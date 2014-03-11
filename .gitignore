@@ -2,3 +2,4 @@ mutt/cache/*
 auth
 message
 headers
+vim/.netrwhist
