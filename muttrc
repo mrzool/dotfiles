@@ -1,13 +1,13 @@
 source ~/.mutt/auth
 
-set locale="ru_RU.UTF-8"
-set from=$my_adress
-set realname=$my_realname
-set imap_user=$my_adress
-set imap_pass=$my_pass
+set locale = "ru_RU.UTF-8"
+set from = $my_adress
+set realname = $my_realname
+set imap_user = $my_adress
+set imap_pass = $my_pass
 
 # REMOTE GMAIL FOLDERS
-set folder=$my_folder
+set folder = $my_folder
 set spoolfile = "+INBOX"
 #set postponed ="+[Google Mail]/Drafts"
 #set trash = "+[Google Mail]/Trash"
@@ -19,8 +19,8 @@ set message_cachedir ="~/.mutt/cache/bodies"
 set certificate_file ="~/.mutt/certificates"
 
 # SMTP SETTINGS
-set smtp_url=$my_smtp_url
-set smtp_pass=$my_pass # use the same passowrd as for IMAP
+set smtp_url = $my_smtp_url
+set smtp_pass = $my_pass # use the same passowrd as for IMAP
 
 # SECURING
 #set move = no  #Stop asking to "move read messages to mbox"!
