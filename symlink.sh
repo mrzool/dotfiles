@@ -30,3 +30,6 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
+# what about the files which are not supposed to go in ~?
+# i'll modify the script for such cases, in the meantime:
+echo -n "don't forget to manually symlink in ~/.config: openbox/, terminator/"
