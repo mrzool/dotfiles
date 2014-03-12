@@ -43,8 +43,8 @@
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Calls Pathogen
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
+" runtime bundle/vim-pathogen/autoload/pathogen.vim
+" call pathogen#infect()
 
 " Sets how many lines of history VIM has to remember
 set history=700
