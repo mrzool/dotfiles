@@ -109,5 +109,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# CUSTOM
+# PATH FOR SDK ANDROID
 PATH=$PATH:/opt/adt-bundle-linux-x86-20131030/sdk/platform-tools:/opt/adt-bundle-linux-x86-20131030/sdk/tools

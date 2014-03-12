@@ -1,0 +1,15 @@
+[global_config]
+  title_transmit_bg_color = "#85144b"
+  title_inactive_bg_color = "#aaaaaa"
+[keybindings]
+[profiles]
+  [[default]]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
