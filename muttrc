@@ -1,3 +1,5 @@
+# Based on http://www.bartbania.com/index.php/consolify-your-gmail-with-mutt/
+
 source ~/.mutt/auth
 
 set locale = "ru_RU.UTF-8"
