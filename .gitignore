@@ -1,4 +1,5 @@
-mutt/cache/*
+mutt/cache/headers
+mutt/cache/bodies/
 auth
 message
 headers
