@@ -1,9 +1,23 @@
 [global_config]
-  title_transmit_bg_color = "#85144b"
-  title_inactive_bg_color = "#aaaaaa"
+  title_transmit_bg_color = "#85144B"
+  handle_size = 0
+  title_inactive_bg_color = "#AAAAAA"
 [keybindings]
+  hide_window = <Shift><Control>a
 [profiles]
   [[default]]
+    palette = "#000000:#aa0000:#00aa00:#aa5500:#0000aa:#aa00aa:#00aaaa:#aaaaaa:#555555:#ff5555:#55ff55:#ffff55:#5555ff:#ff55ff:#55ffff:#ffffff"
+    background_darkness = 0.61
+    scrollback_lines = 5000
+    background_type = transparent
+    scrollbar_position = hidden
+    cursor_color = "#d8d8d8"
+    foreground_color = "#d8d8d8"
+    scroll_on_output = False
+    color_scheme = custom
+    font = Monospace 10
+    background_color = "#2e3436"
+    scrollback_infinite = True
 [layouts]
   [[default]]
     [[[child1]]]
