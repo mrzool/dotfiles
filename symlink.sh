@@ -1,18 +1,24 @@
 #!/bin/bash
 ############################
 # .make.sh
-# This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
+# This script creates symlinks from ~ and ~/.config to any desired dotfiles in ~/dotfiles
 ############################
 
 ########## Variables
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bash_aliases bashrc conkyrc mutt muttrc vim vimrc compton.conf"    # list of files/folders to symlink in homedir
 
-##########
+# list of files/folders to symlink in ~
+homeFiles="bash_aliases bashrc compton.conf conkyrc gitconfig muttrc vim vimrc"    
 
-# create dotfiles_old in homedir
+# list of files/folders to symlink in ~/.config/
+confFiles="openbox terminator tint2rc"
+
+####################
+
+
+# create dotfiles_old in ~
 echo -n "Creating $olddir for backup of any existing dotfiles in ~ ..."
 mkdir -p $olddir
 echo "done"
@@ -22,14 +28,20 @@ echo -n "Changing to the $dir directory ..."
 cd $dir
 echo "done"
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
-for file in $files; do
+# 1. move any existing dotfiles in ~ to dotfiles_old directory, 
+# 2. create symlinks from ~ to any file specified in $homeFiles
+for file in $homeFiles; do
     echo "Moving any existing dotfiles from ~ to $olddir"
     mv ~/.$file ~/dotfiles_old/
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
 
-# what about the files which are not supposed to go in ~?
-# i'll modify the script for such cases, in the meantime:
-echo -n "don't forget to manually symlink in ~/.config: openbox/, terminator/, tint2rc"
+# 1. move any existing dotfiles in ~/.config to dotfiles_old directory, 
+# 2. create symlinks from ~/.config to any file specified in $confFiles
+for file in $confFiles; do
+    echo "Moving any existing dotfiles from ~/.config to $olddir"
+    mv ~/.config/$file ~/dotfiles_old/
+    echo "Creating symlink to $file in ~/.config."
+    ln -s $dir/$file ~/.config/$file
+done

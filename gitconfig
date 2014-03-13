@@ -1,0 +1,9 @@
+[user]
+	email = zool.bib@gmail.com
+	name = zool
+[credential]
+	helper = cache
+[color]
+  ui = true
+[core]
+	excludesfile = ~/.cvsignore
