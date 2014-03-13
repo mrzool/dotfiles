@@ -8,7 +8,9 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bash_aliases bashrc conkyrc muttrc vim vimrc compton.conf gitconfig"    # list of files/folders to symlink in homedir
+
+# list of files/folders to symlink in homedir
+files="bash_aliases bashrc compton.conf conkyrc gitconfig muttrc vim vimrc"    
 
 ##########
 
