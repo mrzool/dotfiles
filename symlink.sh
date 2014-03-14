@@ -7,7 +7,7 @@
 ########## Variables
 
 dir=~/dotfiles                    # dotfiles directory
-olddir=~/dotfiles_old             # old dotfiles backup directory
+olddir=~/backup/dotfiles_old      # old dotfiles backup directory
 
 # list of files/folders to symlink in ~
 homeFiles="bash_aliases bashrc compton.conf conkyrc gitconfig muttrc vim vimrc"    
