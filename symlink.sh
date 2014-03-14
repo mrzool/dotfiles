@@ -2,6 +2,7 @@
 ############################
 # .make.sh
 # This script creates symlinks from ~ and ~/.config to any desired dotfiles in ~/dotfiles
+# Based on http://blog.smalleycreative.com/tutorials/using-git-and-github-to-manage-your-dotfiles/
 ############################
 
 ########## Variables
