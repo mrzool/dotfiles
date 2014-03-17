@@ -75,3 +75,7 @@ conky -q &
 # Autostart the Dropbox deamon
 #(sleep 10s && ~/.dropbox-dist/dropboxd) &
 
+
+# Autostart the Dropbox deamon
+(sleep 10s && ~/.dropbox-dist/dropboxd) &
+
