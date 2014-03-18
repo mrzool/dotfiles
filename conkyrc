@@ -24,7 +24,7 @@ gap_y 56
 no_buffers yes
 uppercase no
 cpu_avg_samples 2
-override_utf8_locale no
+override_utf8_locale yes
 
 TEXT
 ${font sans-serif:bold:size=8}SYSTEM ${hr 2}
@@ -36,10 +36,10 @@ File System: $alignr${fs_type}
 ${font sans-serif:bold:size=8}PROCESSORS ${hr 2}
 ${font sans-serif:normal:size=8}${cpugraph cpu1}
 CPU1: ${cpu cpu1}% ${cpubar cpu1}
-Temp:$alignr${hwmon 0 temp 1} C
+Temp:$alignr${hwmon 0 temp 1}°C
 ${font sans-serif:normal:size=8}${cpugraph cpu2}
 CPU2: ${cpu cpu2}% ${cpubar cpu2}
-Temp:$alignr${hwmon 1 temp 1} C
+Temp:$alignr${hwmon 1 temp 1}°C
 
 ${font sans-serif:bold:size=8}MEMORY ${hr 2}
 ${font sans-serif:normal:size=8}RAM $alignc $mem / $memmax $alignr $memperc%
