@@ -15,3 +15,5 @@
 !terminator/config
 !tint2rc
 !vimrc
+!vim/autoload/**
+!vim/bundle/**
