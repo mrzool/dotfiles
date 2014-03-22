@@ -279,7 +279,7 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 " Alias :W to :w while leaving completion untouched
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 
-" Unmap arrow keys to help me stick to HJKL :)
+" Unmap arrow keys to force me stick to HJKL :)
 inoremap  <Up>     <NOP>
 inoremap  <Down>   <NOP>
 inoremap  <Left>   <NOP>
