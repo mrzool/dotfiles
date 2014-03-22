@@ -259,6 +259,9 @@
     <keybind key="A-F3">
       <action name="Iconify"/>
     </keybind>
+    <keybind key="A-F5">
+      <action name="ToggleMaximize"/>
+    </keybind>
     <keybind key="A-Escape">
       <action name="Lower"/>
       <action name="FocusToBottom"/>
