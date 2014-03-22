@@ -468,6 +468,10 @@
         <command>cb-aerosnap --right</command>
       </action>
     </keybind>
+    <keybind key="A-S-d">
+      <action name="ToggleDecorations"/>
+    </keybind>
+
   </keyboard>
   <mouse>
     <dragThreshold>8</dragThreshold>
