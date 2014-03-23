@@ -107,6 +107,13 @@
 					</command>
 				</action>
 			</item>
+			<item label="Inkscape">
+				<action name="Execute">
+          <command>
+            inkscape 
+          </command>
+				</action>
+			</item>
 		    <item label="Viewnior Image Viewer">
 				<action name="Execute">
 					<command>
