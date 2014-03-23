@@ -23,6 +23,9 @@ eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
 ## Set root window colour
 hsetroot -solid "#2E3436" &
 
+## Detect wheather we have an external monitor connected or not
+/home/zool/bin/monitor-autodetect &
+
 ## Group start:
 ## 1. nitrogen - restores wallpaper
 ## 2. compositor - start
