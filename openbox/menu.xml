@@ -38,7 +38,7 @@
 		<item label="Text Editor">
 			<action name="Execute">
 				<command>
-					terminator --command="vi"
+					gvim
 				</command>
 			</action>
 		</item>
