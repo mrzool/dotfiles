@@ -64,17 +64,13 @@ xscreensaver -no-splash &
 xset r rate 250 25 &
 
 ## Turn on/off system beep
-xset b off &
+xset b on &
 
 ## cb-fortune - have Waldorf say a little adage
 #(sleep 120s && cb-fortune) &
 
 ## Run the conky
 conky -q &
-
-# Autostart the Dropbox deamon
-#(sleep 10s && ~/.dropbox-dist/dropboxd) &
-
 
 # Autostart the Dropbox deamon
 (sleep 10s && ~/.dropbox-dist/dropboxd) &
