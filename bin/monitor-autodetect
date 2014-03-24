@@ -1,0 +1,9 @@
+#!/bin/bash
+myvar="$(xrandr -q)"
+if [[ $myvar == *"VGA connected"* ]]
+  then
+    xrandr --output VGA --auto;
+    xrandr --output LVDS --off;
+  else
+    xrandr --output LVDS --auto;
+fi
