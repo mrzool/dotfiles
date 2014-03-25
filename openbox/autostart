@@ -67,7 +67,7 @@ xscreensaver -no-splash &
 xset r rate 250 25 &
 
 ## Turn on/off system beep
-xset b on &
+xset b off &
 
 ## cb-fortune - have Waldorf say a little adage
 (sleep 120s && cb-fortune) &
