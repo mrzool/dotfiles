@@ -60,7 +60,7 @@ fi
 xscreensaver -no-splash &
 
 ## Start Clipboard manager
-#(sleep 3s && clipit) &
+(sleep 3s && clipit) &
 
 ## Set keyboard settings - 250 ms delay and 25 cps (characters per second) repeat rate.
 ## Adjust the values according to your preferances.
@@ -70,7 +70,7 @@ xset r rate 250 25 &
 xset b on &
 
 ## cb-fortune - have Waldorf say a little adage
-#(sleep 120s && cb-fortune) &
+(sleep 120s && cb-fortune) &
 
 ## Run the conky
 conky -q &
