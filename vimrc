@@ -128,6 +128,11 @@ syntax enable
 colorscheme desert
 set background=dark
 
+if has('gui_running')
+    colorscheme solarized
+endif
+
+
 " Set extra options when running in GUI mode
 if has("gui_running")
     set guioptions-=T
