@@ -70,7 +70,7 @@ xset r rate 250 25 &
 xset b off &
 
 ## cb-fortune - have Waldorf say a little adage
-(sleep 120s && cb-fortune) &
+#(sleep 120s && cb-fortune) &
 
 ## Run the conky
 conky -q &
