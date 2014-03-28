@@ -379,6 +379,15 @@
         <command>x-www-browser</command>
       </action>
     </keybind>
+    <keybind key="W-c">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>Google Chrome</name>
+        </startupnotify>
+        <command>google-chrome</command>
+      </action>
+    </keybind>
     <keybind key="W-l">
       <action name="Execute">
         <startupnotify>
