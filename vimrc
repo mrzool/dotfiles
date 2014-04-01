@@ -345,6 +345,9 @@ map <leader>s? z=
 " Set Lint off by default
 let lint_default = 0
 
+" Map ctrl+n to open NERDTree
+map <C-n> :NERDTreeTabsToggle<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
