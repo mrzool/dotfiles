@@ -136,7 +136,7 @@ systray_icon_asb = 100 0 0
 
 # Clock
 time1_format = %H:%M
-time1_font = Liberation Sans 11
+time1_font = Liberation Sans 10.5
 #time2_format = %d/%m/%y
 #time2_font = Liberation Sans 8
 clock_font_color = #b5b5b5 100
