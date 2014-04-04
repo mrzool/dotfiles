@@ -483,6 +483,18 @@
     <keybind key="A-S-d">
       <action name="ToggleDecorations"/>
     </keybind>
+    <keybind key="A-Left">
+      <action name="Move"/>
+    </keybind>
+    <keybind key="A-Right">
+      <action name="Move"/>
+    </keybind>
+    <keybind key="A-Up">
+      <action name="Move"/>
+    </keybind>
+    <keybind key="A-Down">
+      <action name="Move"/>
+    </keybind>
 
   </keyboard>
   <mouse>
