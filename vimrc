@@ -137,6 +137,10 @@ endif
 if has("gui_running")
     set guioptions-=T
     set guioptions+=e
+    set guioptions-=m 
+    set guioptions-=l 
+    set guioptions-=L 
+    set guioptions-=t 
     set t_Co=256
     set guitablabel=%M\ %t
 endif
