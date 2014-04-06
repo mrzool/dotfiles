@@ -62,7 +62,7 @@ $font${top_mem name 5}${alignr}${top mem 5} %
 
 ${font sans-serif:bold:size=8}NETWORK ${hr 2}
 ${font sans-serif:normal:size=8}IP address: $alignr ${addr wlan0}
-ESSID: $alignr ${wireless_essid ath0}
+ESSID: $alignr ${wireless_essid wlan0}
 Connection quality: $alignr ${wireless_link_qual_perc wlan0}%
 ${downspeedgraph wlan0}
 DLS:${downspeed ath0} kb/s $alignr total: ${totaldown wlan0}
