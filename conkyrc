@@ -60,18 +60,12 @@ $font${top_mem name 3}${alignr}${top mem 3} %
 $font${top_mem name 4}${alignr}${top mem 4} %
 $font${top_mem name 5}${alignr}${top mem 5} %
 
-${font sans-serif:bold:size=8}SHORTCUT KEYS${hr 2}
-${font sans-serif:normal:size=8}Alt+F2$alignr Run Dialog
-Alt+F3$alignr Alt Menu
-Super+Space$alignr Main Menu
-Super+Tab$alignr Client Menu
-Super+t$alignr Terminal
-Super+f$alignr File Manager
-Super+e$alignr Text Editor
-Super+m$alignr Media Player
-Super+w$alignr Web Browser
-Super+c$alignr Google Chrome
-Super+l$alignr Lock Screen
-Super+v$alignr Volume Control
-Super+x$alignr Logout
-PrtSc$alignr Screenshot
+${font sans-serif:bold:size=8}NETWORK ${hr 2}
+${font sans-serif:normal:size=8}IP address: $alignr ${addr wlan0}
+ESSID: $alignr ${wireless_essid ath0}
+Connection quality: $alignr ${wireless_link_qual_perc wlan0}%
+${downspeedgraph wlan0}
+DLS:${downspeed ath0} kb/s $alignr total: ${totaldown wlan0}
+${upspeedgraph wlan0}
+ULS:${upspeed ath0} kb/s $alignr total: ${totalup wlan0}
+
