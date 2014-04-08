@@ -103,6 +103,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-# PATH FOR SDK ANDROID
-PATH=$PATH:/opt/adt-bundle-linux-x86-20131030/sdk/platform-tools:/opt/adt-bundle-linux-x86-20131030/sdk/tools
