@@ -65,7 +65,7 @@ ${font sans-serif:normal:size=8}IP address: $alignr ${addr wlan0}
 ESSID: $alignr ${wireless_essid wlan0}
 Connection quality: $alignr ${wireless_link_qual_perc wlan0}%
 ${downspeedgraph wlan0}
-DLS:${downspeed ath0} kb/s $alignr total: ${totaldown wlan0}
+DLS:${downspeed wlan0} kb/s $alignr total: ${totaldown wlan0}
 ${upspeedgraph wlan0}
-ULS:${upspeed ath0} kb/s $alignr total: ${totalup wlan0}
+ULS:${upspeed wlan0} kb/s $alignr total: ${totalup wlan0}
 
