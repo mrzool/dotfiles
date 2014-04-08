@@ -482,17 +482,18 @@
     </keybind>
     <keybind key="A-S-d">
       <action name="ToggleDecorations"/>
+    <!-- Custom Keybindings -->
     </keybind>
-    <keybind key="A-Left">
+    <keybind key="C-Left">
       <action name="Move"/>
     </keybind>
-    <keybind key="A-Right">
+    <keybind key="C-Right">
       <action name="Move"/>
     </keybind>
-    <keybind key="A-Up">
+    <keybind key="C-Up">
       <action name="Move"/>
     </keybind>
-    <keybind key="A-Down">
+    <keybind key="C-Down">
       <action name="Move"/>
     </keybind>
 
