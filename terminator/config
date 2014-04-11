@@ -1,13 +1,14 @@
 [global_config]
   title_transmit_bg_color = "#85144B"
-  handle_size = 1
   title_inactive_bg_color = "#AAAAAA"
+  handle_size = 1
+  borderless = True
 [keybindings]
   hide_window = <Shift><Control>a
 [profiles]
   [[default]]
     palette = "#000000:#aa0000:#00aa00:#aa5500:#0000aa:#aa00aa:#00aaaa:#aaaaaa:#555555:#ff5555:#55ff55:#ffff55:#5555ff:#ff55ff:#55ffff:#ffffff"
-    background_darkness = 0.70
+    background_darkness = 0.5
     scrollback_lines = 5000
     background_type = transparent
     scrollbar_position = hidden

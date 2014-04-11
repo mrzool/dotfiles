@@ -15,3 +15,4 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 
+alias sendtokindle='mutt zool.bib@kindle.com -s "new book" -a'

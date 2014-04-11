@@ -1,6 +1,6 @@
 *
 !.gitignore
-!bash_aliases
+!aliases
 !bashrc
 !compton.conf
 !conkyrc
