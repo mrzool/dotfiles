@@ -255,10 +255,12 @@ nnoremap <F3> :set hlsearch!<CR>
 
 
 """"""""""""""""""""""""""""""
-" => Status line
+" => Airline :)
 """"""""""""""""""""""""""""""
 " Always show the status line
 set laststatus=2
+let g:airline_powerline_fonts=1
+
 
 " Format the status line
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
