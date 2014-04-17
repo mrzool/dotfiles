@@ -15,6 +15,7 @@
 !terminator/config
 !tint2rc
 !vimrc
+!vim/
 !vim/**
 !bin/
 !bin/**
