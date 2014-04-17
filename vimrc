@@ -102,7 +102,7 @@ set hlsearch
 set incsearch
 
 " Don't redraw while executing macros (good performance config)
-set lazyredraw
+" set lazyredraw
 
 " For regular expressions turn magic on
 set magic
@@ -124,6 +124,9 @@ set tm=500
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
 syntax enable
+
+" 256 color support for terminal
+set t_Co=256
 
 colorscheme desert
 set background=dark
