@@ -246,6 +246,10 @@ autocmd BufReadPost *
 " Remember info about open buffers on close
 set viminfo^=%
 
+" Sets F3 to cancel the highlighting "
+nnoremap <F3> :set hlsearch!<CR>
+
+
 
 """"""""""""""""""""""""""""""
 " => Status line
