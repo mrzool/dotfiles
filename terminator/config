@@ -1,6 +1,6 @@
 [global_config]
-  title_transmit_bg_color = "#85144B"
-  title_inactive_bg_color = "#AAAAAA"
+  title_transmit_bg_color = "#39CCCC"
+  title_inactive_bg_color = "#DDDDDA"
   handle_size = 1
   borderless = True
 [keybindings]
