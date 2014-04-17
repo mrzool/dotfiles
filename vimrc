@@ -122,14 +122,10 @@ set tm=500
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Enable syntax highlighting
-syntax enable
-
-" 256 color support for terminal
 set t_Co=256
+colorscheme molokai
 
-colorscheme desert
-set background=dark
+syntax enable
 
 if has('gui_running')
     colorscheme solarized
@@ -260,6 +256,7 @@ nnoremap <F3> :set hlsearch!<CR>
 " Always show the status line
 set laststatus=2
 let g:airline_powerline_fonts=1
+let g:airline_theme='molokai'
 
 
 " Format the status line
