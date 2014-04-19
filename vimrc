@@ -300,6 +300,8 @@ noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
+" map ctrl-J to insert line break (kinda like the opposite of J)
+:nnoremap <NL> i<CR><ESC>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vimgrep searching and cope displaying
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
