@@ -303,6 +303,11 @@ noremap   <Right>  <NOP>
 " map ctrl-J to insert line break (kinda like the opposite of J)
 :nnoremap <NL> i<CR><ESC>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Abbreviations
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+:abbr fn function
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vimgrep searching and cope displaying
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " When you press gv you vimgrep after the selected text
