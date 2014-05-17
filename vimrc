@@ -302,6 +302,10 @@ noremap   <Right>  <NOP>
 
 " map ctrl-J to insert line break (kinda like the opposite of J)
 :nnoremap <NL> i<CR><ESC>
+
+" make y behave like other capitals
+map Y y$
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Abbreviations
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
