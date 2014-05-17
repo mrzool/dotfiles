@@ -15,4 +15,4 @@ alias l='ls -CF'
 
 alias sendtokindle='mutt zool.bib@kindle.com -s "new book" -a'
 
-alias a2restart="service apache2 restart"
+alias a2restart="sudo service apache2 restart"
