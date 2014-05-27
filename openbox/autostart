@@ -62,6 +62,9 @@ xscreensaver -no-splash &
 ## Start Clipboard manager
 (sleep 3s && clipit) &
 
+## Start keyboard leyout switcher
+(sleep 3s && fbxkb) &
+
 ## Set keyboard settings - 250 ms delay and 25 cps (characters per second) repeat rate.
 ## Adjust the values according to your preferances.
 xset r rate 250 25 &
