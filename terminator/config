@@ -1,7 +1,7 @@
 [global_config]
+  title_inactive_bg_color = "#2d2d2d"
   title_transmit_bg_color = "#4c4c4c"
   title_inactive_fg_color = "#afafaf"
-  title_inactive_bg_color = "#2d2d2d"
   handle_size = 1
   borderless = True
 [keybindings]
@@ -10,7 +10,7 @@
   [[default]]
     scrollbar_position = hidden
     palette = "#000000:#f92672:#6cc72c:#fe9720:#5f91ef:#9358fe:#36af90:#8c8c8c:#4c4c4c:#ff80f4:#a7e22e:#ffee99:#5fd9ef:#ae82fe:#66efd5:#c7cece"
-    background_darkness = 0.9
+    background_darkness = 0.66
     background_type = transparent
     use_system_font = False
     cursor_color = "#d8d8d8"
