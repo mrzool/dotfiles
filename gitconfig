@@ -9,3 +9,5 @@
 	excludesfile = ~/.cvsignore
 [push]
 	default = simple
+[merge]
+	tool = vimdiff
