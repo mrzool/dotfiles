@@ -1,4 +1,4 @@
-*
+
 !.gitignore
 !aliases
 !bashrc
@@ -15,8 +15,5 @@
 !terminator/config
 !tint2rc
 !vimrc
-!vim/
-!vim/**
-vim/.netrwhist
 !bin/
 !bin/**
