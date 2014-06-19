@@ -32,6 +32,8 @@
 "    -> Moving around, tabs and buffers
 "    -> Status line
 "    -> Editing mappings
+"    -> Abbreviations
+"    -> Custom commands
 "    -> vimgrep searching and cope displaying
 "    -> Spell checking
 "    -> Misc
@@ -306,16 +308,18 @@ noremap   <Right>  <NOP>
 " make y behave like other capitals
 map Y y$
 
-" map Enter to add new line under the cursor w/o entering insert mode
-nmap <CR> o<Esc>
-
-" map esc to clear highlights after search
-nnoremap <esc> :noh<return><esc>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Abbreviations
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :abbr fn function
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Custom Commands
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" map :C to clear last used search pattern
+" (and get rid of highlights after search)
+:command C let @/=""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vimgrep searching and cope displaying
