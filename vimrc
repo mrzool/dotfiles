@@ -308,7 +308,8 @@ noremap   <Right>  <NOP>
 " make y behave like other capitals
 map Y y$
 
-
+" maps jj to esc (whoha!)
+inoremap jj <Esc>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Abbreviations
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
