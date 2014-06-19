@@ -306,6 +306,12 @@ noremap   <Right>  <NOP>
 " make y behave like other capitals
 map Y y$
 
+" map Enter to add new line under the cursor w/o entering insert mode
+nmap <CR> o<Esc>
+
+" map esc to clear highlights after search
+nnoremap <esc> :noh<return><esc>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Abbreviations
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
