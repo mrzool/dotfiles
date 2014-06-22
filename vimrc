@@ -322,7 +322,7 @@ inoremap jj <Esc>
 " (and get rid of highlights after search)
 :command C let @/=""
 
-:command Texcompile execute "! pdflatex %"
+:command T execute "w | ! pdflatex %"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vimgrep searching and cope displaying
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
