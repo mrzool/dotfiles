@@ -12,9 +12,12 @@
 [merge]
 	tool = vimdiff
 [alias]
+	st = status
+  a  = add
+	ci = commit
+  ps = push
+  pl = pull
 	co = checkout
 	br = branch
-	ci = commit
-	st = status
 	unstage = reset HEAD --
 	last = log -1 HEAD
