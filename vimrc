@@ -300,10 +300,11 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 
 " Unmap arrow keys to force me stick to HJKL :)
-noremap   <Up>     <NOP>
-noremap   <Down>   <NOP>
-noremap   <Left>   <NOP>
-noremap   <Right>  <NOP>
+" Mission accomplished: commenting out
+" noremap   <Up>     <NOP>
+" noremap   <Down>   <NOP>
+" noremap   <Left>   <NOP>
+" noremap   <Right>  <NOP>
 
 " map ctrl-J to insert line break (kinda like the opposite of J)
 :nnoremap <NL> i<CR><ESC>
