@@ -67,7 +67,7 @@ nmap <leader>w :w!<cr>
 
 " Activate digraph option
 " ex: a <BS> : to give ä
-set dg
+" set dg
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
