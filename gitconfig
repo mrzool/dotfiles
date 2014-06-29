@@ -14,7 +14,7 @@
 [alias]
 	st = status
   a  = add
-	ci = commit
+	cm = commit
   ps = push
   pl = pull
 	co = checkout
