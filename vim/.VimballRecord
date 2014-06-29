@@ -1,1 +1,0 @@
-supertab.vmb: call delete('/home/zool/.vim/doc/supertab.txt')|call delete('/home/zool/.vim/plugin/supertab.vim')
