@@ -95,7 +95,7 @@ set hlsearch
 set incsearch
 
 " Don't redraw while executing macros (good performance config)
-" set lazyredraw
+set lazyredraw
 
 " For regular expressions turn magic on
 set magic
@@ -116,14 +116,10 @@ set tm=500
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set t_Co=256
+
 colorscheme molokai
 
 syntax enable
-
-if has('gui_running')
-    colorscheme solarized
-endif
-
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -195,9 +191,6 @@ map k gk
 map <space> /
 map <c-space> ?
 
-" Disable highlight when <leader><cr> is pressed
-map <silent> <leader><cr> :noh<cr>
-
 " Smart way to move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
@@ -237,11 +230,6 @@ autocmd BufReadPost *
      \ endif
 " Remember info about open buffers on close
 set viminfo^=%
-
-" Sets F3 to cancel the highlighting "
-nnoremap <F3> :set hlsearch!<CR>
-
-
 
 """"""""""""""""""""""""""""""
 " => Airline :)
@@ -302,6 +290,7 @@ map Y y$
 
 " maps jj to esc (whoha!)
 inoremap jj <Esc>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Abbreviations
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -314,7 +303,9 @@ inoremap jj <Esc>
 " (and get rid of highlights after search)
 :command C let @/=""
 
+" map :T to compile TeX file
 :command T execute "w | ! pdflatex %"
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vimgrep searching and cope displaying
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -381,11 +372,10 @@ map <leader>q :e ~/buffer<cr>
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
     emenu Foo.Bar
@@ -442,4 +432,3 @@ function! <SID>BufcloseCloseIt()
      execute("bdelete! ".l:currentBufNum)
    endif
 endfunction
-
