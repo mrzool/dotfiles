@@ -1,9 +1,10 @@
 [global_config]
-  title_inactive_bg_color = "#2d2d2d"
-  title_transmit_bg_color = "#3d9970"
-  title_inactive_fg_color = "#afafaf"
   handle_size = 1
+  focus = system
+  title_inactive_fg_color = "#afafaf"
   borderless = True
+  title_transmit_bg_color = "#3d9970"
+  title_inactive_bg_color = "#2d2d2d"
 [keybindings]
   hide_window = <Shift><Control>a
 [profiles]
