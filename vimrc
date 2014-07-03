@@ -42,6 +42,9 @@ set history=700
 filetype plugin on
 filetype indent on
 
+" Enable matchit plugin
+runtime macros/matchit.vim
+
 " Set to auto read when a file is changed from the outside
 set autoread
 
