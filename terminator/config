@@ -6,6 +6,7 @@
   title_transmit_bg_color = "#3d9970"
   title_inactive_bg_color = "#2d2d2d"
 [keybindings]
+  toggle_zoom = <Ctrl>Return
   hide_window = <Shift><Control>a
 [profiles]
   [[default]]
