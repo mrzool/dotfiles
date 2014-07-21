@@ -127,6 +127,8 @@ set tm=500
 set t_Co=256
 
 colorscheme molokai
+let g:molokai_original = 1
+let g:rehash256 = 1
 
 syntax enable
 
@@ -247,7 +249,10 @@ set viminfo^=%
 set laststatus=2
 let g:airline_powerline_fonts=1
 let g:airline_theme='molokai'
+let g:airline#extensions#tabline#enabled = 1
 
+" hide default mode indicator
+set noshowmode
 
 " Format the status line
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
