@@ -18,3 +18,4 @@ alias spacetouscore='find . -depth -name "* *" \
 # Various
 alias sendtokindle='mutt zool.bib@kindle.com -s "new book" -a'
 alias colorpicker="gcolor2"
+alias copy='xclip -sel clip'
