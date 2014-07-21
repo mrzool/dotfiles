@@ -15,6 +15,11 @@ alias uptolow='for f in *; do mv "$f" "`echo $f | tr "[:upper:]" "[:lower:]"`"; 
 alias spacetouscore='find . -depth -name "* *" \
 | while IFS= read -r f ; do mv -i "$f" "$(dirname "$f")/$(basename "$f"|tr " " _)" ; done'
 
+# Jump and Marks 
+alias ju='jump'
+alias mm='mark'
+alias um='unmark'
+
 # Various
 alias sendtokindle='mutt zool.bib@kindle.com -s "new book" -a'
 alias colorpicker="gcolor2"
