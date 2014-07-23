@@ -4,6 +4,8 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 alias g="git"
+alias copy='xclip -sel clip'
+alias installed='dpkg --get-selections'
 
 # Network Utilities
 alias a2restart="sudo service apache2 restart"
@@ -23,4 +25,3 @@ alias um='unmark'
 # Various
 alias sendtokindle='mutt zool.bib@kindle.com -s "new book" -a'
 alias colorpicker="gcolor2"
-alias copy='xclip -sel clip'
