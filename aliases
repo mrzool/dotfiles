@@ -1,8 +1,7 @@
 # General utilites
-alias l='ls'
+alias l='ls -CF -l'
 alias ll='ls -l'
 alias la='ls -A'
-alias l='ls -CF'
 alias g="git"
 alias copy='xclip -sel clip'
 alias installed='dpkg --get-selections'
