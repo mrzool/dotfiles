@@ -208,6 +208,11 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" Rapidly move between buffers
+map gn :bn<cr>
+map gp :bp<cr>
+map gd :bd<cr>  
+
 " Close the current buffer
 map <leader>bd :Bclose<cr>
 
