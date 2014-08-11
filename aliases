@@ -2,10 +2,16 @@
 alias l='ls -CF -l'
 alias ll='ls -l'
 alias la='ls -A'
-alias g="git"
 alias copy='xclip -sel clip'
 alias installed='dpkg --get-selections'
 alias new-project="git clone git@github.com:mrmrs/trim.git"
+
+# Git aliases
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit"
+alias gpl="git pull"
+alias gps="git push"
 
 # Network Utilities
 alias a2restart="sudo service apache2 restart"
