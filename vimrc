@@ -162,6 +162,9 @@ set nobackup
 set nowb
 set noswapfile
 
+" Do not store global and local values nor folds in a session                             
+set ssop-=options    
+set ssop-=folds      
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
