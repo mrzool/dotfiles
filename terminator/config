@@ -11,11 +11,12 @@
   [[default]]
     scrollbar_position = hidden
     palette = "#000000:#f92672:#6cc72c:#fe9720:#5f91ef:#9358fe:#36af90:#8c8c8c:#4c4c4c:#ff80f4:#a7e22e:#ffee99:#5fd9ef:#ae82fe:#66efd5:#c7cece"
-    background_darkness = 0.85
+    background_darkness = 0.74
     background_type = transparent
     use_system_font = False
     cursor_color = "#d8d8d8"
     foreground_color = "#ffffff"
+    show_titlebar = False
     font = DejaVu Sans Mono for Powerline 10
     background_color = "#2e3436"
   [[formerdefault]]
