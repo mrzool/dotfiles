@@ -13,15 +13,12 @@
 "    -> Files and backups
 "    -> Text, tab and indent related
 "    -> Visual mode related
-"    -> Moving around, tabs and buffers
+"    -> Moving around, tabs, splits and buffers
 "    -> Status line
 "    -> Editing mappings
 "    -> Abbreviations
 "    -> Custom commands
-"    -> vimgrep searching and cope displaying
 "    -> Spell checking
-"    -> Misc
-"    -> Helper functions
 "
 " Notes:
 "       Kudos to Amir Salihefendic for the base vimrc.
@@ -48,19 +45,9 @@ runtime macros/matchit.vim
 " Set to auto read when a file is changed from the outside
 set autoread
 
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
-let mapleader = "-"
-let g:mapleader = "-"
-
-" Fast saving
-nmap <leader>w :w!<cr>
-
-" Fast saving and closing
-nmap <leader>wq :wq<cr>
-
-" Fast saving
-nmap <leader>q :q<cr>
+" Leader mapping
+" let mapleader = "-"
+" let g:mapleader = "-"
 
 " Activate digraph option
 " ex: a <BS> : to give ä
@@ -135,18 +122,6 @@ let g:rehash256 = 1
 
 syntax enable
 
-" Set extra options when running in GUI mode
-if has("gui_running")
-    set guioptions-=T
-    set guioptions+=e
-    set guioptions-=m 
-    set guioptions-=l 
-    set guioptions-=L 
-    set guioptions-=t 
-    set t_Co=256
-    set guitablabel=%M\ %t
-endif
-
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
 
@@ -162,7 +137,7 @@ set nobackup
 set nowb
 set noswapfile
 
-" Do not store global and local values nor folds in a session                             
+" Do not store global, local values or folds in a session                             
 set ssop-=options    
 set ssop-=folds      
 
@@ -193,8 +168,8 @@ set wrap "Wrap lines
 """"""""""""""""""""""""""""""
 " Visual mode pressing * or # searches for the current selection
 " Super useful! From an idea by Michael Naumann
-vnoremap <silent> * :call VisualSelection('f')<CR>
-vnoremap <silent> # :call VisualSelection('b')<CR>
+" vnoremap <silent> * :call VisualSelection('f')<CR>
+" vnoremap <silent> # :call VisualSelection('b')<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -202,8 +177,8 @@ vnoremap <silent> # :call VisualSelection('b')<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-map <space> /
-map <c-space> ?
+" map <space> /
+" map <c-space> ?
 
 " Smart way to move between windows
 map <C-j> <C-W>j
@@ -211,44 +186,18 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-" Rapidly move between buffers
-map gn :bn<cr>
-map gp :bp<cr>
-map gd :bd<cr>  
-
-" Close the current buffer
-map <leader>bd :Bclose<cr>
-
-" Close all the buffers
-map <leader>ba :1,1000 bd!<cr>
-
-" Useful mappings for managing tabs
-map <leader>tn :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove
-
-" Opens a new tab with the current buffer's path
-" Super useful when editing files in the same directory
-map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
-
-" Switch CWD to the directory of the open buffer
-map <leader>cd :cd %:p:h<cr>:pwd<cr>
-
-" Specify the behavior when switching between buffers 
-try
-  set switchbuf=useopen,usetab,newtab
-  set stal=2
-catch
-endtry
-
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
      \ endif
+
 " Remember info about open buffers on close
 set viminfo^=%
+
+" Open new split panes to right and bottom, which feels more natural than Vim’s default:
+set splitbelow
+set splitright
 
 """"""""""""""""""""""""""""""
 " => Airline :)
@@ -257,7 +206,6 @@ set viminfo^=%
 set laststatus=2
 let g:airline_powerline_fonts=1
 let g:airline_theme='molokai'
-let g:airline#extensions#tabline#enabled = 1
 
 " hide default mode indicator
 set noshowmode
@@ -272,37 +220,8 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
-" Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
-nmap <M-j> mz:m+<cr>`z
-nmap <M-k> mz:m-2<cr>`z
-vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
-
-if has("mac") || has("macunix")
-  nmap <D-j> <M-j>
-  nmap <D-k> <M-k>
-  vmap <D-j> <M-j>
-  vmap <D-k> <M-k>
-endif
-
-" Delete trailing white space on save, useful for Python and CoffeeScript ;)
-func! DeleteTrailingWS()
-  exe "normal mz"
-  %s/\s\+$//ge
-  exe "normal `z"
-endfunc
-autocmd BufWrite *.py :call DeleteTrailingWS()
-autocmd BufWrite *.coffee :call DeleteTrailingWS()
-
 " Alias :W to :w while leaving completion untouched
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
-
-" Unmap arrow keys to force me stick to HJKL :)
-" Mission accomplished: commenting out
-" noremap   <Up>     <NOP>
-" noremap   <Down>   <NOP>
-" noremap   <Left>   <NOP>
-" noremap   <Right>  <NOP>
 
 " map ctrl-J to insert line break (kinda like the opposite of J)
 :nnoremap <NL> i<CR><ESC>
@@ -323,41 +242,10 @@ inoremap jj <Esc>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " map :C to clear last used search pattern
 " (and get rid of highlights after search)
-:command C let @/=""
+:command! C let @/=""
 
 " map :T to compile TeX file
-:command T execute "w | ! pdflatex %"
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vimgrep searching and cope displaying
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" When you press gv you vimgrep after the selected text
-vnoremap <silent> gv :call VisualSelection('gv')<CR>
-
-" Open vimgrep and put the cursor in the right position
-map <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
-
-" Vimgreps in the current file
-map <leader><space> :vimgrep // <C-R>%<C-A><right><right><right><right><right><right><right><right><right>
-
-" When you press <leader>r you can search and replace the selected text
-vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
-
-" Do :help cope if you are unsure what cope is. It's super useful!
-"
-" When you search with vimgrep, display your results in cope by doing:
-"   <leader>cc
-"
-" To go to the next search result do:
-"   <leader>n
-"
-" To go to the previous search results do:
-"   <leader>p
-"
-map <leader>cc :botright cope<cr>
-map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
-map <leader>n :cn<cr>
-map <leader>p :cp<cr>
+:command! T execute "w | ! pdflatex %"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -366,102 +254,14 @@ map <leader>p :cp<cr>
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
 
-" Shortcuts using <leader>
-map <leader>sn ]s
-map <leader>sp [s
-map <leader>sa zg
-map <leader>s? z=
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Settings for netrw
+let g:netrw_preview   = 1
+let g:netrw_liststyle = 3
+" let g:netrw_winsize   = 70 not working...
+
 " Set Lint off by default
 let lint_default = 0
-
-" Map ctrl+n to open NERDTree
-map <C-n> :NERDTreeTabsToggle<CR>
-
-" Load limelight when Goyo is started
-function! GoyoBefore()
-  Limelight
-endfunction
-
-function! GoyoAfter()
-  Limelight!
-endfunction
-
-let g:goyo_callbacks = [function('GoyoBefore'), function('GoyoAfter')]
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Misc
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Remove the Windows ^M - when the encodings gets messed up
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-
-" Quickly open a buffer for scripbble
-" map <leader>q :e ~/buffer<cr>
-
-" Toggle paste mode on and off
-map <leader>pp :setlocal paste!<cr>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Helper functions
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-function! CmdLine(str)
-    exe "menu Foo.Bar :" . a:str
-    emenu Foo.Bar
-    unmenu Foo
-endfunction
-
-function! VisualSelection(direction) range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
-
-    let l:pattern = escape(@", '\\/.*$^~[]')
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
-
-    if a:direction == 'b'
-        execute "normal ?" . l:pattern . "^M"
-    elseif a:direction == 'gv'
-        call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
-    elseif a:direction == 'replace'
-        call CmdLine("%s" . '/'. l:pattern . '/')
-    elseif a:direction == 'f'
-        execute "normal /" . l:pattern . "^M"
-    endif
-
-    let @/ = l:pattern
-    let @" = l:saved_reg
-endfunction
-
-
-" Returns true if paste mode is enabled
-function! HasPaste()
-    if &paste
-        return 'PASTE MODE  '
-    en
-    return ''
-endfunction
-
-" Don't close window, when deleting a buffer
-command! Bclose call <SID>BufcloseCloseIt()
-function! <SID>BufcloseCloseIt()
-   let l:currentBufNum = bufnr("%")
-   let l:alternateBufNum = bufnr("#")
-
-   if buflisted(l:alternateBufNum)
-     buffer #
-   else
-     bnext
-   endif
-
-   if bufnr("%") == l:currentBufNum
-     new
-   endif
-
-   if buflisted(l:currentBufNum)
-     execute("bdelete! ".l:currentBufNum)
-   endif
-endfunction
