@@ -59,6 +59,9 @@ set autoread
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
+" Always show tabbar
+set showtabline=2
+
 " Turn on the WiLd menu
 set wildmenu
 
@@ -72,7 +75,7 @@ set ruler
 set number
 
 " Height of the command bar
-set cmdheight=2
+set cmdheight=1
 
 " A buffer becomes hidden when it is abandoned
 set hid
@@ -162,6 +165,8 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
+"Makes foo-bar considered one word
+set iskeyword+=- 
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
@@ -177,8 +182,8 @@ set wrap "Wrap lines
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-" map <space> /
-" map <c-space> ?
+map <space> /
+map <c-space> ?
 
 " Smart way to move between windows
 map <C-j> <C-W>j
@@ -200,19 +205,32 @@ set splitbelow
 set splitright
 
 """"""""""""""""""""""""""""""
-" => Airline :)
+" => Status bar
 """"""""""""""""""""""""""""""
 " Always show the status line
 set laststatus=2
-let g:airline_powerline_fonts=1
-let g:airline_theme='molokai'
+
+" Configure Lightline
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&filetype=="help"?"":&readonly?"":"RO"}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ }
+      \ }
+
 
 " hide default mode indicator
 set noshowmode
-
-" Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
@@ -241,7 +259,6 @@ inoremap jj <Esc>
 " => Custom Commands
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " map :C to clear last used search pattern
-" (and get rid of highlights after search)
 :command! C let @/=""
 
 " map :T to compile TeX file
