@@ -34,6 +34,4 @@ alias um='unmark'
 # Various
 alias sendtokindle='mutt zool.bib@kindle.com -s "new book" -a'
 alias colorpicker="gcolor2"
-alias uptolow='for f in *; do mv "$f" "`echo $f | tr "[:upper:]" "[:lower:]"`"; done'
-alias spacetouscore='find . -depth -name "* *" \
-| while IFS= read -r f ; do mv -i "$f" "$(dirname "$f")/$(basename "$f"|tr " " _)" ; done'
+alias calc="qalc"
