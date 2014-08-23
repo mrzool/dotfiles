@@ -1,0 +1,15 @@
+XXkb.mainwindow.enable: yes
+XXkb.mainwindow.label.enable: yes
+XXkb.mainwindow.type: tray
+XXkb.mainwindow.appicon: no
+XXkb.mainwindow.geometry: 16x16+0+0
+XXkb.mainwindow.label.background: black
+XXkb.mainwindow.label.foreground: gray
+XXkb.mainwindow.label.font:-misc-*-r-*-14-*
+XXkb.mainwindow.label.text.1: It
+XXkb.mainwindow.label.text.2: Us
+XXkb.mainwindow.label.text.3: De
+XXkb.controls.add_when_start: yes
+XXkb.button.enable: no
+XXkb.controls.add_when_change: yes
+XXkb.controls.focusout: yes
