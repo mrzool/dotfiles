@@ -35,3 +35,4 @@ alias um='unmark'
 alias sendtokindle='mutt zool.bib@kindle.com -s "new book" -a'
 alias colorpicker="gcolor2"
 alias calc="qalc"
+alias mpdncmpcpp="sh ~/bin/mpdncmpcpp.sh"

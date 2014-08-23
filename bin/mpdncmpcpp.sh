@@ -1,0 +1,2 @@
+ mpd  
+ ncmpcpp  
