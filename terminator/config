@@ -2,7 +2,7 @@
   title_inactive_bg_color = "#2d2d2d"
   title_transmit_bg_color = "#757575"
   title_inactive_fg_color = "#afafaf"
-  handle_size = 1
+  handle_size = 0
   borderless = True
 [keybindings]
   toggle_zoom = <Ctrl>Return
@@ -11,7 +11,7 @@
   [[default]]
     scrollbar_position = hidden
     palette = "#000000:#f92672:#6cc72c:#fe9720:#5f91ef:#9358fe:#36af90:#8c8c8c:#4c4c4c:#ff80f4:#a7e22e:#ffee99:#5fd9ef:#ae82fe:#66efd5:#c7cece"
-    background_darkness = 0.74
+    background_darkness = 0.61
     background_type = transparent
     use_system_font = False
     cursor_color = "#d8d8d8"
