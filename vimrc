@@ -1,14 +1,15 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maintainer: 
 "       mrzool
-"       http://zool.co.vu - zool.bib@gmail.com
+"       http://zool.co.vu
+"       zool.bib@gmail.com
 "
 " Version: 
 "       1.0 - 2014-06-29 18:55:42
 "
 " Sections:
 "    -> General
-"    -> VIM user interface
+"    -> Vim UI
 "    -> Colors and Fonts
 "    -> Files and backups
 "    -> Text, tab and indent related
@@ -21,9 +22,8 @@
 "    -> Spell checking
 "
 " Notes:
-"       Kudos to Amir Salihefendic for the base vimrc.
-"       More info at:
-"       http://amix.dk/blog/post/19691#The-ultimate-Vim-configuration-on-Github
+"       A stripped-down & personalized version of Amir's vimrc.
+"       http://amix.dk/blog/post/19691
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -59,7 +59,7 @@ set autoread
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
-" Always show tabbar
+" Always show tab bar
 set showtabline=2
 
 " Turn on the WiLd menu
@@ -173,8 +173,8 @@ set iskeyword+=-
 """"""""""""""""""""""""""""""
 " Visual mode pressing * or # searches for the current selection
 " Super useful! From an idea by Michael Naumann
-" vnoremap <silent> * :call VisualSelection('f')<CR>
-" vnoremap <silent> # :call VisualSelection('b')<CR>
+vnoremap <silent> * :call VisualSelection('f')<CR>
+vnoremap <silent> # :call VisualSelection('b')<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -267,7 +267,7 @@ inoremap jj <Esc>
 " => Spell checking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Pressing ,ss will toggle and untoggle spell checking
-map <leader>ss :setlocal spell!<cr>
+" map <leader>ss :setlocal spell!<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
