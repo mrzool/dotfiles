@@ -7,8 +7,8 @@ XXkb.mainwindow.label.background: black
 XXkb.mainwindow.label.foreground: gray
 XXkb.mainwindow.label.font:-misc-*-r-*-14-*
 XXkb.mainwindow.label.text.1: It
-XXkb.mainwindow.label.text.2: Us
-XXkb.mainwindow.label.text.3: De
+XXkb.mainwindow.label.text.2: De
+XXkb.mainwindow.label.text.3: Us
 XXkb.controls.add_when_start: yes
 XXkb.button.enable: no
 XXkb.controls.add_when_change: yes
