@@ -68,4 +68,3 @@ ${downspeedgraph wlan0}
 DLS:${downspeed wlan0} kb/s $alignr total: ${totaldown wlan0}
 ${upspeedgraph wlan0}
 ULS:${upspeed wlan0} kb/s $alignr total: ${totalup wlan0}
-
