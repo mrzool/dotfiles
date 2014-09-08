@@ -46,8 +46,7 @@ runtime macros/matchit.vim
 set autoread
 
 " Leader mapping
-" let mapleader = "-"
-" let g:mapleader = "-"
+let mapleader = "-"
 
 " Activate digraph option
 " ex: a <BS> : to give ä
@@ -113,17 +112,32 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" Stop that stupid window from popping up
+map q: :q
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set t_Co=256
+" set t_Co=256
 
 colorscheme molokai
 let g:molokai_original = 1
 let g:rehash256 = 1
 
 syntax enable
+
+" Set extra options when running in GUI mode
+if has("gui_running")
+    set guioptions-=T
+    set guioptions+=e
+    set guioptions-=m 
+    set guioptions-=l 
+    set guioptions-=L 
+    set guioptions-=t 
+    set t_Co=256
+    set guitablabel=%M\ %t
+endif
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -191,7 +205,7 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-" Return to last edit position when opening files (You want this!)
+" Return to last edit position when opening files
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
@@ -200,31 +214,31 @@ autocmd BufReadPost *
 " Remember info about open buffers on close
 set viminfo^=%
 
-" Open new split panes to right and bottom, which feels more natural than Vim’s default:
+" Open new split panes to right and bottom (feels more natural than Vim’s default)
 set splitbelow
 set splitright
 
 """"""""""""""""""""""""""""""
-" => Status bar
+" => Status bar / Lightline
 """"""""""""""""""""""""""""""
 " Always show the status line
 set laststatus=2
 
-" Configure Lightline
-let g:lightline = {
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'filename', 'modified' ] ]
-      \ },
-      \ 'component': {
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-      \ }
-      \ }
+" " Configure Lightline
+" let g:lightline = {
+"       \ 'active': {
+"       \   'left': [ [ 'mode', 'paste' ],
+"       \             [ 'fugitive', 'filename', 'modified' ] ]
+"       \ },
+"       \ 'component': {
+"       \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+"       \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+"       \ },
+"       \ 'component_visible_condition': {
+"       \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+"       \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+"       \ }
+"       \ }
 
 
 " hide default mode indicator
@@ -247,6 +261,17 @@ map Y y$
 
 " maps jj to esc (whoha!)
 inoremap jj <Esc>
+
+" Quickly save a file
+nnoremap <Leader>w :w<CR>
+
+" Copy and paste to system clipbpard
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Abbreviations
@@ -280,3 +305,10 @@ let g:netrw_liststyle = 3
 
 " Set Lint off by default
 let lint_default = 0
+
+" Mappings for vim-expand-region
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+" Map Goyo
+nnoremap <Leader>G :Goyo<CR>
