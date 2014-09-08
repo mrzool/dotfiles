@@ -302,9 +302,22 @@ let g:netrw_liststyle = 3
 " Set Lint off by default
 let lint_default = 0
 
-" Mappings for vim-expand-region
+" Settings for vim-expand-region
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
+
+let g:expand_region_text_objects = {
+      \ 'iw'  :0,
+      \ 'iW'  :0,
+      \ 'i"'  :0,
+      \ 'i''' :0,
+      \ 'i]'  :0, 
+      \ 'ib'  :0, 
+      \ 'iB'  :0, 
+      \ 'il'  :1, 
+      \ 'ip'  :0,
+      \ 'ie'  :0, 
+      \ }
 
 " Map Goyo
 nnoremap <Leader>g :Goyo<CR>
