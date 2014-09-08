@@ -264,6 +264,11 @@ vmap <Leader>P "+P
 " Enter visual line mode with <Leader><Leader>
 nmap <Leader><Leader> V
 
+
+" Quickly open splits on netrw
+nnoremap <Leader>vs :vs.<CR>
+nnoremap <Leader>sp :sp.<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Abbreviations
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -283,7 +288,7 @@ nmap <Leader><Leader> V
 " => Spell checking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Pressing ,ss will toggle and untoggle spell checking
-" map <leader>ss :setlocal spell!<cr>
+map <leader>ss :setlocal spell!<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -302,4 +307,4 @@ vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
 " Map Goyo
-nnoremap <Leader>G :Goyo<CR>
+nnoremap <Leader>g :Goyo<CR>
