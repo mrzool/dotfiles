@@ -273,6 +273,9 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 
+" Enter visual line mode with <Leader><Leader>
+nmap <Leader><Leader> V
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Abbreviations
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
