@@ -119,25 +119,13 @@ map q: :q
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" set t_Co=256
+set t_Co=256
 
 colorscheme molokai
 let g:molokai_original = 1
 let g:rehash256 = 1
 
 syntax enable
-
-" Set extra options when running in GUI mode
-if has("gui_running")
-    set guioptions-=T
-    set guioptions+=e
-    set guioptions-=m 
-    set guioptions-=l 
-    set guioptions-=L 
-    set guioptions-=t 
-    set t_Co=256
-    set guitablabel=%M\ %t
-endif
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -225,20 +213,20 @@ set splitright
 set laststatus=2
 
 " " Configure Lightline
-" let g:lightline = {
-"       \ 'active': {
-"       \   'left': [ [ 'mode', 'paste' ],
-"       \             [ 'fugitive', 'filename', 'modified' ] ]
-"       \ },
-"       \ 'component': {
-"       \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-"       \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-"       \ },
-"       \ 'component_visible_condition': {
-"       \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-"       \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-"       \ }
-"       \ }
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'filename', 'modified' ] ]
+      \ },
+      \ 'component': {
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ }
+      \ }
 
 
 " hide default mode indicator
