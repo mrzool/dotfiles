@@ -269,6 +269,8 @@ nmap <Leader><Leader> V
 nnoremap <Leader>vs :vs.<CR>
 nnoremap <Leader>sp :sp.<CR>
 
+" Quickly open new tab
+nnoremap <Leader>tn :tabnew.<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Abbreviations
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
