@@ -29,6 +29,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Calls Pathogen
 execute pathogen#infect()
 
@@ -52,9 +53,11 @@ let mapleader = "-"
 " ex: a <BS> : to give ä
 " set dg
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
@@ -119,6 +122,7 @@ map q: :q
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 set t_Co=256
 
 colorscheme molokai
@@ -137,6 +141,7 @@ set ffs=unix,dos,mac
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
 set nowb
@@ -146,9 +151,11 @@ set noswapfile
 set ssop-=options    
 set ssop-=folds      
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Use spaces instead of tabs
 set expandtab
 
@@ -170,9 +177,11 @@ set wrap "Wrap lines
 "Makes foo-bar considered one word
 set iskeyword+=- 
 
+
 """"""""""""""""""""""""""""""
 " => Visual mode related
 """"""""""""""""""""""""""""""
+
 " Visual mode pressing * or # searches for the current selection
 " Super useful! From an idea by Michael Naumann
 vnoremap <silent> * :call VisualSelection('f')<CR>
@@ -206,9 +215,11 @@ set viminfo^=%
 set splitbelow
 set splitright
 
+
 """"""""""""""""""""""""""""""
 " => Status bar / Lightline
 """"""""""""""""""""""""""""""
+
 " Always show the status line
 set laststatus=2
 
@@ -232,9 +243,11 @@ let g:lightline = {
 " hide default mode indicator
 set noshowmode
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
@@ -272,14 +285,19 @@ nnoremap <Leader>sp :sp.<CR>
 " Quickly open and close new tab
 nnoremap <Leader>tn :tabnew.<CR>
 nnoremap <Leader>tc :tabclose<CR>
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Abbreviations
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 :abbr fn function
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Custom Commands
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " map :C to clear last used search pattern
 :command! C let @/=""
 
@@ -290,25 +308,29 @@ nnoremap <Leader>tc :tabclose<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Spell checking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Pressing ,ss will toggle and untoggle spell checking
-map <leader>ss :setlocal spell!<cr>
+
+" Pressing -ss will toggle and untoggle spell checking
+" map <leader>ss :setlocal spell!<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Plugins
+" => Plugin Stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Settings for netrw
 let g:netrw_preview   = 1
 let g:netrw_liststyle = 3
-" let g:netrw_winsize   = 70 not working...
 
-" Set Lint off by default
-let lint_default = 0
+" Run Syntastic check manually
+map <leader>ss :SyntasticCheck<cr>
+
+" Invoke CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 " Settings for vim-expand-region
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
-
 let g:expand_region_text_objects = {
       \ 'iw'  :0,
       \ 'iW'  :0,
