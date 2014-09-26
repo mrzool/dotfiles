@@ -9,7 +9,7 @@ This repo includes dotfiles for:
 
 - bash
 - git
-- vimrc
+- vim
 - openbox
 - terminator
 - compton
