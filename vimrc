@@ -266,12 +266,19 @@ map Y y$
 " maps jj to esc (whoha!)
 inoremap jj <Esc>
 
-" Quickly save a file
+" Quickly save a file/quit
 nnoremap <Leader>w :w<CR>
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>wq :wq<CR>
 
-" Copy and paste to system clipbpard
+" Go to next occurence while vimgrepping
+nnoremap <leader>n :cn<CR>
+nnoremap <leader>nn :cp<CR>
+
+" Copy and paste to system clipboard
 vmap <Leader>y "+y
 vmap <Leader>d "+d
+nmap <Leader>yy "+yy
 nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
