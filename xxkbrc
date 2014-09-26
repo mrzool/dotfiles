@@ -11,5 +11,3 @@ XXkb.mainwindow.label.text.2: De
 XXkb.mainwindow.label.text.3: Us
 XXkb.controls.add_when_start: yes
 XXkb.button.enable: no
-XXkb.controls.add_when_change: yes
-XXkb.controls.focusout: yes
