@@ -1,5 +1,5 @@
 zool's dotfiles
-==============
+===============
 
 Personal configuration files.  I mostly use a combination of bash, vim and git in my daily work.
 
@@ -25,3 +25,5 @@ This repo includes dotfiles for:
 - xxkb
 
 The bash script for symlinking is buggy and unmaintained, run it at your own risk.
+
+Note: there's a Mac OS branch with OS-specific configurations
