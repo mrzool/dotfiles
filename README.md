@@ -9,6 +9,10 @@ This is how it looks:
 
 ![Crunchbang Screenshot](http://i.imgur.com/95lmNNw.png)
 
+
+Tools of the trade
+------------------
+
 This repo includes dotfiles for:
 
 - bash
@@ -24,6 +28,10 @@ This repo includes dotfiles for:
 - xmodmap
 - xxkb
 
+
+Notes
+-----
+
 The bash script for symlinking is buggy and unmaintained, run it at your own risk.
 
-Note: there's a Mac OS branch with OS-specific configurations
+There's a Mac OS branch with OS-specific configurations.
