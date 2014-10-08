@@ -1,7 +1,7 @@
-zool's dotfiles
-===============
+zool's dotfiles for Linux
+=========================
 
-Personal configuration files.  I mostly use a combination of bash, vim and git in my daily work.
+Personal configuration files for Linux.  I mostly use a combination of bash, vim and git in my daily work.
 
 My main machine is a tweaked Thinkpad x100e running [Crunchbang](http://crunchbang.org/), a nimble and infinitely hackable Debian-based Linux distro. It's fast. 
 
