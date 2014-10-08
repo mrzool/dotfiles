@@ -33,5 +33,3 @@ Notes
 -----
 
 The bash script for symlinking is buggy and unmaintained, run it at your own risk.
-
-There's a Mac OS branch with OS-specific configurations.
