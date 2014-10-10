@@ -20,11 +20,13 @@ This repo includes dotfiles for:
 - vim
 - ack
 - mr
+- mutt
+
+Specifically for #!:
 - openbox
 - terminator
 - compton
 - conky
-- mutt
 - tint2
 - xmodmap
 - xxkb
