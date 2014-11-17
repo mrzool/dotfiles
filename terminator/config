@@ -17,7 +17,7 @@
     cursor_color = "#d8d8d8"
     foreground_color = "#ffffff"
     show_titlebar = False
-    font = DejaVu Sans Mono for Powerline 10
+    font = Input 10
     background_color = "#2e3436"
   [[formerdefault]]
     scrollbar_position = hidden
