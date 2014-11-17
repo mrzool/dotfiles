@@ -7,6 +7,11 @@ alias copy='xclip -sel clip'
 alias tolowercase='sh ~/bin/tolowercase.sh'
 alias tounderscore='sh ~/bin/tounderscore.sh'
 
+
+#Terminal
+alias c='clear'
+alias e='exit'
+
 # Package management
 alias backport='apt-get -t wheezy-backports install'
 alias installed='dpkg --get-selections'
@@ -36,7 +41,8 @@ alias mm='mark'
 alias um='unmark'
 
 # Various
-alias sendtokindle='mutt zool.bib@kindle.com -s "new book" -a'
+alias kindlesend='mutt zool.bib@kindle.com -s "new book" -a'
+alias kindlegen='~/bin/kindlegen'
 alias colorpicker="gcolor2"
 alias calc="qalc"
 alias mpdncmpcpp="sh ~/bin/mpdncmpcpp.sh"
