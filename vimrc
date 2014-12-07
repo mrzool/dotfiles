@@ -270,6 +270,10 @@ vmap <Leader>P "+P
 nnoremap <Leader>vs :vs.<CR>
 nnoremap <Leader>sp :sp.<CR>
 
+" Resize vertical split rapidly
+nnoremap <silent> <Leader>> :exe "vertical resize +5 "<CR>
+nnoremap <silent> <Leader>< :exe "vertical resize -5"<CR>
+
 " Quickly open and close new tab
 nnoremap <Leader>tn :tabnew.<CR>
 nnoremap <Leader>tc :tabclose<CR>
