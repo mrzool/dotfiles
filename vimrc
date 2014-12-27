@@ -131,12 +131,14 @@ set noshowmode
 
 set t_Co=256
 
+" colorscheme solarized
+" set background=dark
+" let g:solarized_termtrans = 1
+
 colorscheme molokai
 let g:molokai_original = 1
 let g:rehash256 = 1
-
 syntax enable
-
 set encoding=utf8
 
 " Use Unix as the standard file type
