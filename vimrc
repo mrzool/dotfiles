@@ -331,7 +331,8 @@ let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['liquid'] = 'liquid,html'
 
-" Settings for Ack
+" Fix 2 lines bug with supertab
+let g:SuperTabCrMapping = 0
 
 " When you press gv you Ack after the selected text
 vnoremap <silent> av :call VisualSelection('gv', '')<CR>
