@@ -6,7 +6,9 @@
   borderless = True
 [keybindings]
   toggle_zoom = <Ctrl>Return
+  copy = <Control><Shift>c
   hide_window = <Shift><Control>a
+  paste = <Control><Shift>v
 [profiles]
   [[default]]
     scrollbar_position = hidden
