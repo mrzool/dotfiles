@@ -326,8 +326,10 @@ map <leader>ss :SyntasticCheck<cr>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
-" Map Gundo
-nnoremap <F5> :GundoToggle<CR>
+" Load HTML scope in snipmate whenever working with liquid files
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['liquid'] = 'liquid,html'
 
 " Settings for Ack
 
