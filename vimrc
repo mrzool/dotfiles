@@ -164,9 +164,6 @@ set ssop-=folds
 " Do not fold, ever
 set nofoldenable
 
-" Force md filetype as markdown
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text & tabs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
