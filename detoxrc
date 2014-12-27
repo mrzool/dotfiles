@@ -1,0 +1,13 @@
+sequence "default" {
+  iso8859_1;
+  safe;
+  lower;
+  wipeup { remove_trailing; };
+};
+
+ignore {
+  filename ".git";
+  filename ".svn";
+  filename ".hg";
+  filename "_darcs";
+};
