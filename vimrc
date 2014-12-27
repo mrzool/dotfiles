@@ -334,12 +334,11 @@ let g:snipMate.scope_aliases['liquid'] = 'liquid,html'
 " Fix 2 lines bug with supertab
 let g:SuperTabCrMapping = 0
 
+" Settings for Ack
 " When you press gv you Ack after the selected text
 vnoremap <silent> av :call VisualSelection('gv', '')<CR>
-
 " Open Ack and put the cursor in the right position
 map <leader>a :Ack 
-
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
 
