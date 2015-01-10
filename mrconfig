@@ -1,12 +1,12 @@
 
+[.vim/bundle/ack.vim]
+checkout = git clone 'https://github.com/mileszs/ack.vim' 'ack.vim'
+
 [.vim/bundle/auto-pairs]
 checkout = git clone 'https://github.com/jiangmiao/auto-pairs' 'auto-pairs'
 
 [.vim/bundle/ctrlp.vim]
 checkout = git clone 'https://github.com/kien/ctrlp.vim' 'ctrlp.vim'
-
-[.vim/bundle/goyo.vim]
-checkout = git clone 'https://github.com/junegunn/goyo.vim' 'goyo.vim'
 
 [.vim/bundle/grep.vim]
 checkout = git clone 'https://github.com/vim-scripts/grep.vim' 'grep.vim'
@@ -16,9 +16,6 @@ checkout = git clone 'git@github.com:othree/html5.vim.git' 'html5.vim'
 
 [.vim/bundle/lightline.vim]
 checkout = git clone 'https://github.com/itchyny/lightline.vim' 'lightline.vim'
-
-[.vim/bundle/lint.vim]
-checkout = git clone 'git@github.com:joestelmach/lint.vim.git' 'lint.vim'
 
 [.vim/bundle/mustache]
 checkout = git clone 'git://github.com/mustache/vim-mustache-handlebars.git' 'mustache'
@@ -44,17 +41,8 @@ checkout = git clone 'https://github.com/tomtom/tlib_vim.git' 'tlib_vim'
 [.vim/bundle/vim-addon-mw-utils]
 checkout = git clone 'https://github.com/MarcWeber/vim-addon-mw-utils.git' 'vim-addon-mw-utils'
 
-[.vim/bundle/vim-bootstrap3-snippets]
-checkout = git clone 'https://github.com/chrisgillis/vim-bootstrap3-snippets' 'vim-bootstrap3-snippets'
-
-[.vim/bundle/vim-css-color]
-checkout = git clone 'git@github.com:ap/vim-css-color.git' 'vim-css-color'
-
 [.vim/bundle/vim-css3-syntax]
 checkout = git clone 'https://github.com/hail2u/vim-css3-syntax.git' 'vim-css3-syntax'
-
-[.vim/bundle/vim-expand-region]
-checkout = git clone 'https://github.com/terryma/vim-expand-region' 'vim-expand-region'
 
 [.vim/bundle/vim-fugitive]
 checkout = git clone 'git://github.com/tpope/vim-fugitive.git' 'vim-fugitive'
@@ -64,9 +52,6 @@ checkout = git clone 'https://github.com/elzr/vim-json' 'vim-json'
 
 [.vim/bundle/vim-liquid]
 checkout = git clone 'https://github.com/tpope/vim-liquid' 'vim-liquid'
-
-[.vim/bundle/vim-multiple-cursors]
-checkout = git clone 'https://github.com/terryma/vim-multiple-cursors' 'vim-multiple-cursors'
 
 [.vim/bundle/vim-mustache-handlebars]
 checkout = git clone 'https://github.com/mustache/vim-mustache-handlebars.git' 'vim-mustache-handlebars'
@@ -82,9 +67,3 @@ checkout = git clone 'https://github.com/honza/vim-snippets.git' 'vim-snippets'
 
 [.vim/bundle/vim-surround]
 checkout = git clone 'git://github.com/tpope/vim-surround.git' 'vim-surround'
-
-[.vim/bundle/vim-textobj-line]
-checkout = git clone 'https://github.com/kana/vim-textobj-line' 'vim-textobj-line'
-
-[.vim/bundle/vim-textobj-user]
-checkout = git clone 'https://github.com/kana/vim-textobj-user' 'vim-textobj-user'
