@@ -1,7 +1,7 @@
 zool's dotfiles
 ===============
 
-Config files for my *nix systems.
+Config files for my \*nix systems.
 
 My main machine is a tweaked Thinkpad x100e running [Crunchbang](http://crunchbang.org/), a nimble and infinitely hackable Debian-based Linux distro. It's fast. 
 
