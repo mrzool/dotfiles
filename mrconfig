@@ -8,8 +8,14 @@ checkout = git clone 'https://github.com/jiangmiao/auto-pairs' 'auto-pairs'
 [.vim/bundle/ctrlp.vim]
 checkout = git clone 'https://github.com/kien/ctrlp.vim' 'ctrlp.vim'
 
+[.vim/bundle/goyo.vim]
+checkout = git clone 'https://github.com/junegunn/goyo.vim' 'goyo.vim'
+
 [.vim/bundle/grep.vim]
 checkout = git clone 'https://github.com/vim-scripts/grep.vim' 'grep.vim'
+
+[.vim/bundle/gundo.vim]
+checkout = git clone 'https://github.com/sjl/gundo.vim' 'gundo.vim'
 
 [.vim/bundle/html5.vim]
 checkout = git clone 'git@github.com:othree/html5.vim.git' 'html5.vim'
@@ -17,8 +23,8 @@ checkout = git clone 'git@github.com:othree/html5.vim.git' 'html5.vim'
 [.vim/bundle/lightline.vim]
 checkout = git clone 'https://github.com/itchyny/lightline.vim' 'lightline.vim'
 
-[.vim/bundle/mustache]
-checkout = git clone 'git://github.com/mustache/vim-mustache-handlebars.git' 'mustache'
+[.vim/bundle/matchit.zip]
+checkout = git clone 'https://github.com/vim-scripts/matchit.zip' 'matchit.zip'
 
 [.vim/bundle/scss-syntax.vim]
 checkout = git clone 'git@github.com:cakebaker/scss-syntax.vim.git' 'scss-syntax.vim'
