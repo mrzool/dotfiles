@@ -136,18 +136,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # activates tab completion for git
   source ~/bin/git-completion.bash
 
-  # correctly sets the $PATH so tools installed by homebrew get loaded correctly
+  # correctly load tools installed by homebrew
   export PATH=/usr/local/bin:$PATH
 
-  # Alias definitions.
-  # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-  if [ -f ~/.aliases ]; then
-    . ~/.aliases
-  fi
-
-  # Quickly navigate the filesystem using new jump and mark functions.
-  # To add a new bookmark, cd into the directory and mark it with a name.
+  # Jump and mark functions.
   export MARKPATH=$HOME/.marks
   function jump { 
   cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
@@ -162,13 +154,13 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     \ls -l "$MARKPATH" | tail -n +2 | sed 's/  / /g' | cut -d' ' -f9- | awk -F ' -> ' '{printf "%-10s -> %s\n", $1, $2}'
   }
 
-  # Adds tab completion for jump and unmark functions
+  # Tab completion for jump and unmark functions
   function _jump {
-    local cur=${comp_words[comp_cword]}
-    local marks=$(find $markpath -type l | awk -f '/' '{print $nf}')
-    compreply=($(compgen -w '${marks[@]}' -- "$cur"))
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    local marks=$(find $MARKPATH -type l | awk -F '/' '{print $NF}')
+    COMPREPLY=($(compgen -W '${marks[@]}' -- "$cur"))
     return 0
   }
-  complete -o default -o nospace -f _jump jump
+  complete -o default -o nospace -F _jump jump
 
 fi
