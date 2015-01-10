@@ -20,9 +20,6 @@ checkout = git clone 'https://github.com/itchyny/lightline.vim' 'lightline.vim'
 [.vim/bundle/mustache]
 checkout = git clone 'git://github.com/mustache/vim-mustache-handlebars.git' 'mustache'
 
-[.vim/bundle/repmo.vim]
-checkout = git clone 'https://github.com/vim-scripts/repmo.vim' 'repmo.vim'
-
 [.vim/bundle/scss-syntax.vim]
 checkout = git clone 'git@github.com:cakebaker/scss-syntax.vim.git' 'scss-syntax.vim'
 
