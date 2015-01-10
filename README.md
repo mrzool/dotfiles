@@ -20,6 +20,7 @@ This repo includes dotfiles for:
 - ack
 - mr
 - mutt
+- detox
 
 Specifically for #!:
 - openbox
