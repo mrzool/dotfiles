@@ -278,8 +278,8 @@ nnoremap <Leader>tn :tabnew.<CR>
 nnoremap <Leader>tc :tabclose<CR>
 
 " Treat long lines as break lines
-map j gj
-map k gk
+nnoremap j gj
+nnoremap k gk
 
 " Underline current line
 nnoremap <Leader>u :Underline<CR>
