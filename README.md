@@ -1,7 +1,7 @@
-zool's dotfiles for Linux
-=========================
+zool's dotfiles
+===============
 
-Config files for Linux.
+Config files for my *nix systems.
 
 My main machine is a tweaked Thinkpad x100e running [Crunchbang](http://crunchbang.org/), a nimble and infinitely hackable Debian-based Linux distro. It's fast. 
 
@@ -30,9 +30,3 @@ Specifically for #!:
 - tint2
 - xmodmap
 - xxkb
-
-
-Notes
------
-
-The bash script for symlinking is buggy and unmaintained, run it at your own risk.
