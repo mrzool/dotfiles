@@ -1,4 +1,4 @@
-" Started with base by: Amir Salihefendic <http://amix.dk>
+" Based on: https://github.com/amix/vimrc
 "
 " Sections:
 "
@@ -239,7 +239,7 @@ cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W')
 map q: :q
 
 " map ctrl-J to insert line break (opposite of J)
-:nnoremap <NL> i<CR><ESC>
+nnoremap <NL> i<CR><ESC>
 
 " make y behave like other capitals
 map Y y$
