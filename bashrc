@@ -1,4 +1,6 @@
-# OS X and Linux Common Settings
+##################################
+# OS X and Linux Common Settings #
+##################################
 
 # If not running interactively, don't do anything
 case $- in
@@ -21,7 +23,9 @@ shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-# Settings for Linux
+######################
+# Settings for Linux #
+######################
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
 
@@ -116,8 +120,9 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 
 fi
 
-
-# Settings for Mac OS X
+#########################
+# Settings for Mac OS X #
+#########################
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
 
