@@ -3,5 +3,3 @@
 --type-add=css=scss
 
 --ignore-dir=node_modules/
-
-
