@@ -13,10 +13,10 @@
 	tool = vimdiff
 [alias]
 	st = status
-  a  = add
-	cm = commit
-  ps = push
-  pl = pull
+        a  = add
+        cm = commit
+        ps = push
+        pl = pull
 	co = checkout
 	br = branch
 	unstage = reset HEAD --
