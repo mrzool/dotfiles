@@ -1,10 +1,10 @@
 # Unix basic
-alias l='ls -CF -l'
+alias l='ls -CF -lh'
 alias ll='ls -l'
 alias la='ls -A'
 alias copy='xclip -sel clip'
 
-alias vi='nvim'
+# alias vi='nvim'
 
 alias tolowercase='sh ~/bin/tolowercase.sh'
 alias tounderscore='sh ~/bin/tounderscore.sh'
@@ -29,7 +29,6 @@ alias gb="git branch"
 alias gck="git checkout"
 alias gpl="git pull"
 alias gps="git push"
-alias new-project="git clone git@github.com:mrmrs/trim.git"
 
 # Networking
 alias a2restart="sudo service apache2 restart"
