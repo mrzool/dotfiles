@@ -1,10 +1,10 @@
 # Unix basic
-alias l='ls -CF -l'
+alias l='ls -CF -lh'
 alias ll='ls -l'
 alias la='ls -A'
 alias copy='xclip -sel clip'
 
-alias vi='nvim'
+# alias vi='nvim'
 
 alias tolowercase='sh ~/bin/tolowercase.sh'
 alias tounderscore='sh ~/bin/tounderscore.sh'
