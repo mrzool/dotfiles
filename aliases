@@ -29,11 +29,11 @@ alias gb="git branch"
 alias gck="git checkout"
 alias gpl="git pull"
 alias gps="git push"
-alias new-project="git clone git@github.com:mrmrs/trim.git"
 
 # Networking
 alias a2restart="sudo service apache2 restart"
 alias sss='python -m SimpleHTTPServer 8888 &'
+alias sps='php -S localhost:3000'
 alias showip="sh ~/bin/showip.sh"
 alias guard='bundle exec guard'
 
