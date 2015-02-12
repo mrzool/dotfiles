@@ -270,8 +270,11 @@ nnoremap <Leader>vs :vs.<CR>
 nnoremap <Leader>sp :sp.<CR>
 
 " Resize vertical split rapidly
-nnoremap <silent> <Leader>> :exe "vertical resize +5 "<CR>
+nnoremap <silent> <Leader>> :exe "vertical resize +5"<CR>
 nnoremap <silent> <Leader>< :exe "vertical resize -5"<CR>
+
+" HTML with CSS on the side
+nnoremap <silent> <Leader>c :exe ":30winc >"<CR>
 
 " Quickly open and close new tab
 nnoremap <Leader>tn :tabnew.<CR>
@@ -283,7 +286,6 @@ nnoremap k gk
 
 " Underline current line
 nnoremap <Leader>u :Underline<CR>
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Abbreviations
