@@ -3,6 +3,7 @@ alias l='ls -CF -lh'
 alias ll='ls -l'
 alias la='ls -A'
 alias copy='xclip -sel clip'
+alias ct='column -t'
 
 # alias vi='nvim'
 
