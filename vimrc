@@ -39,10 +39,8 @@ set autoread
 " Leader mapping
 let mapleader = "-"
 
-" Activate digraph option
-" ex: a <BS> : to give ä
-" set dg
-
+" Enable the mouse (pretty much only to resize splits)
+set mouse=a
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => UI
