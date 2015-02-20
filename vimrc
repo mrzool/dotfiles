@@ -122,6 +122,8 @@ let g:lightline = {
 " hide default mode indicator
 set noshowmode
 
+" Typing %% on the command prompt automatically expands the path of the current buffer
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
