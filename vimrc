@@ -250,7 +250,6 @@ inoremap jj <Esc>
 " Quickly save a file/quit
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
-nnoremap <Leader>wq :wq<CR>
 
 " Go to next occurence while vimgrepping
 nnoremap <leader>n :cn<CR>
