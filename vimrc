@@ -325,9 +325,10 @@ let g:netrw_liststyle = 3
 " Run Syntastic check
 map <leader>ss :SyntasticCheck<cr>
 
-" Invoke CtrlP
+"  CtrlP settings
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
 
 " Load HTML scope in snipmate whenever working with liquid files
 let g:snipMate = {}
