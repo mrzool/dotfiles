@@ -52,16 +52,16 @@ set so=7
 " Always show tab bar
 set showtabline=2
 
-" Turn on the WiLd menu
+" Turn on the wild menu
 set wildmenu
 
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
 
-"Always show current position
+" Always show current position
 set ruler
 
-"Always show line numbers
+" Always show line numbers
 set number
 
 " Height of the command bar
@@ -74,7 +74,7 @@ set hid
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
-" Searching tweaks
+" Search tweaks
 set ignorecase
 set smartcase
 set hlsearch
