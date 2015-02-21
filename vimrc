@@ -130,16 +130,17 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set t_Co=256
-
-" colorscheme solarized
-" set background=dark
-" let g:solarized_termtrans = 1
-
-colorscheme molokai
-let g:molokai_original = 1
-let g:rehash256 = 1
 syntax enable
 set encoding=utf8
+
+let g:solarized_termtrans=1
+colorscheme solarized
+set background=dark
+" let g:solarized_termcolors=16
+
+" colorscheme molokai
+" let g:molokai_original = 1
+" let g:rehash256 = 1
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
