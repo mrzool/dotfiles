@@ -156,7 +156,7 @@ set nobackup
 set nowb
 set noswapfile
 
-" Do not store global, local values or folds in a session                             
+" Do not store global, local values or folds in a session 
 set ssop-=options    
 set ssop-=folds      
 
