@@ -39,10 +39,8 @@ set autoread
 " Leader mapping
 let mapleader = "-"
 
-" Activate digraph option
-" ex: a <BS> : to give ä
-" set dg
-
+" Treat all numerals as decimal
+set nrformats=
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => UI
