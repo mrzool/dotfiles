@@ -42,6 +42,9 @@ let mapleader = "-"
 " Treat all numerals as decimal
 set nrformats=
 
+" Enable the mouse (pretty much only to resize splits)
+set mouse=a
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => UI
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -52,16 +55,16 @@ set so=7
 " Always show tab bar
 set showtabline=2
 
-" Turn on the WiLd menu
+" Turn on the wild menu
 set wildmenu
 
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
 
-"Always show current position
+" Always show current position
 set ruler
 
-"Always show line numbers
+" Always show line numbers
 set number
 
 " Height of the command bar
@@ -74,7 +77,7 @@ set hid
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
-" Searching tweaks
+" Search tweaks
 set ignorecase
 set smartcase
 set hlsearch
@@ -105,6 +108,7 @@ set laststatus=2
 
 " Configure Lightline
 let g:lightline = {
+      \ 'colorscheme': 'solarized',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'filename', 'modified' ] ]
@@ -122,22 +126,25 @@ let g:lightline = {
 " hide default mode indicator
 set noshowmode
 
+" Typing %% on the command prompt automatically expands the path of the current buffer
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set t_Co=256
-
-" colorscheme solarized
-" set background=dark
-" let g:solarized_termtrans = 1
-
-colorscheme molokai
-let g:molokai_original = 1
-let g:rehash256 = 1
 syntax enable
 set encoding=utf8
+
+let g:solarized_termtrans=1
+colorscheme solarized
+set background=dark
+" let g:solarized_termcolors=16
+
+" colorscheme molokai
+" let g:molokai_original = 1
+" let g:rehash256 = 1
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
@@ -152,12 +159,12 @@ set nobackup
 set nowb
 set noswapfile
 
-" Do not store global, local values or folds in a session                             
+" Do not store global, local values or folds in a session 
 set ssop-=options    
 set ssop-=folds      
 
 " Forces *.md as markdown
-" autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Do not fold, ever
 set nofoldenable
@@ -248,7 +255,6 @@ inoremap jj <Esc>
 " Quickly save a file/quit
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
-nnoremap <Leader>wq :wq<CR>
 
 " Go to next occurence while vimgrepping
 nnoremap <leader>n :cn<CR>
@@ -322,9 +328,10 @@ let g:netrw_liststyle = 3
 " Run Syntastic check
 map <leader>ss :SyntasticCheck<cr>
 
-" Invoke CtrlP
+"  CtrlP settings
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
 
 " Load HTML scope in snipmate whenever working with liquid files
 let g:snipMate = {}
