@@ -80,7 +80,7 @@ set whichwrap+=<,>,h,l
 " Search tweaks
 set ignorecase
 set smartcase
-set hlsearch
+" set hlsearch
 set incsearch
 
 " Don't redraw while executing macros
@@ -240,8 +240,8 @@ set splitright
 map 0 ^
 
 " Forgive common typos
-cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
-map q: :q
+" cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
+" map q: :q
 
 " map ctrl-J to insert line break (opposite of J)
 nnoremap <NL> i<CR><ESC>
