@@ -70,3 +70,6 @@ checkout = git clone 'https://github.com/honza/vim-snippets.git' 'vim-snippets'
 
 [.vim/bundle/vim-surround]
 checkout = git clone 'git://github.com/tpope/vim-surround.git' 'vim-surround'
+
+[.vim/bundle/vim-colors-solarized]
+checkout = git clone 'git://github.com/altercation/vim-colors-solarized.git' 'vim-colors-solarized'
