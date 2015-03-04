@@ -20,8 +20,45 @@
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Calls Pathogen
-execute pathogen#infect()
+" Be iMproved
+set nocompatible
+
+" Call Vundle and load plugins
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'kien/ctrlp.vim'
+Plugin 'junegunn/goyo.vim'
+Plugin 'vim-scripts/grep.vim'
+Plugin 'sjl/gundo.vim'
+Plugin 'othree/html5.vim.git'
+Plugin 'itchyny/lightline.vim'
+Plugin 'vim-scripts/matchit.zip'
+Plugin 'cakebaker/scss-syntax.vim.git'
+Plugin 'ervandew/supertab'
+Plugin 'scrooloose/syntastic.git'
+Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'tomtom/tlib_vim.git'
+Plugin 'MarcWeber/vim-addon-mw-utils.git'
+Plugin 'hail2u/vim-css3-syntax.git'
+Plugin 'tpope/vim-fugitive.git'
+Plugin 'elzr/vim-json'
+Plugin 'tpope/vim-liquid'
+Plugin 'mustache/vim-mustache-handlebars.git'
+Plugin 'tpope/vim-repeat'
+Plugin 'garbas/vim-snipmate.git'
+Plugin 'honza/vim-snippets.git'
+Plugin 'tpope/vim-surround.git'
+
+call vundle#end()
+
+filetype plugin indent on
 
 " Sets how many lines of history VIM has to remember
 set history=700
@@ -53,7 +90,7 @@ set mouse=a
 set so=7
 
 " Always show tab bar
-set showtabline=2
+set showtabline=1
 
 " Turn on the wild menu
 set wildmenu
