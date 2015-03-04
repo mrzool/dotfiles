@@ -77,7 +77,7 @@ set whichwrap+=<,>,h,l
 " Search tweaks
 set ignorecase
 set smartcase
-set hlsearch
+" set hlsearch
 set incsearch
 
 " Don't redraw while executing macros
@@ -123,8 +123,6 @@ let g:lightline = {
 " hide default mode indicator
 set noshowmode
 
-" Typing %% on the command prompt automatically expands the path of the current buffer
-cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -287,6 +285,12 @@ nnoremap k gk
 
 " Underline current line
 nnoremap <Leader>u :Underline<CR>
+
+" Expands the path of the current buffer on the command prompt with %% 
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+" Super-duper force write
+cnoremap w!! w !sudo tee %
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Abbreviations
