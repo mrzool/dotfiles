@@ -378,6 +378,10 @@ let g:snipMate.scope_aliases['liquid'] = 'liquid,html'
 " Fix 2 lines bug with supertab
 let g:SuperTabCrMapping = 0
 
+" Settings for Gundo
+nnoremap <Leader>g :GundoToggle<CR>
+let g:gundo_preview_bottom = 1
+
 " Settings for Ack
 " When you press gv you Ack after the selected text
 vnoremap <silent> av :call VisualSelection('gv', '')<CR>
