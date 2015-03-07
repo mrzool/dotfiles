@@ -280,8 +280,8 @@ map 0 ^
 " cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 " map q: :q
 
-" map ctrl-J to insert line break (opposite of J)
-nnoremap <NL> i<CR><ESC>
+" map Enter Enter to insert line break
+nnoremap <CR><CR> i<CR><ESC>
 
 " make y behave like other capitals
 map Y y$
