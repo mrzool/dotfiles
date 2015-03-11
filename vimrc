@@ -55,6 +55,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'garbas/vim-snipmate.git'
 Plugin 'honza/vim-snippets.git'
 Plugin 'tpope/vim-surround.git'
+Plugin 'StanAngeloff/php.vim'
 
 call vundle#end()
 
