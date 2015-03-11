@@ -279,8 +279,8 @@ map 0 ^
 " cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 " map q: :q
 
-" map ctrl-J to insert line break (opposite of J)
-nnoremap <NL> i<CR><ESC>
+" map Enter Enter to insert line break
+nnoremap <CR><CR> i<CR><ESC>
 
 " make y behave like other capitals
 map Y y$
@@ -382,6 +382,10 @@ let g:snipMate.scope_aliases['liquid'] = 'liquid,html'
 
 " Fix 2 lines bug with supertab
 let g:SuperTabCrMapping = 0
+
+" Settings for Gundo
+nnoremap <Leader>g :GundoToggle<CR>
+let g:gundo_preview_bottom = 1
 
 " Settings for Ack
 " When you press gv you Ack after the selected text
