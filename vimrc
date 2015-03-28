@@ -332,8 +332,9 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Jump to matching item with tab 
-nnoremap <tab> %
-vnoremap <tab> %
+" This conflicts w/ the default <c-i> behavior
+" nnoremap <tab> %
+" vnoremap <tab> %
 
 " Copy and paste to system clipboard
 vmap <Leader>y "+y
