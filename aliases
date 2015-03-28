@@ -20,16 +20,16 @@ alias backport='apt-get -t wheezy-backports install'
 alias installed='dpkg --get-selections'
 
 # Git aliases
-alias gs="git status"
-alias gd="git diff"
-alias ga="git add"
-alias gap="git add -p"
-alias gc="git commit -v"
-alias gac="git commit -av"
-alias gb="git branch"
-alias gck="git checkout"
-alias gpl="git pull"
-alias gps="git push"
+# alias gs="git status"
+# alias gd="git diff"
+# alias ga="git add"
+# alias gap="git add -p"
+# alias gc="git commit -v"
+# alias gac="git commit -av"
+# alias gb="git branch"
+# alias gck="git checkout"
+# alias gpl="git pull"
+# alias gps="git push"
 
 # Networking
 alias a2restart="sudo service apache2 restart"
