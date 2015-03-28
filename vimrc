@@ -40,20 +40,18 @@ Plugin 'othree/html5.vim.git'
 Plugin 'itchyny/lightline.vim'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'cakebaker/scss-syntax.vim.git'
-Plugin 'ervandew/supertab'
 Plugin 'scrooloose/syntastic.git'
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'tomtom/tcomment_vim'
-Plugin 'tomtom/tlib_vim.git'
 Plugin 'MarcWeber/vim-addon-mw-utils.git'
+Plugin 'tomtom/tlib_vim.git'
+Plugin 'garbas/vim-snipmate.git'
+Plugin 'honza/vim-snippets.git'
 Plugin 'hail2u/vim-css3-syntax.git'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'elzr/vim-json'
 Plugin 'tpope/vim-liquid'
-Plugin 'mustache/vim-mustache-handlebars.git'
 Plugin 'tpope/vim-repeat'
-Plugin 'garbas/vim-snipmate.git'
-Plugin 'honza/vim-snippets.git'
 Plugin 'tpope/vim-surround.git'
 Plugin 'StanAngeloff/php.vim'
 
@@ -74,7 +72,7 @@ runtime macros/matchit.vim
 " Set to auto read when a file is changed from the outside
 set autoread
 
-" Leader mapping
+" Leader key
 let mapleader = "-"
 
 " Treat all numerals as decimal
@@ -83,9 +81,25 @@ set nrformats=
 " Enable the mouse (pretty much only to resize splits)
 set mouse=a
 
+" Set dictionary
+set dictionary=/usr/share/dict/words
+
+" Add dictionary to default sources for autocompletion
+set complete+=k
+
+" Persistent undos
+set undofile
+
+" Substitute globally on lines
+set gdefault
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => UI
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Improve smoothness
+set ttyfast
 
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
@@ -95,6 +109,7 @@ set showtabline=1
 
 " Turn on the wild menu
 set wildmenu
+set wildmode=list:longest
 
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
@@ -104,6 +119,7 @@ set ruler
 
 " Always show line numbers
 set number
+set numberwidth=3
 
 " Height of the command bar
 set cmdheight=1
@@ -118,6 +134,7 @@ set whichwrap+=<,>,h,l
 " Search tweaks
 set ignorecase
 set smartcase
+
 " set hlsearch
 set incsearch
 
@@ -129,7 +146,7 @@ set magic
 
 " Show matching brackets
 set showmatch
-set mat=2
+set matchtime=2
 
 " No bells
 set noerrorbells
@@ -163,6 +180,9 @@ let g:lightline = {
 
 " hide default mode indicator
 set noshowmode
+
+" Load Monokai for selected filetypes
+" autocmd FileType markdown colorscheme molokai
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -273,50 +293,30 @@ set splitright
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Remap VIM 0 to first non-blank character
-map 0 ^
+noremap 0 ^
 
-" Forgive common typos
-" cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
-" map q: :q
+" make y behave like other capitals
+noremap Y y$
 
 " map Enter Enter to insert line break
 nnoremap <CR><CR> i<CR><ESC>
 
-" make y behave like other capitals
-map Y y$
-
-" maps jj to esc
-inoremap jj <Esc>
-
-" Quickly save a file/quit
+" Save a file/quit
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 
-" Go to next occurence while vimgrepping
-nnoremap <leader>n :cn<CR>
-nnoremap <leader>nn :cp<CR>
-
-" Copy and paste to system clipboard
-vmap <Leader>y "+y
-vmap <Leader>d "+d
-nmap <Leader>yy "+yy
-nmap <Leader>p "+p
-nmap <Leader>P "+P
-vmap <Leader>p "+p
-vmap <Leader>P "+P
-
-" Quickly open splits on netrw
+" Open file explorer in a split
 nnoremap <Leader>vs :vs.<CR>
 nnoremap <Leader>sp :sp.<CR>
 
-" Resize vertical split rapidly
+" Resize vertical split
 nnoremap <silent> <Leader>> :exe "vertical resize +5"<CR>
 nnoremap <silent> <Leader>< :exe "vertical resize -5"<CR>
 
 " HTML with CSS on the side
 nnoremap <silent> <Leader>c :exe ":30winc >"<CR>
 
-" Quickly open and close new tab
+" Open/close tab
 nnoremap <Leader>tn :tabnew.<CR>
 nnoremap <Leader>tc :tabclose<CR>
 
@@ -327,17 +327,44 @@ nnoremap k gk
 " Underline current line
 nnoremap <Leader>u :Underline<CR>
 
+" Edit and source the .vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" Jump to matching item with tab 
+nnoremap <tab> %
+vnoremap <tab> %
+
+" Copy and paste to system clipboard
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>yy "+yy
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
 " Expands the path of the current buffer on the command prompt with %% 
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " Super-duper force write
 cnoremap w!! w !sudo tee %
 
+" maps jj to esc
+inoremap jj <Esc>
+
+" Uppercase current work
+inoremap <c-u> <esc>viwUA
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Abbreviations
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-:abbr fn function
+iabbrev zb@ zool.bib@gmail.com
+iabbrev mt@ mattia.tezzele@gmail.com
+iabbrev in@ info@mrzool.cc
+iabbrev mrz http://mrzool.cc
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -356,7 +383,7 @@ cnoremap w!! w !sudo tee %
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Pressing -ss will toggle and untoggle spell checking
-" map <leader>ss :setlocal spell!<cr>
+map <leader>ss :setlocal spell!<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -381,7 +408,7 @@ let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['liquid'] = 'liquid,html'
 
 " Fix 2 lines bug with supertab
-let g:SuperTabCrMapping = 0
+" let g:SuperTabCrMapping = 0
 
 " Settings for Gundo
 nnoremap <Leader>g :GundoToggle<CR>
