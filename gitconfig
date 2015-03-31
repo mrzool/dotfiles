@@ -22,5 +22,6 @@
 	br  = branch
 	unstage = reset HEAD --
 	last = log -1 HEAD
+	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
 [status]
 	submodulesummary = true
