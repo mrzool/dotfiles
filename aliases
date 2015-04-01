@@ -20,6 +20,7 @@ alias backport='apt-get -t wheezy-backports install'
 alias installed='dpkg --get-selections'
 
 # Git aliases
+alias g="git"
 alias gs="pwd"
 # alias gd="git diff"
 # alias ga="git add"
