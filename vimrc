@@ -40,33 +40,30 @@ Plugin 'othree/html5.vim.git'
 Plugin 'itchyny/lightline.vim'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'cakebaker/scss-syntax.vim.git'
-Plugin 'ervandew/supertab'
 Plugin 'scrooloose/syntastic.git'
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'tomtom/tcomment_vim'
-Plugin 'tomtom/tlib_vim.git'
 Plugin 'MarcWeber/vim-addon-mw-utils.git'
+Plugin 'tomtom/tlib_vim.git'
+Plugin 'garbas/vim-snipmate.git'
+Plugin 'honza/vim-snippets.git'
 Plugin 'hail2u/vim-css3-syntax.git'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'elzr/vim-json'
 Plugin 'tpope/vim-liquid'
-Plugin 'mustache/vim-mustache-handlebars.git'
 Plugin 'tpope/vim-repeat'
-Plugin 'garbas/vim-snipmate.git'
-Plugin 'honza/vim-snippets.git'
 Plugin 'tpope/vim-surround.git'
 Plugin 'StanAngeloff/php.vim'
+" Plugin 'tpope/vim-vinegar.git'
 
 call vundle#end()
-
-filetype plugin indent on
-
-" Sets how many lines of history VIM has to remember
-set history=700
 
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
+
+" Sets how many lines of history VIM has to remember
+set history=700
 
 " Enable matchit plugin
 runtime macros/matchit.vim
@@ -74,18 +71,34 @@ runtime macros/matchit.vim
 " Set to auto read when a file is changed from the outside
 set autoread
 
-" Leader mapping
+" Leader key
 let mapleader = "-"
 
 " Treat all numerals as decimal
 set nrformats=
 
 " Enable the mouse (pretty much only to resize splits)
-set mouse=a
+" set mouse=a
+
+" Set dictionary
+set dictionary=/usr/share/dict/words
+
+" Add dictionary to default sources for autocompletion
+" set complete+=k
+
+" Persistent undos
+set undofile
+
+" Substitute globally on lines
+set gdefault
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => UI
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Improve smoothness
+set ttyfast
 
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
@@ -95,6 +108,7 @@ set showtabline=1
 
 " Turn on the wild menu
 set wildmenu
+set wildmode=list:longest
 
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
@@ -104,6 +118,7 @@ set ruler
 
 " Always show line numbers
 set number
+set numberwidth=3
 
 " Height of the command bar
 set cmdheight=1
@@ -118,6 +133,7 @@ set whichwrap+=<,>,h,l
 " Search tweaks
 set ignorecase
 set smartcase
+
 " set hlsearch
 set incsearch
 
@@ -129,7 +145,7 @@ set magic
 
 " Show matching brackets
 set showmatch
-set mat=2
+set matchtime=2
 
 " No bells
 set noerrorbells
@@ -137,7 +153,7 @@ set novisualbell
 set t_vb=
 set tm=500
 
-" Switch cursor shape with modes
+" Switch cursor shape when changing modes
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
@@ -163,6 +179,9 @@ let g:lightline = {
 
 " hide default mode indicator
 set noshowmode
+
+" Load Monokai for selected filetypes
+" autocmd BufReadPre *.md colorscheme molokai | let g:molokai_original=1 | let g:rehash256=1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -225,7 +244,10 @@ set tw=500
 
 set ai "Auto indent
 set si "Smart indent
-set wrap "Wrap lines
+set nowrap "Do not wrap lines
+
+" Don't wrap HTML
+" autocmd FileType html setlocal nowrap
 
 " Makes foo-bar considered one word
 set iskeyword+=- 
@@ -263,8 +285,8 @@ autocmd BufReadPost *
 " Remember info about open buffers on close
 set viminfo^=%
 
-" Open new split panes to right and bottom (feels more natural than Vim’s default)
-set splitbelow
+" Open new split panes to right and bottom
+" set splitbelow
 set splitright
 
 
@@ -273,28 +295,46 @@ set splitright
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Remap VIM 0 to first non-blank character
-map 0 ^
+noremap 0 ^
 
-" Forgive common typos
-" cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
-" map q: :q
+" make y behave like other capitals
+nnoremap Y y$
 
 " map Enter Enter to insert line break
 nnoremap <CR><CR> i<CR><ESC>
 
-" make y behave like other capitals
-map Y y$
-
-" maps jj to esc
-inoremap jj <Esc>
-
-" Quickly save a file/quit
+" Save a file/quit
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 
-" Go to next occurence while vimgrepping
-nnoremap <leader>n :cn<CR>
-nnoremap <leader>nn :cp<CR>
+" Open file explorer quickly
+nnoremap <Leader>vs :Vex!<CR>
+nnoremap <Leader>sp :Sex<CR>
+nnoremap <Leader>tn :Tex<CR>
+nnoremap <Leader>tc :tabclose<CR>
+
+" Resize vertical split
+nnoremap <silent> <Leader>> :exe "vertical resize +5"<CR>
+nnoremap <silent> <Leader>< :exe "vertical resize -5"<CR>
+
+" HTML with CSS on the side
+nnoremap <silent> <Leader>c :exe ":30winc >"<CR>
+
+" Treat long lines as break lines
+nnoremap j gj
+nnoremap k gk
+
+" Underline current line
+nnoremap <Leader>u :Underline<CR>
+
+" Edit and source the .vimrc
+nnoremap <leader>ev :tabe $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" Jump to matching item with tab 
+" This conflicts w/ the default <c-i> behavior
+" nnoremap <tab> %
+" vnoremap <tab> %
 
 " Copy and paste to system clipboard
 vmap <Leader>y "+y
@@ -305,39 +345,27 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 
-" Quickly open splits on netrw
-nnoremap <Leader>vs :vs.<CR>
-nnoremap <Leader>sp :sp.<CR>
-
-" Resize vertical split rapidly
-nnoremap <silent> <Leader>> :exe "vertical resize +5"<CR>
-nnoremap <silent> <Leader>< :exe "vertical resize -5"<CR>
-
-" HTML with CSS on the side
-nnoremap <silent> <Leader>c :exe ":30winc >"<CR>
-
-" Quickly open and close new tab
-nnoremap <Leader>tn :tabnew.<CR>
-nnoremap <Leader>tc :tabclose<CR>
-
-" Treat long lines as break lines
-nnoremap j gj
-nnoremap k gk
-
-" Underline current line
-nnoremap <Leader>u :Underline<CR>
-
 " Expands the path of the current buffer on the command prompt with %% 
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " Super-duper force write
 cnoremap w!! w !sudo tee %
 
+" maps jj to esc
+inoremap jj <Esc>
+
+" Uppercase current work
+inoremap <c-u> <esc>viwUA
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Abbreviations
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-:abbr fn function
+iabbrev zb@ zool.bib@gmail.com
+iabbrev mt@ mattia.tezzele@gmail.com
+iabbrev in@ info@mrzool.cc
+iabbrev mrz http://mrzool.cc
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -356,7 +384,7 @@ cnoremap w!! w !sudo tee %
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Pressing -ss will toggle and untoggle spell checking
-" map <leader>ss :setlocal spell!<cr>
+map <leader>ss :setlocal spell!<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -366,6 +394,7 @@ cnoremap w!! w !sudo tee %
 " Settings for netrw
 let g:netrw_preview   = 1
 let g:netrw_liststyle = 3
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
 " Run Syntastic check
 map <leader>ss :SyntasticCheck<cr>
@@ -381,15 +410,15 @@ let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['liquid'] = 'liquid,html'
 
 " Fix 2 lines bug with supertab
-let g:SuperTabCrMapping = 0
+" let g:SuperTabCrMapping = 0
 
 " Settings for Gundo
 nnoremap <Leader>g :GundoToggle<CR>
 let g:gundo_preview_bottom = 1
 
 " Settings for Ack
-" When you press gv you Ack after the selected text
-vnoremap <silent> av :call VisualSelection('gv', '')<CR>
+" When you press ack you Ack after the selected text
+vnoremap <silent> ack :call VisualSelection('gv', '')<CR>
 " Open Ack and put the cursor in the right position
 map <leader>a :Ack 
 " When you press <leader>r you can search and replace the selected text

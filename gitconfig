@@ -1,6 +1,6 @@
 [user]
 	email = zool.bib@gmail.com
-	name = zool
+	name  = zool
 [credential]
 	helper = cache
 [color]
@@ -12,15 +12,17 @@
 [merge]
 	tool = vimdiff
 [alias]
-	st = status
-  a  = add
-  cm = commit
-  ps = push
-  pl = pull
-  co = checkout
-	br = branch
+	st  = status
+  a   = add
+  cm  = commit -v
+  acm = commit -av
+  ps  = push
+  pl  = pull
+  co  = checkout
+	br  = branch
 	unstage = reset HEAD --
 	last = log -1 HEAD
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
 [status]
 	submodulesummary = true
