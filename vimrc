@@ -357,6 +357,10 @@ inoremap jj <Esc>
 " Uppercase current work
 inoremap <c-u> <esc>viwUA
 
+" Compile TeX document
+map <leader>t :! pdflatex %<CR>
+map <leader>x :! xelatex %<CR>
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Abbreviations
@@ -375,8 +379,6 @@ iabbrev mrz http://mrzool.cc
 " map :C to clear last used search pattern
 :command! C let @/=""
 
-" map :T to compile TeX file
-:command! T execute "w | ! pdflatex %"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
