@@ -54,7 +54,9 @@ Plugin 'tpope/vim-liquid'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround.git'
 Plugin 'StanAngeloff/php.vim'
-" Plugin 'tpope/vim-vinegar.git'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
 
 call vundle#end()
 
@@ -242,12 +244,10 @@ set tabstop=2
 set lbr
 set tw=500
 
-set ai "Auto indent
-set si "Smart indent
-set nowrap "Do not wrap lines
-
-" Don't wrap HTML
-" autocmd FileType html setlocal nowrap
+set ai " Auto indent
+set si " Smart indent
+set wrap " Wrap lines
+autocmd FileType html setlocal nowrap " But don't wrap HTML
 
 " Makes foo-bar considered one word
 set iskeyword+=- 
@@ -267,8 +267,8 @@ vnoremap <silent> # :call VisualSelection('b', '')<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-map <space> /
-map <c-space> ?
+noremap <space> /
+noremap <c-space> ?
 
 " Smart way to move between windows
 map <C-j> <C-W>j
