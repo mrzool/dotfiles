@@ -57,6 +57,7 @@ Plugin 'StanAngeloff/php.vim'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plugin 'tpope/vim-eunuch'
 
 call vundle#end()
 
@@ -425,6 +426,10 @@ vnoremap <silent> ack :call VisualSelection('gv', '')<CR>
 map <leader>a :Ack 
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
+
+" Settings for LaTeX-Box
+let g:LatexBox_latexmk_preview_continuously = 1
+let g:LatexBox_quickfix = 2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Custom functions
