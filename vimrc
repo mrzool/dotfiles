@@ -88,7 +88,7 @@ set dictionary=/usr/share/dict/words
 " set complete+=k
 
 " Persistent undos
-set undofile
+" set undofile
 
 " Substitute globally on lines
 set gdefault
