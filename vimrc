@@ -54,7 +54,8 @@ Plugin 'tpope/vim-liquid'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround.git'
 Plugin 'StanAngeloff/php.vim'
-" Plugin 'tpope/vim-vinegar.git'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'tpope/vim-eunuch'
 
 call vundle#end()
 
