@@ -16,7 +16,7 @@ alias c='clear'
 alias e='exit'
 
 # Package management
-alias backport='apt-get -t wheezy-backports install'
+alias backport='sudo apt-get -t wheezy-backports install'
 alias installed='dpkg --get-selections'
 
 # Git aliases
