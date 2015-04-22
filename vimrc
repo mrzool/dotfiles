@@ -58,6 +58,8 @@ Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'tpope/vim-eunuch'
+Plugin 'tomasr/molokai'
+Plugin 'chriskempson/base16-vim'
 
 call vundle#end()
 
@@ -165,7 +167,7 @@ set laststatus=2
 
 " Configure Lightline
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
+      \ 'colorscheme': 'wombat',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'filename', 'modified' ] ]
@@ -183,7 +185,7 @@ let g:lightline = {
 " hide default mode indicator
 set noshowmode
 
-" Load Monokai for selected filetypes
+" Load molokai for selected filetypes
 " autocmd BufReadPre *.md colorscheme molokai | let g:molokai_original=1 | let g:rehash256=1
 
 
@@ -195,14 +197,17 @@ set t_Co=256
 syntax enable
 set encoding=utf8
 
-let g:solarized_termtrans=1
-colorscheme solarized
-set background=dark
+" let g:solarized_termtrans=1
+" colorscheme solarized
 " let g:solarized_termcolors=16
 
 " colorscheme molokai
 " let g:molokai_original = 1
 " let g:rehash256 = 1
+
+set background=dark
+let base16colorspace=256
+colorscheme base16-default
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
