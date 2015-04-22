@@ -5,7 +5,7 @@ alias la='ls -A'
 alias copy='xclip -sel clip'
 alias ct='column -t'
 
-# alias vi='nvim'
+alias vi='vim'
 
 alias tolowercase='sh ~/bin/tolowercase.sh'
 alias tounderscore='sh ~/bin/tounderscore.sh'
@@ -20,7 +20,7 @@ alias backport='apt-get -t wheezy-backports install'
 alias installed='dpkg --get-selections'
 
 # Git aliases
-alias g="git"
+# alias g="git"
 alias gs="pwd"
 # alias gd="git diff"
 # alias ga="git add"
