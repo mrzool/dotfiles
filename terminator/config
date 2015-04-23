@@ -11,57 +11,60 @@
   paste = <Control><Shift>v
 [profiles]
   [[default]]
-    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
-    foreground_color = "#eee8d5"
-    background_color = "#002b36"
-    cursor_color = "#eee8d5"
-    background_darkness = 0.6
-    background_type = transparent
     scrollbar_position = hidden
+    palette = "#2d2d2d:#f2777a:#99cc99:#ffcc66:#6699cc:#cc99cc:#66cccc:#d3d0c8:#747369:#f2777a:#99cc99:#ffcc66:#6699cc:#cc99cc:#66cccc:#f2f0ec"
+    background_darkness = 0.48
     use_system_font = False
+    cursor_color = "#d3d0c8"
+    foreground_color = "#d3d0c8"
     icon_bell = False
     show_titlebar = False
     font = Input 10
-
+    background_color = "#2d2d2d"
   [[monokai]]
+    scrollbar_position = hidden
     palette = "#000000:#f92672:#6cc72c:#fe9720:#5f91ef:#9358fe:#36af90:#8c8c8c:#4c4c4c:#ff80f4:#a7e22e:#ffee99:#5fd9ef:#ae82fe:#66efd5:#c7cece"
-    foreground_color = "#ffffff"
-    background_color = "#2e3436"
+    background_darkness = 0.6
+    background_type = transparent
+    use_system_font = False
     cursor_color = "#d8d8d8"
-    background_darkness = 0.6
-    background_type = transparent
-    scrollbar_position = hidden
-    use_system_font = False
+    foreground_color = "#ffffff"
     icon_bell = False
     show_titlebar = False
     font = Input 10
-
+    background_color = "#2e3436"
   [[solarized-dark]]
+    scrollbar_position = hidden
     palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
-    foreground_color = "#eee8d5"
-    background_color = "#002b36"
-    cursor_color = "#eee8d5"
     background_darkness = 0.6
     background_type = transparent
-    scrollbar_position = hidden
     use_system_font = False
+    cursor_color = "#eee8d5"
+    foreground_color = "#eee8d5"
     icon_bell = False
     show_titlebar = False
     font = Input 10
-
+    background_color = "#002b36"
+  [[base16]]
+    scrollbar_position = hidden
+    palette = "#2d2d2d:#f2777a:#99cc99:#ffcc66:#6699cc:#cc99cc:#66cccc:#d3d0c8:#747369:#f2777a:#99cc99:#ffcc66:#6699cc:#cc99cc:#66cccc:#f2f0ec"
+    use_system_font = False
+    cursor_color = "#d3d0c8"
+    foreground_color = "#d3d0c8"
+    icon_bell = False
+    show_titlebar = False
+    font = Input 10
+    background_color = "#2d2d2d"
   [[solarized-light]]
-    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
-    background_color = "#eee8d5"
-    foreground_color = "#002b36"
-    cursor_color = "#002b36"
-    /* background_darkness = 0.3 */
-    /* background_type = transparent */
     scrollbar_position = hidden
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
     use_system_font = False
+    cursor_color = "#002b36"
+    foreground_color = "#002b36"
     icon_bell = False
     show_titlebar = False
     font = Input 10
-
+    background_color = "#eee8d5"
 [layouts]
   [[default]]
     [[[child1]]]
