@@ -258,6 +258,10 @@ autocmd FileType html setlocal nowrap " But don't wrap HTML
 " Makes foo-bar considered one word
 set iskeyword+=- 
 
+" Turn off physical line wrapping
+set textwidth=0 
+set wrapmargin=0
+set formatoptions-=t
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Visual mode
