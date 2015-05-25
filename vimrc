@@ -101,7 +101,7 @@ set ttyfast
 set so=7
 
 " Always show tab bar
-set showtabline=1
+set showtabline=2
 
 " Turn on the wild menu
 set wildmenu
