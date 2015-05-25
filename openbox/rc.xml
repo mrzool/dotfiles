@@ -896,6 +896,9 @@
   </menu>
   <applications>
     <application class="*">
+      <decor>yes</decor>
+    </application>
+    <application name="terminator">
       <decor>no</decor>
     </application>
     <!--
