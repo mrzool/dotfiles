@@ -186,23 +186,29 @@ set noshowmode
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set t_Co=256
+
 syntax enable
 set encoding=utf8
 
-" let g:solarized_termtrans=1
-" colorscheme solarized
-" let g:solarized_termcolors=16
-
-" colorscheme molokai
-" let g:molokai_original = 1
-" let g:rehash256 = 1
-
-set background=dark
-let base16colorspace=256
-colorscheme base16-default
-
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
+
+" For Terminator on Linux
+let g:molokai_original=1
+let g:rehash256=1
+colorscheme molokai
+" Transparent background
+hi Normal guibg=NONE ctermbg=NONE
+" Transparent split separator
+hi VertSplit       ctermfg=244 ctermbg=NONE   cterm=bold
+
+" let base16colorspace=256
+" colorscheme base16-default
+
+" let g:solarized_termcolors=256
+" let g:solarized_termtrans=1
+" set background=dark
+" colorscheme solarized
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
