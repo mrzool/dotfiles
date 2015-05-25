@@ -25,35 +25,46 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 
+" Plugins
 Plugin 'gmarik/Vundle.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'kien/ctrlp.vim'
-Plugin 'junegunn/goyo.vim'
-Plugin 'vim-scripts/grep.vim'
-Plugin 'sjl/gundo.vim'
-Plugin 'othree/html5.vim.git'
-Plugin 'itchyny/lightline.vim'
-Plugin 'vim-scripts/matchit.zip'
-Plugin 'cakebaker/scss-syntax.vim.git'
-Plugin 'scrooloose/syntastic.git'
+
+" Colorschemes
 Plugin 'altercation/vim-colors-solarized.git'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'MarcWeber/vim-addon-mw-utils.git'
-Plugin 'tomtom/tlib_vim.git'
-Plugin 'garbas/vim-snipmate.git'
-Plugin 'honza/vim-snippets.git'
-Plugin 'hail2u/vim-css3-syntax.git'
-Plugin 'tpope/vim-fugitive.git'
-Plugin 'elzr/vim-json'
+Plugin 'chriskempson/base16-vim'
+Plugin 'tomasr/molokai'
 Plugin 'tpope/vim-liquid'
+
+" Syntax
+Plugin 'scrooloose/syntastic.git'
+Plugin 'othree/html5.vim.git'
+Plugin 'cakebaker/scss-syntax.vim.git'
+Plugin 'hail2u/vim-css3-syntax.git'
+Plugin 'elzr/vim-json'
+Plugin 'pangloss/vim-javascript'
+Plugin 'StanAngeloff/php.vim'
+
+" Interface
+Plugin 'itchyny/lightline.vim'
+Plugin 'junegunn/goyo.vim'
+
+" Integrations
+Plugin 'kien/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-fugitive.git'
+Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround.git'
-Plugin 'StanAngeloff/php.vim'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tomasr/molokai'
-Plugin 'chriskempson/base16-vim'
-Plugin 'pangloss/vim-javascript'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'garbas/vim-snipmate.git'
+Plugin 'honza/vim-snippets.git'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'sjl/gundo.vim'
+Plugin 'vim-scripts/grep.vim'
+
+" Others
+Plugin 'MarcWeber/vim-addon-mw-utils.git'
+Plugin 'vim-scripts/matchit.zip'
+Plugin 'tomtom/tlib_vim.git'
 
 call vundle#end()
 
