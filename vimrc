@@ -1,5 +1,3 @@
-" Based on: https://github.com/amix/vimrc
-"
 " Sections:
 "
 "    -> General
@@ -20,10 +18,8 @@
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Be iMproved
 set nocompatible
 
-" Call Vundle and load plugins
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 
@@ -54,20 +50,16 @@ Plugin 'tpope/vim-liquid'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround.git'
 Plugin 'StanAngeloff/php.vim'
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
-Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tomasr/molokai'
 Plugin 'chriskempson/base16-vim'
+Plugin 'pangloss/vim-javascript'
 
 call vundle#end()
 
-" Enable filetype plugins
 filetype plugin on
 filetype indent on
 
-" Sets how many lines of history VIM has to remember
 set history=700
 
 " Enable matchit plugin
@@ -82,7 +74,7 @@ let mapleader = "-"
 " Treat all numerals as decimal
 set nrformats=
 
-" Enable the mouse (pretty much only to resize splits)
+" Enable the mouse
 " set mouse=a
 
 " Set dictionary
@@ -338,7 +330,7 @@ nnoremap <leader>ev :tabe $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Jump to matching item with tab 
-" This conflicts w/ the default <c-i> behavior
+" This conflicts with the default <c-i> behavior
 " nnoremap <tab> %
 " vnoremap <tab> %
 
@@ -367,6 +359,16 @@ inoremap <c-u> <esc>viwUA
 map <leader>t :! pdflatex %<CR>
 map <leader>x :! xelatex %<CR>
 
+" Invoke fugitive status window
+nnoremap SS :Gstatus<CR>
+
+" Traverse the argslist
+nnoremap <leader>n :next<CR>
+nnoremap <leader>N :prev<CR>
+
+" Invert apostrophe/backtick 'jump to mark' behavior
+nnoremap ' `
+nnoremap ` '
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Abbreviations
@@ -405,7 +407,7 @@ let g:netrw_liststyle = 3
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
 " Run Syntastic check
-map <leader>ss :SyntasticCheck<cr>
+map <leader>sy :SyntasticCheck<cr>
 
 "  CtrlP settings
 let g:ctrlp_map = '<c-p>'
