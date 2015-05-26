@@ -410,12 +410,13 @@ map <leader>ss :setlocal spell!<cr>
 let g:netrw_preview   = 1
 let g:netrw_liststyle = 3
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+let g:netrw_browsex_viewer = 'google-chrome'
 
 " Run Syntastic check
 map <leader>ss :SyntasticCheck<cr>
 
 "  CtrlP settings
-let g:ctrlp_map = '<c-p>'
+let g:ctrlp_map = 'FF'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|_site|output)|(\.(swp|ico|git|svn))$'
 
