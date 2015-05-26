@@ -86,9 +86,6 @@ let mapleader = "-"
 " Treat all numerals as decimal
 set nrformats=
 
-" Enable the mouse
-" set mouse=a
-
 " Set dictionary
 set dictionary=/usr/share/dict/words
 
@@ -409,6 +406,18 @@ nnoremap <leader>a :Ack
 vnoremap <silent> ack :call VisualSelection('gv', '')<CR>
 " Search & replace selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
+
+" Enable/disable the mouse
+nnoremap <leader>m :call ToggleMouse()<CR>
+
+function! ToggleMouse()
+  if &mouse == "a"
+    set mouse=
+  else
+    set mouse=a
+  endif
+endfunction
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
