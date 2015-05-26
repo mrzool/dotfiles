@@ -340,7 +340,8 @@ nnoremap k gk
 nnoremap <Leader>u :Underline<CR>
 
 " Edit and source the .vimrc
-nnoremap <leader>ev :tabe $MYVIMRC<cr>
+noremap <leader>ev :execute 'tabe ' . resolve(expand($MYVIMRC))<CR>
+" nnoremap <leader>ev :tabe $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Jump to matching item with tab 
