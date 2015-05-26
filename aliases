@@ -5,7 +5,7 @@ alias la='ls -A'
 alias copy='xclip -sel clip'
 alias ct='column -t'
 
-# alias vi='nvim'
+alias vi='vim'
 
 alias tolowercase='sh ~/bin/tolowercase.sh'
 alias tounderscore='sh ~/bin/tounderscore.sh'
