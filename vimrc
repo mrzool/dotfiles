@@ -216,7 +216,8 @@ if has("unix")
     let g:molokai_original=1
     let g:rehash256=1
     colorscheme molokai
-    hi Normal guibg=NONE ctermbg=NONE "Transparent background
+    "Transparent background
+    hi Normal guibg=NONE ctermbg=NONE
   endif
 endif
 
