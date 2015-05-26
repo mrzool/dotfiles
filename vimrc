@@ -410,20 +410,12 @@ vnoremap <silent> ack :call VisualSelection('gv', '')<CR>
 " Search & replace selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Custom Commands
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" map :C to clear last used search pattern
-:command! C let @/=""
-
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Spell checking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Pressing -ss will toggle and untoggle spell checking
+" Toggle/untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
 
 
