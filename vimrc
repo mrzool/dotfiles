@@ -253,7 +253,9 @@ set tw=500
 set ai " Auto indent
 set si " Smart indent
 set wrap " Wrap lines
-autocmd FileType html setlocal nowrap " But don't wrap HTML
+autocmd FileType html setlocal nowrap
+autocmd FileType liquid setlocal nowrap
+autocmd FileType php setlocal nowrap
 
 " Makes foo-bar considered one word
 set iskeyword+=- 
