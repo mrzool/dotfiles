@@ -204,17 +204,24 @@ set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
-" For Terminator on Linux
-let g:molokai_original=1
-let g:rehash256=1
-colorscheme molokai
-" Transparent background
-hi Normal guibg=NONE ctermbg=NONE
-" Transparent split separator
-hi VertSplit       ctermfg=244 ctermbg=NONE   cterm=bold
+if has("unix")
+  let s:uname = system("uname")
+  if s:uname == "Darwin\n"
+    " Settings for iTerm2 on OS X
+    set background=dark
+    let base16colorspace=256
+    colorscheme base16-default
+  else
+    " Settings for Terminator on Linux
+    let g:molokai_original=1
+    let g:rehash256=1
+    colorscheme molokai
+    hi Normal guibg=NONE ctermbg=NONE "Transparent background
+  endif
+endif
 
-" let base16colorspace=256
-" colorscheme base16-default
+" Transparent split separator
+hi VertSplit ctermfg=244 ctermbg=NONE   cterm=bold
 
 " let g:solarized_termcolors=256
 " let g:solarized_termtrans=1
