@@ -1,5 +1,3 @@
-" Based on: https://github.com/amix/vimrc
-"
 " Sections:
 "
 "    -> General
@@ -20,54 +18,59 @@
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Be iMproved
 set nocompatible
 
-" Call Vundle and load plugins
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 
+" Plugins
 Plugin 'gmarik/Vundle.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'kien/ctrlp.vim'
-Plugin 'junegunn/goyo.vim'
-Plugin 'vim-scripts/grep.vim'
-Plugin 'sjl/gundo.vim'
-Plugin 'othree/html5.vim.git'
-Plugin 'itchyny/lightline.vim'
-Plugin 'vim-scripts/matchit.zip'
-Plugin 'cakebaker/scss-syntax.vim.git'
-Plugin 'scrooloose/syntastic.git'
+
+" Colorschemes
 Plugin 'altercation/vim-colors-solarized.git'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'MarcWeber/vim-addon-mw-utils.git'
-Plugin 'tomtom/tlib_vim.git'
-Plugin 'garbas/vim-snipmate.git'
-Plugin 'honza/vim-snippets.git'
-Plugin 'hail2u/vim-css3-syntax.git'
-Plugin 'tpope/vim-fugitive.git'
-Plugin 'elzr/vim-json'
+Plugin 'chriskempson/base16-vim'
+Plugin 'tomasr/molokai'
 Plugin 'tpope/vim-liquid'
+
+" Syntax
+Plugin 'scrooloose/syntastic.git'
+Plugin 'othree/html5.vim.git'
+Plugin 'cakebaker/scss-syntax.vim.git'
+Plugin 'hail2u/vim-css3-syntax.git'
+Plugin 'elzr/vim-json'
+Plugin 'pangloss/vim-javascript'
+Plugin 'StanAngeloff/php.vim'
+
+" Interface
+Plugin 'itchyny/lightline.vim'
+Plugin 'junegunn/goyo.vim'
+
+" Integrations
+Plugin 'kien/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-fugitive.git'
+Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround.git'
-Plugin 'StanAngeloff/php.vim'
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
-Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tomasr/molokai'
-Plugin 'chriskempson/base16-vim'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'garbas/vim-snipmate.git'
+Plugin 'honza/vim-snippets.git'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'sjl/gundo.vim'
+Plugin 'vim-scripts/grep.vim'
+
+" Others
+Plugin 'MarcWeber/vim-addon-mw-utils.git'
+Plugin 'vim-scripts/matchit.zip'
+Plugin 'tomtom/tlib_vim.git'
 
 call vundle#end()
 
-" Enable filetype plugins
 filetype plugin on
 filetype indent on
 
-" Sets how many lines of history VIM has to remember
 set history=700
 
 " Enable matchit plugin
@@ -82,7 +85,7 @@ let mapleader = "-"
 " Treat all numerals as decimal
 set nrformats=
 
-" Enable the mouse (pretty much only to resize splits)
+" Enable the mouse
 " set mouse=a
 
 " Set dictionary
@@ -109,7 +112,7 @@ set ttyfast
 set so=7
 
 " Always show tab bar
-set showtabline=1
+set showtabline=2
 
 " Turn on the wild menu
 set wildmenu
@@ -167,7 +170,7 @@ set laststatus=2
 
 " Configure Lightline
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'solarized',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'filename', 'modified' ] ]
@@ -194,23 +197,29 @@ set noshowmode
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set t_Co=256
+
 syntax enable
 set encoding=utf8
 
-" let g:solarized_termtrans=1
-" colorscheme solarized
-" let g:solarized_termcolors=16
-
-" colorscheme molokai
-" let g:molokai_original = 1
-" let g:rehash256 = 1
-
-set background=dark
-let base16colorspace=256
-colorscheme base16-default
-
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
+
+" For Terminator on Linux
+let g:molokai_original=1
+let g:rehash256=1
+colorscheme molokai
+" Transparent background
+hi Normal guibg=NONE ctermbg=NONE
+" Transparent split separator
+hi VertSplit       ctermfg=244 ctermbg=NONE   cterm=bold
+
+" let base16colorspace=256
+" colorscheme base16-default
+
+" let g:solarized_termcolors=256
+" let g:solarized_termtrans=1
+" set background=dark
+" colorscheme solarized
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -345,7 +354,7 @@ noremap <leader>ev :execute 'tabe ' . resolve(expand($MYVIMRC))<CR>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Jump to matching item with tab 
-" This conflicts w/ the default <c-i> behavior
+" This conflicts with the default <c-i> behavior
 " nnoremap <tab> %
 " vnoremap <tab> %
 
@@ -374,6 +383,16 @@ inoremap <c-u> <esc>viwUA
 map <leader>t :! pdflatex %<CR>
 map <leader>x :! xelatex %<CR>
 
+" Invoke fugitive status window
+nnoremap SS :Gstatus<CR>
+
+" Traverse the argslist
+nnoremap <leader>n :next<CR>
+nnoremap <leader>N :prev<CR>
+
+" Invert apostrophe/backtick 'jump to mark' behavior
+nnoremap ' `
+nnoremap ` '
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Abbreviations
@@ -413,7 +432,7 @@ let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_browsex_viewer = 'google-chrome'
 
 " Run Syntastic check
-map <leader>ss :SyntasticCheck<cr>
+map <leader>sy :SyntasticCheck<cr>
 
 "  CtrlP settings
 let g:ctrlp_map = 'FF'

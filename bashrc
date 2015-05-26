@@ -32,8 +32,8 @@ fi
 export TERM=xterm-256color
 
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+# BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
+# [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
@@ -115,5 +115,3 @@ _completemarks() {
   return 0
 }
 complete -F _completemarks jump unmark
-
-

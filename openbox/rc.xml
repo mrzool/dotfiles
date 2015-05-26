@@ -181,13 +181,13 @@
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
     <!-- Keybindings for desktop switching -->
-    <keybind key="C-A-Left">
+    <keybind key="W-K">
       <action name="GoToDesktop">
         <to>left</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="C-A-Right">
+    <keybind key="W-J">
       <action name="GoToDesktop">
         <to>right</to>
         <wrap>no</wrap>
@@ -896,6 +896,9 @@
   </menu>
   <applications>
     <application class="*">
+      <decor>yes</decor>
+    </application>
+    <application name="terminator">
       <decor>no</decor>
     </application>
     <!--
