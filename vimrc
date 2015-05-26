@@ -26,6 +26,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Plugins
+
 Plugin 'gmarik/Vundle.vim'
 
 " Colorschemes
@@ -108,7 +109,7 @@ set gdefault
 " Improve smoothness
 set ttyfast
 
-" Set 7 lines to the cursor - when moving vertically using j/k
+" Set 7 lines to the cursor
 set so=7
 
 " Always show tab bar
@@ -153,7 +154,7 @@ set magic
 
 " Show matching brackets
 set showmatch
-set matchtime=2
+set matchtime=15
 
 " No bells
 set noerrorbells
@@ -188,9 +189,6 @@ let g:lightline = {
 " hide default mode indicator
 set noshowmode
 
-" Load molokai for selected filetypes
-" autocmd BufReadPre *.md colorscheme molokai | let g:molokai_original=1 | let g:rehash256=1
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -202,7 +200,7 @@ syntax enable
 set encoding=utf8
 
 " Use Unix as the standard file type
-set ffs=unix,dos,mac
+set ffs=unix
 
 if has("unix")
   let s:uname = system("uname")
@@ -264,8 +262,8 @@ set shiftwidth=2
 set tabstop=2
 
 " Linebreak on 500 characters
-set lbr
-set tw=500
+" set lbr
+" set tw=500
 
 set ai " Auto indent
 set si " Smart indent
@@ -278,9 +276,9 @@ autocmd FileType php setlocal nowrap
 set iskeyword+=- 
 
 " Turn off physical line wrapping
-set textwidth=0 
-set wrapmargin=0
-set formatoptions-=t
+" set textwidth=0 
+" set wrapmargin=0
+" set formatoptions-=t
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Visual mode
@@ -329,7 +327,7 @@ noremap 0 ^
 " make y behave like other capitals
 nnoremap Y y$
 
-" map Enter Enter to insert line break
+" Insert line break
 nnoremap <CR><CR> i<CR><ESC>
 
 " Save a file/quit
@@ -346,7 +344,7 @@ nnoremap <Leader>tc :tabclose<CR>
 nnoremap <silent> <Leader>> :exe "vertical resize +5"<CR>
 nnoremap <silent> <Leader>< :exe "vertical resize -5"<CR>
 
-" HTML with CSS on the side
+" HTML/CSS view
 nnoremap <silent> <Leader>c :exe ":30winc >"<CR>
 
 " Treat long lines as break lines
@@ -356,7 +354,7 @@ nnoremap k gk
 " Underline current line
 nnoremap <Leader>u :Underline<CR>
 
-" Edit and source the .vimrc
+" Edit/source the .vimrc
 noremap <leader>ev :execute 'tabe ' . resolve(expand($MYVIMRC))<CR>
 " nnoremap <leader>ev :tabe $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
@@ -366,7 +364,7 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " nnoremap <tab> %
 " vnoremap <tab> %
 
-" Copy and paste to system clipboard
+" Copy/paste to system clipboard
 vmap <Leader>y "+y
 vmap <Leader>d "+d
 nmap <Leader>yy "+yy
@@ -375,16 +373,16 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 
-" Expands the path of the current buffer on the command prompt with %% 
+" Expands path of current buffer on the command prompt
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " Super-duper force write
 cnoremap w!! w !sudo tee %
 
-" maps jj to esc
+" Maps jj to esc
 inoremap jj <Esc>
 
-" Uppercase current work
+" Uppercase current word
 inoremap <c-u> <esc>viwUA
 
 " Compile TeX document
@@ -402,15 +400,15 @@ nnoremap <leader>N :prev<CR>
 nnoremap ' `
 nnoremap ` '
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Abbreviations
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Toggle Gundo
+nnoremap <Leader>g :GundoToggle<CR>
 
-iabbrev zb@ zool.bib@gmail.com
-iabbrev mt@ mattia.tezzele@gmail.com
-iabbrev in@ info@mrzool.cc
-iabbrev mrz http://mrzool.cc
-
+" Open Ack
+nnoremap <leader>a :Ack 
+" Ack after selected text
+vnoremap <silent> ack :call VisualSelection('gv', '')<CR>
+" Search & replace selected text
+vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Custom Commands
@@ -452,24 +450,9 @@ let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['liquid'] = 'liquid,html'
 
-" Fix 2 lines bug with supertab
-" let g:SuperTabCrMapping = 0
-
 " Settings for Gundo
-nnoremap <Leader>g :GundoToggle<CR>
 let g:gundo_preview_bottom = 1
 
-" Settings for Ack
-" When you press ack you Ack after the selected text
-vnoremap <silent> ack :call VisualSelection('gv', '')<CR>
-" Open Ack and put the cursor in the right position
-map <leader>a :Ack 
-" When you press <leader>r you can search and replace the selected text
-vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
-
-" Settings for LaTeX-Box
-let g:LatexBox_latexmk_preview_continuously = 1
-let g:LatexBox_quickfix = 2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Custom functions
