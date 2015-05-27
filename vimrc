@@ -1,25 +1,6 @@
-" Sections:
-"
-"    -> General
-"    -> UI
-"    -> Colors and Fonts
-"    -> Files and backups
-"    -> Text & tabs
-"    -> Visual mode related
-"    -> Moving around, tabs, splits and buffers
-"    -> Mappings
-"    -> Abbreviations
-"    -> Custom commands
-"    -> Spell checking
-"    -> Plugins settings
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => General
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GENERAL SETTINGS
 
 set nocompatible
-
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 
@@ -72,22 +53,19 @@ call vundle#end()
 filetype plugin on
 filetype indent on
 
+set encoding=utf8
 set history=700
-
-" Enable matchit plugin
-runtime macros/matchit.vim
-
-" Set to auto read when a file is changed from the outside
 set autoread
-
-" Leader key
+set fileformats=unix
 let mapleader = "-"
+runtime macros/matchit.vim
+set dictionary=/usr/share/dict/words
 
 " Treat all numerals as decimal
 set nrformats=
 
-" Set dictionary
-set dictionary=/usr/share/dict/words
+" Substitute globally on lines
+set gdefault
 
 " Add dictionary to default sources for autocompletion
 " set complete+=k
@@ -95,19 +73,13 @@ set dictionary=/usr/share/dict/words
 " Persistent undos
 " set undofile
 
-" Substitute globally on lines
-set gdefault
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => UI
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" INTERFACE
 
 " Improve smoothness
 set ttyfast
 
 " Set 7 lines to the cursor
-set so=7
+set scrolloff=7
 
 " Always show tab bar
 set showtabline=2
@@ -119,18 +91,18 @@ set wildmode=list:longest
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
 
-" Always show current position
+" show current position
 set ruler
 
-" Always show line numbers
+" show line numbers
 set number
-set numberwidth=3
+set numberwidth=2
 
 " Height of the command bar
 set cmdheight=1
 
 " A buffer becomes hidden when it is abandoned
-set hid
+set hidden
 
 " Configure backspace
 set backspace=eol,start,indent
@@ -139,8 +111,6 @@ set whichwrap+=<,>,h,l
 " Search tweaks
 set ignorecase
 set smartcase
-
-" set hlsearch
 set incsearch
 
 " Don't redraw while executing macros
@@ -157,7 +127,7 @@ set matchtime=15
 set noerrorbells
 set novisualbell
 set t_vb=
-set tm=500
+set timeoutlen=300
 
 " Switch cursor shape when changing modes
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
@@ -166,39 +136,15 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 " Always show the status line
 set laststatus=2
 
-" Configure Lightline
-let g:lightline = {
-      \ 'colorscheme': 'solarized',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'filename', 'modified' ] ]
-      \ },
-      \ 'component': {
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-      \ }
-      \ }
-
 " hide default mode indicator
 set noshowmode
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Colors and Fonts
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+" Number of colors
 set t_Co=256
 
 syntax enable
-set encoding=utf8
 
-" Use Unix as the standard file type
-set ffs=unix
-
+" Colorscheme settings
 if has("unix")
   let s:uname = system("uname")
   if s:uname == "Darwin\n"
@@ -219,24 +165,44 @@ endif
 " Transparent split separator
 hi VertSplit ctermfg=244 ctermbg=NONE   cterm=bold
 
+" Fine-tune number column
+set foldcolumn=1
+highlight FoldColumn ctermbg=NONE
+highlight LineNr ctermbg=NONE
+
 " let g:solarized_termcolors=256
 " let g:solarized_termtrans=1
 " set background=dark
 " colorscheme solarized
 
+" Configure Lightline
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'filename', 'modified' ] ]
+      \ },
+      \ 'component': {
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ }
+      \ }
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Files and backups
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" FILES & BACKUPS
 
 " Turn backup off
 set nobackup
-set nowb
+set nowritebackup
 set noswapfile
 
 " Do not store global, local values or folds in a session 
-set ssop-=options    
-set ssop-=folds      
+set ssop-=options
+set ssop-=folds
 
 " Forces *.md as markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
@@ -244,20 +210,12 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 " Do not fold, ever
 set nofoldenable
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Text & tabs
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" TEXT & TABS
 
-" Use spaces instead of tabs
 set expandtab
-
-" Be smart when using tabs
 set smarttab
-
-" 1 tab == 2 spaces
 set shiftwidth=2
 set tabstop=2
-
 set linebreak
 " set tw=500
 set autoindent
@@ -280,29 +238,6 @@ set iskeyword+=-
 " set wrapmargin=0
 " set formatoptions-=t
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Visual mode
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Visual mode pressing * or # searches for the current selection
-vnoremap <silent> * :call VisualSelection('f', '')<CR>
-vnoremap <silent> # :call VisualSelection('b', '')<CR>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Moving around, tabs, splits and buffers
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-noremap <space> /
-noremap <c-space> ?
-
-" Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-
 " Return to last edit position when opening files
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -312,14 +247,10 @@ autocmd BufReadPost *
 " Remember info about open buffers on close
 set viminfo^=%
 
-" Open new split panes to right and bottom
-" set splitbelow
 set splitright
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Mappings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MAPPINGS
 
 " Remap VIM 0 to first non-blank character
 noremap 0 ^
@@ -424,13 +355,22 @@ endfunction
 " K opens help section for word under cursor
 autocmd FileType vim setlocal keywordprg=:help
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Spell checking
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " Toggle/untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
+
+" Visual mode pressing * or # searches for the current selection
+vnoremap <silent> * :call VisualSelection('f', '')<CR>
+vnoremap <silent> # :call VisualSelection('b', '')<CR>
+
+" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
+noremap <space> /
+noremap <c-space> ?
+
+" Smart way to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -461,7 +401,7 @@ let g:gundo_preview_bottom = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Custom functions
+" => Functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Command to underline the current line
