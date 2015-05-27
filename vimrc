@@ -421,6 +421,8 @@ function! ToggleMouse()
   endif
 endfunction
 
+" K opens help section for word under cursor
+autocmd FileType vim setlocal keywordprg=:help
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
