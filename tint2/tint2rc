@@ -69,10 +69,10 @@ panel_layer = bottom
 panel_background_id = 3
 
 # Panel Autohide
-autohide = 0
+autohide = 1
 autohide_show_timeout = 0.3
-autohide_hide_timeout = 1.5
-autohide_height = 6
+autohide_hide_timeout = 0.5
+autohide_height = 3
 strut_policy = none
 
 # Taskbar
