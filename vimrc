@@ -1,5 +1,3 @@
-" GENERAL SETTINGS
-
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -31,7 +29,7 @@ Plugin 'junegunn/goyo.vim'
 
 " Integrations
 Plugin 'kien/ctrlp.vim'
-Plugin 'mileszs/ack.vim'
+Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-repeat'
@@ -53,13 +51,14 @@ call vundle#end()
 filetype plugin on
 filetype indent on
 
+runtime macros/matchit.vim
 set encoding=utf8
 set history=700
 set autoread
 set fileformats=unix
-let mapleader = "-"
-runtime macros/matchit.vim
 set dictionary=/usr/share/dict/words
+
+let mapleader = "-"
 
 " Treat all numerals as decimal
 set nrformats=
@@ -73,8 +72,6 @@ set gdefault
 " Persistent undos
 " set undofile
 
-" INTERFACE
-
 " Improve smoothness
 set ttyfast
 
@@ -82,7 +79,7 @@ set ttyfast
 set scrolloff=7
 
 " Always show tab bar
-set showtabline=2
+set showtabline=1
 
 " Turn on the wild menu
 set wildmenu
@@ -175,26 +172,6 @@ highlight LineNr ctermbg=NONE
 " set background=dark
 " colorscheme solarized
 
-" Configure Lightline
-let g:lightline = {
-      \ 'colorscheme': 'solarized',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'filename', 'modified' ] ]
-      \ },
-      \ 'component': {
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-      \ }
-      \ }
-
-
-" FILES & BACKUPS
-
 " Turn backup off
 set nobackup
 set nowritebackup
@@ -209,8 +186,6 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Do not fold, ever
 set nofoldenable
-
-" TEXT & TABS
 
 set expandtab
 set smarttab
@@ -247,10 +222,10 @@ autocmd BufReadPost *
 " Remember info about open buffers on close
 set viminfo^=%
 
+" Open vsplits to the right
 set splitright
 
-
-" MAPPINGS
+" Custom mappings
 
 " Remap VIM 0 to first non-blank character
 noremap 0 ^
@@ -334,10 +309,13 @@ nnoremap ` '
 " Toggle Gundo
 nnoremap <Leader>g :GundoToggle<CR>
 
+" Toggle Goyo
+nnoremap <Leader>g :Goyo<CR>
+
 " Open Ack
-nnoremap <leader>a :Ack 
+nnoremap <leader>a :Ag 
 " Ack after selected text
-vnoremap <silent> ack :call VisualSelection('gv', '')<CR>
+vnoremap <silent> ag :call VisualSelection('gv', '')<CR>
 " Search & replace selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
 
@@ -372,19 +350,16 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" Run Syntastic check
+map <leader>sy :SyntasticCheck<cr>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Plugins Settings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PLUGINS SETTINGS
 
 " Settings for netrw
 let g:netrw_preview   = 1
 let g:netrw_liststyle = 3
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_browsex_viewer = 'google-chrome'
-
-" Run Syntastic check
-map <leader>sy :SyntasticCheck<cr>
 
 "  CtrlP settings
 let g:ctrlp_map = 'FF'
@@ -396,15 +371,28 @@ let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['liquid'] = 'liquid,html'
 
-" Settings for Gundo
+" Gundo settings
 let g:gundo_preview_bottom = 1
 
+" Lightline settings
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'filename', 'modified' ] ]
+      \ },
+      \ 'component': {
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ }
+      \ }
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Functions
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" FUNCTIONS
 
-" Command to underline the current line
 function! s:Underline(chars)
   let chars = empty(a:chars) ? '-' : a:chars
   let nr_columns = virtcol('$') - 1
