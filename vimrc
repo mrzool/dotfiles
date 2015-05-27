@@ -263,9 +263,11 @@ set linebreak
 set autoindent
 set smartindent
 
-set ai " Auto indent
-set si " Smart indent
-set wrap " Wrap lines
+" Display non-printing chars
+set list
+set listchars=eol:¬,extends:>,precedes:<
+
+set wrap
 autocmd FileType html setlocal nowrap
 autocmd FileType liquid setlocal nowrap
 autocmd FileType php setlocal nowrap
