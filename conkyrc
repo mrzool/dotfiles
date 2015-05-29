@@ -20,7 +20,7 @@ default_shade_color 000000
 default_outline_color 828282
 alignment top_right
 gap_x 12
-gap_y 56
+gap_y 50
 no_buffers yes
 uppercase no
 cpu_avg_samples 2
@@ -32,6 +32,7 @@ ${font sans-serif:normal:size=8}$sysname $kernel $alignr $machine
 Host:$alignr$nodename
 Uptime:$alignr$uptime
 File System: $alignr${fs_type}
+Battery: $alignr${execi 60 acpi | grep -Eo '[0-9]+%'} (${execi 60 acpi | grep -Eo '(:?[0-9]+){3}'})
 
 ${font sans-serif:bold:size=8}PROCESSORS ${hr 2}
 ${font sans-serif:normal:size=8}${cpugraph cpu1}
