@@ -12,7 +12,6 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'chriskempson/base16-vim'
 Plugin 'tomasr/molokai'
-Plugin 'tpope/vim-liquid'
 
 " Syntax
 Plugin 'scrooloose/syntastic.git'
@@ -22,6 +21,7 @@ Plugin 'hail2u/vim-css3-syntax.git'
 Plugin 'elzr/vim-json'
 Plugin 'pangloss/vim-javascript'
 Plugin 'StanAngeloff/php.vim'
+Plugin 'tpope/vim-liquid'
 
 " Interface
 Plugin 'itchyny/lightline.vim'
