@@ -94,6 +94,7 @@ set ruler
 " show line numbers
 set number
 set numberwidth=2
+set relativenumber
 
 " Height of the command bar
 set cmdheight=1
@@ -327,6 +328,17 @@ function! ToggleMouse()
     set mouse=
   else
     set mouse=a
+  endif
+endfunction
+
+" Enable/disable relative numbers
+nnoremap <leader>r :call ToggleRelativeNumber()<CR>
+
+function! ToggleRelativeNumber()
+  if &relativenumber
+    set norelativenumber
+  else
+    set relativenumber
   endif
 endfunction
 
