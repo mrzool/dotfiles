@@ -164,7 +164,7 @@ endif
 hi VertSplit ctermfg=244 ctermbg=NONE   cterm=bold
 
 " Fine-tune number column
-set foldcolumn=1
+set foldcolumn=0
 highlight FoldColumn ctermbg=NONE
 highlight LineNr ctermbg=NONE
 
