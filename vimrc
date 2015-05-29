@@ -206,6 +206,9 @@ autocmd FileType html setlocal nowrap
 autocmd FileType liquid setlocal nowrap
 autocmd FileType php setlocal nowrap
 
+" Wrap markdown at 80 chars
+au BufRead,BufNewFile *.md setlocal textwidth=80
+
 " Makes foo-bar considered one word
 set iskeyword+=- 
 
