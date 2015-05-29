@@ -406,7 +406,7 @@ let g:lightline = {
       \ }
       \ }
 
-" FUNCTIONS
+" Functions
 
 function! s:Underline(chars)
   let chars = empty(a:chars) ? '-' : a:chars
