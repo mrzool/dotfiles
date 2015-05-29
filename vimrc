@@ -34,7 +34,7 @@ Plugin 'tpope/vim-fugitive.git'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround.git'
-Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-commentary.git'
 Plugin 'garbas/vim-snipmate.git'
 Plugin 'honza/vim-snippets.git'
 Plugin 'jiangmiao/auto-pairs'
@@ -368,7 +368,7 @@ map <C-l> <C-W>l
 " Run Syntastic check
 map <leader>sy :SyntasticCheck<cr>
 
-" PLUGINS SETTINGS
+" Plugins Settings
 
 " Settings for netrw
 let g:netrw_preview   = 1
