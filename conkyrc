@@ -31,8 +31,8 @@ ${font sans-serif:bold:size=8}SYSTEM ${hr 2}
 ${font sans-serif:normal:size=8}$sysname $kernel $alignr $machine
 Host:$alignr$nodename
 Uptime:$alignr$uptime
+Battery: $alignr${execi 60 acpi | grep -Eo '[0-9]+%'}
 File System: $alignr${fs_type}
-Battery: $alignr${execi 60 acpi | grep -Eo '[0-9]+%'} (${execi 60 acpi | grep -Eo '(:?[0-9]+){3}'})
 
 ${font sans-serif:bold:size=8}PROCESSORS ${hr 2}
 ${font sans-serif:normal:size=8}${cpugraph cpu1}
