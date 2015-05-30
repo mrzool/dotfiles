@@ -92,8 +92,8 @@ set wildignore=*.o,*~,*.pyc
 set ruler
 
 " show line numbers
-set number
-set numberwidth=2
+" set number
+set numberwidth=1
 set relativenumber
 
 " Height of the command bar
