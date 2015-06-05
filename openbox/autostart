@@ -84,3 +84,6 @@ conky -q &
 
 # Sets proper screen brightness
 xbacklight = 50 &
+
+# Remap capslock
+xmodmap ~/.Xmodmap

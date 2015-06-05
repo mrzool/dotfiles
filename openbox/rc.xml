@@ -181,13 +181,13 @@
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
     <!-- Keybindings for desktop switching -->
-    <keybind key="C-A-Left">
+    <keybind key="W-K">
       <action name="GoToDesktop">
         <to>left</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="C-A-Right">
+    <keybind key="W-J">
       <action name="GoToDesktop">
         <to>right</to>
         <wrap>no</wrap>
@@ -375,15 +375,6 @@
         <startupnotify>
           <enabled>true</enabled>
           <name>Web Browser</name>
-        </startupnotify>
-        <command>chromium-browser --window-size=940,600 --window-position=150,120</command>
-      </action>
-    </keybind>
-    <keybind key="W-c">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Google Chrome</name>
         </startupnotify>
         <command>google-chrome</command>
       </action>
@@ -896,6 +887,9 @@
   </menu>
   <applications>
     <application class="*">
+      <decor>yes</decor>
+    </application>
+    <application name="terminator">
       <decor>no</decor>
     </application>
     <!--
