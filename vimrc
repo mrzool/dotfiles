@@ -148,7 +148,7 @@ if has("unix")
     " Settings for iTerm2 on OS X
     set background=dark
     let base16colorspace=256
-    colorscheme base16-default
+    colorscheme base16-ocean
   else
     " Settings for Terminator on Linux
     let g:molokai_original=1
