@@ -45,6 +45,7 @@ alias mm='mark'
 alias um='unmark'
 
 # Various
+alias fuck='$(thefuck $(fc -ln -1))'
 alias kindlesend='mutt zool.bib@kindle.com -s "new book" -a'
 alias kindlegen='~/bin/kindlegen'
 alias colorpicker="gcolor2"
