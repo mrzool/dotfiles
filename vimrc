@@ -144,7 +144,7 @@ if has("unix")
     " Settings for iTerm2 on OS X
     set background=dark
     let base16colorspace=256
-    colorscheme base16-default
+    colorscheme base16-ocean
   else
     " Settings for Terminator on Linux
     let g:molokai_original=1
@@ -194,9 +194,9 @@ set linebreak
 set autoindent
 set smartindent
 
-" Display non-printing chars
+" Whitespace settings
 set list
-set listchars=eol:¬,extends:>,precedes:<
+set listchars=eol:¬,extends:>,precedes:<,tab:>-
 
 set wrap
 autocmd FileType html setlocal nowrap

@@ -20,7 +20,7 @@ alias backport='sudo apt-get -t wheezy-backports install'
 alias installed='dpkg --get-selections'
 
 # Git aliases
-alias g="git"
+# alias g="git"
 alias gs="pwd"
 # alias gd="git diff"
 # alias ga="git add"
@@ -50,6 +50,7 @@ alias mm='mark'
 alias um='unmark'
 
 # Various
+alias fuck='$(thefuck $(fc -ln -1))'
 alias kindlesend='mutt zool.bib@kindle.com -s "new book" -a'
 alias kindlegen='~/bin/kindlegen'
 alias colorpicker="gcolor2"
