@@ -91,11 +91,6 @@ set wildignore=*.o,*~,*.pyc
 " show current position
 set ruler
 
-" show line numbers
-" set number
-set numberwidth=1
-set relativenumber
-
 " Height of the command bar
 set cmdheight=1
 
@@ -163,7 +158,9 @@ endif
 " Transparent split separator
 hi VertSplit ctermfg=244 ctermbg=NONE   cterm=bold
 
-" Fine-tune number column
+" Line numbers-related
+set numberwidth=2
+set relativenumber
 set foldcolumn=0
 highlight FoldColumn ctermbg=NONE
 highlight LineNr ctermbg=NONE
@@ -316,9 +313,9 @@ nnoremap <Leader>g :GundoToggle<CR>
 " Toggle Goyo
 nnoremap <Leader>g :Goyo<CR>
 
-" Open Ack
+" Open Ag
 nnoremap <leader>a :Ag 
-" Ack after selected text
+" Ag after selected text
 vnoremap <silent> ag :call VisualSelection('gv', '')<CR>
 " Search & replace selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
@@ -340,8 +337,10 @@ nnoremap <leader>r :call ToggleRelativeNumber()<CR>
 function! ToggleRelativeNumber()
   if &relativenumber
     set norelativenumber
+    set number
   else
     set relativenumber
+    set nonumber
   endif
 endfunction
 
@@ -349,7 +348,7 @@ endfunction
 autocmd FileType vim setlocal keywordprg=:help
 
 " Toggle/untoggle spell checking
-map <leader>ss :setlocal spell!<cr>
+nnoremap <leader>ss :setlocal spell!<cr>
 
 " Visual mode pressing * or # searches for the current selection
 vnoremap <silent> * :call VisualSelection('f', '')<CR>
