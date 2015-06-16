@@ -32,6 +32,11 @@ alias gs="pwd"
 # alias gpl="git pull"
 # alias gps="git push"
 
+# Vmail
+alias vmail="VMAIL_HOME=~/.vmail/zool.bib vmail"
+alias vvmail="VMAIL_HOME=~/.vmail/mattia.tezzele vmail"
+
+
 # Networking
 alias a2restart="sudo service apache2 restart"
 alias sss='python -m SimpleHTTPServer 8888 &'
@@ -54,3 +59,4 @@ alias mrregister="sh ~/bin/mrregister.sh"
 alias unrar="unrar x"
 alias vmail2="VMAIL_HOME=~/.vmail/mattia.tezzele vmail"
 alias gtypist="gtypist -S"
+alias 1pass="jump 1password && sss"
