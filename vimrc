@@ -33,7 +33,7 @@ Plugin 'tpope/vim-fugitive.git'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround.git'
-Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-commentary.git'
 Plugin 'garbas/vim-snipmate.git'
 Plugin 'honza/vim-snippets.git'
 Plugin 'sjl/gundo.vim'
@@ -90,10 +90,6 @@ set wildignore=*.o,*~,*.pyc
 
 " show current position
 set ruler
-
-" show line numbers
-set number
-set numberwidth=2
 
 " Height of the command bar
 set cmdheight=1
@@ -174,7 +170,9 @@ endif
 " Transparent split separator
 hi VertSplit ctermfg=244 ctermbg=NONE   cterm=bold
 
-" Fine-tune number column
+" Line numbers-related
+set numberwidth=2
+set relativenumber
 set foldcolumn=0
 highlight FoldColumn ctermbg=NONE
 highlight LineNr ctermbg=NONE
@@ -220,6 +218,9 @@ autocmd BufNewFile,BufRead *.md setlocal wrap
 " autocmd FileType markdown setlocal wrap
 " autocmd FileType liquid setlocal nowrap
 " autocmd FileType php setlocal nowrap
+
+" Wrap markdown at 80 chars
+au BufRead,BufNewFile *.md setlocal textwidth=80
 
 " Makes foo-bar considered one word
 set iskeyword+=- 
@@ -328,9 +329,9 @@ nnoremap <Leader>g :GundoToggle<CR>
 " Toggle Goyo
 nnoremap <Leader>g :Goyo<CR>
 
-" Open Ack
+" Open Ag
 nnoremap <leader>a :Ag 
-" Ack after selected text
+" Ag after selected text
 vnoremap <silent> ag :call VisualSelection('gv', '')<CR>
 " Search & replace selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
@@ -346,11 +347,24 @@ function! ToggleMouse()
   endif
 endfunction
 
+" Enable/disable relative numbers
+nnoremap <leader>r :call ToggleRelativeNumber()<CR>
+
+function! ToggleRelativeNumber()
+  if &relativenumber
+    set norelativenumber
+    set number
+  else
+    set relativenumber
+    set nonumber
+  endif
+endfunction
+
 " K opens help section for word under cursor
 autocmd FileType vim setlocal keywordprg=:help
 
 " Toggle/untoggle spell checking
-map <leader>ss :setlocal spell!<cr>
+nnoremap <leader>ss :setlocal spell!<cr>
 
 " Visual mode pressing * or # searches for the current selection
 vnoremap <silent> * :call VisualSelection('f', '')<CR>
@@ -369,7 +383,7 @@ map <C-l> <C-W>l
 " Run Syntastic check
 map <leader>sy :SyntasticCheck<cr>
 
-" PLUGINS SETTINGS
+" Plugins Settings
 
 " Settings for netrw
 let g:netrw_preview   = 1
@@ -407,7 +421,7 @@ let g:lightline = {
       \ }
       \ }
 
-" FUNCTIONS
+" Functions
 
 function! s:Underline(chars)
   let chars = empty(a:chars) ? '-' : a:chars
@@ -443,4 +457,3 @@ function! VisualSelection(direction, extra_filter) range
     let @/ = l:pattern
     let @" = l:saved_reg
 endfunction
-

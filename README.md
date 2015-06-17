@@ -3,7 +3,7 @@ zool's dotfiles
 
 Config files for my \*nix systems.
 
-OSs used: [Crunchbang](http://crunchbang.org/), Mac OS X.
+OSs used: [Crunchbang](http://crunchbang.org/) (RIP), Mac OS X.
 
 Tools of the trade
 ------------------
