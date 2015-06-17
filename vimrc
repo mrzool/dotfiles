@@ -24,7 +24,6 @@ Plugin 'StanAngeloff/php.vim'
 Plugin 'tpope/vim-liquid'
 
 " Interface
-" Plugin 'itchyny/lightline.vim'
 Plugin 'junegunn/goyo.vim'
 
 " Integrations
@@ -37,9 +36,10 @@ Plugin 'tpope/vim-surround.git'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'garbas/vim-snipmate.git'
 Plugin 'honza/vim-snippets.git'
-Plugin 'jiangmiao/auto-pairs'
 Plugin 'sjl/gundo.vim'
 Plugin 'vim-scripts/grep.vim'
+Plugin 'Raimondi/delimitMate'
+'
 
 " Others
 Plugin 'MarcWeber/vim-addon-mw-utils.git'
