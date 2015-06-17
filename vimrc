@@ -106,14 +106,16 @@ set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
 " Custom status line
-set statusline=%t      " Name of file in the buffer
-set statusline+=%m     " Modified flag
-set statusline+=%=     " Align to the right
-set statusline+=%y     " Type of file in the buffer
-set statusline+=%5l    " Current line
-set statusline+=/      " Separator
-set statusline+=%L     " Total lines
-set statusline+=%5p%%  " Percentage through file
+set statusline=%f   " Path to the file in the buffer
+set statusline+=%m  " Modified flag
+set statusline+=%=  " Align to the right from now on
+set statusline+=[%{fugitive#head()}]   " Current branch
+set statusline+=\ \  " Blank space
+set statusline+=%y   " Type of file in the buffer
+set statusline+=%5l  " Current line
+set statusline+=/    " Slash
+set statusline+=%-5L " Total lines
+set statusline+=%p%% " Percentage through the file
 
 " Search tweaks
 set ignorecase
