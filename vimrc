@@ -12,7 +12,6 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'chriskempson/base16-vim'
 Plugin 'tomasr/molokai'
-Plugin 'tpope/vim-liquid'
 
 " Syntax
 Plugin 'scrooloose/syntastic.git'
@@ -22,9 +21,10 @@ Plugin 'hail2u/vim-css3-syntax.git'
 Plugin 'elzr/vim-json'
 Plugin 'pangloss/vim-javascript'
 Plugin 'StanAngeloff/php.vim'
+Plugin 'tpope/vim-liquid'
 
 " Interface
-Plugin 'itchyny/lightline.vim'
+" Plugin 'itchyny/lightline.vim'
 Plugin 'junegunn/goyo.vim'
 
 " Integrations
@@ -105,6 +105,16 @@ set hidden
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
+" Custom status line
+set statusline=%t      " Name of file in the buffer
+set statusline+=%m     " Modified flag
+set statusline+=%=     " Align to the right
+set statusline+=%y     " Type of file in the buffer
+set statusline+=%5l    " Current line
+set statusline+=/      " Separator
+set statusline+=%L     " Total lines
+set statusline+=%5p%%  " Percentage through file
+
 " Search tweaks
 set ignorecase
 set smartcase
@@ -134,7 +144,7 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 set laststatus=2
 
 " hide default mode indicator
-set noshowmode
+" set noshowmode
 
 " Number of colors
 set t_Co=256
@@ -163,7 +173,7 @@ endif
 hi VertSplit ctermfg=244 ctermbg=NONE   cterm=bold
 
 " Fine-tune number column
-set foldcolumn=1
+set foldcolumn=0
 highlight FoldColumn ctermbg=NONE
 highlight LineNr ctermbg=NONE
 
@@ -187,10 +197,13 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 " Do not fold, ever
 set nofoldenable
 
+" Insert space characters whenever the tab key is pressed
 set expandtab
-set smarttab
-set shiftwidth=2
+" How many spaces for a tab
 set tabstop=2
+" How many spaces for indentation
+set shiftwidth=2
+set smarttab
 set linebreak
 " set tw=500
 set autoindent
@@ -198,12 +211,13 @@ set smartindent
 
 " Whitespace settings
 set list
-set listchars=eol:¬,extends:>,precedes:<,tab:>-
+set listchars=eol:¬,extends:>,precedes:<,tab:\ \ 
 
-set wrap
-autocmd FileType html setlocal nowrap
-autocmd FileType liquid setlocal nowrap
-autocmd FileType php setlocal nowrap
+set nowrap
+autocmd BufNewFile,BufRead *.md setlocal wrap
+" autocmd FileType markdown setlocal wrap
+" autocmd FileType liquid setlocal nowrap
+" autocmd FileType php setlocal nowrap
 
 " Makes foo-bar considered one word
 set iskeyword+=- 
@@ -427,3 +441,4 @@ function! VisualSelection(direction, extra_filter) range
     let @/ = l:pattern
     let @" = l:saved_reg
 endfunction
+
