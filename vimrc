@@ -235,6 +235,10 @@ set viminfo^=%
 " Open vertical splits to the right
 set splitright
 
+" Abbreviations
+inoreabbrev teh the
+inoreabbrev usign using
+
 " Custom mappings
 
 " Remap VIM 0 to first non-blank character
