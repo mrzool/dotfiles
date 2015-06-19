@@ -321,10 +321,10 @@ nnoremap ' `
 nnoremap ` '
 
 " Toggle Gundo
-nnoremap <Leader>g :GundoToggle<CR>
+nnoremap <Leader>gu :GundoToggle<CR>
 
 " Toggle Goyo
-nnoremap <Leader>g :Goyo<CR>
+nnoremap <Leader>go :Goyo<CR>
 
 " Open Ag
 nnoremap <leader>a :Ag 
