@@ -79,7 +79,12 @@ set ttyfast
 set scrolloff=7
 
 " Always show tab bar
-set showtabline=1
+set showtabline=2
+
+set helpheight=5
+
+" Always show the status line
+set laststatus=2
 
 " Turn on the wild menu
 set wildmenu
@@ -104,6 +109,7 @@ set whichwrap+=<,>,h,l
 " Custom status line
 set statusline=%f   " Path to the file in the buffer
 set statusline+=%m  " Modified flag
+" set statusline+=%5{v:register} "Which active register
 set statusline+=%=  " Align to the right from now on
 set statusline+=[%{fugitive#head()}]   " Current branch
 set statusline+=\ \  " Blank space
@@ -138,9 +144,6 @@ set timeoutlen=300
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
-" Always show the status line
-set laststatus=2
-
 " hide default mode indicator
 " set noshowmode
 
@@ -170,17 +173,12 @@ endif
 " Transparent split separator
 hi VertSplit ctermfg=244 ctermbg=NONE   cterm=bold
 
-" Line numbers-related
+" Line numbers tweaks
+set number
 set numberwidth=2
-set relativenumber
 set foldcolumn=0
 highlight FoldColumn ctermbg=NONE
 highlight LineNr ctermbg=NONE
-
-" let g:solarized_termcolors=256
-" let g:solarized_termtrans=1
-" set background=dark
-" colorscheme solarized
 
 " Turn backup off
 set nobackup
@@ -204,7 +202,6 @@ set tabstop=2
 " How many spaces for indentation
 set shiftwidth=2
 set smarttab
-set linebreak
 " set tw=500
 set autoindent
 set smartindent
@@ -213,22 +210,18 @@ set smartindent
 set list
 set listchars=eol:¬,extends:>,precedes:<,tab:\ \ 
 
-set nowrap
-autocmd BufNewFile,BufRead *.md setlocal wrap
-" autocmd FileType markdown setlocal wrap
-" autocmd FileType liquid setlocal nowrap
-" autocmd FileType php setlocal nowrap
+" Wrap related
+set nowrap " Leave text alone unless otherwise specified
+set textwidth=0 " Never insert EOL in text
+set wrapmargin=0
 
-" Wrap markdown at 80 chars
-au BufRead,BufNewFile *.md setlocal textwidth=80
+" Wrap text only in markdown files
+autocmd BufNewFile,BufRead *.md setlocal wrap
+autocmd FileType markdown setlocal wrap
+set linebreak " Do not amputate words
 
 " Makes foo-bar considered one word
 set iskeyword+=- 
-
-" Turn off physical line wrapping
-" set textwidth=0 
-" set wrapmargin=0
-" set formatoptions-=t
 
 " Return to last edit position when opening files
 autocmd BufReadPost *
@@ -239,7 +232,7 @@ autocmd BufReadPost *
 " Remember info about open buffers on close
 set viminfo^=%
 
-" Open vsplits to the right
+" Open vertical splits to the right
 set splitright
 
 " Custom mappings
@@ -403,23 +396,6 @@ let g:snipMate.scope_aliases['liquid'] = 'liquid,html'
 
 " Gundo settings
 let g:gundo_preview_bottom = 1
-
-" Lightline settings
-let g:lightline = {
-      \ 'colorscheme': 'solarized',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'filename', 'modified' ] ]
-      \ },
-      \ 'component': {
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-      \ }
-      \ }
 
 " Functions
 
