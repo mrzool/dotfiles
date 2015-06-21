@@ -68,3 +68,7 @@ COMPREPLY=($(compgen -W '${marks[@]}' -- "$cur"))
 return 0
   }
   complete -o default -o nospace -F _jump jump
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+source ~/.profile
