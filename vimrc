@@ -384,6 +384,11 @@ map <C-l> <C-W>l
 " Run Syntastic check
 map <leader>sy :SyntasticCheck<cr>
 
+" Make links in help pages stand out
+set conceallevel=0
+hi link HelpBar Normal 
+hi link HelpStar Normal
+
 " Plugins Settings
 
 " Settings for netrw
