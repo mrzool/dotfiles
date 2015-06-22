@@ -267,9 +267,13 @@ nnoremap <silent> <Leader>< :exe "vertical resize -5"<CR>
 " HTML/CSS view
 nnoremap <silent> <Leader>c :exe ":30winc >"<CR>
 
-" Treat long lines as break lines
+" Move per visual line
 nnoremap j gj
 nnoremap k gk
+
+" Move per real line
+nnoremap gj j
+nnoremap gk k
 
 " Underline current line
 nnoremap <Leader>u :Underline<CR>
