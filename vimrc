@@ -26,6 +26,7 @@ Plugin 'liamcurry/tumblr.vim.git'
 
 " Interface
 Plugin 'junegunn/goyo.vim'
+Plugin 'tpope/vim-vinegar.git'
 
 " Integrations
 Plugin 'kien/ctrlp.vim'
