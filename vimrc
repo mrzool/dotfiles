@@ -121,6 +121,12 @@ set statusline+=/    " Slash
 set statusline+=%-5L " Total lines
 set statusline+=%p%% " Percentage through the file
 
+" Highlight status bar when in insert mode
+if version >= 700
+  au InsertEnter * hi StatusLine ctermfg=235 ctermbg=2
+  au InsertLeave * hi StatusLine ctermbg=19 ctermfg=20
+endif
+
 " Search tweaks
 set ignorecase
 set smartcase
