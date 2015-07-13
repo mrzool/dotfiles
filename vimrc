@@ -364,6 +364,9 @@ function! ToggleMouse()
   endif
 endfunction
 
+" Get mouse working when running Vim in tmux
+set ttymouse=xterm2
+
 " Enable/disable relative numbers
 nnoremap <leader>r :call ToggleRelativeNumber()<CR>
 
