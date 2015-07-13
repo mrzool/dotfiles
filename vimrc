@@ -80,8 +80,8 @@ set ttyfast
 " Set 7 lines to the cursor
 set scrolloff=7
 
-" Never show the tab bar
-set showtabline=0
+" Show tab bar if there are at least two tabs
+set showtabline=1
 
 set helpheight=5
 
