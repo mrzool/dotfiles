@@ -299,7 +299,7 @@ noremap <leader>ev :execute 'tabe ' . resolve(expand($MYVIMRC))<CR>
 " nnoremap <leader>ev :tabe $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
-" Jump to matching item with tab 
+" Jump to matching item with tab
 " This conflicts with the default <c-i> behavior
 " nnoremap <tab> %
 " vnoremap <tab> %
@@ -392,13 +392,16 @@ noremap <space> /
 noremap <c-space> ?
 
 " Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+noremap <C-j> <C-W>j
+noremap <C-k> <C-W>k
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
 
 " Run Syntastic check
-map <leader>sy :SyntasticCheck<cr>
+noremap <leader>sy :SyntasticCheck<cr>
+
+" Pipe buffer content in system clipboard
+noremap <leader>c :w !pbcopy<CR>
 
 " Make links in help pages stand out
 set conceallevel=0
