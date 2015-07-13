@@ -251,6 +251,9 @@ set splitright
 " Abbreviations
 inoreabbrev teh the
 inoreabbrev usign using
+inoreabbrev lokk look
+inoreabbrev hwo how
+
 
 " Custom mappings
 
