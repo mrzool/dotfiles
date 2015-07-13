@@ -62,11 +62,17 @@ set dictionary=/usr/share/dict/words
 
 let mapleader = "-"
 
-" Treat all numerals as decimal
-set nrformats=
+" Treat numerals as decimal
+set nrformats -=octal
 
 " Substitute globally on lines
 set gdefault
+
+set ttimeout
+set ttimeoutlen=100
+
+" Show partially typed commands at the bottom
+set showcmd
 
 " Persistent undos
 " set undofile
