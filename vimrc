@@ -183,7 +183,7 @@ if has("unix")
 endif
 
 " Transparent split separator
-hi VertSplit ctermfg=244 ctermbg=NONE   cterm=bold
+highlight VertSplit ctermfg=244 ctermbg=NONE   cterm=bold
 
 " Line numbers tweaks
 set number
@@ -233,7 +233,7 @@ autocmd FileType markdown setlocal wrap
 set linebreak " Do not amputate words
 
 " Makes foo-bar considered one word
-set iskeyword+=- 
+set iskeyword+=-
 
 " Return to last edit position when opening files
 autocmd BufReadPost *
