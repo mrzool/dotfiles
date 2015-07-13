@@ -23,6 +23,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'tpope/vim-liquid'
 Plugin 'liamcurry/tumblr.vim.git'
+Plugin 'keith/tmux.vim'
 
 " Interface
 Plugin 'junegunn/goyo.vim'
