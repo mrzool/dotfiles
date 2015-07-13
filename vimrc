@@ -68,9 +68,6 @@ set nrformats=
 " Substitute globally on lines
 set gdefault
 
-" Add dictionary to default sources for autocompletion
-" set complete+=k
-
 " Persistent undos
 " set undofile
 
@@ -88,9 +85,11 @@ set helpheight=5
 " Always show the status line
 set laststatus=2
 
-" Turn on the wild menu
-set wildmenu
-set wildmode=list:longest
+" Configure autocompletion
+inoremap <Tab> <C-P>
+set complete=.,b,u,] " Pull from current file, other buffers, and current tags
+set wildmenu " Turn on wildmenu
+set wildmode=longest,list:longest " How text gets replaced
 
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
