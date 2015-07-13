@@ -11,6 +11,7 @@ Tools of the trade
 This repo includes dotfiles for:
 
 - bash
+- tmux
 - git
 - vim
 - ack
