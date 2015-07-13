@@ -221,7 +221,7 @@ set smartindent
 
 " Whitespace settings
 set list
-set listchars=eol:¬,extends:>,precedes:<,tab:\ \ 
+set listchars=eol:¬,extends:…,precedes:…,tab:\ \ 
 
 " Wrap related
 set nowrap " Leave text alone unless otherwise specified
