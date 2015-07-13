@@ -38,11 +38,10 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 BASE16_SHELL="/Users/zool/.config/base16-shell/base16-ocean.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
-# activates tab completion for homebrew
+# tab completion
 source `brew --repository`/Library/Contributions/brew_bash_completion.sh
-
-# activates tab completion for git
 source ~/bin/git-completion.bash
+source ~/bin/tmux.completion.bash
 
 # correctly load tools installed by homebrew
 export PATH=/usr/local/bin:$PATH
