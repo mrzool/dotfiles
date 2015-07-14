@@ -9,34 +9,34 @@ set realname = $my_realname
 set imap_user = $my_adress
 set imap_pass = $my_pass
 
-# REMOTE GMAIL FOLDERS
+# Remote Gmail folders
 set folder = $my_folder
 set spoolfile = "+INBOX"
-#set postponed ="+[Google Mail]/Drafts"
-#set trash = "+[Google Mail]/Trash"
-#set any_label = "+[Google Mail]/any_label"
+set postponed ="+[Google Mail]/Drafts"
+# set trash = "+[Google Mail]/Trash"
+# set any_label = "+[Google Mail]/any_label"
 
-# LOCAL FOLDERS FOR CACHED HEADERS AND CERTIFICATES
+# Local folders for cached headers and certificates
 set header_cache ="~/.mutt/cache/headers"
 set message_cachedir ="~/.mutt/cache/bodies"
 set certificate_file ="~/.mutt/certificates"
 
-# SMTP SETTINGS
+# SMTP settings
 set smtp_url = $my_smtp_url
 set smtp_pass = $my_pass # use the same passowrd as for IMAP
 
-# SECURING
+# Securing
 #set move = no  #Stop asking to "move read messages to mbox"!
 set imap_keepalive = 900
 
-# EMAIL CHECK
+# Email check
 set timeout=10    # mutt 'presses' (like) a key for you (while you're idle) 
                   # each x sec to trigger the thing below
 set mail_check=5  # mutt checks for new mails on every keystroke
                   # but not more often then once in 5 seconds
 set beep_new      # beep on new messages in the mailboxes
 
-# OTHER SETTINGS
+# Other settings
 set sort = 'threads'
 set sort_aux = 'reverse-last-date-received'
 
