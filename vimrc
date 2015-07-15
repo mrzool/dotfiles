@@ -114,7 +114,7 @@ set hidden
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
-" Custom status line
+" Status line
 set statusline=%f   " Path to the file in the buffer
 set statusline+=%m  " Modified flag
 " set statusline+=%5{v:register} "Which active register
@@ -184,12 +184,12 @@ if has("unix")
     let g:molokai_original=1
     let g:rehash256=1
     colorscheme molokai
-    "Transparent background
+    " Transparent background
     hi Normal guibg=NONE ctermbg=NONE
   endif
 endif
 
-" Transparent split separator
+" Transparent vertical split separator
 highlight VertSplit ctermfg=244 ctermbg=NONE   cterm=bold
 
 " Line numbers tweaks
