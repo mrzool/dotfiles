@@ -69,6 +69,7 @@ set nrformats -=octal
 " Substitute globally on lines
 set gdefault
 
+" How much time does Vim wait between keystrokes in composite commands
 set ttimeout
 set ttimeoutlen=100
 
@@ -306,7 +307,8 @@ noremap <leader>ev :execute 'tabe ' . resolve(expand($MYVIMRC))<CR>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Jump to matching item with tab
-" This conflicts with the default <c-i> behavior
+" Sadly this conflicts with the default <C-i> behavior
+" Still no fix found
 " nnoremap <tab> %
 " vnoremap <tab> %
 
@@ -387,6 +389,7 @@ function! ToggleRelativeNumber()
 endfunction
 
 " K opens help section for word under cursor
+" Super-useful when editing the vimrc
 autocmd FileType vim setlocal keywordprg=:help
 
 " Toggle/untoggle spell checking
