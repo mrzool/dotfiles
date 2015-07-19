@@ -1,19 +1,31 @@
+"------------------------------------------------------------
+" Sections:
+" - Plugins
+" - General options
+" - Files and buffers
+" - Search and completion
+" - Text and whitespace
+" - User Interface
+" - Abbreviations
+" - Custom mappings and functions
+" - Plugins Settings
+"------------------------------------------------------------
+
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 
+"------------------------------------------------------------
 " Plugins
 
 Plugin 'gmarik/Vundle.vim'
 
-" Colorschemes
+" Colorschemes and Syntax
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'chriskempson/base16-vim'
 Plugin 'tomasr/molokai'
-
-" Syntax
 Plugin 'scrooloose/syntastic.git'
 Plugin 'othree/html5.vim.git'
 Plugin 'cakebaker/scss-syntax.vim.git'
@@ -24,12 +36,16 @@ Plugin 'StanAngeloff/php.vim'
 Plugin 'tpope/vim-liquid'
 Plugin 'liamcurry/tumblr.vim.git'
 Plugin 'keith/tmux.vim'
+Plugin 'tpope/vim-git'
 
 " Interface
 Plugin 'junegunn/goyo.vim'
 Plugin 'tpope/vim-vinegar.git'
 
 " Integrations
+Plugin 'vim-scripts/matchit.zip'
+Plugin 'MarcWeber/vim-addon-mw-utils.git'
+Plugin 'tomtom/tlib_vim.git'
 Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-fugitive.git'
@@ -37,24 +53,26 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround.git'
 Plugin 'tpope/vim-commentary.git'
+Plugin 'tpope/vim-obsession.git'
 Plugin 'garbas/vim-snipmate.git'
 Plugin 'honza/vim-snippets.git'
 Plugin 'sjl/gundo.vim'
 Plugin 'vim-scripts/grep.vim'
 Plugin 'Raimondi/delimitMate'
-'
-
-" Others
-Plugin 'MarcWeber/vim-addon-mw-utils.git'
-Plugin 'vim-scripts/matchit.zip'
-Plugin 'tomtom/tlib_vim.git'
 
 call vundle#end()
 
 filetype plugin on
 filetype indent on
 
-runtime macros/matchit.vim
+" Load stock matchit.vim if no newer version available
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime! macros/matchit.vim
+endif
+
+"------------------------------------------------------------
+" General options
+
 set encoding=utf8
 set history=700
 set autoread
@@ -66,54 +84,127 @@ let mapleader = "-"
 " Treat numerals as decimal
 set nrformats -=octal
 
-" Substitute globally on lines
-set gdefault
-
 " How much time does Vim wait between keystrokes in composite commands
 set ttimeout
 set ttimeoutlen=100
 
-" Show partially typed commands at the bottom
-set showcmd
-
 " Persistent undos
 " set undofile
 
-" Improve smoothness
-set ttyfast
+" Get mouse working when running Vim in tmux
+set ttymouse=xterm2
 
-" Set 7 lines to the cursor
-set scrolloff=7
+" Configure backspace
+set backspace=eol,start,indent
 
-" Show tab bar if there are at least two tabs
-set showtabline=1
+" Jump to next/previous line when moving left/right
+" set whichwrap+=<,>
 
-set helpheight=5
+" Do not store global, local values or folds in a session 
+set ssop-=options
+set ssop-=folds
 
-" Always show the status line
-set laststatus=2
+"------------------------------------------------------------
+" Files and buffers
 
-" Configure autocompletion
+" A buffer becomes hidden when it is abandoned
+set hidden
+
+" Turn backup off
+set nobackup
+set nowritebackup
+set noswapfile
+
+" Forces *.md as markdown
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" Return to last edit position when opening files
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
+
+" Remember info about open buffers on close
+set viminfo^=%
+
+"------------------------------------------------------------
+" Search and completion
+
+" Substitute globally on lines
+set gdefault
+
+" Search tweaks
+set ignorecase
+set smartcase
+set incsearch
+
+" Turn magic on for regex
+set magic
+
+" Set path as project path and search it recursively
+" (fixes 'file not found' error when using 'gf')
+set path+=$PWD/**
+
+" Autocompletion settings
 inoremap <Tab> <C-P>
 set complete=.,b,u,] " Pull from current file, other buffers, and current tags
 set wildmenu " Turn on wildmenu
 set wildmode=longest,list:longest " How text gets replaced
+set wildignore=*.o,*~,*.pyc " Ignore compiled files when autocompleting
 
-" Ignore compiled files
-set wildignore=*.o,*~,*.pyc
+"------------------------------------------------------------
+" Text and whitespace
+
+" Do not fold, ever
+set nofoldenable
+
+" Insert space characters whenever the tab key is pressed
+set expandtab
+" How many spaces for a tab
+set tabstop=2
+" How many spaces for indentation
+set shiftwidth=2
+set smarttab
+" set tw=500
+set autoindent
+set smartindent
+
+" Wrap related
+set nowrap " Leave text alone unless otherwise specified
+set textwidth=0 " Never insert line-breaks in text
+set wrapmargin=0
+
+" Wrap text only in markdown files
+autocmd BufNewFile,BufRead *.md setlocal wrap
+autocmd FileType markdown setlocal wrap
+set linebreak " Do not amputate words
+
+" Makes foo-bar considered one word
+set iskeyword+=-
+
+"------------------------------------------------------------
+" User Interface
+
+" Improve smoothness
+set ttyfast
+
+" Don't redraw while executing macros
+set lazyredraw
+
+" Show partially typed commands at the bottom
+set showcmd
+
+" Keep cursor 5 lines from window borders when scrolling
+set scrolloff=5
+
+" Always show the status line
+set laststatus=2
 
 " show current position
 set ruler
 
 " Height of the command bar
 set cmdheight=1
-
-" A buffer becomes hidden when it is abandoned
-set hidden
-
-" Configure backspace
-set backspace=eol,start,indent
-set whichwrap+=<,>,h,l
 
 " Status line
 set statusline=%f   " Path to the file in the buffer
@@ -129,31 +220,10 @@ set statusline+=%-5L " Total lines
 set statusline+=%p%% " Percentage through the file
 
 " Highlight status bar when in insert mode
-if version >= 700
-  au InsertEnter * hi StatusLine ctermfg=235 ctermbg=2
-  au InsertLeave * hi StatusLine ctermbg=19 ctermfg=20
-endif
-
-" Search tweaks
-set ignorecase
-set smartcase
-set incsearch
-
-" Don't redraw while executing macros
-set lazyredraw
-
-" Turn magic on for regex
-set magic
-
-" Show matching brackets
-set showmatch
-set matchtime=15
-
-" No bells
-set noerrorbells
-set novisualbell
-set t_vb=
-set timeoutlen=300
+" if version >= 700
+"   au InsertEnter * hi StatusLine ctermfg=235 ctermbg=2
+"   au InsertLeave * hi StatusLine ctermbg=19 ctermfg=20
+" endif
 
 " Switch cursor shape when changing modes
 if exists('$TMUX')
@@ -200,74 +270,46 @@ set foldcolumn=0
 highlight FoldColumn ctermbg=NONE
 highlight LineNr ctermbg=NONE
 
-" Turn backup off
-set nobackup
-set nowritebackup
-set noswapfile
-
-" Do not store global, local values or folds in a session 
-set ssop-=options
-set ssop-=folds
-
-" Forces *.md as markdown
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-
-" Do not fold, ever
-set nofoldenable
-
-" Insert space characters whenever the tab key is pressed
-set expandtab
-" How many spaces for a tab
-set tabstop=2
-" How many spaces for indentation
-set shiftwidth=2
-set smarttab
-" set tw=500
-set autoindent
-set smartindent
-
 " Whitespace settings
 set list
 set listchars=eol:¬,extends:…,precedes:…,tab:\ \ 
 
-" Wrap related
-set nowrap " Leave text alone unless otherwise specified
-set textwidth=0 " Never insert EOL in text
-set wrapmargin=0
-
-" Wrap text only in markdown files
-autocmd BufNewFile,BufRead *.md setlocal wrap
-autocmd FileType markdown setlocal wrap
-set linebreak " Do not amputate words
-
-" Makes foo-bar considered one word
-set iskeyword+=-
-
-" Return to last edit position when opening files
-autocmd BufReadPost *
-     \ if line("'\"") > 0 && line("'\"") <= line("$") |
-     \   exe "normal! g`\"" |
-     \ endif
-
-" Remember info about open buffers on close
-set viminfo^=%
-
 " Open vertical splits to the right
 set splitright
 
+" Show tab bar if there are at least two tabs
+set showtabline=1
+
+" Show matching brackets
+set showmatch
+set matchtime=15
+
+" No bells
+set noerrorbells
+set novisualbell
+set t_vb=
+set timeoutlen=300
+
+" Make links in help pages stand out
+set conceallevel=0
+hi link HelpBar Normal 
+hi link HelpStar Normal
+
+
+"------------------------------------------------------------
 " Abbreviations
 inoreabbrev teh the
 inoreabbrev usign using
 inoreabbrev lokk look
 inoreabbrev hwo how
 
-
-" Custom mappings
+"------------------------------------------------------------
+" Custom mappings and functions
 
 " Remap VIM 0 to first non-blank character
 noremap 0 ^
 
-" make y behave like other capitals
+" make Y behave D and C
 nnoremap Y y$
 
 " Insert line break
@@ -301,9 +343,18 @@ nnoremap gk k
 " Underline current line
 nnoremap <Leader>u :Underline<CR>
 
-" Edit/source the .vimrc
-noremap <leader>ev :execute 'tabe ' . resolve(expand($MYVIMRC))<CR>
+function! s:Underline(chars)
+  let chars = empty(a:chars) ? '-' : a:chars
+  let nr_columns = virtcol('$') - 1
+  let uline = repeat(chars, (nr_columns / len(chars)) + 1)
+  put =strpart(uline, 0, nr_columns)
+endfunction
+
+command! -nargs=? Underline call s:Underline(<q-args>)
+
+" Edit/source vimrc
 " nnoremap <leader>ev :tabe $MYVIMRC<cr>
+noremap <leader>ev :execute 'tabe ' . resolve(expand($MYVIMRC))<CR>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Jump to matching item with tab
@@ -323,9 +374,6 @@ vmap <Leader>P "+P
 
 " Expands path of current buffer on the command prompt
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
-
-" Super-duper force write
-cnoremap w!! w !sudo tee %
 
 " Maps jj to esc
 inoremap jj <Esc>
@@ -354,102 +402,16 @@ nnoremap <Leader>gu :GundoToggle<CR>
 " Toggle Goyo
 nnoremap <Leader>go :Goyo<CR>
 
+" Visual mode pressing * or # searches for the current selection
+vnoremap <silent> * :call VisualSelection('f', '')<CR>
+vnoremap <silent> # :call VisualSelection('b', '')<CR>
+
 " Open Ag
 nnoremap <leader>a :Ag 
 " Ag after selected text
 vnoremap <silent> ag :call VisualSelection('gv', '')<CR>
 " Search & replace selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
-
-" Enable/disable the mouse
-nnoremap <leader>m :call ToggleMouse()<CR>
-
-function! ToggleMouse()
-  if &mouse == "a"
-    set mouse=
-  else
-    set mouse=a
-  endif
-endfunction
-
-" Get mouse working when running Vim in tmux
-set ttymouse=xterm2
-
-" Enable/disable relative numbers
-nnoremap <leader>r :call ToggleRelativeNumber()<CR>
-
-function! ToggleRelativeNumber()
-  if &relativenumber
-    set norelativenumber
-    set number
-  else
-    set relativenumber
-    set nonumber
-  endif
-endfunction
-
-" K opens help section for word under cursor
-" Super-useful when editing the vimrc
-autocmd FileType vim setlocal keywordprg=:help
-
-" Toggle/untoggle spell checking
-nnoremap <leader>ss :setlocal spell!<cr>
-
-" Visual mode pressing * or # searches for the current selection
-vnoremap <silent> * :call VisualSelection('f', '')<CR>
-vnoremap <silent> # :call VisualSelection('b', '')<CR>
-
-" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-noremap <space> /
-noremap <c-space> ?
-
-" Smart way to move between windows
-noremap <C-j> <C-W>j
-noremap <C-k> <C-W>k
-noremap <C-h> <C-W>h
-noremap <C-l> <C-W>l
-
-" Run Syntastic check
-noremap <leader>sy :SyntasticCheck<cr>
-
-" Pipe buffer content in system clipboard
-noremap <leader>c :w !pbcopy<CR>
-
-" Make links in help pages stand out
-set conceallevel=0
-hi link HelpBar Normal 
-hi link HelpStar Normal
-
-" Plugins Settings
-
-" Settings for netrw
-let g:netrw_preview   = 1
-let g:netrw_liststyle = 3
-let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
-let g:netrw_browsex_viewer = 'google-chrome'
-
-"  CtrlP settings
-let g:ctrlp_map = 'FF'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|_site|output)|(\.(swp|ico|git|svn))$'
-
-" Load HTML scope in snipmate whenever working with liquid files
-let g:snipMate = {}
-let g:snipMate.scope_aliases = {}
-let g:snipMate.scope_aliases['liquid'] = 'liquid,html'
-
-" Gundo settings
-let g:gundo_preview_bottom = 1
-
-" Functions
-
-function! s:Underline(chars)
-  let chars = empty(a:chars) ? '-' : a:chars
-  let nr_columns = virtcol('$') - 1
-  let uline = repeat(chars, (nr_columns / len(chars)) + 1)
-  put =strpart(uline, 0, nr_columns)
-endfunction
-command! -nargs=? Underline call s:Underline(<q-args>)
 
 function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
@@ -477,3 +439,93 @@ function! VisualSelection(direction, extra_filter) range
     let @/ = l:pattern
     let @" = l:saved_reg
 endfunction
+
+" Enable/disable the mouse
+nnoremap <leader>m :call ToggleMouse()<CR>
+
+function! ToggleMouse()
+  if &mouse == "a"
+    set mouse=
+  else
+    set mouse=a
+  endif
+endfunction
+
+" Enable/disable relative numbers
+nnoremap <leader>r :call ToggleRelativeNumber()<CR>
+
+function! ToggleRelativeNumber()
+  if &relativenumber
+    set norelativenumber
+    set number
+  else
+    set relativenumber
+    set nonumber
+  endif
+endfunction
+
+" K opens help section for word under cursor
+" Super-useful while editing the vimrc
+autocmd FileType vim setlocal keywordprg=:help
+
+" Toggle/untoggle spell checking
+nnoremap <leader>ss :setlocal spell!<cr>
+
+" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
+noremap <space> /
+noremap <c-space> ?
+
+" Smart way to move between windows
+noremap <C-j> <C-W>j
+noremap <C-k> <C-W>k
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
+
+" Run Syntastic check
+noremap <leader>sy :SyntasticCheck<cr>
+
+" Pipe buffer content in system clipboard
+noremap <leader>c :w !pbcopy<CR>
+
+"------------------------------------------------------------
+" Plugins Settings
+
+" Netrw Settings
+let g:netrw_preview   = 1
+let g:netrw_liststyle = 3
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+let g:netrw_browsex_viewer = 'google-chrome'
+
+" CtrlP settings
+let g:ctrlp_map = 'FF'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|_site|output)|(\.(swp|ico|git|svn))$'
+
+" Gundo settings
+let g:gundo_preview_bottom = 1
+
+" Snipmate settings
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['liquid'] = 'liquid,html' " loads HTML snippets in liquid files
+
+" Goyo settings
+function! s:goyo_enter()
+  silent !tmux set status off
+  set noshowmode
+  set noshowcmd
+  set nolist
+  set noruler
+endfunction
+
+function! s:goyo_leave()
+  silent !tmux set status on
+  set showmode
+  set showcmd
+  set list
+  set ruler
+  source $MYVIMRC
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
