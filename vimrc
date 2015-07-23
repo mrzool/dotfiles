@@ -184,6 +184,10 @@ autocmd BufNewFile,BufRead *.md setlocal wrap
 autocmd FileType markdown setlocal wrap
 set linebreak " Do not amputate words
 
+" Highlight whitespace using symbols
+set list
+set listchars=eol:¬,extends:…,precedes:…,tab:\ \ 
+
 " Makes foo-bar considered one word
 set iskeyword+=-
 
@@ -245,6 +249,7 @@ endif
 " Number of colors
 set t_Co=256
 
+" Duh
 syntax enable
 
 " Colorscheme settings
@@ -275,10 +280,6 @@ set foldcolumn=0
 highlight FoldColumn ctermbg=NONE
 highlight LineNr ctermbg=NONE
 
-" Whitespace settings
-set list
-set listchars=eol:¬,extends:…,precedes:…,tab:\ \ 
-
 " Open vertical splits to the right
 set splitright
 
@@ -300,9 +301,12 @@ set conceallevel=0
 hi link HelpBar Normal 
 hi link HelpStar Normal
 
+" Smaller help window
+set helpheight=12
 
 "------------------------------------------------------------
 " Abbreviations
+
 inoreabbrev teh the
 inoreabbrev usign using
 inoreabbrev lokk look
