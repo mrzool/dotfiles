@@ -496,6 +496,10 @@ noremap <leader>sy :SyntasticCheck<cr>
 " Pipe buffer content in system clipboard
 noremap <leader>c :w !pbcopy<CR>
 
+" New buffer from visual selection
+vnoremap <leader>n d:vnew<CR>P
+
+
 "------------------------------------------------------------
 " Plugins Settings
 
