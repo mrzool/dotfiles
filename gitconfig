@@ -27,3 +27,5 @@
 	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
 [status]
 	submodulesummary = true
+[github]
+	user = mrzool
