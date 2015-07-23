@@ -59,6 +59,11 @@ Plugin 'honza/vim-snippets.git'
 Plugin 'sjl/gundo.vim'
 Plugin 'vim-scripts/grep.vim'
 Plugin 'Raimondi/delimitMate'
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
+" Plugin 'vim-pandoc/vim-pandoc'
+" Plugin 'vim-pandoc/vim-pandoc-syntax'
+
 
 call vundle#end()
 
