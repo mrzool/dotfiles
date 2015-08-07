@@ -38,7 +38,10 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 BASE16_SHELL="/Users/zool/.config/base16-shell/base16-ocean.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
-# tab completion
+# Completion Settings
+bind "set completion-ignore-case on"
+bind "set show-all-if-ambiguous on"
+
 source `brew --repository`/Library/Contributions/brew_bash_completion.sh
 source ~/bin/git-completion.bash
 source ~/bin/tmux.completion.bash
