@@ -152,7 +152,6 @@ set magic
 set path+=$PWD/**
 
 " Autocompletion settings
-inoremap <Tab> <C-P>
 set complete=.,b,u,] " Pull from current file, other buffers, and current tags
 set wildmenu " Turn on wildmenu
 set wildmode=longest,list:longest " How text gets replaced
@@ -388,12 +387,9 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 " Maps jj to esc
 inoremap jj <Esc>
 
-" Uppercase current word
-inoremap <c-u> <esc>viwUA
-
 " Compile TeX document
-map <leader>t :! pdflatex %<CR>
-map <leader>x :! xelatex %<CR>
+nnoremap <leader>t :! pdflatex %<CR>
+nnoremap <leader>x :! xelatex %<CR>
 
 " Invoke fugitive status window
 nnoremap SS :Gstatus<CR>
@@ -451,7 +447,7 @@ function! VisualSelection(direction, extra_filter) range
 endfunction
 
 " Enable/disable the mouse
-nnoremap <leader>m :call ToggleMouse()<CR>
+nnoremap <leader>mo :call ToggleMouse()<CR>
 
 function! ToggleMouse()
   if &mouse == "a"
@@ -481,24 +477,27 @@ autocmd FileType vim setlocal keywordprg=:help
 " Toggle/untoggle spell checking
 nnoremap <leader>ss :setlocal spell!<cr>
 
-" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-noremap <space> /
-noremap <c-space> ?
+" Search and backwards search
+map <space> /
+map <leader><space> ?
 
 " Smart way to move between windows
-noremap <C-j> <C-W>j
-noremap <C-k> <C-W>k
-noremap <C-h> <C-W>h
-noremap <C-l> <C-W>l
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
 
 " Run Syntastic check
-noremap <leader>sy :SyntasticCheck<cr>
+nnoremap <leader>sy :SyntasticCheck<cr>
 
 " Pipe buffer content in system clipboard
-noremap <leader>c :w !pbcopy<CR>
+nnoremap <leader>c :w !pbcopy<CR>
 
 " New buffer from visual selection
 vnoremap <leader>n d:vnew<CR>P
+
+" Run :Make
+nnoremap <leader>ma :Make<CR>
 
 " Disable backspace (I want to use C-h, C-w and C-u instead)
 inoremap <BS> <Nop>
