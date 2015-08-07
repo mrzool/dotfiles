@@ -61,6 +61,7 @@ Plugin 'vim-scripts/grep.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
+Plugin 'tpope/vim-dispatch'
 " Plugin 'vim-pandoc/vim-pandoc'
 " Plugin 'vim-pandoc/vim-pandoc-syntax'
 
@@ -499,6 +500,8 @@ noremap <leader>c :w !pbcopy<CR>
 " New buffer from visual selection
 vnoremap <leader>n d:vnew<CR>P
 
+" Disable backspace (I want to use C-h, C-w and C-u instead)
+inoremap <BS> <Nop>
 
 "------------------------------------------------------------
 " Plugins Settings
