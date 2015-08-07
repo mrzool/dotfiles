@@ -44,8 +44,11 @@ source ~/bin/git-completion.bash
 source ~/bin/tmux.completion.bash
 source ~/bin/tmuxinator.bash
 
-# correctly load tools installed by homebrew
-export PATH=/usr/local/bin:$PATH
+# add homebrew bin folder to PATH
+export PATH="/usr/local/bin:$PATH"
+
+# add node bin folder to PATH
+export PATH="$HOME/.node/bin:$PATH"
 
 # Jump and mark functions.
 export MARKPATH=$HOME/.marks
