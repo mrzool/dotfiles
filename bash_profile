@@ -42,6 +42,7 @@ BASE16_SHELL="/Users/zool/.config/base16-shell/base16-ocean.dark.sh"
 source `brew --repository`/Library/Contributions/brew_bash_completion.sh
 source ~/bin/git-completion.bash
 source ~/bin/tmux.completion.bash
+source ~/bin/tmuxinator.bash
 
 # correctly load tools installed by homebrew
 export PATH=/usr/local/bin:$PATH
