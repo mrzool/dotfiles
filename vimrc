@@ -180,7 +180,7 @@ set textwidth=0 " Never insert line-breaks in text
 set wrapmargin=0
 
 " Wrap text only in markdown files
-autocmd BufNewFile,BufRead *.md setlocal wrap
+autocmd BufNewFile,BufRead,BufEnter *.md setlocal wrap
 autocmd FileType markdown setlocal wrap
 set linebreak " Do not amputate words
 
