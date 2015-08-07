@@ -50,6 +50,9 @@ export PATH="/usr/local/bin:$PATH"
 # add node bin folder to PATH
 export PATH="$HOME/.node/bin:$PATH"
 
+# Set Vim as default editor
+export EDITOR="vim"
+
 # Jump and mark functions.
 export MARKPATH=$HOME/.marks
 function jump { 
