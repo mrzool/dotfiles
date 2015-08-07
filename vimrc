@@ -311,6 +311,8 @@ inoreabbrev teh the
 inoreabbrev usign using
 inoreabbrev lokk look
 inoreabbrev hwo how
+inoreabbrev amoutn amount
+inoreabbrev fucntion function
 
 "------------------------------------------------------------
 " Custom mappings and functions
