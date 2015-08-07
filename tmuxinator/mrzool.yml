@@ -28,12 +28,5 @@ pre: rm -rf _site/
 # post: tmux -CC attach -t mrzool
 
 windows:
+  - processes: npm start
   - development: vim .
-  - drafts:
-      root: ~/Dropbox/Apps/Byword/drafts/
-      panes: vim .
-  - processes:
-      layout: main-vertical
-      panes:
-        - jekyll build -w --drafts
-        - gulp
