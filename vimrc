@@ -62,6 +62,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
 Plugin 'tpope/vim-dispatch'
+Plugin 'christoomey/vim-tmux-navigator'
 " Plugin 'vim-pandoc/vim-pandoc'
 " Plugin 'vim-pandoc/vim-pandoc-syntax'
 
