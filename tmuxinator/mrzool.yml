@@ -27,6 +27,20 @@ pre: rm -rf _site/
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t mrzool
 
+# Built-in layouts:
+# - even-horizontal 
+# - even-vertical 
+# - main-horizontal 
+# - main-vertical 
+# - tiled 
+# - the next 
+
+
 windows:
-  - processes: npm start
+  - processes:
+      layout: main-vertical
+      panes:
+        - npm run build
+        - npm run server
+        - npm run sync
   - development: vim .
