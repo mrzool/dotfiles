@@ -24,7 +24,7 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 
 # sets up custom prompt
-export GITAWAREPROMPT=~/.bash/git-aware-prompt
+export GITAWAREPROMPT=~/bin/git-aware-prompt
 source "${GITAWAREPROMPT}/main.sh"
 export PS1="\[\033[33;1m\]\W\[\033[m\]\[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]$ "
 
