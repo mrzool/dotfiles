@@ -193,6 +193,9 @@ set listchars=eol:¬,extends:…,precedes:…,tab:\ \
 " Makes foo-bar considered one word
 set iskeyword+=-
 
+" Change text between < .. >
+set matchpairs+=<:>
+
 "------------------------------------------------------------
 " User Interface
 
