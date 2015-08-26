@@ -205,6 +205,10 @@ set lazyredraw
 " Show partially typed commands at the bottom
 set showcmd
 
+" Improves scrolling when wrap is set
+" See http://vi.stackexchange.com/questions/4507/scrolling-issues-when-the-wrap-option-is-set
+set display=lastline
+
 " Keep cursor 5 lines from window borders when scrolling
 set scrolloff=5
 
