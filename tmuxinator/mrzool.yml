@@ -42,5 +42,6 @@ windows:
       panes:
         - npm run build
         - npm run server
-        - npm run sync
+        # - npm run sync
   - development: vim .
+  - drafts: vim -c "lcd ~/drafts" -c "e ."
