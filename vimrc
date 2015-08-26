@@ -352,10 +352,14 @@ nnoremap <silent> <Leader>c :exe ":30winc >"<CR>
 " Move per visual line
 nnoremap j gj
 nnoremap k gk
+vnoremap j gj
+vnoremap k gk
 
 " Move per real line
 nnoremap gj j
 nnoremap gk k
+vnoremap gj j
+vnoremap gk k
 
 " Underline current line
 nnoremap <Leader>u :Underline<CR>
