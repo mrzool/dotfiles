@@ -293,8 +293,8 @@ set splitright
 set showtabline=1
 
 " Show matching brackets
-set showmatch
-set matchtime=15
+" set showmatch
+" set matchtime=15
 
 " No bells
 set noerrorbells
