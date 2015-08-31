@@ -517,6 +517,11 @@ nnoremap <leader>ma :Make<CR>
 " Disable backspace (I want to use C-h, C-w and C-u instead)
 inoremap <BS> <Nop>
 
+" Break undo sequence in insert mode when certain actions are performed
+" See http://vi.stackexchange.com/questions/4556/undo-in-insert-mode/4558#455
+inoremap <CR> <C-G>u<CR>
+inoremap <C-R> <C-G>u<C-R>
+
 "------------------------------------------------------------
 " Plugins Settings
 
