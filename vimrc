@@ -554,16 +554,13 @@ function! s:goyo_enter()
   silent !tmux set status off
   set noshowmode
   set noshowcmd
-  set nolist
   set noruler
+  set nolist
+  hi nontext ctermfg=bg
 endfunction
 
 function! s:goyo_leave()
   silent !tmux set status on
-  set showmode
-  set showcmd
-  set list
-  set ruler
   source $MYVIMRC
 endfunction
 
