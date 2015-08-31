@@ -522,6 +522,11 @@ inoremap <BS> <Nop>
 inoremap <CR> <C-G>u<CR>
 inoremap <C-R> <C-G>u<C-R>
 
+" Quick normal mode ops from insert mode
+inoremap II <Esc>I
+inoremap AA <Esc>A
+inoremap OO <Esc>O
+
 "------------------------------------------------------------
 " Plugins Settings
 
