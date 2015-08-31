@@ -14,14 +14,20 @@ if [ -f ~/.aliases ]; then
 fi
 
 # don't put duplicate lines or lines starting with space in the history.
-HISTCONTROL=ignoreboth
+HISTCONTROL="erasedups:ignoreboth"
+
+# No need to remember the exit command.
+export HISTIGNORE="&:[ ]*:exit"
+
+# Save multi-line commands to the history as one command.
+shopt -s cmdhist
 
 # append to the history file, don't overwrite it
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=500000
+HISTFILESIZE=100000
 
 # sets up custom prompt
 export GITAWAREPROMPT=~/bin/git-aware-prompt
@@ -52,6 +58,9 @@ export PATH="/usr/local/bin:$PATH"
 
 # add node bin folder to PATH
 export PATH="$HOME/.node/bin:$PATH"
+
+# Add my bin folder
+export PATH="$HOME/bin/:$PATH"
 
 # Set Vim as default editor
 export EDITOR="vim"
