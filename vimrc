@@ -150,7 +150,7 @@ set incsearch
 set magic
 
 " Set path as project path and search it recursively
-" (fixes 'file not found' error when using 'gf')
+" (fixes 'file not found' error when using `gf`)
 set path+=$PWD/**
 
 " Autocompletion settings
@@ -186,7 +186,7 @@ autocmd BufNewFile,BufRead,BufEnter *.md setlocal wrap
 autocmd FileType markdown setlocal wrap
 set linebreak " Do not amputate words
 
-" Highlight whitespace using symbols
+" Highlight whitespace with symbols
 set list
 set listchars=eol:¬,extends:…,precedes:…,tab:\ \ 
 
@@ -227,7 +227,7 @@ set cmdheight=1
 " Status line
 set statusline=%f   " Path to the file in the buffer
 set statusline+=%m  " Modified flag
-" set statusline+=%5{v:register} "Which active register
+set statusline+=%5{v:register} "Which active register
 set statusline+=%=  " Align to the right from now on
 set statusline+=[%{fugitive#head()}]   " Current branch
 set statusline+=\ \  " Blank space
@@ -238,10 +238,10 @@ set statusline+=%-5L " Total lines
 set statusline+=%p%% " Percentage through the file
 
 " Highlight status bar when in insert mode
-" if version >= 700
-"   au InsertEnter * hi StatusLine ctermfg=235 ctermbg=2
-"   au InsertLeave * hi StatusLine ctermbg=19 ctermfg=20
-" endif
+if version >= 700
+  au InsertEnter * hi StatusLine ctermfg=235 ctermbg=2
+  au InsertLeave * hi StatusLine ctermbg=19 ctermfg=20
+endif
 
 " Switch cursor shape when changing modes
 if exists('$TMUX')
@@ -329,7 +329,7 @@ inoreabbrev fucntion function
 " Remap VIM 0 to first non-blank character
 noremap 0 ^
 
-" make Y behave D and C
+" make Y behave like D and C
 nnoremap Y y$
 
 " Insert line break
@@ -339,7 +339,7 @@ nnoremap <CR><CR> i<CR><ESC>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 
-" Open file explorer quickly
+" Open file explorer
 nnoremap <Leader>vs :Vex!<CR>
 nnoremap <Leader>sp :Sex<CR>
 nnoremap <Leader>tn :Tex<CR>
@@ -403,8 +403,8 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 inoremap jj <Esc>
 
 " Compile TeX document
-nnoremap <leader>t :! pdflatex %<CR>
-nnoremap <leader>x :! xelatex %<CR>
+" nnoremap <leader>t :! pdflatex %<CR>
+" nnoremap <leader>x :! xelatex %<CR>
 
 " Invoke fugitive status window
 nnoremap SS :Gstatus<CR>
@@ -497,10 +497,10 @@ map <space> /
 map <leader><space> ?
 
 " Smart way to move between windows
-nnoremap <C-j> <C-W>j
-nnoremap <C-k> <C-W>k
-nnoremap <C-h> <C-W>h
-nnoremap <C-l> <C-W>l
+" nnoremap <C-j> <C-W>j
+" nnoremap <C-k> <C-W>k
+" nnoremap <C-h> <C-W>h
+" nnoremap <C-l> <C-W>l
 
 " Run Syntastic check
 nnoremap <leader>sy :SyntasticCheck<cr>
@@ -514,7 +514,7 @@ vnoremap <leader>n d:vnew<CR>P
 " Run :Make
 nnoremap <leader>ma :Make<CR>
 
-" Disable backspace (I want to use C-h, C-w and C-u instead)
+" Disable backspace
 inoremap <BS> <Nop>
 
 " Break undo sequence in insert mode when certain actions are performed
