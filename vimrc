@@ -421,7 +421,7 @@ nnoremap ` '
 nnoremap <Leader>gu :GundoToggle<CR>
 
 " Toggle Goyo
-nnoremap <Leader>go :Goyo<CR>
+nnoremap <Leader>go :set nolist<CR>:Goyo<CR>
 
 " Visual mode pressing * or # searches for the current selection
 vnoremap <silent> * :call VisualSelection('f', '')<CR>
