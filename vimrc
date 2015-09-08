@@ -63,6 +63,7 @@ Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'hdima/python-syntax'
 " Plugin 'vim-pandoc/vim-pandoc'
 " Plugin 'vim-pandoc/vim-pandoc-syntax'
 
@@ -192,6 +193,9 @@ set listchars=eol:¬,extends:…,precedes:…,tab:\ \
 " Makes foo-bar considered one word
 set iskeyword+=-
 
+" Change text between < .. >
+set matchpairs+=<:>
+
 "------------------------------------------------------------
 " User Interface
 
@@ -203,6 +207,10 @@ set lazyredraw
 
 " Show partially typed commands at the bottom
 set showcmd
+
+" Improves scrolling when wrap is set
+" See http://vi.stackexchange.com/questions/4507/scrolling-issues-when-the-wrap-option-is-set
+set display=lastline
 
 " Keep cursor 5 lines from window borders when scrolling
 set scrolloff=5
@@ -288,8 +296,8 @@ set splitright
 set showtabline=1
 
 " Show matching brackets
-set showmatch
-set matchtime=15
+" set showmatch
+" set matchtime=15
 
 " No bells
 set noerrorbells
@@ -347,10 +355,14 @@ nnoremap <silent> <Leader>c :exe ":30winc >"<CR>
 " Move per visual line
 nnoremap j gj
 nnoremap k gk
+vnoremap j gj
+vnoremap k gk
 
 " Move per real line
 nnoremap gj j
 nnoremap gk k
+vnoremap gj j
+vnoremap gk k
 
 " Underline current line
 nnoremap <Leader>u :Underline<CR>
@@ -505,6 +517,16 @@ nnoremap <leader>ma :Make<CR>
 " Disable backspace
 inoremap <BS> <Nop>
 
+" Break undo sequence in insert mode when certain actions are performed
+" See http://vi.stackexchange.com/questions/4556/undo-in-insert-mode/4558#455
+inoremap <CR> <C-G>u<CR>
+inoremap <C-R> <C-G>u<C-R>
+
+" Quick normal mode ops from insert mode
+inoremap II <Esc>I
+inoremap AA <Esc>A
+inoremap OO <Esc>O
+
 "------------------------------------------------------------
 " Plugins Settings
 
@@ -532,16 +554,13 @@ function! s:goyo_enter()
   silent !tmux set status off
   set noshowmode
   set noshowcmd
-  set nolist
   set noruler
+  set nolist
+  hi nontext ctermfg=bg
 endfunction
 
 function! s:goyo_leave()
   silent !tmux set status on
-  set showmode
-  set showcmd
-  set list
-  set ruler
   source $MYVIMRC
 endfunction
 
