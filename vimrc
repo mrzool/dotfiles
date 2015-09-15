@@ -378,7 +378,7 @@ command! -nargs=? Underline call s:Underline(<q-args>)
 
 " Edit/source vimrc
 " nnoremap <leader>ev :tabe $MYVIMRC<cr>
-noremap <leader>ev :execute 'tabe ' . resolve(expand($MYVIMRC))<CR>
+noremap <leader>ev :execute 'split ' . resolve(expand($MYVIMRC))<CR>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Jump to matching item with tab
