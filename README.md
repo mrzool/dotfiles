@@ -18,6 +18,7 @@ This repo includes dotfiles for:
 - mr
 - mutt
 - detox
+- npm
 
 Specifically for Crunchbang:
 
