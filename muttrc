@@ -25,6 +25,9 @@ set certificate_file ="~/.mutt/certificates"
 set smtp_url = $my_smtp_url
 set smtp_pass = $my_pass # use the same passowrd as for IMAP
 
+# Fixes the 'No authenticators available' error
+set smtp_authenticators = 'gssapi:login'
+
 # Securing
 #set move = no  #Stop asking to "move read messages to mbox"!
 set imap_keepalive = 900
