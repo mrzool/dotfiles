@@ -23,7 +23,7 @@ This repo includes dotfiles for:
 
 ---
 
-#!-specific (not maintained):
+&#35;!-specific (not maintained):
 
 - openbox
 - terminator
