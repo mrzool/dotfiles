@@ -3,7 +3,8 @@ zool's dotfiles
 
 Config files for my \*nix systems.
 
-OSs used: [Crunchbang](http://crunchbang.org/) (RIP), Mac OS X.
+Current OS: Mac OS X 10.11 El Capitan
+Previously: [#!](http://crunchbang.org/) (RIP), Debian, Ubuntu
 
 Tools of the trade
 ------------------
@@ -20,7 +21,9 @@ This repo includes dotfiles for:
 - detox
 - npm
 
-Specifically for Crunchbang:
+---
+
+#!-specific (not maintained):
 
 - openbox
 - terminator
