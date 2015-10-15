@@ -60,7 +60,10 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.node/bin:$PATH"
 
 # Add my bin folder
-export PATH="$HOME/bin/:$PATH"
+export PATH="$HOME/bin:$PATH"
+
+# Fix LaTeX after El Capitan update
+export PATH="$PATH:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin"
 
 # Set Vim as default editor
 export EDITOR="vim"
