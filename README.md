@@ -21,8 +21,6 @@ This repo includes dotfiles for:
 - detox
 - npm
 
----
-
 &#35;!-specific (not maintained):
 
 - openbox
