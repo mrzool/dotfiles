@@ -550,6 +550,26 @@ let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|_site|output)|(\.(s
 " Gundo settings
 let g:gundo_preview_bottom = 1
 
+" Syntastic settings
+let g:syntastic_html_tidy_ignore_errors = [
+			\ 'trimming empty <i>',
+			\ 'trimming empty <span>',
+			\ '<input> proprietary attribute \"autocomplete\"',
+			\ 'proprietary attribute \"role\"',
+			\ 'proprietary attribute \"hidden\"',
+			\ 'proprietary attribute \"ng-',
+			\ '<svg> is not recognized!',
+			\ 'discarding unexpected <svg>',
+			\ 'discarding unexpected </svg>',
+			\ '<rect> is not recognized!',
+			\ 'discarding unexpected <rect>',
+			\ '<circle> is not recognized!',
+			\ 'discarding unexpected <circle>',
+			\ '<text> is not recognized!',
+			\ 'discarding unexpected <text>',
+			\ 'discarding unexpected </text>'
+			\ ]
+
 " Snipmate settings
 let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
