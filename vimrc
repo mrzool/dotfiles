@@ -38,7 +38,7 @@ Plugin 'liamcurry/tumblr.vim.git'
 Plugin 'keith/tmux.vim'
 Plugin 'tpope/vim-git'
 
-" Interface
+" User Interface
 Plugin 'junegunn/goyo.vim'
 Plugin 'tpope/vim-vinegar.git'
 
