@@ -126,6 +126,12 @@ set noswapfile
 " Forces *.md as markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
+" Turn on spell-checking in markdown files
+autocmd BufRead,BufNewFile *.md setlocal spell
+
+" Spell-checking settings
+set spelllang=en,de,it
+
 " Return to last edit position when opening files
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
