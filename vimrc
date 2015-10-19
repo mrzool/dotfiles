@@ -567,7 +567,14 @@ let g:syntastic_html_tidy_ignore_errors = [
 			\ 'discarding unexpected <circle>',
 			\ '<text> is not recognized!',
 			\ 'discarding unexpected <text>',
-			\ 'discarding unexpected </text>'
+			\ 'discarding unexpected </text>',
+			\ '<path> is not recognized!',
+			\ 'discarding unexpected <path>',
+			\ '<desc> is not recognized!',
+			\ 'discarding unexpected <desc>',
+			\ 'discarding unexpected </desc>',
+			\ '<g> is not recognized!',
+			\ 'discarding unexpected <g>'
 			\ ]
 
 " Snipmate settings
