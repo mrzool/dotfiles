@@ -7,10 +7,6 @@ alias ct='column -t'
 
 alias vi='vim'
 
-alias tolowercase='sh ~/bin/tolowercase.sh'
-alias tounderscore='sh ~/bin/tounderscore.sh'
-
-
 # Terminal
 alias c='clear'
 alias e='exit'
@@ -18,10 +14,6 @@ alias e='exit'
 # Package management
 alias backport='sudo apt-get -t wheezy-backports install'
 alias installed='dpkg --get-selections'
-
-# Vmail
-alias vmail="VMAIL_HOME=~/.vmail/zool.bib vmail"
-alias vvmail="VMAIL_HOME=~/.vmail/mattia.tezzele vmail"
 
 # Networking
 alias a2restart="sudo service apache2 restart"
@@ -36,28 +28,9 @@ alias mm='mark'
 alias um='unmark'
 
 # Various
-alias fuck='$(thefuck $(fc -ln -1))'
-alias kindlesend='mutt zool.bib@kindle.com -s "new book" -a'
 alias colorpicker="gcolor2"
 alias calc="qalc"
-alias mpdncmpcpp="sh ~/bin/mpdncmpcpp.sh"
 alias mrregister="sh ~/bin/mrregister.sh"
 alias unrar="unrar x"
-alias vmail2="VMAIL_HOME=~/.vmail/mattia.tezzele vmail"
 alias gtypist="gtypist -S"
 alias 1pass="jump 1password && sss"
-
-# Added by termtile (https://github.com/apaszke/termtile)
-alias ul='osascript ~/.termtile/tile.scpt up left'
-alias ur='osascript ~/.termtile/tile.scpt up right'
-alias dl='osascript ~/.termtile/tile.scpt down left'
-alias dr='osascript ~/.termtile/tile.scpt down right'
-alias ll='osascript ~/.termtile/tile.scpt left'
-alias rr='osascript ~/.termtile/tile.scpt right'
-alias up='osascript ~/.termtile/tile.scpt up'
-alias down='osascript ~/.termtile/tile.scpt down'
-alias big='osascript ~/.termtile/resize.scpt '
-alias cen='osascript ~/.termtile/center.scpt '
-alias max='osascript ~/.termtile/maximize.scpt '
-
-
