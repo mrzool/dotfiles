@@ -198,9 +198,9 @@ set list
 set listchars=eol:¬,extends:…,precedes:…,tab:\ \ 
 
 " Makes foo-bar considered one word
-set iskeyword+=-
+" set iskeyword+=-
 
-" Change text between < .. >
+" Change text between < and >
 set matchpairs+=<:>
 
 "------------------------------------------------------------
