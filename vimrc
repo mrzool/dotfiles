@@ -593,11 +593,9 @@ function! s:goyo_enter()
   set noruler
   set nolist
   hi nontext ctermfg=bg
-  set eventignore=all
 endfunction
 
 function! s:goyo_leave()
-  set eventignore=""
   silent !tmux set status on
   source $MYVIMRC
 endfunction
