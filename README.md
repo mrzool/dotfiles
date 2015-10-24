@@ -5,7 +5,7 @@ Config files for my \*nix systems.
 
 **Current OS**: Mac OS X 10.11 "El Capitan"
 
-**Previously**: Arch Linux, [#!](http://crunchbang.org/) (RIP), Debian, Ubuntu
+**Previously**: Arch Linux, Crunchbang (now [Bunsen Labs](https://www.bunsenlabs.org/)), Debian, Ubuntu
 
 Tools of the trade
 ------------------
@@ -22,7 +22,7 @@ This repo includes dotfiles for:
 - detox
 - npm
 
-&#35;!-specific (not maintained):
+Crunchbang-specific (not maintained):
 
 - openbox
 - terminator
