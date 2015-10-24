@@ -3,8 +3,9 @@ zool's dotfiles
 
 Config files for my \*nix systems.
 
-Current OS: Mac OS X 10.11 El Capitan  
-Previously: [#!](http://crunchbang.org/) (RIP), Debian, Ubuntu
+**Current OS**: Mac OS X 10.11 "El Capitan"
+
+**Previously**: Arch Linux, [#!](http://crunchbang.org/) (RIP), Debian, Ubuntu
 
 Tools of the trade
 ------------------
