@@ -349,9 +349,10 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 
 " Open file explorer
-nnoremap <Leader>vs :Vex!<CR>
-nnoremap <Leader>sp :Sex<CR>
-nnoremap <Leader>tn :Tex<CR>
+nnoremap <Leader>e  :e.<CR>
+nnoremap <Leader>v  :Vex!<CR>
+nnoremap <Leader>s  :Sex<CR>
+nnoremap <Leader>t  :Tex<CR>
 nnoremap <Leader>tc :tabclose<CR>
 
 " Resize vertical split
