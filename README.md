@@ -16,24 +16,6 @@ See [more screenshots](http://notes.mrzool.cc/post/124238252897/following-up-on-
 Tools of the trade
 ------------------
 
-This repo includes dotfiles for:
+This repo includes dotfiles for: bash, tmux, git, vim, ack, mr, mutt, detox, npm.
 
-- bash
-- tmux
-- git
-- vim
-- ack
-- mr
-- mutt
-- detox
-- npm
-
-Crunchbang-specific (not maintained):
-
-- openbox
-- terminator
-- compton
-- conky
-- tint2
-- xmodmap
-- xxkb
+Crunchbang-specific (not maintained): openbox, terminator, compton, conky, tint2, xmodmap, xxkb.
