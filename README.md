@@ -11,7 +11,7 @@ Config files for my \*nix systems.
 - **Font**: [Input](http://input.fontbureau.com/) by [Font Bureau](http://www.fontbureau.com/)
 - **Wallpaper**: [Flavoured](http://digitalshiva.deviantart.com/art/Flavoured-121784194)
 
-See [more screenshots](http://notes.mrzool.cc/post/124238252897/following-up-on-a-discussion-on-runixporn-here).
+See more screenshots [here](http://notes.mrzool.cc/post/124238252897/following-up-on-a-discussion-on-runixporn-here).
 
 Tools of the trade
 ------------------
