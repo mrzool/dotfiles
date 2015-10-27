@@ -355,6 +355,8 @@ nnoremap <Leader>s  :Sex<CR>
 nnoremap <Leader>t  :Tex<CR>
 nnoremap <Leader>tc :tabclose<CR>
 
+nnoremap <Leader>l :lcd 
+
 " Resize vertical split
 nnoremap <silent> <Leader>> :exe "vertical resize +5"<CR>
 nnoremap <silent> <Leader>< :exe "vertical resize -5"<CR>
