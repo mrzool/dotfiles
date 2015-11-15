@@ -390,14 +390,8 @@ command! -nargs=? Underline call s:Underline(<q-args>)
 
 " Edit/source vimrc
 " nnoremap <leader>ev :tabe $MYVIMRC<cr>
-noremap <leader>ev :execute 'split ' . resolve(expand($MYVIMRC))<CR>
-nnoremap <leader>sv :source $MYVIMRC<cr>
-
-" Jump to matching item with tab
-" Sadly this conflicts with the default <C-i> behavior
-" Still no fix found
-" nnoremap <tab> %
-" vnoremap <tab> %
+noremap <leader>E :execute 'edit ' . resolve(expand($MYVIMRC))<CR>
+nnoremap <leader>S :source $MYVIMRC<cr>
 
 " Copy/paste to system clipboard
 vmap <Leader>y "+y
