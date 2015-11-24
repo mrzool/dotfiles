@@ -1,4 +1,4 @@
-"------------------------------------------------------------
+" ------------------------------------------------------------
 " Sections:
 " - Plugins
 " - General options
@@ -22,11 +22,12 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
-" Colorschemes and Syntax
+" Colorschemes
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'chriskempson/base16-vim'
 Plugin 'tomasr/molokai'
-Plugin 'scrooloose/syntastic.git'
+
+" Syntax
 Plugin 'othree/html5.vim.git'
 Plugin 'cakebaker/scss-syntax.vim.git'
 Plugin 'hail2u/vim-css3-syntax.git'
@@ -37,12 +38,16 @@ Plugin 'tpope/vim-liquid'
 Plugin 'liamcurry/tumblr.vim.git'
 Plugin 'keith/tmux.vim'
 Plugin 'tpope/vim-git'
+Plugin 'hdima/python-syntax'
+Plugin 'stephenway/postcss.vim.git'
+Plugin 'tpope/vim-markdown.git'
 
 " User Interface
 Plugin 'junegunn/goyo.vim'
 Plugin 'tpope/vim-vinegar.git'
 
 " Integrations
+Plugin 'scrooloose/syntastic.git'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'MarcWeber/vim-addon-mw-utils.git'
 Plugin 'tomtom/tlib_vim.git'
@@ -63,7 +68,6 @@ Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'hdima/python-syntax'
 " Plugin 'vim-pandoc/vim-pandoc'
 " Plugin 'vim-pandoc/vim-pandoc-syntax'
 
@@ -123,14 +127,9 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" Forces *.md as markdown
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-
-" Turn on spell-checking in markdown files
-autocmd BufRead,BufNewFile *.md setlocal spell
-
-" Spell-checking settings
-set spelllang=en,de,it
+" K opens help section for word under cursor
+" Super-useful while editing the vimrc
+autocmd FileType vim setlocal keywordprg=:help
 
 " Return to last edit position when opening files
 autocmd BufReadPost *
@@ -305,8 +304,8 @@ set splitright
 set showtabline=1
 
 " Show matching brackets
-" set showmatch
-" set matchtime=15
+set showmatch
+set matchtime=15
 
 " No bells
 set noerrorbells
@@ -331,9 +330,23 @@ inoreabbrev lokk look
 inoreabbrev hwo how
 inoreabbrev amoutn amount
 inoreabbrev fucntion function
+inoreabbrev latex <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span>
+inoreabbrev tex <span class="latex">T<sub>e</sub>X</span>
+
 
 "------------------------------------------------------------
-" Custom mappings and functions
+" Custom mappings
+
+" Maps jj to esc
+inoremap jj <Esc>
+
+" Disable backspace
+inoremap <BS> <Nop>
+
+" Break undo sequence in insert mode when certain actions are performed
+" See http://vi.stackexchange.com/questions/4556/undo-in-insert-mode/4558#455
+inoremap <CR> <C-G>u<CR>
+inoremap <C-R> <C-G>u<C-R>
 
 " Remap VIM 0 to first non-blank character
 noremap 0 ^
@@ -341,28 +354,12 @@ noremap 0 ^
 " make Y behave like D and C
 nnoremap Y y$
 
+" Search and backwards search
+map <space> /
+map <leader><space> ?
+
 " Insert line break
 nnoremap <CR><CR> i<CR><ESC>
-
-" Save a file/quit
-nnoremap <Leader>w :w<CR>
-nnoremap <Leader>q :q<CR>
-
-" Open file explorer
-nnoremap <Leader>e  :e.<CR>
-nnoremap <Leader>v  :Vex!<CR>
-nnoremap <Leader>s  :Sex<CR>
-nnoremap <Leader>t  :Tex<CR>
-nnoremap <Leader>tc :tabclose<CR>
-
-nnoremap <Leader>l :lcd 
-
-" Resize vertical split
-nnoremap <silent> <Leader>> :exe "vertical resize +5"<CR>
-nnoremap <silent> <Leader>< :exe "vertical resize -5"<CR>
-
-" HTML/CSS view
-nnoremap <silent> <Leader>c :exe ":30winc >"<CR>
 
 " Move per visual line
 nnoremap j gj
@@ -376,9 +373,44 @@ nnoremap gk k
 vnoremap gj j
 vnoremap gk k
 
+" Invoke fugitive status window
+nnoremap SS :Gstatus<CR>
+
+" Invert apostrophe/backtick 'jump to mark' behavior
+nnoremap ' `
+nnoremap ` '
+
+" Visual mode pressing * or # searches for the current selection
+vnoremap <silent> * :call VisualSelection('f', '')<CR>
+vnoremap <silent> # :call VisualSelection('b', '')<CR>
+
+" Expands path of current buffer on the command prompt
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+"------------------------------------------------------------
+" Leader mappings
+
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>q :q<CR>
+
+" Open file explorer
+nnoremap <Leader>e  :e.<CR>
+nnoremap <Leader>v  :Vex!<CR>
+nnoremap <Leader>s  :Hex<CR>
+nnoremap <Leader>t  :Tex<CR>
+
+nnoremap <Leader>l :lcd ../
+nnoremap <Leader>o :!open<Space>
+
+" Resize vertical split
+nnoremap <silent> <Leader>> :exe "vertical resize +5"<CR>
+nnoremap <silent> <Leader>< :exe "vertical resize -5"<CR>
+
+" HTML/CSS view
+nnoremap <silent> <Leader>c :exe ":30winc >"<CR>
+
 " Underline current line
 nnoremap <Leader>u :Underline<CR>
-
 function! s:Underline(chars)
   let chars = empty(a:chars) ? '-' : a:chars
   let nr_columns = virtcol('$') - 1
@@ -402,36 +434,11 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 
-" Expands path of current buffer on the command prompt
-cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
-
-" Maps jj to esc
-inoremap jj <Esc>
-
-" Compile TeX document
-" nnoremap <leader>t :! pdflatex %<CR>
-" nnoremap <leader>x :! xelatex %<CR>
-
-" Invoke fugitive status window
-nnoremap SS :Gstatus<CR>
-
-" Traverse the argslist
-nnoremap <leader>n :next<CR>
-nnoremap <leader>N :prev<CR>
-
-" Invert apostrophe/backtick 'jump to mark' behavior
-nnoremap ' `
-nnoremap ` '
-
 " Toggle Gundo
-nnoremap <Leader>gu :GundoToggle<CR>
+nnoremap <Leader>G :GundoToggle<CR>
 
 " Toggle Goyo
-nnoremap <Leader>go :set nolist<CR>:Goyo<CR>
-
-" Visual mode pressing * or # searches for the current selection
-vnoremap <silent> * :call VisualSelection('f', '')<CR>
-vnoremap <silent> # :call VisualSelection('b', '')<CR>
+nnoremap <Leader>z :set nolist<CR>:Goyo<CR>
 
 " Open Ag
 nnoremap <leader>a :Ag 
@@ -440,36 +447,11 @@ vnoremap <silent> ag :call VisualSelection('gv', '')<CR>
 " Search & replace selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
 
-function! CmdLine(str)
-    exe "menu Foo.Bar :" . a:str
-    emenu Foo.Bar
-    unmenu Foo
-endfunction 
-
-function! VisualSelection(direction, extra_filter) range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
-
-    let l:pattern = escape(@", '\\/.*$^~[]')
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
-
-    if a:direction == 'b'
-        execute "normal ?" . l:pattern . "^M"
-    elseif a:direction == 'gv'
-        call CmdLine("Ag \"" . l:pattern . "\" " )
-    elseif a:direction == 'replace'
-        call CmdLine("%s" . '/'. l:pattern . '/')
-    elseif a:direction == 'f'
-        execute "normal /" . l:pattern . "^M"
-    endif
-
-    let @/ = l:pattern
-    let @" = l:saved_reg
-endfunction
+" Run :Make
+nnoremap <leader>m :Make<CR>
 
 " Enable/disable the mouse
-nnoremap <leader>mo :call ToggleMouse()<CR>
-
+nnoremap <leader>M :call ToggleMouse()<CR>
 function! ToggleMouse()
   if &mouse == "a"
     set mouse=
@@ -479,8 +461,7 @@ function! ToggleMouse()
 endfunction
 
 " Enable/disable relative numbers
-nnoremap <leader>r :call ToggleRelativeNumber()<CR>
-
+nnoremap <leader>R :call ToggleRelativeNumber()<CR>
 function! ToggleRelativeNumber()
   if &relativenumber
     set norelativenumber
@@ -491,16 +472,8 @@ function! ToggleRelativeNumber()
   endif
 endfunction
 
-" K opens help section for word under cursor
-" Super-useful while editing the vimrc
-autocmd FileType vim setlocal keywordprg=:help
-
 " Toggle/untoggle spell checking
 nnoremap <leader>ss :setlocal spell!<cr>
-
-" Search and backwards search
-map <space> /
-map <leader><space> ?
 
 " Smart way to move between windows
 " nnoremap <C-j> <C-W>j
@@ -516,22 +489,6 @@ nnoremap <leader>c :w !pbcopy<CR>
 
 " New buffer from visual selection
 vnoremap <leader>n d:vnew<CR>P
-
-" Run :Make
-nnoremap <leader>ma :Make<CR>
-
-" Disable backspace
-inoremap <BS> <Nop>
-
-" Break undo sequence in insert mode when certain actions are performed
-" See http://vi.stackexchange.com/questions/4556/undo-in-insert-mode/4558#455
-inoremap <CR> <C-G>u<CR>
-inoremap <C-R> <C-G>u<C-R>
-
-" Quick normal mode ops from insert mode
-inoremap II <Esc>I
-inoremap AA <Esc>A
-inoremap OO <Esc>O
 
 "------------------------------------------------------------
 " Plugins Settings
@@ -586,10 +543,9 @@ let g:snipMate.scope_aliases['liquid'] = 'liquid,html' " loads HTML snippets in 
 function! s:goyo_enter()
   silent !tmux set status off
   set noshowmode
-  set noshowcmd
-  set noruler
-  set nolist
-  hi nontext ctermfg=bg
+  " set noshowcmd
+  " set noruler
+  " hi nontext ctermfg=bg
 endfunction
 
 function! s:goyo_leave()
@@ -599,3 +555,40 @@ endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+" Gist settings
+
+" :w updates a gist.
+let g:gist_update_on_write = 1
+" Gists are private by default
+let g:gist_post_private = 1
+" let g:gist_edit_with_buffers = 1
+
+" For Ag
+function! CmdLine(str)
+    exe "menu Foo.Bar :" . a:str
+    emenu Foo.Bar
+    unmenu Foo
+endfunction 
+
+function! VisualSelection(direction, extra_filter) range
+    let l:saved_reg = @"
+    execute "normal! vgvy"
+
+    let l:pattern = escape(@", '\\/.*$^~[]')
+    let l:pattern = substitute(l:pattern, "\n$", "", "")
+
+    if a:direction == 'b'
+        execute "normal ?" . l:pattern . "^M"
+    elseif a:direction == 'gv'
+        call CmdLine("Ag \"" . l:pattern . "\" " )
+    elseif a:direction == 'replace'
+        call CmdLine("%s" . '/'. l:pattern . '/')
+    elseif a:direction == 'f'
+        execute "normal /" . l:pattern . "^M"
+    endif
+
+    let @/ = l:pattern
+    let @" = l:saved_reg
+endfunction
+
