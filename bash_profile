@@ -35,6 +35,12 @@ export df="$HOME/dotfiles"
 export repos="$HOME/repos"
 export documents="$HOME/Documents"
 
+# Implicit cd
+shopt -s autocd
+
+# Correct minor errors in the spelling of a directory when cding
+shopt -s cdspell
+
 # sets up custom prompt
 export GITAWAREPROMPT=~/bin/git-aware-prompt
 source "${GITAWAREPROMPT}/main.sh"
