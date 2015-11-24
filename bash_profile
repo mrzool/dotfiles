@@ -39,6 +39,7 @@ shopt -s cdable_vars
 export df="$HOME/dotfiles"
 export repos="$HOME/repos"
 export documents="$HOME/Documents"
+export mrzool="$HOME/repos/mrzool.github.io"
 
 # Implicit cd
 shopt -s autocd
