@@ -10,7 +10,12 @@ esac
 
 # Alias definitions
 if [ -f ~/.aliases ]; then
-    . ~/.aliases
+  . ~/.aliases
+fi
+
+# Add bash completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
 fi
 
 # don't put duplicate lines or lines starting with space in the history.
