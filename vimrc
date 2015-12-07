@@ -11,7 +11,10 @@
 " - Plugins Settings
 "------------------------------------------------------------
 
-set nocompatible
+if !has('nvim')
+  set nocompatible
+endif
+
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 
@@ -85,7 +88,10 @@ endif
 "------------------------------------------------------------
 " General options
 
-set encoding=utf8
+if !has('nvim')
+  set encoding=utf8
+endif
+
 set history=700
 set autoread
 set fileformats=unix
@@ -104,7 +110,9 @@ set ttimeoutlen=100
 " set undofile
 
 " Get mouse working when running Vim in tmux
-set ttymouse=xterm2
+if !has('nvim')
+  set ttymouse=xterm2
+endif
 
 " Configure backspace
 set backspace=eol,start,indent
@@ -206,7 +214,10 @@ set matchpairs+=<:>
 " User Interface
 
 " Improve smoothness
-set ttyfast
+if !has('nvim')
+  set ttyfast
+endif
+
 
 " Don't redraw while executing macros
 set lazyredraw
