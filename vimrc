@@ -552,17 +552,20 @@ let g:snipMate.scope_aliases['liquid'] = 'liquid,html' " loads HTML snippets in 
 
 " Goyo settings
 function! s:goyo_enter()
-  silent !tmux set status off
+  if exists('$TMUX')
+    silent !tmux set status off
+  endif
   set noshowmode
-  " set noshowcmd
-  " set noruler
-  " hi nontext ctermfg=bg
 endfunction
 
-function! s:goyo_leave()
-  silent !tmux set status on
-  source $MYVIMRC
-endfunction
+if !exists('*s:goyo_leave')
+  function! s:goyo_leave()
+    if exists('$TMUX')
+      silent !tmux set status on
+    endif
+    source $MYVIMRC
+  endfunction
+endif
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
