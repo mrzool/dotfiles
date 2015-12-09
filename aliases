@@ -1,11 +1,11 @@
-# Unix basic
 alias l='ls -CF -lh'
 alias ll='ls -l'
 alias la='ls -A'
 alias copy='xclip -sel clip'
 alias ct='column -t'
 
-alias vi='vim'
+# alias vi='nvim'
+# alias vim='nvim'
 
 # Terminal
 alias c='clear'
@@ -21,11 +21,6 @@ alias sss='python -m SimpleHTTPServer 8888 &'
 alias sps='php -S localhost:3000'
 alias showip="sh ~/bin/showip.sh"
 alias guard='bundle exec guard'
-
-# Jump and Marks 
-alias ju='jump'
-alias mm='mark'
-alias um='unmark'
 
 # Various
 alias colorpicker="gcolor2"
