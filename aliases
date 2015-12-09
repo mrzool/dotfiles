@@ -4,6 +4,8 @@ alias la='ls -A'
 alias copy='xclip -sel clip'
 alias ct='column -t'
 
+alias refresh='source ~/.bash_profile'
+
 # alias vi='nvim'
 # alias vim='nvim'
 
