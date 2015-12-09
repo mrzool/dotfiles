@@ -125,6 +125,9 @@ set backspace=eol,start,indent
 set ssop-=options
 set ssop-=folds
 
+" Make use of modeline
+set modeline
+
 "------------------------------------------------------------
 " Files and buffers
 
@@ -219,6 +222,8 @@ if !has('nvim')
   set ttyfast
 endif
 
+" Don't highlight search results
+set nohlsearch
 
 " Don't redraw while executing macros
 set lazyredraw
