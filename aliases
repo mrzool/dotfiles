@@ -1,3 +1,5 @@
+# vi:syntax=sh
+
 alias l='ls -CF -lh'
 alias ll='ls -l'
 alias la='ls -A'
