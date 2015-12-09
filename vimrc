@@ -238,17 +238,17 @@ set display=lastline
 " Keep cursor 5 lines from window borders when scrolling
 set scrolloff=5
 
-" Always show the status line
-set laststatus=2
-
 " show current position
 set ruler
 
 " Height of the command bar
 set cmdheight=1
 
+" Always show the status line
+set laststatus=2
+
 " Status line
-set statusline=%f   " Path to the file in the buffer
+set statusline=%t   " File name of the file in the buffer
 set statusline+=%m  " Modified flag
 set statusline+=%5{v:register} "Which active register
 set statusline+=%=  " Align to the right from now on
