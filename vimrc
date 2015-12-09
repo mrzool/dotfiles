@@ -281,7 +281,7 @@ endif
 " set noshowmode
 
 " Number of colors
-set t_Co=256
+" set t_Co=256
 
 " Duh
 syntax enable
@@ -304,15 +304,15 @@ if has("unix")
   endif
 endif
 
-" Transparent vertical split separator
-highlight VertSplit ctermfg=244 ctermbg=NONE   cterm=bold
+" Transparency wizardry
+highlight VertSplit ctermfg=244 ctermbg=NONE guibg=NONE
+highlight FoldColumn guibg=NONE ctermbg=NONE
+highlight LineNr guibg=NONE ctermbg=NONE
 
 " Line numbers tweaks
 set number
 set numberwidth=2
 set foldcolumn=0
-highlight FoldColumn ctermbg=NONE
-highlight LineNr ctermbg=NONE
 
 " Open vertical splits to the right
 set splitright
