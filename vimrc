@@ -277,6 +277,11 @@ else
     let &t_EI = "\e[2 q"
 endif
 
+" Switch cursor shape when using NeoVim
+if has('nvim')
+  let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+endif
+
 " hide default mode indicator
 " set noshowmode
 
