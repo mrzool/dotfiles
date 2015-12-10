@@ -14,25 +14,32 @@ fi
 # don't put duplicate lines or lines starting with space in the history
 HISTCONTROL="erasedups:ignoreboth"
 
-# No need to remember the exit command
-export HISTIGNORE="&:[ ]*:exit"
+# Commands that don't need to get recorded
+export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history"
 
 # Save multi-line commands to the history as one command
 shopt -s cmdhist
 
-# append to the history file, don't overwrite it
+# Append to the history file, don't overwrite it
 shopt -s histappend
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+# Set history size to a very large number
 HISTSIZE=500000
 HISTFILESIZE=100000
+
+# Record each line of history right away
+# instead of at the end of the session
+PROMPT_COMMAND='history -a'
+
+# Set history timestamp format
+HISTTIMEFORMAT='%F %T '
 
 # Activate and define cdable variables
 shopt -s cdable_vars
 export dotfiles="$HOME/dotfiles"
 export repos="$HOME/repos"
 export documents="$HOME/Documents"
-export mrzool="$HOME/repos/mrzool.github.io"
+export dropbox="$HOME/Dropbox"
 
 # Define search path for the cd command
 CDPATH=".:~/repos"
