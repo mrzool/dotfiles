@@ -35,7 +35,7 @@ export documents="$HOME/Documents"
 export mrzool="$HOME/repos/mrzool.github.io"
 
 # Define search path for the cd command
-CDPATH=".:~:~/repos"
+CDPATH=".:~/repos"
 
 # Implicit cd
 shopt -s autocd
