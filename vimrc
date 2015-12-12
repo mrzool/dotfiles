@@ -568,6 +568,7 @@ function! s:goyo_enter()
   endif
   Limelight
   set noshowmode
+  set scrolloff=999
 endfunction
 
 if !exists('*s:goyo_leave')
