@@ -38,7 +38,6 @@ HISTTIMEFORMAT='%F %T '
 shopt -s cdable_vars
 export dotfiles="$HOME/dotfiles"
 export repos="$HOME/repos"
-export documents="$HOME/Documents"
 export dropbox="$HOME/Dropbox"
 
 # Define search path for the cd command
