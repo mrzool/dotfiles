@@ -75,9 +75,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # OSX-SPECIFIC SETTINGS
 
   # enable programmable completion
-  source `brew --repository`/Library/Contributions/brew_bash_completion.sh
-
-  # This seems to be needed too
   if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
   fi
