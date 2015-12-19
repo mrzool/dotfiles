@@ -60,6 +60,7 @@ source ~/bin/git-completion.bash
 source ~/bin/tmux.completion.bash
 source ~/bin/tmuxinator.bash
 source ~/bin/npm-completion.bash
+source ~/bin/pandoc.bash
 
 # add node bin folder to PATH
 export PATH="$HOME/.node/bin:$PATH"
