@@ -286,9 +286,8 @@ endif
 " set noshowmode
 
 " Number of colors
-" set t_Co=256
+set t_Co=256
 
-" Duh
 syntax enable
 
 " Colorscheme settings
