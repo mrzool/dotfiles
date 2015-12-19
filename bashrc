@@ -105,9 +105,6 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     debian_chroot=$(cat /etc/debian_chroot)
   fi
 
-  # activate 256 colors support
-  export TERM=xterm-256color
-
   # set a fancy prompt (non-color, unless we know we "want" color)
   case "$TERM" in
     xterm-color) color_prompt=yes;;
