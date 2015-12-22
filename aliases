@@ -24,13 +24,10 @@ alias installed='dpkg --get-selections'
 alias a2restart="sudo service apache2 restart"
 alias sss='python -m SimpleHTTPServer 8888 &'
 alias sps='php -S localhost:3000'
-alias showip="sh ~/bin/showip.sh"
 alias guard='bundle exec guard'
 
 # Various
 alias colorpicker="gcolor2"
 alias calc="qalc"
-alias mrregister="sh ~/bin/mrregister.sh"
 alias unrar="unrar x"
 alias gtypist="gtypist -S"
-alias 1pass="jump 1password && sss"
