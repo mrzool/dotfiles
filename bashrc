@@ -96,6 +96,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # Fix LaTeX after El Capitan update
   export PATH="$PATH:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin"
 
+  # Add Calibre command line tools
+  export PATH=$PATH:/Applications/calibre.app/Contents/MacOS
+
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
 
   # LINUX-SPECIFIC SETTINGS
