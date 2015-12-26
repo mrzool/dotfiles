@@ -47,7 +47,6 @@ Plugin 'tpope/vim-markdown.git'
 
 " User Interface
 Plugin 'junegunn/goyo.vim'
-Plugin 'junegunn/limelight.vim'
 Plugin 'tpope/vim-vinegar.git'
 
 " Integrations
@@ -566,7 +565,6 @@ function! s:goyo_enter()
   if exists('$TMUX')
     silent !tmux set status off
   endif
-  Limelight
   set noshowmode
   set scrolloff=999
 endfunction
@@ -576,19 +574,12 @@ if !exists('*s:goyo_leave')
     if exists('$TMUX')
       silent !tmux set status on
     endif
-    Limelight!
     source $MYVIMRC
   endfunction
 endif
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
-
-" Limelight settings
-
-" let g:limelight_conceal_ctermfg = 'gray'
-let g:limelight_conceal_ctermfg = 19
-let g:limelight_priority = -1
 
 " Gist settings
 
