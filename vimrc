@@ -592,11 +592,10 @@ let g:limelight_priority = -1
 
 " Gist settings
 
-" :w updates a gist.
-let g:gist_update_on_write = 1
-" Gists are private by default
+" Private Gists by default
 let g:gist_post_private = 1
-" let g:gist_edit_with_buffers = 1
+" Only :w! updates a gist.
+let g:gist_update_on_write = 0
 
 " For Ag
 function! CmdLine(str)
