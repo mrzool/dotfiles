@@ -520,6 +520,10 @@ let g:netrw_liststyle = 3
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_browsex_viewer = 'google-chrome'
 
+" Python syntax settings
+let python_version_2 = 1
+let python_highlight_all = 1
+
 " CtrlP settings
 let g:ctrlp_map = 'FF'
 let g:ctrlp_cmd = 'CtrlP'
