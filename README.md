@@ -14,7 +14,7 @@ See more screenshots [here](http://notes.mrzool.cc/post/124238252897/following-u
 
 This repo includes dotfiles for: bash, tmux, git, vim, ack, mr, mutt, detox, npm.
 
-Linux-specific (not maintained): openbox, terminator, compton, conky, tint2, xmodmap, xxkb.
+Linux-specific (not maintained at the moment): openbox, terminator, compton, conky, tint2, xmodmap, xxkb.
 
 ## License
 
