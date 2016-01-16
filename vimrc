@@ -350,6 +350,7 @@ inoreabbrev usign using
 inoreabbrev lokk look
 inoreabbrev hwo how
 inoreabbrev amoutn amount
+inoreabbrev desing design
 inoreabbrev fucntion function
 inoreabbrev latex <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span>
 inoreabbrev tex <span class="latex">T<sub>e</sub>X</span>
