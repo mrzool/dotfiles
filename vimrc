@@ -149,6 +149,13 @@ autocmd BufReadPost *
      \   exe "normal! g`\"" |
      \ endif
 
+" Save all buffers when focus is lost
+autocmd FocusLost * silent! wa
+
+
+set autowrite
+
+
 " Remember info about open buffers on close
 set viminfo^=%
 
