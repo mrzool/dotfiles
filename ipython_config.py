@@ -146,7 +146,7 @@
 #------------------------------------------------------------------------------
 
 # Whether to display a banner upon starting IPython.
-# c.TerminalIPythonApp.display_banner = True
+c.TerminalIPythonApp.display_banner = False
 
 # If a command or file is given via the command-line, e.g. 'ipython foo.py',
 # start an interactive shell after executing the file or command.
@@ -203,7 +203,7 @@
 # c.InteractiveShell.color_info = True
 
 # Set the color scheme (NoColor, Linux, or LightBG).
-# c.InteractiveShell.colors = 'LightBG'
+c.InteractiveShell.colors = 'Linux'
 
 # 
 # c.InteractiveShell.debug = False
@@ -279,8 +279,8 @@
 # 
 # c.InteractiveShell.readline_use = True
 
-# 
-# c.InteractiveShell.separate_in = '\n'
+# No blank line between prompts 
+c.InteractiveShell.separate_in = ''
 
 # 
 # c.InteractiveShell.separate_out = ''
