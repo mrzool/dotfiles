@@ -573,6 +573,9 @@ let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['liquid'] = 'liquid,html' " loads HTML snippets in liquid files
 
 " Goyo settings
+
+let g:goyo_height = 85
+
 function! s:goyo_enter()
   if exists('$TMUX')
     silent !tmux set status off
