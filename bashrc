@@ -99,6 +99,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # Add Calibre command line tools
   export PATH=$PATH:/Applications/calibre.app/Contents/MacOS
 
+  # Add Miniconda2
+  export PATH="/Users/zool/tools/miniconda2/bin:$PATH"
+
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
 
   # LINUX-SPECIFIC SETTINGS
