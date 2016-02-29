@@ -583,18 +583,18 @@ let g:snipMate.scope_aliases['liquid'] = 'liquid,html' " loads HTML snippets in 
 let g:goyo_height = 85
 
 function! s:goyo_enter()
-  if exists('$TMUX')
-    silent !tmux set status off
-  endif
+  " if exists('$TMUX')
+  "   silent !tmux set status off
+  " endif
   set noshowmode
   set scrolloff=999
 endfunction
 
 if !exists('*s:goyo_leave')
   function! s:goyo_leave()
-    if exists('$TMUX')
-      silent !tmux set status on
-    endif
+    " if exists('$TMUX')
+    "   silent !tmux set status on
+    " endif
     source $MYVIMRC
   endfunction
 endif
@@ -636,4 +636,3 @@ function! VisualSelection(direction, extra_filter) range
     let @/ = l:pattern
     let @" = l:saved_reg
 endfunction
-
