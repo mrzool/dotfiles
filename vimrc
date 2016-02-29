@@ -131,6 +131,9 @@ set ssop-=folds
 " Make use of modeline
 set modeline
 
+" Make yank repeatable with .
+set cpoptions+=y
+
 "------------------------------------------------------------
 " Files and buffers
 
