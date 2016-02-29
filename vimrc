@@ -109,7 +109,9 @@ set ttimeout
 set ttimeoutlen=100
 
 " Persistent undos
-" set undofile
+set undofile
+set undolevels=5000
+set undodir=$HOME/.vim_undo_files
 
 " Get mouse working when running Vim in tmux
 if !has('nvim')
