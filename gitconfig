@@ -10,6 +10,7 @@
 	editor = /usr/local/bin/vim
 [push]
 	default = simple
+	followTags = true
 [merge]
 	tool = vimdiff
 [alias]
