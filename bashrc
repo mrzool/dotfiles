@@ -86,9 +86,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # ls custom colors
   export LSCOLORS=ExFxBxDxCxegedabagacad
 
-  # Fix Python error 'unknown locale: UTF-8'
+  # Set up locales to UTF-8
   export LC_ALL=en_US.UTF-8
   export LANG=en_US.UTF-8
+  export LANGUAGE=en_US.UTF-8
 
   # Base16 Shell
   BASE16_SHELL="/Users/zool/.config/base16-shell/base16-ocean.dark.sh"
