@@ -1,0 +1,30 @@
+mpd_host = "localhost"
+mpd_port = "6600"
+mpd_music_dir = "/Users/Shared/iTunes \Media/Music"
+mpd_connection_timeout = "5"
+
+visualizer_fifo_path = "/tmp/mpd.fifo"
+visualizer_output_name = "my_fifo"
+visualizer_sync_interval = "30"
+visualizer_type = "wave" (spectrum/wave)
+visualizer_look = "∙▋"
+visualizer_in_stereo = "yes"
+
+playlist_disable_highlight_delay = "2"
+
+song_list_format = "$1 %n │ $5%a$1 │ $8%t $7(%l)$1 $R$6%b $7(%y)$1 $9"
+
+selected_item_prefix = "$8"
+selected_item_suffix = "$9"
+
+song_columns_list_format = " (5)[black]{n} (6)[magenta]{lr} (35)[blue]{t} (30)[cyan]{a} (20)[green]{bEr} (4)[white]{yE}"
+
+playlist_display_mode = "columns" (classic/columns)
+
+progressbar_look = "─░─"
+
+user_interface = "alternative" (classic/alternative)
+
+header_visibility = "yes"
+
+display_volume_level = "yes"
