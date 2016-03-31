@@ -511,10 +511,10 @@ endfunction
 nnoremap <leader>ss :setlocal spell!<cr>
 
 " Smart way to move between windows
-" nnoremap <C-j> <C-W>j
-" nnoremap <C-k> <C-W>k
-" nnoremap <C-h> <C-W>h
-" nnoremap <C-l> <C-W>l
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
 
 " Run Syntastic check
 nnoremap <leader>sy :SyntasticCheck<cr>
