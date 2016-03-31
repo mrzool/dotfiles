@@ -22,7 +22,7 @@ alias installed='dpkg --get-selections'
 
 # Networking
 alias a2restart="sudo service apache2 restart"
-alias sss='python -m SimpleHTTPServer 8888 &'
+alias sss='python -m SimpleHTTPServer 8888'
 alias sps='php -S localhost:3000'
 alias guard='bundle exec guard'
 
