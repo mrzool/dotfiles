@@ -609,7 +609,8 @@ let g:gist_post_private = 1
 " Only :w! updates a gist.
 let g:gist_update_on_write = 0
 
-" For Ag
+" Ag Settings
+
 function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
     emenu Foo.Bar
