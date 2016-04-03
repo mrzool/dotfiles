@@ -535,6 +535,7 @@ let g:netrw_preview   = 1
 let g:netrw_liststyle = 3
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_browsex_viewer = 'google-chrome'
+let g:netrw_http_xcmd= "-o" " use curl to open http links
 
 " Python syntax settings
 let python_version_2 = 1
