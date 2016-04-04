@@ -11,7 +11,7 @@ if [ -f ~/.aliases ]; then
   . ~/.aliases
 fi
 
-# don't put duplicate lines or lines starting with space in the history
+# Don't put duplicate lines or lines starting with space in the history
 HISTCONTROL="erasedups:ignoreboth"
 
 # Commands that don't need to get recorded
@@ -62,7 +62,7 @@ source ~/bin/tmuxinator.bash
 source ~/bin/npm-completion.bash
 source ~/bin/pandoc.bash
 
-# add node bin folder to PATH
+# Add node bin folder to PATH
 export PATH="$HOME/.node/bin:$PATH"
 
 # Add my bin folder to PATH
@@ -75,12 +75,12 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   # OSX-SPECIFIC SETTINGS
 
-  # enable programmable completion
+  # Enable Bash completion
   if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
   fi
 
-  # activates colors
+  # Activates colors
   export CLICOLOR=1
 
   # ls custom colors
@@ -95,7 +95,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   BASE16_SHELL="/Users/zool/.config/base16-shell/base16-ocean.dark.sh"
   [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
-  # add homebrew bin folder to PATH
+  # Add homebrew bin folder to PATH
   export PATH="/usr/local/bin:$PATH"
 
   # Fix LaTeX after El Capitan update
@@ -111,17 +111,17 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
 
   # LINUX-SPECIFIC SETTINGS
 
-  # set variable identifying the chroot you work in
+  # Set variable identifying the chroot you work in
   if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
   fi
 
-  # set a fancy prompt (non-color, unless we know we "want" color)
+  # Set a fancy prompt (non-color, unless we know we "want" color)
   case "$TERM" in
     xterm-color) color_prompt=yes;;
   esac
 
-  # uncomment for a colored prompt, if the terminal has the capability
+  # Uncomment for a colored prompt, if the terminal has the capability
   force_color_prompt=yes
 
   if [ -n "$force_color_prompt" ]; then
@@ -151,7 +151,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
       ;;
   esac
 
-  # enable color support of ls and also add handy aliases
+  # Enable color support of ls and also add handy aliases
   if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
@@ -163,7 +163,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     alias egrep='egrep --color=auto'
   fi
 
-  # enable programmable completion features
+  # Enable programmable completion features
   if ! shopt -oq posix; then
     if [ -f /usr/share/bash-completion/bash_completion ]; then
       . /usr/share/bash-completion/bash_completion
