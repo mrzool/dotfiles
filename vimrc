@@ -424,6 +424,10 @@ vnoremap <silent> # :call VisualSelection('b', '')<CR>
 " Expands path of current buffer on the command prompt
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
+" Remap <c-w>o to open current buffer in a new tab
+" Mimics zoom in on current split
+nnoremap <c-w>o :tab sp<CR>
+
 "------------------------------------------------------------
 " Leader mappings
 
