@@ -1,7 +1,7 @@
 # Based on http://www.bartbania.com/index.php/consolify-your-gmail-with-mutt/
 
 source ~/Dropbox/sec/auth
-source ~/.mutt/mutt-colors-solarized-dark-16.muttrc
+# source ~/.mutt/mutt-colors-solarized-dark-16.muttrc
 
 set locale = "ru_RU.UTF-8"
 set from = $my_adress
@@ -38,6 +38,10 @@ set timeout=10    # mutt 'presses' (like) a key for you (while you're idle)
 set mail_check=5  # mutt checks for new mails on every keystroke
                   # but not more often then once in 5 seconds
 set beep_new      # beep on new messages in the mailboxes
+
+# Use goobook to search contacts
+set query_command="goobook query '%s'"
+bind editor <Tab> complete-query # Tab to autocomplete query
 
 # Other settings
 set sort = 'threads'
