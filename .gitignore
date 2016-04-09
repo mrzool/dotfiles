@@ -1,4 +1,6 @@
-ncmpcpp/error.log
-mpd/mpd.db
-mpd/mpd.log
-mpd/mpdstate
+ncmpcpp/*
+!ncmpcpp/bindings
+!ncmpcpp/config
+mpd/*
+!mpd/mpd.conf
+
