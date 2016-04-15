@@ -325,8 +325,8 @@ endif
 
 " Transparency wizardry
 highlight VertSplit ctermfg=244 ctermbg=NONE guibg=NONE
-highlight FoldColumn guibg=NONE ctermbg=NONE
-highlight LineNr guibg=NONE ctermbg=NONE
+highlight FoldColumn ctermbg=NONE guibg=NONE
+highlight LineNr ctermbg=NONE guibg=NONE
 
 " Line numbers tweaks
 set number
