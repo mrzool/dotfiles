@@ -9,7 +9,7 @@ alias ct='column -t'
 alias refresh='source ~/.bash_profile'
 alias -- -='cd -'
 
-# alias vi='nvim'
+alias vi='vim'
 # alias vim='nvim'
 
 # Terminal
