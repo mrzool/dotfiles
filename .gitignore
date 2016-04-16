@@ -4,6 +4,7 @@ ncmpcpp/*
 mpd/*
 !mpd/mpd.conf
 mutt/*
+!mutt/muttrc
 !mutt/dark.256.muttrc.erb
 !mutt/view_attachment.sh
 

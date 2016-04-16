@@ -3,7 +3,7 @@
 
 # set locale = "en_US.UTF-8"
 source ~/Dropbox/sec/auth
-source ~/.mutt/dark.256.muttrc.erb
+source dark.256.muttrc.erb
 
 # Account details
 set imap_user = $my_adress
@@ -17,8 +17,8 @@ set smtp_pass = $my_pass
 set folder = $my_folder
 set spoolfile = "+INBOX"
 set postponed ="+[Google Mail]/Drafts"
-set trash = "+[Google Mail]/Trash"
 set record = "+[GMail]/Sent Mail"
+# set trash = "+[Google Mail]/Trash"
 # set any_label = "+[Google Mail]/any_label"
 
 # Local folders for cached headers and certificates
@@ -36,7 +36,10 @@ set imap_keepalive = 900
 unset markers # Don't display ugly plus signs when wrapping lines
 set pager_index_lines=10 # Keep index visible when opening mail (split view)
 set smart_wrap # Be smart when wrapping lines
+set pager_stop
 
+auto_view text/html # view html automatically
+alternative_order text/plain text/enriched text/html # save html for last
 
 # Email check
 set timeout=10     # mutt 'presses' (like) a key for you (while you're idle) 
@@ -48,9 +51,12 @@ set beep_new       # beep on new messages in the mailboxes
 # Use goobook to search contacts
 set query_command="goobook query '%s'"
 
-# Other settings
+# Gmail-style threading
 set sort = 'threads'
 set sort_aux = 'reverse-last-date-received'
+
+set include
+set fast_reply
 
 # Key bindings
 bind generic,index Q exit
@@ -111,7 +117,6 @@ macro index,pager gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
 # Not sure I need these
 # set imap_check_subscribed
 # set hostname = gmail.com
-# set include
 # set auto_tag = yes
 # ignore "Authentication-Results:"
 # ignore "DomainKey-Signature:"
@@ -119,3 +124,5 @@ macro index,pager gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
 # hdr_order Date From To Cc
 # alternative_order text/plain text/html *
 # auto_view text/html
+
+
