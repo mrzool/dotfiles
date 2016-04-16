@@ -1,19 +1,24 @@
 # Based on http://www.bartbania.com/index.php/consolify-your-gmail-with-mutt/
+# and on http://lifehacker.com/5574557/how-to-use-the-fast-and-powerful-mutt-email-client-with-gmail
 
+# set locale = "en_US.UTF-8"
 source ~/Dropbox/sec/auth
-# source ~/.mutt/mutt-colors-solarized-dark-16.muttrc
+source ~/.mutt/dark.256.muttrc.erb
 
-set locale = "ru_RU.UTF-8"
-set from = $my_adress
-set realname = $my_realname
+# Account details
 set imap_user = $my_adress
 set imap_pass = $my_pass
+set from = $my_adress
+set realname = $my_realname
+set smtp_url = $my_smtp_url
+set smtp_pass = $my_pass
 
 # Remote Gmail folders
 set folder = $my_folder
 set spoolfile = "+INBOX"
 set postponed ="+[Google Mail]/Drafts"
-# set trash = "+[Google Mail]/Trash"
+set trash = "+[Google Mail]/Trash"
+set record = "+[GMail]/Sent Mail"
 # set any_label = "+[Google Mail]/any_label"
 
 # Local folders for cached headers and certificates
@@ -21,27 +26,27 @@ set header_cache ="~/.mutt/cache/headers"
 set message_cachedir ="~/.mutt/cache/bodies"
 set certificate_file ="~/.mutt/certificates"
 
-# SMTP settings
-set smtp_url = $my_smtp_url
-set smtp_pass = $my_pass # use the same passowrd as for IMAP
-
 # Fixes the 'No authenticators available' error
 set smtp_authenticators = 'gssapi:login'
 
 # Securing
-#set move = no  #Stop asking to "move read messages to mbox"!
+set move = no
 set imap_keepalive = 900
 
+unset markers # Don't display ugly plus signs when wrapping lines
+set pager_index_lines=10 # Keep index visible when opening mail (split view)
+set smart_wrap # Be smart when wrapping lines
+
+
 # Email check
-set timeout=10    # mutt 'presses' (like) a key for you (while you're idle) 
-                  # each x sec to trigger the thing below
-set mail_check=5  # mutt checks for new mails on every keystroke
-                  # but not more often then once in 5 seconds
-set beep_new      # beep on new messages in the mailboxes
+set timeout=10     # mutt 'presses' (like) a key for you (while you're idle) 
+                   # each x sec to trigger the thing below
+set mail_check=120 # mutt checks for new mails on every keystroke
+                   # but not more often then once in 120 seconds
+set beep_new       # beep on new messages in the mailboxes
 
 # Use goobook to search contacts
 set query_command="goobook query '%s'"
-bind editor <Tab> complete-query # Tab to autocomplete query
 
 # Other settings
 set sort = 'threads'
@@ -94,3 +99,23 @@ bind index,pager N next-unread
 bind index,pager P previous-unread
 
 bind index,pager X print-message
+
+# Gmail-style keyboard shortcuts
+macro index,pager y "<enter-command>unset trash\n <delete-message>" "Gmail archive message"
+macro index,pager d "<enter-command>set trash=\"imaps://imap.googlemail.com/[GMail]/Bin\"\n <delete-message>" "Gmail delete message"
+macro index,pager gi "<change-folder>=INBOX<enter>" "Go to inbox"
+macro index,pager ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
+macro index,pager gs "<change-folder>=[Gmail]/Starred<enter>" "Go to starred messages"
+macro index,pager gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
+
+# Not sure I need these
+# set imap_check_subscribed
+# set hostname = gmail.com
+# set include
+# set auto_tag = yes
+# ignore "Authentication-Results:"
+# ignore "DomainKey-Signature:"
+# ignore "DKIM-Signature:"
+# hdr_order Date From To Cc
+# alternative_order text/plain text/html *
+# auto_view text/html
