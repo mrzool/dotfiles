@@ -5,4 +5,5 @@ mpd/*
 !mpd/mpd.conf
 mutt/*
 !mutt/dark.256.muttrc.erb
+!mutt/view_attachment.sh
 
