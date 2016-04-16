@@ -107,6 +107,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # Add Miniconda2
   export PATH="/Users/zool/tools/miniconda2/bin:$PATH"
 
+  # Fix support for 256 colors in tmux
+  [ -n "$TMUX" ] && export TERM=screen-256color
+
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
 
   # LINUX-SPECIFIC SETTINGS
