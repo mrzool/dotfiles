@@ -1,62 +1,99 @@
-# Based on http://www.bartbania.com/index.php/consolify-your-gmail-with-mutt/
-# and on http://lifehacker.com/5574557/how-to-use-the-fast-and-powerful-mutt-email-client-with-gmail
+# Based on:
+# http://stevelosh.com/blog/2012/10/the-homely-mutt/
+# http://www.lucianofiandesio.com/getting-started-with-mutt-on-osx
+# http://www.bartbania.com/index.php/consolify-your-gmail-with-mutt/
+# http://lifehacker.com/5574557/how-to-use-the-fast-and-powerful-mutt-email-client-with-gmail
+# https://web.archive.org/web/20100704062413/http://cache.gawker.com/assets/images/lifehacker/2010/06/muttrc-gmail.txt
 
 # set locale = "en_US.UTF-8"
-source ~/Dropbox/sec/auth
-source dark.256.muttrc.erb
+source ~/Dropbox/sec/gmail # FYI: no passwords are stored in this file
 
 # Account details
-set imap_user = $my_adress
+set imap_user = $my_address
 set imap_pass = $my_pass
-set from = $my_adress
+set from = $my_address
 set realname = $my_realname
 set smtp_url = $my_smtp_url
 set smtp_pass = $my_pass
 
-# Remote Gmail folders
-set folder = $my_folder
+# Gmail config
+set hostname = "gmail.com"
+set folder = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
-set postponed ="+[Google Mail]/Drafts"
+set postponed = "+[GMail]/Drafts"
 set record = "+[GMail]/Sent Mail"
-# set trash = "+[Google Mail]/Trash"
-# set any_label = "+[Google Mail]/any_label"
+set trash = "+[GMail]/Trash"
+# set any_label = "+[Gmail]/any_label"
+set imap_check_subscribed
+set smtp_authenticators = 'gssapi:login' # Fixes 'No authenticators available' error
+set imap_keepalive = 900
+set query_command="goobook query '%s'" # Use goobook to search contacts
 
-# Local folders for cached headers and certificates
+# Paths
 set header_cache ="~/.mutt/cache/headers"
 set message_cachedir ="~/.mutt/cache/bodies"
 set certificate_file ="~/.mutt/certificates"
+set mailcap_path = "~/.mutt/mailcap"
+# set tmpdir = "~/.mutt/temp"
+# set signature = "~/.mutt/sig"
 
-# Fixes the 'No authenticators available' error
-set smtp_authenticators = 'gssapi:login'
-
-# Securing
-set move = no
-set imap_keepalive = 900
-
-unset markers # Don't display ugly plus signs when wrapping lines
+# Basic Options
+set wait_key = no        # shut up, mutt
+set mbox_type = Maildir  # mailbox type
+unset move               # gmail does that
+set delete               # don't ask, just do
+unset confirmappend      # don't ask, just do!
+set quit                 # don't ask, just do!!
+unset mark_old           # read/new is good enough for me
+set pipe_decode          # strip headers and eval mimes when piping
+set thorough_search      # strip headers and eval mimes before searching
+unset markers            # Don't display ugly plus signs when wrapping lines
 set pager_index_lines=10 # Keep index visible when opening mail (split view)
-set smart_wrap # Be smart when wrapping lines
+set smart_wrap           # Be smart when wrapping lines
 set pager_stop
+set include
+set fast_reply
+# set auto_tag
+
+# Email check
+set timeout=10
+set mail_check=120
+set beep_new
+
+# Index View Options
+set date_format = "%d/%m"
+set index_format = "[%Z]  %D  %-20.20F  %s"
+set sort = threads                         # like gmail
+set sort_aux = reverse-last-date-received  # like gmail
+set uncollapse_jump                        # don't collapse on an unread message
+set sort_re                                # thread based on regex
+set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+
+# Status Bar
+set status_chars  = " *%A"
+set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+
+# Header
+ignore *                                # ignore all headers
+unignore from: to: cc: date: subject:   # show only these
+unhdr_order *                           # some distros order things by default
+hdr_order from: to: cc: date: subject:  # and in this order
+
+# Sidebar
+set sidebar_delim   = '│'
+set sidebar_visible = yes
+set sidebar_width   = 24
+# color sidebar_new color221 color0
+
+# Sidebar Bindings
+bind index,pager <down>   sidebar-next
+bind index,pager <up>     sidebar-prev
+bind index,pager <right>  sidebar-open
+
 
 auto_view text/html # view html automatically
 alternative_order text/plain text/enriched text/html # save html for last
 
-# Email check
-set timeout=10     # mutt 'presses' (like) a key for you (while you're idle) 
-                   # each x sec to trigger the thing below
-set mail_check=120 # mutt checks for new mails on every keystroke
-                   # but not more often then once in 120 seconds
-set beep_new       # beep on new messages in the mailboxes
-
-# Use goobook to search contacts
-set query_command="goobook query '%s'"
-
-# Gmail-style threading
-set sort = 'threads'
-set sort_aux = 'reverse-last-date-received'
-
-set include
-set fast_reply
 
 # Key bindings
 bind generic,index Q exit
@@ -114,15 +151,5 @@ macro index,pager ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
 macro index,pager gs "<change-folder>=[Gmail]/Starred<enter>" "Go to starred messages"
 macro index,pager gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
 
-# Not sure I need these
-# set imap_check_subscribed
-# set hostname = gmail.com
-# set auto_tag = yes
-# ignore "Authentication-Results:"
-# ignore "DomainKey-Signature:"
-# ignore "DKIM-Signature:"
-# hdr_order Date From To Cc
-# alternative_order text/plain text/html *
-# auto_view text/html
-
-
+# Color scheme
+source ~/.mutt/dark.256.muttrc.erb
