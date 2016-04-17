@@ -4,9 +4,13 @@
 # http://www.bartbania.com/index.php/consolify-your-gmail-with-mutt/
 # http://lifehacker.com/5574557/how-to-use-the-fast-and-powerful-mutt-email-client-with-gmail
 # https://web.archive.org/web/20100704062413/http://cache.gawker.com/assets/images/lifehacker/2010/06/muttrc-gmail.txt
+#
+# TODO: more comments
 
 # set locale = "en_US.UTF-8"
-source ~/Dropbox/sec/gmail # FYI: no passwords are stored in this file
+
+# Account parameters
+source ~/Dropbox/sec/gmail # FYI: no passwords have been stored in this file
 
 # Account details
 set imap_user = $my_address
@@ -22,7 +26,7 @@ set folder = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
 set postponed = "+[GMail]/Drafts"
 set record = "+[GMail]/Sent Mail"
-set trash = "+[GMail]/Trash"
+set trash = "+[GMail]/Trash" # Requires ad-hoc patch
 # set any_label = "+[Gmail]/any_label"
 set imap_check_subscribed
 set smtp_authenticators = 'gssapi:login' # Fixes 'No authenticators available' error
