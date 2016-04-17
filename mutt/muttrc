@@ -86,7 +86,7 @@ hdr_order from: to: cc: date: subject:  # and in this order
 # Sidebar
 set sidebar_delim   = '│'
 set sidebar_visible = yes
-set sidebar_width   = 24
+set sidebar_width   = 34
 # color sidebar_new color221 color0
 
 # Sidebar Bindings
