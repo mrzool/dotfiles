@@ -24,6 +24,8 @@ set show-all-if-ambiguous on
 set mark-symlinked-directories on
 set match-hidden-files on
 set skip-completed-text on
+set visible-stats on
+set skip-completed-text on
 
 # Allow UTF-8 input and output
 set input-meta on
