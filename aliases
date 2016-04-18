@@ -5,6 +5,7 @@ alias ll='ls -l'
 alias la='ls -A'
 alias copy='xclip -sel clip'
 alias ct='column -t'
+alias info='info --vi-keys'
 
 alias refresh='source ~/.bash_profile'
 alias -- -='cd -'
