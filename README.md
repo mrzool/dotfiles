@@ -12,9 +12,11 @@ Config files for my \*nix systems.
 
 See more screenshots [here](http://notes.mrzool.cc/post/124238252897/following-up-on-a-discussion-on-runixporn-here).
 
-This repo includes dotfiles for: Bash, Git, Vim, Readline, tmux, ack, mr, mutt, detox, npm, mpd/ncmpcpp, gem, and IPython.
+This repo includes dotfiles for: Bash, tmux, Git, Vim, Readline, Mutt, mpd/ncmpcpp, ack, mr, detox, npm, gem, IPython.
 
 Linux-specific (not maintained at the moment): openbox, terminator, compton, conky, tint2, xmodmap, xxkb.
+
+Managed with [GNU Stow](https://www.gnu.org/software/stow/) (see [this](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html)).
 
 ## License
 
