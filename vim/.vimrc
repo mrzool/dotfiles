@@ -72,12 +72,12 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
 Plugin 'tpope/vim-dispatch'
-" Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'junegunn/vim-xmark'
+" Plugin '0x0dea/vim-molasses'
+" Plugin 'christoomey/vim-tmux-navigator'
 " Plugin 'benmills/vimux'
 " Plugin 'vim-pandoc/vim-pandoc'
 " Plugin 'vim-pandoc/vim-pandoc-syntax'
-
 
 call vundle#end()
 
