@@ -30,7 +30,7 @@ Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'chriskempson/base16-vim'
 Plugin 'tomasr/molokai'
 
-" Syntax
+" " Syntax
 Plugin 'othree/html5.vim.git'
 Plugin 'cakebaker/scss-syntax.vim.git'
 Plugin 'hail2u/vim-css3-syntax.git'
@@ -45,11 +45,11 @@ Plugin 'hdima/python-syntax'
 Plugin 'stephenway/postcss.vim.git'
 Plugin 'tpope/vim-markdown.git'
 
-" User Interface
+" " User Interface
 Plugin 'junegunn/goyo.vim'
 Plugin 'tpope/vim-vinegar.git'
 
-" Integrations
+" " Integrations
 Plugin 'scrooloose/syntastic.git'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'MarcWeber/vim-addon-mw-utils.git'
@@ -648,3 +648,8 @@ function! VisualSelection(direction, extra_filter) range
     let @/ = l:pattern
     let @" = l:saved_reg
 endfunction
+
+" vim-rsi Settings
+
+let g:rsi_no_meta = 1 " Fixes ä issue
+
