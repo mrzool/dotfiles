@@ -111,10 +111,10 @@ set nrformats -=octal
 set ttimeout
 set ttimeoutlen=100
 
-" Persistent undos
+" Persisten undos
+set undodir=$HOME/.vim/tmp/undo//
 set undofile
 set undolevels=5000
-set undodir=$HOME/.vim_undo_files
 
 " Get mouse working when running Vim in tmux
 if !has('nvim')
