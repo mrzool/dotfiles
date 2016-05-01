@@ -533,6 +533,18 @@ nnoremap <leader>c :w !pbcopy<CR>
 " New buffer from visual selection
 vnoremap <leader>n d:vnew<CR>P
 
+" Give toggling powers to 0
+" From http://ddrscott.github.io/blog/2016/vim-toggle-movement/
+function! ToggleHome()
+  let pos = getpos('.')
+  execute "normal! ^"
+  if pos == getpos('.')
+    execute "normal! 0"
+  endif
+endfunction
+
+nnoremap 0 :call ToggleHome()<CR>
+
 "------------------------------------------------------------
 " Plugins Settings
 
