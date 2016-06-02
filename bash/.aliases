@@ -10,6 +10,9 @@ alias info='info --vi-keys'
 alias refresh='source ~/.bash_profile'
 alias -- -='cd -'
 
+alias mount='diskutil mount'
+alias umount='diskutil unmount'
+
 # alias vi='vim'
 # alias vim='nvim'
 
