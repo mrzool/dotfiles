@@ -666,3 +666,5 @@ endfunction
 
 let g:rsi_no_meta = 1 " Fixes ä issue
 
+command! Stage GitGutterStageHunk
+command! Preview GitGutterPreviewHunk
