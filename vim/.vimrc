@@ -435,6 +435,7 @@ nnoremap <c-w>o :tab sp<CR>
 " Leader mappings
 
 nnoremap <Leader>w :w<CR>
+nnoremap <Leader>W :wa<CR>
 nnoremap <Leader>q :q<CR>
 
 " Open file explorer
