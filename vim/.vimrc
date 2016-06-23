@@ -188,7 +188,7 @@ set magic
 set path+=$PWD/**
 
 " Autocompletion settings
-set complete=.,b,u,] " Pull from current file, other buffers, and current tags
+set complete=.,w,b,u,t,i,t,kspell " Pull from current file, buffers in other windows and in the buffer list, and current tags
 set wildmenu " Turn on wildmenu
 set wildmode=longest,list:longest " How text gets replaced
 set wildignore=*.o,*~,*.pyc " Ignore compiled files when autocompleting
