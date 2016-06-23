@@ -552,6 +552,10 @@ endfunction
 
 nnoremap 0 :call ToggleHome()<CR>
 
+" Fix cursor position after yanking visually
+" From http://ddrscott.github.io/blog/2016/yank-without-jank/
+vnoremap <expr>y "my\"" . v:register . "y`y"
+
 "------------------------------------------------------------
 " Plugins Settings
 
