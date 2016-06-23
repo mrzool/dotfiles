@@ -450,6 +450,10 @@ nnoremap <Leader>v  :Vex!<CR>
 nnoremap <Leader>s  :Hex<CR>
 nnoremap <Leader>t  :Tex<CR>
 
+" Edit/source vimrc
+noremap <leader>E :execute 'edit ' . resolve(expand($MYVIMRC))<CR>
+nnoremap <leader>S :source $MYVIMRC<cr>
+
 nnoremap <Leader>l :lcd ../
 nnoremap <Leader>o :!open<Space>
 
@@ -472,10 +476,6 @@ endfunction
 
 command! -nargs=? Underline call s:Underline(<q-args>)
 
-" Edit/source vimrc
-" nnoremap <leader>ev :tabe $MYVIMRC<cr>
-noremap <leader>E :execute 'edit ' . resolve(expand($MYVIMRC))<CR>
-nnoremap <leader>S :source $MYVIMRC<cr>
 
 " Copy/paste to system clipboard
 vmap <Leader>y "+y
