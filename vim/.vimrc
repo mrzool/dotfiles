@@ -221,6 +221,8 @@ autocmd BufNewFile,BufRead,BufEnter *.md setlocal wrap linebreak
 autocmd FileType markdown setlocal wrap linebreak
 autocmd BufNewFile,BufRead,BufEnter *.yml setlocal wrap linebreak
 autocmd FileType yaml setlocal wrap linebreak
+autocmd BufNewFile,BufRead,BufEnter *.txt setlocal wrap linebreak
+autocmd FileType text setlocal wrap linebreak
 
 " Highlight whitespace with symbols
 set list
