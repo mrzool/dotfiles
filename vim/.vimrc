@@ -479,7 +479,6 @@ endfunction
 
 command! -nargs=? Underline call s:Underline(<q-args>)
 
-
 " Copy/paste to system clipboard
 vmap <Leader>y "+y
 vmap <Leader>d "+d
@@ -602,22 +601,15 @@ let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['liquid'] = 'liquid,html' " loads HTML snippets in liquid files
 
 " Goyo settings
-
 let g:goyo_height = 85
 
 function! s:goyo_enter()
-  " if exists('$TMUX')
-  "   silent !tmux set status off
-  " endif
   set noshowmode
   set scrolloff=999
 endfunction
 
 if !exists('*s:goyo_leave')
   function! s:goyo_leave()
-    " if exists('$TMUX')
-    "   silent !tmux set status on
-    " endif
     source $MYVIMRC
   endfunction
 endif
@@ -626,14 +618,12 @@ autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 " Gist settings
-
 " Private Gists by default
 let g:gist_post_private = 1
 " Only :w! updates a gist.
 let g:gist_update_on_write = 0
 
-" Ag Settings
-
+" Ag settings
 function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
     emenu Foo.Bar
@@ -661,5 +651,5 @@ function! VisualSelection(direction, extra_filter) range
     let @" = l:saved_reg
 endfunction
 
-" vim-rsi Settings
+" vim-rsi settings
 let g:rsi_no_meta = 1 " Fixes ä issue
