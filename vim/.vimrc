@@ -466,6 +466,7 @@ nnoremap <Leader>n :exe ":GitGutterNextHunk"<CR>
 nnoremap <Leader>N :exe ":GitGutterPrevHunk"<CR>
 nnoremap <Leader>a :exe ":GitGutterStageHunk"<CR>
 nnoremap <Leader>c :Gcommit -m 
+command! Preview GitGutterPreviewHunk
 
 " Underline current line
 nnoremap <Leader>u :Underline<CR>
