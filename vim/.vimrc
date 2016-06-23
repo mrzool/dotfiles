@@ -332,6 +332,9 @@ endif
 highlight VertSplit ctermfg=244 ctermbg=NONE guibg=NONE
 highlight FoldColumn ctermbg=NONE guibg=NONE
 highlight LineNr ctermbg=NONE guibg=NONE
+highlight GitGutterAdd ctermbg=NONE guibg=NONE
+highlight GitGutterChange ctermbg=NONE guibg=NONE
+highlight GitGutterDelete ctermbg=NONE guibg=NONE
 
 " Line numbers tweaks
 set number
