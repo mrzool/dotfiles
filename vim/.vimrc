@@ -537,9 +537,6 @@ nnoremap <C-l> <C-W>l
 " Run Syntastic check
 nnoremap <leader>sy :SyntasticCheck<cr>
 
-" Pipe buffer content in system clipboard
-nnoremap <leader>c :w !pbcopy<CR>
-
 " New buffer from visual selection
 vnoremap <leader>n d:vnew<CR>P
 
