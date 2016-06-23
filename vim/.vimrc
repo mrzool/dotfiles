@@ -457,8 +457,9 @@ nnoremap <Leader>o :!open<Space>
 nnoremap <silent> <Leader>> :exe "vertical resize +5"<CR>
 nnoremap <silent> <Leader>< :exe "vertical resize -5"<CR>
 
-" HTML/CSS view
-nnoremap <silent> <Leader>c :exe ":30winc >"<CR>
+" Git workflow
+nnoremap <Leader>a :exe ":GitGutterStageHunk"<CR>
+nnoremap <Leader>c :Gcommit -m 
 
 " Underline current line
 nnoremap <Leader>u :Underline<CR>
