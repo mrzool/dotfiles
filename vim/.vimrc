@@ -462,6 +462,8 @@ nnoremap <silent> <Leader>> :exe "vertical resize +5"<CR>
 nnoremap <silent> <Leader>< :exe "vertical resize -5"<CR>
 
 " Git workflow
+nnoremap <Leader>n :exe ":GitGutterNextHunk"<CR>
+nnoremap <Leader>N :exe ":GitGutterPrevHunk"<CR>
 nnoremap <Leader>a :exe ":GitGutterStageHunk"<CR>
 nnoremap <Leader>c :Gcommit -m 
 
