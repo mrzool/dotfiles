@@ -495,7 +495,6 @@ nnoremap <Leader>G :GundoToggle<CR>
 nnoremap <Leader>z :set nolist<CR>:Goyo<CR>
 
 " Open Ag
-nnoremap <leader>a :Ag 
 " Ag after selected text
 vnoremap <silent> ag :call VisualSelection('gv', '')<CR>
 " Search & replace selected text
