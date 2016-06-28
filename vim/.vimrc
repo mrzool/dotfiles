@@ -113,7 +113,7 @@ set nrformats -=octal
 set ttimeout
 set ttimeoutlen=100
 
-" Persisten undos
+" Persistent undos
 set undodir=$HOME/.vim/tmp/undo//
 set undofile
 set undolevels=5000
