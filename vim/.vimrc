@@ -33,7 +33,7 @@ Plugin 'mattn/webapi-vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'pbrisbin/vim-colors-off'
 
-" " Syntax
+" Syntax
 Plugin 'othree/html5.vim.git'
 Plugin 'hail2u/vim-css3-syntax.git'
 Plugin 'elzr/vim-json'
@@ -45,13 +45,13 @@ Plugin 'hdima/python-syntax'
 Plugin 'stephenway/postcss.vim.git'
 Plugin 'tpope/vim-markdown.git'
 
-" " User Interface
+" User Interface
 Plugin 'junegunn/goyo.vim'
 Plugin 'tpope/vim-vinegar.git'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'sjl/gundo.vim'
 
-" " Integrations
+" Integrations
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/grep.vim'
 Plugin 'kien/ctrlp.vim'
@@ -524,7 +524,7 @@ endfunction
 " Toggle/untoggle spell checking
 nnoremap <leader>ss :setlocal spell!<cr>
 
-" Smart way to move between windows
+" Mappings to move between windows
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-h> <C-W>h
