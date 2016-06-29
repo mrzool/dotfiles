@@ -515,18 +515,6 @@ function! ToggleMouse()
   endif
 endfunction
 
-" Enable/disable relative numbers
-nnoremap <leader>R :call ToggleRelativeNumber()<CR>
-function! ToggleRelativeNumber()
-  if &relativenumber
-    set norelativenumber
-    set number
-  else
-    set relativenumber
-    set nonumber
-  endif
-endfunction
-
 " Toggle/untoggle spell checking
 nnoremap <leader>ss :setlocal spell!<cr>
 
