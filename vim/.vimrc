@@ -108,6 +108,8 @@ set autoread
 set fileformats=unix
 set dictionary=/usr/share/dict/words
 
+set tags=tags;/
+
 let mapleader = "-"
 
 " Treat numerals as decimal
