@@ -29,7 +29,7 @@ Plugin 'MarcWeber/vim-addon-mw-utils.git'
 Plugin 'tomtom/tlib_vim.git'
 Plugin 'mattn/webapi-vim'
 
-" Colorschemes
+" Color schemes
 Plugin 'chriskempson/base16-vim'
 Plugin 'pbrisbin/vim-colors-off'
 
