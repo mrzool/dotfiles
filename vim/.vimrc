@@ -22,23 +22,23 @@ call vundle#begin()
 
 "------------------------------------------------------------
 " Plugins
-
 Plugin 'gmarik/Vundle.vim'
 
+" Libraries
+Plugin 'MarcWeber/vim-addon-mw-utils.git'
+Plugin 'tomtom/tlib_vim.git'
+Plugin 'mattn/webapi-vim'
+
 " Colorschemes
-Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'chriskempson/base16-vim'
-Plugin 'tomasr/molokai'
+Plugin 'pbrisbin/vim-colors-off'
 
 " " Syntax
 Plugin 'othree/html5.vim.git'
-Plugin 'cakebaker/scss-syntax.vim.git'
 Plugin 'hail2u/vim-css3-syntax.git'
 Plugin 'elzr/vim-json'
 Plugin 'pangloss/vim-javascript'
-Plugin 'StanAngeloff/php.vim'
 Plugin 'tpope/vim-liquid'
-Plugin 'liamcurry/tumblr.vim.git'
 Plugin 'keith/tmux.vim'
 Plugin 'tpope/vim-git'
 Plugin 'hdima/python-syntax'
@@ -48,34 +48,37 @@ Plugin 'tpope/vim-markdown.git'
 " " User Interface
 Plugin 'junegunn/goyo.vim'
 Plugin 'tpope/vim-vinegar.git'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'sjl/gundo.vim'
 
 " " Integrations
-Plugin 'scrooloose/syntastic.git'
 Plugin 'vim-scripts/matchit.zip'
-Plugin 'MarcWeber/vim-addon-mw-utils.git'
-Plugin 'tomtom/tlib_vim.git'
+Plugin 'vim-scripts/grep.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
+Plugin 'Raimondi/delimitMate'
+Plugin 'scrooloose/syntastic.git'
 Plugin 'tpope/vim-fugitive.git'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround.git'
+Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary.git'
+Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-obsession.git'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-rsi'
-Plugin 'garbas/vim-snipmate.git'
-Plugin 'honza/vim-snippets.git'
-Plugin 'sjl/gundo.vim'
-Plugin 'vim-scripts/grep.vim'
-Plugin 'Raimondi/delimitMate'
-Plugin 'mattn/webapi-vim'
-Plugin 'mattn/gist-vim'
 Plugin 'tpope/vim-dispatch'
-Plugin 'junegunn/vim-xmark'
-Plugin 'pbrisbin/vim-colors-off'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'mrtazz/simplenote.vim'
+Plugin 'mattn/gist-vim'
+
+" Non active
+" Plugin 'cakebaker/scss-syntax.vim.git'
+" Plugin 'StanAngeloff/php.vim'
+" Plugin 'liamcurry/tumblr.vim.git'
+" Plugin 'tomasr/molokai'
+" Plugin 'altercation/vim-colors-solarized.git'
+" Plugin 'mrtazz/simplenote.vim'
+" Plugin 'junegunn/vim-xmark'
+" Plugin 'garbas/vim-snipmate.git'
+" Plugin 'honza/vim-snippets.git'
 " Plugin '0x0dea/vim-molasses'
 " Plugin 'christoomey/vim-tmux-navigator'
 " Plugin 'benmills/vimux'
