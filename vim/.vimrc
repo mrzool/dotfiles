@@ -381,6 +381,9 @@ inoreabbrev fucntion function
 inoreabbrev latex <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span>
 inoreabbrev tex <span class="latex">T<sub>e</sub>X</span>
 inoreabbrev mattia@ mattia.tezzele@gmail.com
+" Use omni-completion to auto-close HTML tags
+inoreabbrev </ </<C-X><C-O>
+
 
 
 "------------------------------------------------------------
