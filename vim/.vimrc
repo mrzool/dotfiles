@@ -69,7 +69,7 @@ Plugin 'tpope/vim-rsi'
 Plugin 'tpope/vim-dispatch'
 Plugin 'mattn/gist-vim'
 
-" Non active
+" Not used atm
 " Plugin 'cakebaker/scss-syntax.vim.git'
 " Plugin 'StanAngeloff/php.vim'
 " Plugin 'liamcurry/tumblr.vim.git'
