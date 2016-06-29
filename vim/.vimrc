@@ -67,6 +67,7 @@ Plugin 'tpope/vim-obsession.git'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-rsi'
 Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-ragtag'
 Plugin 'mattn/gist-vim'
 
 " Not used atm
@@ -650,3 +651,6 @@ let g:rsi_no_meta = 1 " Fixes ä issue
 
 " DelimitMate Settings
 let delimitMate_expand_space = 1
+
+" Ragtag settings
+let g:ragtag_global_maps = 1
