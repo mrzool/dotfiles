@@ -647,3 +647,6 @@ endfunction
 
 " vim-rsi settings
 let g:rsi_no_meta = 1 " Fixes ä issue
+
+" DelimitMate Settings
+let delimitMate_expand_space = 1
