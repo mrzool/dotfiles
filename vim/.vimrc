@@ -125,6 +125,10 @@ set undodir=$HOME/.vim/tmp/undo//
 set undofile
 set undolevels=5000
 
+" Save and restore marks, registers content, 
+" command-line history, search pattern history
+set viminfo='1000,<500,:500,/500
+
 " Get mouse working when running Vim in tmux
 if !has('nvim')
   set ttymouse=xterm2
