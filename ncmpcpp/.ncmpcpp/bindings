@@ -185,9 +185,9 @@ def_key "ctrl-d"
 def_key "d"
   delete_playlist_items
 #
-#def_key "delete"
-#  delete_stored_playlist
-#
+def_key "D"
+  delete_stored_playlist
+
 def_key "ctrl-l"
   next_column
 #
