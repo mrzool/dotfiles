@@ -1,6 +1,6 @@
 mpd_host = "localhost"
 mpd_port = "6600"
-mpd_music_dir = "/Users/Shared/iTunes \Media/Music"
+mpd_music_dir = "/Volumes/z/music/"
 mpd_connection_timeout = "5"
 
 visualizer_fifo_path = "/tmp/mpd.fifo"
