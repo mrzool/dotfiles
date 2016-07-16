@@ -68,6 +68,7 @@ Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-rsi'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-ragtag'
+Plugin 'tpope/vim-unimpaired'
 Plugin 'mattn/gist-vim'
 
 " Not used atm
@@ -123,6 +124,10 @@ set ttimeoutlen=100
 set undodir=$HOME/.vim/tmp/undo//
 set undofile
 set undolevels=5000
+
+" Save and restore marks, registers content, 
+" command-line history, search pattern history
+set viminfo='1000,<500,:500,/500
 
 " Get mouse working when running Vim in tmux
 if !has('nvim')
