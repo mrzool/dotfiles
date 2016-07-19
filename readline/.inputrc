@@ -30,3 +30,8 @@ set skip-completed-text on
 set input-meta on
 set output-meta on
 set convert-meta off
+
+# Expand space when in Bash
+$if Bash
+  Space: magic-space
+$endif
