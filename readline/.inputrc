@@ -32,7 +32,8 @@ set input-meta on
 set output-meta on
 set convert-meta off
 
-# Expand space when in Bash
+# Bash-specific mappings and settings
 $if Bash
   Space: magic-space
+  \C-w: backward-kill-word
 $endif

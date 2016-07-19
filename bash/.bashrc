@@ -71,6 +71,9 @@ export PATH="$HOME/bin:$PATH"
 # Set Vim as default editor
 export EDITOR="vim"
 
+# Allow C-W mapping in inputrc to work (see: http://unix.stackexchange.com/questions/296822/readline-treat-dash-as-a-word-break-character/296840#296840)
+stty werase undef
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
 
   # OSX-SPECIFIC SETTINGS
