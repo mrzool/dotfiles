@@ -25,6 +25,7 @@ set mark-symlinked-directories on
 set match-hidden-files on
 # set visible-stats on
 set skip-completed-text on
+set colored-stats on
 
 # Allow UTF-8 input and output
 set input-meta on
