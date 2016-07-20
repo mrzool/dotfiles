@@ -56,11 +56,11 @@ source "${GITAWAREPROMPT}/main.sh"
 export PS1="\[\033[33;1m\]\W\[\033[m\]\[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]$ "
 
 # Complete all the things
-source ~/bin/git-completion.bash
-source ~/bin/tmux.completion.bash
-source ~/bin/tmuxinator.bash
-source ~/bin/npm-completion.bash
-source ~/bin/pandoc.bash
+source ~/bin/completions/git-completion.bash
+source ~/bin/completions/tmux.completion.bash
+source ~/bin/completions/tmuxinator.bash
+source ~/bin/completions/npm-completion.bash
+source ~/bin/completions/pandoc.bash
 
 # Add node bin folder to PATH
 export PATH="$HOME/.node/bin:$PATH"
