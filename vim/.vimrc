@@ -342,6 +342,10 @@ endif
 " Display comments in italics
 highlight Comment cterm=italic
 
+" Italics and bold in markdown files
+highlight htmlItalic cterm=italic
+highlight htmlBold cterm=bold
+
 " Transparency wizardry
 highlight VertSplit ctermfg=244 ctermbg=NONE guibg=NONE
 highlight FoldColumn ctermbg=NONE guibg=NONE
