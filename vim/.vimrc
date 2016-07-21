@@ -339,6 +339,9 @@ if has("unix")
   endif
 endif
 
+" Display comments in italics
+highlight Comment cterm=italic
+
 " Transparency wizardry
 highlight VertSplit ctermfg=244 ctermbg=NONE guibg=NONE
 highlight FoldColumn ctermbg=NONE guibg=NONE
