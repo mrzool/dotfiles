@@ -174,9 +174,7 @@ autocmd BufReadPost *
 " Save all buffers when focus is lost
 autocmd FocusLost * silent! wa
 
-
 set autowrite
-
 
 " Remember info about open buffers on close
 set viminfo^=%
@@ -396,10 +394,6 @@ inoreabbrev fucntion function
 inoreabbrev latex <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span>
 inoreabbrev tex <span class="latex">T<sub>e</sub>X</span>
 inoreabbrev mattia@ mattia.tezzele@gmail.com
-" Use omni-completion to auto-close HTML tags
-inoreabbrev </ </<C-X><C-O>
-
-
 
 "------------------------------------------------------------
 " Custom mappings
