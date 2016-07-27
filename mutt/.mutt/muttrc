@@ -26,7 +26,7 @@ set folder = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
 set postponed = "+[GMail]/Drafts"
 set record = "+[GMail]/Sent Mail"
-set trash = "+[GMail]/Trash" # Requires ad-hoc patch
+# set trash = "+[GMail]/Trash" # Requires ad-hoc patch
 # set any_label = "+[Gmail]/any_label"
 set imap_check_subscribed
 set smtp_authenticators = 'gssapi:login' # Fixes 'No authenticators available' error
@@ -84,9 +84,9 @@ unhdr_order *                           # some distros order things by default
 hdr_order from: to: cc: date: subject:  # and in this order
 
 # Sidebar
-set sidebar_delim   = '│'
-set sidebar_visible = yes
-set sidebar_width   = 34
+# set sidebar_delim   = '│'
+# set sidebar_visible = yes
+# set sidebar_width   = 34
 # color sidebar_new color221 color0
 
 # Sidebar Bindings
