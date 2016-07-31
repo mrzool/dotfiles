@@ -90,14 +90,13 @@ hdr_order from: to: cc: date: subject:  # and in this order
 # color sidebar_new color221 color0
 
 # Sidebar Bindings
-bind index,pager <down>   sidebar-next
-bind index,pager <up>     sidebar-prev
-bind index,pager <right>  sidebar-open
+# bind index,pager <down>   sidebar-next
+# bind index,pager <up>     sidebar-prev
+# bind index,pager <right>  sidebar-open
 
 
 auto_view text/html # view html automatically
 alternative_order text/plain text/enriched text/html # save html for last
-
 
 # Key bindings
 bind generic,index Q exit
