@@ -36,3 +36,4 @@ alias calc="qalc"
 alias unrar="unrar x"
 alias gtypist="gtypist -S"
 alias ctags="`brew --prefix`/bin/ctags"
+alias ed='ed -p:'
