@@ -6,13 +6,13 @@ directory = $PWD
 magnets = false
 
 ; save each selected torrent in a .torrent file
-torrents = false                     
+torrents = false
 
 [LocalDB]
 ; use a local copy of the pirate bay database
-enabled = false                 
+enabled = false
 
-; path of the database     
+; path of the database
 path = ~/downloads/pirate-get/db
 
 [Misc]
