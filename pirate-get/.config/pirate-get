@@ -1,3 +1,5 @@
+; vi: ft=dosini
+
 [Save]
 ; directory where to save files
 directory = $PWD
@@ -19,7 +21,7 @@ path = ~/downloads/pirate-get/db
 ; specify a custom command for opening the magnet
 ; ex. myprogram --open %s
 ; %s represent the magnet uri
-openCommand = peerflix "%s" --vlc --not-on-top --path `pwd`
+openCommand = peerflix "%s" --vlc --not-on-top --path `pwd` -l
 
 ; open magnets with transmission-remote client
 transmission = false
