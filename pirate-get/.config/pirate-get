@@ -1,0 +1,32 @@
+[Save]
+; directory where to save files
+directory = $PWD
+
+; save each selected magnet link in a .magnet file
+magnets = false
+
+; save each selected torrent in a .torrent file
+torrents = false                     
+
+[LocalDB]
+; use a local copy of the pirate bay database
+enabled = false                 
+
+; path of the database     
+path = ~/downloads/pirate-get/db
+
+[Misc]
+; specify a custom command for opening the magnet
+; ex. myprogram --open %s
+; %s represent the magnet uri
+openCommand = peerflix "%s" --vlc
+
+; open magnets with transmission-remote client
+transmission = false
+
+; use colored output
+colors = true
+
+; the pirate bay mirror(s) to use:
+; one or more space separated URLs
+mirror = https://thepiratebay.org
