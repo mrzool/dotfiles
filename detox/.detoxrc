@@ -5,6 +5,12 @@ sequence "default" {
   wipeup { remove_trailing; };
 };
 
+sequence "utf_8" {
+  utf_8;
+  safe;
+  wipeup;
+};
+
 ignore {
   filename ".git";
   filename ".svn";
