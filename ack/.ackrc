@@ -1,5 +1,9 @@
+# Always sort the files
+#--sort−files
+
+# Always color, even if piping to a another program
+--color
+
 --pager=less -RFX
-
 --type-add=css=scss
-
 --ignore-dir=node_modules/
