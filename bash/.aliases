@@ -13,7 +13,7 @@ alias -- -='cd -'
 alias mount='diskutil mount'
 alias umount='diskutil unmount'
 
-# alias vi='vim'
+alias vi='vim'
 # alias vim='nvim'
 
 # Terminal
