@@ -144,7 +144,7 @@ set backspace=eol,start,indent
 set ssop-=options
 set ssop-=folds
 
-" Make use of modeline
+" Activate modeline
 set modeline
 
 " Make yank repeatable with .
