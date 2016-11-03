@@ -111,7 +111,7 @@ set dictionary=/usr/share/dict/words
 
 set tags=tags;/
 
-let mapleader = "-"
+let mapleader = "\<Space>"
 
 " Treat numerals as decimal
 set nrformats -=octal
