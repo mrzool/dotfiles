@@ -21,7 +21,7 @@ path = ~/downloads/pirate-get/db
 ; specify a custom command for opening the magnet
 ; ex. myprogram --open %s
 ; %s represent the magnet uri
-openCommand = peerflix "%s" --vlc --not-on-top --path `pwd` -l
+openCommand = peerflix "%s" --vlc --not-on-top
 
 ; open magnets with transmission-remote client
 transmission = false
