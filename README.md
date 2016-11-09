@@ -12,6 +12,8 @@ Config files for my \*nix systems.
 
 See more screenshots [here](http://notes.mrzool.cc/post/124238252897/following-up-on-a-discussion-on-runixporn-here).
 
+See the thread on [unixporn](https://www.reddit.com/r/unixporn/comments/3ddudy/os_x_vimtmux_setup/).
+
 This repo includes dotfiles for: Bash, tmux, Git, Vim, Readline, Mutt, mpd/ncmpcpp, ack, mr, detox, npm, gem, IPython.
 
 Linux-specific (not maintained at the moment): openbox, terminator, compton, conky, tint2, xmodmap, xxkb.
