@@ -1,0 +1,12 @@
+directory: /Volumes/Data/music
+library: /Volumes/Data/music.blb
+paths: 
+  default: %asciify{%lower{$albumartist}}-%asciify{%lower{$album}}-$year/$track-%asciify{%lower{$title}}
+  comp: varius-artists/$album%aunique{}/$track-%asciify{%lower{$title}}
+import:
+  move: yes
+replace:
+  '\ ': _
+plugins: ftintitle
+ftintitle:
+  format: (feat. {0})
