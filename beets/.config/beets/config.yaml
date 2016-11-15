@@ -5,6 +5,12 @@ paths:
   comp: varius-artists/$album%aunique{}/$track-%asciify{%lower{$title}}
 import:
   move: yes
+match:
+  strong_rec_thresh: 0.1
+  preferred:
+    countries: [US, GB|UK]
+    media: [CD, Digital Media|File]
+    original_year: yes
 replace:
   '\ ': _
 plugins: ftintitle
