@@ -13,6 +13,15 @@ match:
     original_year: yes
 replace:
   '\ ': _
-plugins: ftintitle
+plugins: ftintitle edit embedart scrub
 ftintitle:
   format: (feat. {0})
+# lastgenre:
+#   canonical: yes
+#   whitelist:
+#     - acoustic music
+#     - electronic
+#     - hip hop
+#     - classical
+#     - rock
+#     - jazz
