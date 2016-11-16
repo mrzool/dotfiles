@@ -13,7 +13,11 @@ match:
     original_year: yes
 replace:
   '\ ': _
-plugins: ftintitle edit embedart scrub replaygain
+plugins: ftintitle edit fetchart embedart scrub replaygain
+fetchart:
+  minwidth: 500
+  maxwidth: 700
+  enforceratio: yes
 ftintitle:
   format: (feat. {0})
 replaygain:
