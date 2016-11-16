@@ -4,7 +4,7 @@ paths:
   default: %asciify{%lower{$albumartist}}-%asciify{%lower{$album}}-$year/$track-%asciify{%lower{$title}}
   comp: varius-artists/$album%aunique{}/$track-%asciify{%lower{$title}}
 import:
-  move: yes
+  move: no
 match:
   strong_rec_thresh: 0.1
   preferred:
