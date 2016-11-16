@@ -39,6 +39,7 @@ shopt -s cdable_vars
 export dotfiles="$HOME/dotfiles"
 export repos="$HOME/repos"
 export dropbox="$HOME/Dropbox"
+export torrents="/tmp/torrent-stream"
 
 # Define search path for the cd command
 CDPATH=".:~/repos"

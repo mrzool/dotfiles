@@ -13,9 +13,13 @@ match:
     original_year: yes
 replace:
   '\ ': _
-plugins: ftintitle edit embedart scrub
+plugins: ftintitle edit embedart scrub replaygain
 ftintitle:
   format: (feat. {0})
+replaygain:
+  backend: command
+  auto: no
+  overwrite: yes
 # lastgenre:
 #   canonical: yes
 #   whitelist:
