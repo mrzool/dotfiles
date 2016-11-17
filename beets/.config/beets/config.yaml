@@ -14,17 +14,18 @@ match:
     original_year: yes
 replace:
   '\ ': _
-plugins: ftintitle edit fetchart embedart scrub replaygain
+plugins: ftintitle edit fetchart embedart scrub
 fetchart:
   minwidth: 500
   maxwidth: 700
   enforceratio: yes
 ftintitle:
   format: (feat. {0})
-replaygain:
-  backend: command
-  auto: no
-  overwrite: yes
+
+# replaygain:
+#   backend: command
+#   auto: no
+#   overwrite: yes
 # lastgenre:
 #   canonical: yes
 #   whitelist:
