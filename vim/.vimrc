@@ -50,6 +50,7 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'tpope/vim-vinegar.git'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'sjl/gundo.vim'
+Plugin 'terryma/vim-smooth-scroll'
 
 " Integrations
 Plugin 'vim-scripts/matchit.zip'
@@ -662,3 +663,9 @@ let delimitMate_expand_space = 1
 
 " Ragtag settings
 let g:ragtag_global_maps = 1
+
+" Smooth-scroll mappings
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 10, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 10, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 10, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 4)<CR>
