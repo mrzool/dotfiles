@@ -14,7 +14,11 @@ match:
     original_year: yes
 replace:
   '\ ': _
-plugins: ftintitle edit fetchart embedart scrub
+plugins: ftintitle edit fetchart embedart scrub export
+export:
+  json:
+    formatting:
+      indent: 2
 fetchart:
   minwidth: 500
   maxwidth: 700
