@@ -417,8 +417,8 @@ noremap 0 ^
 nnoremap Y y$
 
 " Search and backwards search
-map <space> /
-map <leader><space> ?
+nnoremap <space> /
+nnoremap <leader><space> ?
 
 " Insert line break
 nnoremap <CR><CR> i<CR><ESC>
