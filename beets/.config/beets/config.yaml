@@ -2,7 +2,7 @@ directory: /Volumes/Data/music
 library: /Volumes/Data/music.blb
 paths: 
   default: %asciify{%lower{$albumartist}}-%asciify{%lower{$album}}-$year/$track-%asciify{%lower{$title}}
-  comp: varius-artists/$album%aunique{}/$track-%asciify{%lower{$title}}
+  comp: various-artists/$album%aunique{}/$track-%asciify{%lower{$title}}
 import:
   move: no
 original_date: yes
