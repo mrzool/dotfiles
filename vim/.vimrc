@@ -33,7 +33,7 @@ Plugin 'mattn/webapi-vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'pbrisbin/vim-colors-off'
 
-" Syntax
+" Syntax/Indenting
 Plugin 'othree/html5.vim.git'
 Plugin 'hail2u/vim-css3-syntax.git'
 Plugin 'elzr/vim-json'
@@ -44,6 +44,7 @@ Plugin 'tpope/vim-git'
 Plugin 'hdima/python-syntax'
 Plugin 'stephenway/postcss.vim.git'
 Plugin 'tpope/vim-markdown.git'
+Plugin 'mustache/vim-mustache-handlebars'
 
 " User Interface
 Plugin 'junegunn/goyo.vim'
@@ -75,7 +76,6 @@ Plugin 'mattn/gist-vim'
 " Not used atm
 " Plugin 'cakebaker/scss-syntax.vim.git'
 " Plugin 'StanAngeloff/php.vim'
-" Plugin 'liamcurry/tumblr.vim.git'
 " Plugin 'tomasr/molokai'
 " Plugin 'altercation/vim-colors-solarized.git'
 " Plugin 'mrtazz/simplenote.vim'
@@ -87,6 +87,8 @@ Plugin 'mattn/gist-vim'
 " Plugin 'benmills/vimux'
 " Plugin 'vim-pandoc/vim-pandoc'
 " Plugin 'vim-pandoc/vim-pandoc-syntax'
+" Plugin 'liamcurry/tumblr.vim.git'
+" Plugin 'captbaritone/better-indent-support-for-php-with-html'
 
 call vundle#end()
 
