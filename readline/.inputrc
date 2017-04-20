@@ -1,6 +1,6 @@
 # set editing-mode vi
 # set keymap vi
-set bell-style none
+set bell-style visible
 
 $if mode=vi
     set keymap vi-command
