@@ -36,4 +36,5 @@ set convert-meta off
 $if Bash
   Space: magic-space
   \C-w: backward-kill-word
+  "\C-n": menu-complete
 $endif
