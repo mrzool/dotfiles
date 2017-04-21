@@ -44,7 +44,7 @@ Plugin 'tpope/vim-git'
 Plugin 'hdima/python-syntax'
 Plugin 'stephenway/postcss.vim.git'
 Plugin 'tpope/vim-markdown.git'
-Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'mrzool/mustache.vim'
 
 " User Interface
 Plugin 'junegunn/goyo.vim'
