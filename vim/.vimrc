@@ -384,6 +384,10 @@ hi link HelpStar Normal
 " Smaller help window
 set helpheight=12
 
+" Sensible horizontal scrolling
+" (https://ddrscott.github.io/blog/2016/sidescroll/)
+set sidescroll=1
+
 "------------------------------------------------------------
 " Abbreviations
 
