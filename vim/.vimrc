@@ -486,7 +486,7 @@ nnoremap <silent> <Leader>< :exe "vertical resize -5"<CR>
 " Git workflow
 " nnoremap <Leader>n :exe ":GitGutterNextHunk"<CR>
 " nnoremap <Leader>N :exe ":GitGutterPrevHunk"<CR>
-nnoremap <Leader>a :exe ":GitGutterStageHunk"<CR>
+nnoremap AA :exe ":GitGutterStageHunk"<CR>
 nnoremap <Leader>c :Gcommit -m 
 command! Preview GitGutterPreviewHunk
 
@@ -671,7 +671,7 @@ let delimitMate_expand_space = 1
 let g:ragtag_global_maps = 1
 
 " Smooth-scroll mappings
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 10, 2)<CR>
-noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 10, 2)<CR>
-noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 10, 4)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 4)<CR>
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 25, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 25, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 25, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 25, 4)<CR>
