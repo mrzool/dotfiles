@@ -484,11 +484,12 @@ nnoremap <silent> <Leader>> :exe "vertical resize +5"<CR>
 nnoremap <silent> <Leader>< :exe "vertical resize -5"<CR>
 
 " Git workflow
-" nnoremap <Leader>n :exe ":GitGutterNextHunk"<CR>
-" nnoremap <Leader>N :exe ":GitGutterPrevHunk"<CR>
-nnoremap AA :exe ":GitGutterStageHunk"<CR>
+nnoremap <Leader>a :exe ":GitGutterStageHunk"<CR>
 nnoremap <Leader>c :Gcommit -m 
 command! Preview GitGutterPreviewHunk
+
+" Update git-gutter signs as soon as possible after stop typing event
+set updatetime=1000
 
 " Underline current line
 nnoremap <Leader>u :Underline<CR>
