@@ -90,6 +90,8 @@ Plugin 'mattn/gist-vim'
 " Plugin 'vim-pandoc/vim-pandoc-syntax'
 " Plugin 'liamcurry/tumblr.vim.git'
 " Plugin 'captbaritone/better-indent-support-for-php-with-html'
+" Plugin 'rust-lang/rust.vim'
+" Plugin 'cespare/vim-toml'
 
 call vundle#end()
 
