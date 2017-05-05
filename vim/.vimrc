@@ -409,6 +409,13 @@ inoreabbrev tex <span class="latex">T<sub>e</sub>X</span>
 inoreabbrev mattia@ mattia.tezzele@gmail.com
 
 "------------------------------------------------------------
+" Custom commands
+
+" Edit/source vimrc
+command! E execute 'edit ' . resolve(expand($MYVIMRC))
+command! S source $MYVIMRC
+
+"------------------------------------------------------------
 " Custom mappings
 
 " Maps jj to esc
