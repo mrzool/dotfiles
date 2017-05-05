@@ -412,7 +412,7 @@ inoreabbrev mattia@ mattia.tezzele@gmail.com
 " Custom commands
 
 " Edit/source vimrc
-command! E execute 'edit ' . resolve(expand($MYVIMRC))
+command! E execute 'edit ' . resolve(expand($MYVIMRC)) | lcd %:p:h
 command! S source $MYVIMRC
 
 "------------------------------------------------------------
