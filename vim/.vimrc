@@ -71,6 +71,7 @@ Plugin 'tpope/vim-rsi'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-abolish'
 Plugin 'mattn/gist-vim'
 
 " Not used atm
