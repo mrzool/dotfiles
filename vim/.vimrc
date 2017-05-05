@@ -128,7 +128,7 @@ set undodir=$HOME/.vim/tmp/undo//
 set undofile
 set undolevels=5000
 
-" Save and restore marks, registers content, 
+" Save and restore marks, registers content,
 " command-line history, search pattern history
 set viminfo='1000,<500,:500,/500
 
@@ -139,6 +139,8 @@ endif
 
 " Configure backspace
 set backspace=eol,start,indent
+" Actually disable backspace so I just use <C-h>
+inoremap <BS> <Nop>
 
 " Jump to next/previous line when moving left/right
 " set whichwrap+=<,>
@@ -165,7 +167,7 @@ set nowritebackup
 set noswapfile
 
 " K opens help section for word under cursor
-" Super-useful while editing the vimrc
+" useful when editing the vimrc
 autocmd FileType vim setlocal keywordprg=:help
 
 " Return to last edit position when opening files
@@ -243,7 +245,7 @@ set listchars=eol:¬,extends:…,precedes:…,tab:\ \
 " Makes foo-bar considered one word
 " set iskeyword+=-
 
-" Change text between < and >
+" Consider < and > a pair
 set matchpairs+=<:>
 
 "------------------------------------------------------------
@@ -408,9 +410,6 @@ inoreabbrev mattia@ mattia.tezzele@gmail.com
 " Maps jj to esc
 inoremap jj <Esc>
 
-" Disable backspace
-inoremap <BS> <Nop>
-
 " Break undo sequence in insert mode when certain actions are performed
 " See http://vi.stackexchange.com/questions/4556/undo-in-insert-mode/4558#455
 inoremap <CR> <C-G>u<CR>
@@ -421,10 +420,6 @@ noremap 0 ^
 
 " make Y behave like D and C
 nnoremap Y y$
-
-" Search and backwards search
-noremap <space> /
-noremap <leader><space> ?
 
 " Insert line break
 nnoremap <CR><CR> i<CR><ESC>
@@ -440,9 +435,6 @@ nnoremap gj j
 nnoremap gk k
 vnoremap gj j
 vnoremap gk k
-
-" Invoke fugitive status window
-nnoremap SS :Gstatus<CR>
 
 " Invert apostrophe/backtick 'jump to mark' behavior
 nnoremap ' `
@@ -483,7 +475,8 @@ nnoremap <Leader>o :!open<Space>
 nnoremap <silent> <Leader>> :exe "vertical resize +5"<CR>
 nnoremap <silent> <Leader>< :exe "vertical resize -5"<CR>
 
-" Git workflow
+" Git-related
+nnoremap SS :Gstatus<CR>
 nnoremap <Leader>a :exe ":GitGutterStageHunk"<CR>
 nnoremap <Leader>c :Gcommit -m 
 command! Preview GitGutterPreviewHunk
@@ -527,7 +520,7 @@ endfunction
 " Toggle/untoggle spell checking
 nnoremap <leader>ss :setlocal spell!<cr>
 
-" Mappings to move between windows
+" Move between windows
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-h> <C-W>h
@@ -537,11 +530,14 @@ nnoremap <C-l> <C-W>l
 nnoremap <leader>sy :SyntasticCheck<cr>
 
 " New buffer from visual selection
-vnoremap <leader>n d:vnew<CR>P
+vnoremap <leader>n d:new<CR>P
 
 " Fix cursor position after yanking visually
 " From http://ddrscott.github.io/blog/2016/yank-without-jank/
 vnoremap <expr>y "my\"" . v:register . "y`y"
+
+" Insert ✓ at beginning of line (for checklists)
+" nnoremap <leader>d I<C-k>OK<space><esc>
 
 "------------------------------------------------------------
 " Plugins Settings
