@@ -465,26 +465,14 @@ nnoremap <c-w>o :tab sp<CR>
 "------------------------------------------------------------
 " Leader mappings
 
-nnoremap <Leader>w :w<CR>
-nnoremap <Leader>W :wa<CR>
-nnoremap <Leader>q :q<CR>
-
 " Open file explorer
 nnoremap <Leader>e  :e.<CR>
 nnoremap <Leader>v  :Vex!<CR>
 nnoremap <Leader>s  :Hex<CR>
 nnoremap <Leader>t  :Tex<CR>
 
-" Edit/source vimrc
-noremap <leader>E :execute 'edit ' . resolve(expand($MYVIMRC))<CR>
-nnoremap <leader>S :source $MYVIMRC<cr>
-
 nnoremap <Leader>l :lcd ../
 nnoremap <Leader>o :!open<Space>
-
-" Resize vertical split
-nnoremap <silent> <Leader>> :exe "vertical resize +5"<CR>
-nnoremap <silent> <Leader>< :exe "vertical resize -5"<CR>
 
 " Git-related
 nnoremap SS :Gstatus<CR>
@@ -542,13 +530,6 @@ nnoremap <leader>sy :SyntasticCheck<cr>
 
 " New buffer from visual selection
 vnoremap <leader>n d:new<CR>P
-
-" Fix cursor position after yanking visually
-" From http://ddrscott.github.io/blog/2016/yank-without-jank/
-vnoremap <expr>y "my\"" . v:register . "y`y"
-
-" Insert ✓ at beginning of line (for checklists)
-" nnoremap <leader>d I<C-k>OK<space><esc>
 
 "------------------------------------------------------------
 " Plugins Settings
