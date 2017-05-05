@@ -115,7 +115,8 @@ set dictionary=/usr/share/dict/words
 
 set tags=tags;/
 
-let mapleader = "/"
+let mapleader = " "
+nnoremap <SPACE> <Nop>
 
 " Treat numerals as decimal
 set nrformats -=octal
