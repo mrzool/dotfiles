@@ -1,0 +1,40 @@
+# automatic reloading
+refresh-on-startup yes
+auto-reload no
+reload-time 360 # minutes
+
+# reloading
+reload-threads 4
+reload-only-visible-feeds no
+show-read-feeds no
+download-retries 4
+
+# notification
+notify-screen yes
+notify-xterm yes
+
+# storage
+max-items 200
+
+# external programs
+browser open # use default browser
+
+# Save path
+save-path ~/Documents/newsbeuter
+
+# display
+article-sort-order date-desc
+feedlist-format "%S%n %11u %t"
+articlelist-format "%D %f %?T?;%-17T; ?%t"
+datetime-format %m-%d
+color background white black
+color listnormal white black
+color listfocus black white
+color info black white
+color article white black
+
+# interface
+confirm-exit no
+bind-key k up
+bind-key j down
+bind-key O open-in-browser-and-mark-read

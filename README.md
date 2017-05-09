@@ -14,7 +14,7 @@ See more screenshots [here](http://notes.mrzool.cc/post/124238252897/following-u
 
 See the thread on [/r/unixporn](https://www.reddit.com/r/unixporn/comments/3ddudy/os_x_vimtmux_setup/).
 
-This repo includes dotfiles for: Bash, tmux, Git, Vim, Readline, Mutt, mpd/ncmpcpp, ack, mr, detox, npm, gem, IPython, beets.
+This repo includes dotfiles for: Bash, tmux, Git, Vim, Readline, Mutt, mpd/ncmpcpp, ack, mr, detox, npm, gem, IPython, beets, newsbeuter.
 
 Linux-specific (not maintained at the moment): openbox, terminator, compton, conky, tint2, xmodmap, xxkb.
 
