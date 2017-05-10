@@ -23,6 +23,7 @@ browser open # use default browser
 save-path ~/Documents/newsbeuter
 
 # display
+text-width 72
 article-sort-order date-asc
 feedlist-format "%S%n %11u %t"
 articlelist-format "%D %f %?T?;%-17T; ?%t"
