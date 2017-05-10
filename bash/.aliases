@@ -1,39 +1,36 @@
 # vi:syntax=sh
 
+alias refresh='source ~/.bash_profile'
+
+alias c='clear'
+alias e='exit'
+
+alias -- -='cd -'
+
 alias l='ls -CF -lh'
 alias ll='ls -l'
 alias la='ls -A'
-alias copy='xclip -sel clip'
+
 alias ct='column -t'
 alias info='info --vi-keys'
-
-alias refresh='source ~/.bash_profile'
-alias -- -='cd -'
 
 alias mount='diskutil mount'
 alias umount='diskutil unmount'
 
-alias vi='vim'
-# alias vim='nvim'
-
-# Terminal
-alias c='clear'
-alias e='exit'
-
-# Package management
-alias backport='sudo apt-get -t wheezy-backports install'
-alias installed='dpkg --get-selections'
-
-# Networking
+# Services
 alias a2restart="sudo service apache2 restart"
-alias sss='python -m SimpleHTTPServer 8888'
-alias sps='php -S localhost:3000'
-alias guard='bundle exec guard'
+alias sss='python -m SimpleHTTPServer 8888' # Start Simple Server
+alias sps='php -S localhost:3000' # Start PHP Server
 
-# Various
-alias colorpicker="gcolor2"
-alias calc="qalc"
+# Utilities
+alias vi='vim'
 alias unrar="unrar x"
 alias gtypist="gtypist -S"
 alias ctags="`brew --prefix`/bin/ctags"
 alias ed='ed -p:'
+alias news="newsbeuter"
+
+# Linux things
+# alias backport='sudo apt-get -t wheezy-backports install'
+# alias installed='dpkg --get-selections'
+# alias copy='xclip -sel clip'
