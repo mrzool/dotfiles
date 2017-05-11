@@ -92,7 +92,7 @@ vi_prec_num 1
 emacs_like_lineedit 1
 mark 0
 close_tab_back 0
-confirm_qq 1
+confirm_qq 0
 save_hist 1
 history 100
 use_history 1
