@@ -17,7 +17,8 @@ notify-xterm yes
 max-items 0 # keep all items
 
 # external programs
-browser open # use default browser
+# browser open # use default browser
+browser w3m
 
 # Save path
 save-path ~/Documents/newsbeuter
