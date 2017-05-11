@@ -28,7 +28,7 @@ text-width 72
 article-sort-order date-asc
 feedlist-format "%S%n %11u %t"
 articlelist-format "%D %f %?T?;%-17T; ?%t"
-datetime-format "%d %b"
+datetime-format "%d %b %y"
 color background white black
 color listnormal white black
 color listfocus black white
