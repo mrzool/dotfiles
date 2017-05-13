@@ -1,23 +1,24 @@
-# automatic reloading
+# reloading
 refresh-on-startup yes
 auto-reload no
 reload-time 360 # minutes
-
-# reloading
+prepopulate-query-feeds yes
 reload-threads 4
 reload-only-visible-feeds no
 show-read-feeds yes
 download-retries 4
+download-full-page yes
 
 # notification
 notify-screen yes
 notify-xterm yes
 
 # storage
-max-items 0 # keep all items
+max-items 200
 
 # external programs
 browser w3m
+external-url-viewer "urlview"
 
 # Save path
 save-path ~/Documents/newsbeuter
