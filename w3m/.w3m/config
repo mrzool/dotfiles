@@ -63,8 +63,8 @@ passwd_file ~/.w3m/passwd
 use_lessopen 0
 bgextviewer 1
 extbrowser3 
-extbrowser2 
 extbrowser /usr/bin/open
+extbrowser2 sh -c 'printf %s "$0" | pbcopy'
 mailer 
 mailto_options 1
 editor vim
