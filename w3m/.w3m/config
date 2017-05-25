@@ -62,9 +62,9 @@ disable_secret_security_check 0
 passwd_file ~/.w3m/passwd
 use_lessopen 0
 bgextviewer 1
-extbrowser3 
 extbrowser /usr/bin/open
 extbrowser2 sh -c 'printf %s "$0" | pbcopy'
+extbrowser3 sh -c 'printf %s "$0" | instapaper-add'
 mailer 
 mailto_options 1
 editor vim
