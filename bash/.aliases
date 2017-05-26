@@ -28,7 +28,11 @@ alias unrar="unrar x"
 alias gtypist="gtypist -S"
 alias ctags="`brew --prefix`/bin/ctags"
 alias ed='ed -p:'
-alias news="newsbeuter"
+
+# Newsbeuter
+alias news="newsbeuter -u ~/.newsbeuter/urls-news"
+alias reads="newsbeuter -u ~/.newsbeuter/urls-blogs"
+alias jobs="newsbeuter -u ~/.newsbeuter/urls-jobs"
 
 # Linux things
 # alias backport='sudo apt-get -t wheezy-backports install'
