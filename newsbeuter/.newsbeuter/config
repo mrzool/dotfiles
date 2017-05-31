@@ -19,6 +19,7 @@ max-items 200
 # external programs
 browser w3m
 external-url-viewer "urlview"
+bookmark-cmd instapaper-add
 
 # Save path
 save-path ~/Documents/newsbeuter
