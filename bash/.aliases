@@ -30,9 +30,9 @@ alias ctags="`brew --prefix`/bin/ctags"
 alias ed='ed -p:'
 
 # Newsbeuter
-alias news="newsbeuter -u ~/.newsbeuter/urls-news"
-alias reads="newsbeuter -u ~/.newsbeuter/urls-blogs"
-alias jobs="newsbeuter -u ~/.newsbeuter/urls-jobs"
+alias news="newsbeuter -u ~/feeds/urls-news"
+alias reads="newsbeuter -u ~/feeds/urls-reads"
+alias jobs="newsbeuter -u ~/feeds/urls-jobs"
 
 # Linux things
 # alias backport='sudo apt-get -t wheezy-backports install'
