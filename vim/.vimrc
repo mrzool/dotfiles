@@ -45,6 +45,7 @@ Plugin 'hdima/python-syntax'
 Plugin 'stephenway/postcss.vim.git'
 Plugin 'tpope/vim-markdown.git'
 Plugin 'mrzool/mustache.vim'
+Plugin 'StanAngeloff/php.vim'
 
 " User Interface
 Plugin 'junegunn/goyo.vim'
@@ -76,7 +77,6 @@ Plugin 'mattn/gist-vim'
 
 " Not used atm
 " Plugin 'cakebaker/scss-syntax.vim.git'
-" Plugin 'StanAngeloff/php.vim'
 " Plugin 'tomasr/molokai'
 " Plugin 'altercation/vim-colors-solarized.git'
 " Plugin 'mrtazz/simplenote.vim'
