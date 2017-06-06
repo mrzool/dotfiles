@@ -242,6 +242,9 @@ autocmd FileType yaml setlocal wrap linebreak
 autocmd BufNewFile,BufRead,BufEnter *.txt setlocal wrap linebreak
 autocmd FileType text setlocal wrap linebreak
 
+" Insert space before every line break for format=flowed to work
+autocmd FileType mail setlocal formatoptions+=aw
+
 " Highlight whitespace with symbols
 set list
 set listchars=eol:¬,extends:…,precedes:…,tab:\ \ 
