@@ -1,0 +1,10 @@
+# vi: ft=config
+
+urls-source "oldreader"
+oldreader-login "zool.bib@gmail.com"
+oldreader-password "`security find-internet-password -g -w -j oldreader`"
+oldreader-flag-share "a"
+oldreader-flag-star "b"
+
+include "~/dotfiles/newsbeuter/.newsbeuter/config"
+
