@@ -21,9 +21,6 @@ browser w3m
 external-url-viewer "urlview"
 bookmark-cmd instapaper-add
 
-# Save path
-save-path ~/Documents/newsbeuter
-
 # display
 text-width 72
 article-sort-order date-asc
