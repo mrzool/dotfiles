@@ -8,6 +8,7 @@ reload-only-visible-feeds no
 show-read-feeds yes
 download-retries 4
 download-full-page yes
+cleanup-on-quit no
 
 # notification
 notify-screen yes
