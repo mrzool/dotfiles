@@ -38,7 +38,3 @@ color article white black
 confirm-exit no
 bind-key k up
 bind-key j down
-bind-key ^F pagedown
-bind-key ^B pageup
-# bind-key ^I next-dialog
-# bind-key ^O prev-dialog
