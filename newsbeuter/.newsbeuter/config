@@ -15,7 +15,7 @@ notify-screen yes
 notify-xterm yes
 
 # storage
-max-items 200
+max-items 500
 
 # external programs
 browser w3m
