@@ -30,8 +30,8 @@ alias ctags="`brew --prefix`/bin/ctags"
 alias ed='ed -p:'
 
 # Newsbeuter
-alias news="newsbeuter -u ~/feeds/urls-news"
-alias reads="newsbeuter -u ~/feeds/urls-reads"
+# alias news="newsbeuter -u ~/feeds/urls-news"
+alias news="newsbeuter -C ~/dotfiles/newsbeuter/.newsbeuter/config-or"
 alias jobs="newsbeuter -u ~/feeds/urls-jobs"
 
 # Linux things
