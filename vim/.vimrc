@@ -18,12 +18,11 @@ endif
 filetype plugin on
 filetype indent on
 
-packadd minpac
-call minpac#init()
-
 "------------------------------------------------------------
 " Plugins
 
+packadd minpac
+call minpac#init()
 call minpac#add('k-takata/minpac', {'type':'opt'})
 
 " Libraries
