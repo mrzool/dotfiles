@@ -15,88 +15,85 @@ if !has('nvim')
   set nocompatible
 endif
 
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
+filetype plugin on
+filetype indent on
 
-call vundle#begin()
+packadd minpac
+call minpac#init()
 
 "------------------------------------------------------------
 " Plugins
-Plugin 'gmarik/Vundle.vim'
+
+call minpac#add('k-takata/minpac', {'type':'opt'})
 
 " Libraries
-Plugin 'MarcWeber/vim-addon-mw-utils.git'
-Plugin 'tomtom/tlib_vim.git'
-Plugin 'mattn/webapi-vim'
+call minpac#add('MarcWeber/vim-addon-mw-utils')
+call minpac#add('tomtom/tlib_vim')
+call minpac#add('mattn/webapi-vim')
 
 " Color schemes
-Plugin 'chriskempson/base16-vim'
-Plugin 'pbrisbin/vim-colors-off'
+call minpac#add('chriskempson/base16-vim')
+call minpac#add('pbrisbin/vim-colors-off')
 
 " Syntax/Indenting
-Plugin 'othree/html5.vim.git'
-Plugin 'hail2u/vim-css3-syntax.git'
-Plugin 'elzr/vim-json'
-Plugin 'pangloss/vim-javascript'
-Plugin 'tpope/vim-liquid'
-Plugin 'keith/tmux.vim'
-Plugin 'tpope/vim-git'
-Plugin 'hdima/python-syntax'
-Plugin 'stephenway/postcss.vim.git'
-Plugin 'tpope/vim-markdown.git'
-Plugin 'mrzool/mustache.vim'
-Plugin 'StanAngeloff/php.vim'
+call minpac#add('othree/html5.vim')
+call minpac#add('hail2u/vim-css3-syntax')
+call minpac#add('elzr/vim-json')
+call minpac#add('pangloss/vim-javascript')
+call minpac#add('tpope/vim-liquid')
+call minpac#add('keith/tmux.vim')
+call minpac#add('tpope/vim')
+call minpac#add('hdima/python-syntax')
+call minpac#add('stephenway/postcss.vim')
+call minpac#add('tpope/vim-markdown')
+call minpac#add('mrzool/mustache.vim')
+call minpac#add('StanAngeloff/php.vim')
 
 " User Interface
-Plugin 'junegunn/goyo.vim'
-Plugin 'tpope/vim-vinegar.git'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'sjl/gundo.vim'
-Plugin 'terryma/vim-smooth-scroll'
+call minpac#add('junegunn/goyo.vim')
+call minpac#add('tpope/vim-vinegar')
+call minpac#add('airblade/vim-gitgutter')
+call minpac#add('sjl/gundo.vim')
+call minpac#add('terryma/vim-smooth-scroll')
 
 " Integrations
-Plugin 'vim-scripts/matchit.zip'
-Plugin 'vim-scripts/grep.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'rking/ag.vim'
-Plugin 'Raimondi/delimitMate'
-Plugin 'scrooloose/syntastic.git'
-Plugin 'tpope/vim-fugitive.git'
-Plugin 'tpope/vim-surround.git'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-commentary.git'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-obsession.git'
-Plugin 'tpope/vim-speeddating'
-Plugin 'tpope/vim-rsi'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-ragtag'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-abolish'
-Plugin 'mattn/gist-vim'
+call minpac#add('vim-scripts/matchit.zip')
+call minpac#add('vim-scripts/grep.vim')
+call minpac#add('kien/ctrlp.vim')
+call minpac#add('rking/ag.vim')
+call minpac#add('Raimondi/delimitMate')
+call minpac#add('scrooloose/syntastic')
+call minpac#add('tpope/vim-fugitive')
+call minpac#add('tpope/vim-surround')
+call minpac#add('tpope/vim-repeat')
+call minpac#add('tpope/vim-commentary')
+call minpac#add('tpope/vim-eunuch')
+call minpac#add('tpope/vim-obsession')
+call minpac#add('tpope/vim-speeddating')
+call minpac#add('tpope/vim-rsi')
+call minpac#add('tpope/vim-dispatch')
+call minpac#add('tpope/vim-ragtag')
+call minpac#add('tpope/vim-unimpaired')
+call minpac#add('tpope/vim-abolish')
+call minpac#add('mattn/gist-vim')
 
 " Not used atm
-" Plugin 'cakebaker/scss-syntax.vim.git'
-" Plugin 'tomasr/molokai'
-" Plugin 'altercation/vim-colors-solarized.git'
-" Plugin 'mrtazz/simplenote.vim'
-" Plugin 'junegunn/vim-xmark'
-" Plugin 'garbas/vim-snipmate.git'
-" Plugin 'honza/vim-snippets.git'
-" Plugin '0x0dea/vim-molasses'
-" Plugin 'christoomey/vim-tmux-navigator'
-" Plugin 'benmills/vimux'
-" Plugin 'vim-pandoc/vim-pandoc'
-" Plugin 'vim-pandoc/vim-pandoc-syntax'
-" Plugin 'liamcurry/tumblr.vim.git'
-" Plugin 'captbaritone/better-indent-support-for-php-with-html'
-" Plugin 'rust-lang/rust.vim'
-" Plugin 'cespare/vim-toml'
-
-call vundle#end()
-
-filetype plugin on
-filetype indent on
+" call minpac#add('cakebaker/scss-syntax.vim')
+" call minpac#add('tomasr/molokai')
+" call minpac#add('altercation/vim-colors-solarized')
+" call minpac#add('mrtazz/simplenote.vim')
+" call minpac#add('junegunn/vim-xmark')
+" call minpac#add('garbas/vim-snipmate')
+" call minpac#add('honza/vim-snippets')
+" call minpac#add('0x0dea/vim-molasses')
+" call minpac#add('christoomey/vim-tmux-navigator')
+" call minpac#add('benmills/vimux')
+" call minpac#add('vim-pandoc/vim-pandoc')
+" call minpac#add('vim-pandoc/vim-pandoc-syntax')
+" call minpac#add('liamcurry/tumblr.vim')
+" call minpac#add('captbaritone/better-indent-support-for-php-with-html')
+" call minpac#add('rust-lang/rust.vim')
+" call minpac#add('cespare/vim-toml')
 
 " Load stock matchit.vim if no newer version available
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
@@ -417,6 +414,10 @@ inoreabbrev mattia@ mattia.tezzele@gmail.com
 " Edit/source vimrc
 command! E execute 'edit ' . resolve(expand($MYVIMRC)) | lcd %:p:h
 command! S source $MYVIMRC
+
+" minpac commands
+command! PackUpdate call minpac#update()
+command! PackClean call minpac#clean()
 
 "------------------------------------------------------------
 " Custom mappings
