@@ -411,9 +411,8 @@ inoreabbrev mattia@ mattia.tezzele@gmail.com
 "------------------------------------------------------------
 " Custom commands
 
-" Edit/source vimrc
+" Edit vimrc
 command! E execute 'edit ' . resolve(expand($MYVIMRC)) | lcd %:p:h
-command! S source $MYVIMRC
 
 " minpac commands
 command! PackUpdate call minpac#update()
