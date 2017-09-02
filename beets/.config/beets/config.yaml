@@ -1,5 +1,5 @@
-directory: /Volumes/Data/music
-library: /Volumes/Data/music.blb
+directory: /Volumes/DataHD/music
+library: /Volumes/DataHD/music.blb
 paths: 
   default: %asciify{%lower{$albumartist}}-%asciify{%lower{$album}}-$year/$track-%asciify{%lower{$title}}
   comp: various-artists/$album%aunique{}/$track-%asciify{%lower{$title}}
