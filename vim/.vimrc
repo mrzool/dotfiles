@@ -238,6 +238,9 @@ autocmd FileType yaml setlocal wrap linebreak
 autocmd BufNewFile,BufRead,BufEnter *.txt setlocal wrap linebreak
 autocmd FileType text setlocal wrap linebreak
 
+" Turn on spell-checking for Markdown files
+autocmd BufRead,BufNewFile *.md setlocal spell
+
 " Insert space before every line break for format=flowed to work
 autocmd FileType mail setlocal formatoptions+=aw
 
