@@ -114,6 +114,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # Fix support for 256 colors in tmux
   [ -n "$TMUX" ] && export TERM=screen-256color-italic
 
+  # Archey :)
+  archey -o
+
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
 
   # LINUX-SPECIFIC SETTINGS
