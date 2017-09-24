@@ -363,6 +363,10 @@ highlight GitGutterAdd ctermbg=NONE guibg=NONE
 highlight GitGutterChange ctermbg=NONE guibg=NONE
 highlight GitGutterDelete ctermbg=NONE guibg=NONE
 
+" Red background for misspelled words
+highlight clear SpellBad
+highlight SpellBad ctermbg=01 ctermfg=00
+
 " Line numbers tweaks
 set number
 set numberwidth=2
