@@ -230,7 +230,7 @@ set nowrap " Leave text alone unless otherwise specified
 set textwidth=0 " Never insert line-breaks in text
 set wrapmargin=0
 
-" Wrap text in markdown and in yaml files
+" Wrap text in markdown, yaml and txt files
 autocmd BufNewFile,BufRead,BufEnter *.md setlocal wrap linebreak
 autocmd FileType markdown setlocal wrap linebreak
 autocmd BufNewFile,BufRead,BufEnter *.yml setlocal wrap linebreak
