@@ -2,7 +2,9 @@
 
 Config files for my \*nix systems.
 
-![mrzool tmux/vim config](preview.png)
+![mrzool tmux/vim config](dotfiles-1.png)
+
+![mrzool tmux/vim config](dotfiles-2.png)
 
 - **Current OS**: Mac OS X 10.11 "El Capitan"
 - **Terminal**: [iTerm2](https://www.iterm2.com/)
