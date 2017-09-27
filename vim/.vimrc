@@ -549,7 +549,7 @@ let g:netrw_liststyle = 3
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_browsex_viewer = 'google-chrome'
 let g:netrw_http_xcmd= "-o" " use curl to open http links
-if expand('%:p:h:t') == 'dotfiles'
+if expand('%:p') =~ 'dotfiles'
   let g:netrw_hide=0 " Show hidden files if I'm in my dotfiles folder
 endif
 
