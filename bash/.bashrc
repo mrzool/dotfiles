@@ -40,6 +40,7 @@ export dotfiles="$HOME/dotfiles"
 export repos="$HOME/repos"
 export dropbox="$HOME/Dropbox"
 export jobs="$HOME/Documents/jobs/"
+export notes="$HOME/Dropbox/notes/"
 
 # Define search path for the cd command
 CDPATH=".:~/repos"
