@@ -42,6 +42,20 @@ export dropbox="$HOME/Dropbox"
 export jobs="$HOME/Documents/jobs/"
 export notes="$HOME/Dropbox/notes/"
 
+# Take quick notes from the command line
+# (Mostly to save commands)
+notes() {
+  if [ ! -z "$1" ]; then
+    # Using the "$@" here will take all parameters passed into
+    # this function so we can place everything into our file.
+    echo "$@" >> "$notes/memo-cli-oneliners.txt"
+  else
+    # If no arguments were passed we will take stdin and place
+    # it into our notes instead.
+    cat - >> "$notes/memo-cli-oneliners.txt"
+  fi
+}
+
 # Define search path for the cd command
 CDPATH=".:~/repos"
 
