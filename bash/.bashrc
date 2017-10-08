@@ -1,39 +1,23 @@
-# GENERAL SETTINGS
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
       *) return;;
 esac
 
-# Alias definitions
+# Load aliases
 if [ -f ~/.aliases ]; then
   . ~/.aliases
 fi
 
-# Don't put duplicate lines or lines starting with space in the history
-HISTCONTROL="erasedups:ignoreboth"
+export EDITOR="vim"
 
-# Commands that don't need to get recorded
-export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history"
-
-# Save multi-line commands to the history as one command
-shopt -s cmdhist
-
-# Append to the history file, don't overwrite it
-shopt -s histappend
-
-# Set history size to a very large number
-HISTSIZE=500000
-HISTFILESIZE=100000
-
-# Record each line of history right away
-# instead of at the end of the session
-PROMPT_COMMAND='history -a'
-
-# Set history timestamp format
-HISTTIMEFORMAT='%F %T '
-
+# Implicit cd
+shopt -s autocd
+# Correct minor errors in the spelling of a directory
+shopt -s cdspell
+shopt -s dirspell
+# Define search path for the cd command
+CDPATH=".:~/repos"
 # Activate and define cdable variables
 shopt -s cdable_vars
 export dotfiles="$HOME/dotfiles"
@@ -42,8 +26,25 @@ export dropbox="$HOME/Dropbox"
 export jobs="$HOME/Documents/jobs/"
 export notes="$HOME/Dropbox/notes/"
 
+
+# Don't put duplicate lines or lines starting with space in the history
+HISTCONTROL="erasedups:ignoreboth"
+# Commands that don't need to get recorded
+export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history"
+# Save multi-line commands to the history as one command
+shopt -s cmdhist
+# Append to the history file, don't overwrite it
+shopt -s histappend
+# Set history size to a very large number
+HISTSIZE=500000
+HISTFILESIZE=100000
+# Record each line of history right away
+# instead of at the end of the session
+PROMPT_COMMAND='history -a'
+# Set history timestamp format
+HISTTIMEFORMAT='%F %T '
+
 # Take quick notes from the command line
-# (Mostly to save commands)
 notes() {
   if [ ! -z "$1" ]; then
     # Using the "$@" here will take all parameters passed into
@@ -56,17 +57,7 @@ notes() {
   fi
 }
 
-# Define search path for the cd command
-CDPATH=".:~/repos"
-
-# Implicit cd
-shopt -s autocd
-
-# Correct minor errors in the spelling of a directory
-shopt -s cdspell
-shopt -s dirspell
-
-# Git custom prompt
+# Custom prompt, git-aware
 export GITAWAREPROMPT=~/bin/git-aware-prompt
 source "${GITAWAREPROMPT}/main.sh"
 export PS1="\[\033[33;1m\]\W\[\033[m\]\[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]$ "
@@ -80,19 +71,19 @@ source ~/bin/completions/pandoc.bash
 
 # Add node bin folder to PATH
 export PATH="$HOME/.node/bin:$PATH"
-
 # Add my bin folder to PATH
 export PATH="$HOME/bin:$PATH"
 
-# Set Vim as default editor
-export EDITOR="vim"
-
-# Allow C-W mapping in inputrc to work (see: http://unix.stackexchange.com/questions/296822/readline-treat-dash-as-a-word-break-character/296840#296840)
+# Allow C-W mapping in inputrc to work
+# see https://unix.stackexchange.com/q/296822/63527
 stty werase undef
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
 
-  # OSX-SPECIFIC SETTINGS
+  # Set up locales
+  export LC_ALL=en_US.UTF-8
+  export LANG=en_US.UTF-8
+  export LANGUAGE=en_US.UTF-8
 
   # Enable Bash completion
   if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
@@ -101,40 +92,27 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   # Activates colors
   export CLICOLOR=1
-
-  # ls custom colors
-  export LSCOLORS=ExFxBxDxCxegedabagacad
-
-  # Set up locales to UTF-8
-  export LC_ALL=en_US.UTF-8
-  export LANG=en_US.UTF-8
-  export LANGUAGE=en_US.UTF-8
-
   # Base16 Shell
   BASE16_SHELL=$HOME/.config/base16-shell/
   [ -n "$PS1"  ] && [ -s $BASE16_SHELL/profile_helper.sh  ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+  # ls custom colors
+  export LSCOLORS=ExFxBxDxCxegedabagacad
+  # Fix support for 256 colors in tmux
+  [ -n "$TMUX" ] && export TERM=screen-256color-italic
 
   # Add homebrew bin folder to PATH
   export PATH="/usr/local/bin:$PATH"
-
   # Fix LaTeX after El Capitan update
   export PATH="$PATH:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin"
-
   # Add Calibre command line tools
   export PATH=$PATH:/Applications/calibre.app/Contents/MacOS
-
   # Add Miniconda2
   export PATH="/Users/zool/tools/miniconda2/bin:$PATH"
-
-  # Fix support for 256 colors in tmux
-  [ -n "$TMUX" ] && export TERM=screen-256color-italic
 
   # Archey :)
   archey -o
 
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-
-  # LINUX-SPECIFIC SETTINGS
 
   # Set variable identifying the chroot you work in
   if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
@@ -197,10 +175,4 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     fi
   fi
 
-  # Add RVM to PATH for scripting
-  export PATH="$PATH:$HOME/.rvm/bin"
-
 fi
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
