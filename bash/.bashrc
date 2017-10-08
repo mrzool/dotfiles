@@ -80,99 +80,10 @@ stty werase undef
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
 
-  # Set up locales
-  export LC_ALL=en_US.UTF-8
-  export LANG=en_US.UTF-8
-  export LANGUAGE=en_US.UTF-8
-
-  # Enable Bash completion
-  if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
-    . $(brew --prefix)/share/bash-completion/bash_completion
-  fi
-
-  # Activates colors
-  export CLICOLOR=1
-  # Base16 Shell
-  BASE16_SHELL=$HOME/.config/base16-shell/
-  [ -n "$PS1"  ] && [ -s $BASE16_SHELL/profile_helper.sh  ] && eval "$($BASE16_SHELL/profile_helper.sh)"
-  # ls custom colors
-  export LSCOLORS=ExFxBxDxCxegedabagacad
-  # Fix support for 256 colors in tmux
-  [ -n "$TMUX" ] && export TERM=screen-256color-italic
-
-  # Add homebrew bin folder to PATH
-  export PATH="/usr/local/bin:$PATH"
-  # Fix LaTeX after El Capitan update
-  export PATH="$PATH:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin"
-  # Add Calibre command line tools
-  export PATH=$PATH:/Applications/calibre.app/Contents/MacOS
-  # Add Miniconda2
-  export PATH="/Users/zool/tools/miniconda2/bin:$PATH"
-
-  # Archey :)
-  archey -o
+  source ~/.bashrc.macos
 
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
 
-  # Set variable identifying the chroot you work in
-  if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-  fi
-
-  # Set a fancy prompt (non-color, unless we know we "want" color)
-  case "$TERM" in
-    xterm-color) color_prompt=yes;;
-  esac
-
-  # Uncomment for a colored prompt, if the terminal has the capability
-  force_color_prompt=yes
-
-  if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-      # We have color support; assume it's compliant with Ecma-48
-      # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-      # a case would tend to support setf rather than setaf.)
-      color_prompt=yes
-    else
-      color_prompt=
-    fi
-  fi
-
-  if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
-  else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\W\$ '
-  fi
-  unset color_prompt force_color_prompt
-
-  # If this is an xterm set the title to user@host:dir
-  case "$TERM" in
-    xterm*|rxvt*)
-      PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \W\a\]$PS1"
-      ;;
-    *)
-      ;;
-  esac
-
-  # Enable color support of ls and also add handy aliases
-  if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    alias dir='dir --color=auto'
-    alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-  fi
-
-  # Enable programmable completion features
-  if ! shopt -oq posix; then
-    if [ -f /usr/share/bash-completion/bash_completion ]; then
-      . /usr/share/bash-completion/bash_completion
-    elif [ -f /etc/bash_completion ]; then
-      . /etc/bash_completion
-    fi
-  fi
+  source ~/.bashrc.linux-gnu
 
 fi

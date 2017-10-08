@@ -1,0 +1,34 @@
+# vi:syntax=sh
+
+# Set up locales
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
+# Enable Bash completion
+if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
+. $(brew --prefix)/share/bash-completion/bash_completion
+fi
+
+# Activates colors
+export CLICOLOR=1
+# Base16 Shell
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1"  ] && [ -s $BASE16_SHELL/profile_helper.sh  ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+# ls custom colors
+export LSCOLORS=ExFxBxDxCxegedabagacad
+# Fix support for 256 colors in tmux
+[ -n "$TMUX" ] && export TERM=screen-256color-italic
+
+# Add homebrew bin folder to PATH
+export PATH="/usr/local/bin:$PATH"
+# Fix LaTeX after El Capitan update
+export PATH="$PATH:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin"
+# Add Calibre command line tools
+export PATH=$PATH:/Applications/calibre.app/Contents/MacOS
+# Add Miniconda2
+export PATH="/Users/zool/tools/miniconda2/bin:$PATH"
+
+# Archey :)
+archey -o
+
