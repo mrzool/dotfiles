@@ -6,7 +6,7 @@ esac
 
 # Load aliases
 if [ -f ~/.aliases ]; then
-  . ~/.aliases
+  source ~/.aliases
 fi
 
 export EDITOR="vim"
@@ -26,7 +26,6 @@ export dropbox="$HOME/Dropbox"
 export jobs="$HOME/Documents/jobs/"
 export notes="$HOME/Dropbox/notes/"
 
-
 # Don't put duplicate lines or lines starting with space in the history
 HISTCONTROL="erasedups:ignoreboth"
 # Commands that don't need to get recorded
@@ -44,19 +43,6 @@ PROMPT_COMMAND='history -a'
 # Set history timestamp format
 HISTTIMEFORMAT='%F %T '
 
-# Take quick notes from the command line
-notes() {
-  if [ ! -z "$1" ]; then
-    # Using the "$@" here will take all parameters passed into
-    # this function so we can place everything into our file.
-    echo "$@" >> "$notes/memo-cli-oneliners.txt"
-  else
-    # If no arguments were passed we will take stdin and place
-    # it into our notes instead.
-    cat - >> "$notes/memo-cli-oneliners.txt"
-  fi
-}
-
 # Custom prompt, git-aware
 export GITAWAREPROMPT=~/bin/git-aware-prompt
 source "${GITAWAREPROMPT}/main.sh"
@@ -65,7 +51,6 @@ export PS1="\[\033[33;1m\]\W\[\033[m\]\[$txtcyn\]\$git_branch\[$txtred\]\$git_di
 # Complete all the things
 source ~/bin/completions/git-completion.bash
 source ~/bin/completions/tmux.completion.bash
-source ~/bin/completions/tmuxinator.bash
 source ~/bin/completions/npm-completion.bash
 source ~/bin/completions/pandoc.bash
 

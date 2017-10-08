@@ -27,8 +27,7 @@ export PATH="$PATH:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texb
 # Add Calibre command line tools
 export PATH=$PATH:/Applications/calibre.app/Contents/MacOS
 # Add Miniconda2
-export PATH="/Users/zool/tools/miniconda2/bin:$PATH"
+# export PATH="/Users/zool/tools/miniconda2/bin:$PATH"
 
 # Archey :)
 archey -o
-
