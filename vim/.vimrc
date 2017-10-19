@@ -489,6 +489,12 @@ nnoremap <Leader>a :exe ":GitGutterStageHunk"<CR>
 nnoremap <Leader>c :Gcommit -m 
 command! Preview GitGutterPreviewHunk
 
+" GitGutter styling to use · instead of +/-
+let g:gitgutter_sign_added = '∙'
+let g:gitgutter_sign_modified = '∙'
+let g:gitgutter_sign_removed = '∙'
+let g:gitgutter_sign_modified_removed = '∙'
+
 " Update git-gutter signs as soon as possible after stop typing event
 set updatetime=1000
 
