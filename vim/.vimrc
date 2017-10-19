@@ -526,7 +526,8 @@ function! ToggleMouse()
 endfunction
 
 " Toggle/untoggle spell checking
-nnoremap <leader>ss :setlocal spell!<cr>
+" Commented out as favoring unimpaired mapping
+" nnoremap <leader>ss :setlocal spell!<cr>
 
 " Move between windows
 nnoremap <C-j> <C-W>j
