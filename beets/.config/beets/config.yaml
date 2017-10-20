@@ -14,7 +14,7 @@ match:
     original_year: yes
 replace:
   '\ ': _
-plugins: ftintitle edit fetchart embedart scrub export
+plugins: ftintitle edit fetchart embedart scrub export lastgenre
 export:
   json:
     formatting:
@@ -30,12 +30,6 @@ ftintitle:
 #   backend: command
 #   auto: no
 #   overwrite: yes
-# lastgenre:
-#   canonical: yes
-#   whitelist:
-#     - acoustic music
-#     - electronic
-#     - hip hop
-#     - classical
-#     - rock
-#     - jazz
+lastgenre:
+  canonical: yes
+  whitelist: ~/dotfiles/beets/.config/beets/genres-whitelist
