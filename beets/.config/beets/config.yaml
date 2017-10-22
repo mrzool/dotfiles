@@ -22,7 +22,7 @@ export:
 fetchart:
   minwidth: 500
   maxwidth: 700
-  enforceratio: yes
+  enforceratio: 5%
 ftintitle:
   format: (feat. {0})
 
