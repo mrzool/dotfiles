@@ -5,6 +5,7 @@ paths:
   comp: various-artists/$album%aunique{}/$track-%asciify{%lower{$title}}
 import:
   move: no
+  # copy: no
 original_date: yes
 match:
   strong_rec_thresh: 0.1
