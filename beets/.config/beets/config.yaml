@@ -1,5 +1,5 @@
 directory: /Volumes/DataHD/music
-library: /Volumes/DataHD/zool-music.db
+library: ~/Dropbox/Apps/beets/zool-music.db
 paths: 
   default: %asciify{%lower{$albumartist}}-%asciify{%lower{$album}}-$year/$track-%asciify{%lower{$title}}
   comp: various-artists/$album%aunique{}/$track-%asciify{%lower{$title}}
