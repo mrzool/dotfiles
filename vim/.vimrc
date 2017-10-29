@@ -499,13 +499,13 @@ let g:gitgutter_sign_modified_removed = '∙'
 set updatetime=1000
 
 " Copy/paste to system clipboard
-vmap <Leader>y "+y
-vmap <Leader>d "+d
-nmap <Leader>yy "+yy
-nmap <Leader>p "+p
-nmap <Leader>P "+P
-vmap <Leader>p "+p
-vmap <Leader>P "+P
+" vmap <Leader>y "+y
+" vmap <Leader>d "+d
+" nmap <Leader>yy "+yy
+" nmap <Leader>p "+p
+" nmap <Leader>P "+P
+" vmap <Leader>p "+p
+" vmap <Leader>P "+P
 
 " Toggle Gundo
 nnoremap <Leader>G :GundoToggle<CR>
