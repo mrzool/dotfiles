@@ -32,8 +32,8 @@ alias ql='qlmanage -p "$@" 2> /dev/null' # 'Quick look' on Mac OS
 
 # Newsbeuter
 alias reads="newsbeuter -C ~/dotfiles/newsbeuter/.newsbeuter/config-or"
-alias news="newsbeuter -u ~/feeds/urls-news"
-alias jobz="newsbeuter -u ~/feeds/urls-jobs"
+alias news="newsbeuter -u ~/Dropbox/feeds/urls-news"
+alias jobz="newsbeuter -u ~/Dropbox/feeds/urls-jobs"
 
 # Linux things
 # alias backport='sudo apt-get -t wheezy-backports install'
