@@ -31,3 +31,5 @@
 	submodulesummary = true
 [github]
 	user = mrzool
+[ghi]
+	token = !security find-internet-password -a mrzool -s github.com -l 'ghi token' -w
