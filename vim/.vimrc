@@ -563,6 +563,7 @@ let g:netrw_browsex_viewer = 'google-chrome'
 let g:netrw_http_xcmd= "-o" " use curl to open http links
 if expand('%:p') =~ 'dotfiles'
   let g:netrw_hide=0 " Show hidden files if I'm in my dotfiles folder
+  let g:ctrlp_show_hidden = 1 " Get CtrlP to show hidden files
 endif
 
 " Python syntax settings
