@@ -57,7 +57,7 @@ Plug 'terryma/vim-smooth-scroll'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/grep.vim'
 Plug 'kien/ctrlp.vim'
-Plug 'rking/ag.vim'
+Plug 'mileszs/ack.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
@@ -630,33 +630,11 @@ let g:gist_post_private = 1
 " Only :w! updates a gist.
 let g:gist_update_on_write = 0
 
-" Ag settings
-function! CmdLine(str)
-    exe "menu Foo.Bar :" . a:str
-    emenu Foo.Bar
-    unmenu Foo
-endfunction 
-
-function! VisualSelection(direction, extra_filter) range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
-
-    let l:pattern = escape(@", '\\/.*$^~[]')
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
-
-    if a:direction == 'b'
-        execute "normal ?" . l:pattern . "^M"
-    elseif a:direction == 'gv'
-        call CmdLine("Ag \"" . l:pattern . "\" " )
-    elseif a:direction == 'replace'
-        call CmdLine("%s" . '/'. l:pattern . '/')
-    elseif a:direction == 'f'
-        execute "normal /" . l:pattern . "^M"
-    endif
-
-    let @/ = l:pattern
-    let @" = l:saved_reg
-endfunction
+" ack.vim settings
+" use ag instead of ack
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif
 
 " vim-rsi settings
 let g:rsi_no_meta = 1 " Fixes ä issue
