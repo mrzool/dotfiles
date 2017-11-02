@@ -72,7 +72,6 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-abolish'
-Plug 'mattn/gist-vim'
 
 " Not used atm
 " Plug 'cakebaker/scss-syntax.vim'
@@ -91,6 +90,7 @@ Plug 'mattn/gist-vim'
 " Plug 'captbaritone/better-indent-support-for-php-with-html'
 " Plug 'rust-lang/rust.vim'
 " Plug 'cespare/vim-toml'
+" Plug 'mattn/gist-vim'
 
 call plug#end()
 
