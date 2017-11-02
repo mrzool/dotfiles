@@ -420,10 +420,6 @@ inoreabbrev mattia@ mattia.tezzele@gmail.com
 " Edit vimrc
 command! E execute 'edit ' . resolve(expand($MYVIMRC)) | lcd %:p:h
 
-" minpac commands
-command! PackUpdate call minpac#update()
-command! PackClean call minpac#clean()
-
 "------------------------------------------------------------
 " Custom mappings
 
