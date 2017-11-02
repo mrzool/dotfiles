@@ -490,7 +490,9 @@ nnoremap <Leader>o :!open<Space>
 nnoremap SS :Gstatus<CR>
 nnoremap <Leader>a :exe ":GitGutterStageHunk"<CR>
 nnoremap <Leader>c :Gcommit -m 
-command! Preview GitGutterPreviewHunk
+command! Hpreview GitGutterPreviewHunk
+command! Hnext GitGutterNextHunk
+command! Hprev GitGutterPrevHunk
 
 " GitGutter styling to use · instead of +/-
 let g:gitgutter_sign_added = '∙'
