@@ -308,6 +308,9 @@ set statusline+=%p%% " Percentage through the file
 "   au InsertLeave * hi StatusLine ctermbg=19 ctermfg=20
 " endif
 
+" hide default mode indicator
+" set noshowmode
+
 " Switch cursor shape when changing modes
 if exists('$TMUX')
     let &t_SI = "\<Esc>Ptmux;\<Esc>\e[5 q\<Esc>\\"
@@ -321,9 +324,6 @@ endif
 if has('nvim')
   let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 endif
-
-" hide default mode indicator
-" set noshowmode
 
 " Number of colors
 set t_Co=256
@@ -410,9 +410,6 @@ inoreabbrev hwo how
 inoreabbrev amoutn amount
 inoreabbrev desing design
 inoreabbrev fucntion function
-inoreabbrev latex <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span>
-inoreabbrev tex <span class="latex">T<sub>e</sub>X</span>
-inoreabbrev mattia@ mattia.tezzele@gmail.com
 
 "------------------------------------------------------------
 " Custom commands
@@ -452,10 +449,6 @@ nnoremap gk k
 vnoremap gj j
 vnoremap gk k
 
-" Invert apostrophe/backtick 'jump to mark' behavior
-nnoremap ' `
-nnoremap ` '
-
 " Searches for current selection in visual mode
 xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
 xnoremap # :<C-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
@@ -494,23 +487,8 @@ command! Hpreview GitGutterPreviewHunk
 command! Hnext GitGutterNextHunk
 command! Hprev GitGutterPrevHunk
 
-" GitGutter styling to use · instead of +/-
-let g:gitgutter_sign_added = '∙'
-let g:gitgutter_sign_modified = '∙'
-let g:gitgutter_sign_removed = '∙'
-let g:gitgutter_sign_modified_removed = '∙'
-
 " Update git-gutter signs as soon as possible after stop typing event
 set updatetime=1000
-
-" Copy/paste to system clipboard
-" vmap <Leader>y "+y
-" vmap <Leader>d "+d
-" nmap <Leader>yy "+yy
-" nmap <Leader>p "+p
-" nmap <Leader>P "+P
-" vmap <Leader>p "+p
-" vmap <Leader>P "+P
 
 " Toggle Gundo
 nnoremap <Leader>G :GundoToggle<CR>
@@ -535,10 +513,6 @@ function! ToggleMouse()
     set mouse=a
   endif
 endfunction
-
-" Toggle/untoggle spell checking
-" Commented out as favoring unimpaired mapping
-" nnoremap <leader>ss :setlocal spell!<cr>
 
 " Move between windows
 nnoremap <C-j> <C-W>j
@@ -626,12 +600,6 @@ endif
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
-
-" Gist settings
-" Private Gists by default
-let g:gist_post_private = 1
-" Only :w! updates a gist.
-let g:gist_update_on_write = 0
 
 " ack.vim settings
 " use ag instead of ack
