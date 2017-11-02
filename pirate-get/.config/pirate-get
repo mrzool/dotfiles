@@ -21,7 +21,7 @@ path = ~/downloads/pirate-get/db
 ; specify a custom command for opening the magnet
 ; ex. myprogram --open %s
 ; %s represent the magnet uri
-openCommand = peerflix "%s" --all
+openCommand = aria2c --dir=/users/zool/Downloads/torrents/ "%s"
 
 ; open magnets with transmission-remote client
 transmission = false
