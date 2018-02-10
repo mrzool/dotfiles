@@ -14,6 +14,8 @@ I'm a creature of habit and I like my software to be stable and predictable. I'm
 - **Font**: [Input Mono](http://input.fontbureau.com/) by [Font Bureau](http://www.fontbureau.com/) (since 2014, the year of release)
 - **Desktop wallpaper**: [Flavoured](http://digitalshiva.deviantart.com/art/Flavoured-121784194) by Tkui (my only wallpaper since 2009!)
 
+By the way, my computer is an upgraded 2010's white polycarbonate unibody MacBook (A1342) that looks like [this](http://mrzool.cc/assets/imgs/macbook-A1342.jpeg) and which I'm very fond of.
+
 This repository includes dotfiles for Bash, Readline, Vim, tmux, Git, Mutt, newsbeuter, mpd/ncmpcpp, and more.
 
 Managed with the [GNU Stow](https://www.gnu.org/software/stow/) utility (read more about it [here](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html)).
