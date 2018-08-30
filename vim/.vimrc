@@ -425,8 +425,9 @@ inoremap jj <Esc>
 
 " Break undo sequence in insert mode when certain actions are performed
 " See http://vi.stackexchange.com/questions/4556/undo-in-insert-mode/4558#455
-inoremap <CR> <C-G>u<CR>
-inoremap <C-R> <C-G>u<C-R>
+" Interfering with DelimitMate, commenting out
+" inoremap <CR> <C-G>u<CR>
+" inoremap <C-R> <C-G>u<C-R>
 
 " Remap VIM 0 to first non-blank character
 noremap 0 ^
