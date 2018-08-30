@@ -223,7 +223,7 @@ set shiftwidth=2
 set smarttab
 " set tw=500
 set autoindent
-set smartindent
+" set cindent
 
 " Wrap related
 set nowrap " Leave text alone unless otherwise specified
