@@ -23,7 +23,7 @@ shopt -s cdable_vars
 export dotfiles="$HOME/dotfiles"
 export repos="$HOME/repos"
 export dropbox="$HOME/Dropbox"
-export jobs="$HOME/Documents/jobs/"
+# export jobs="$HOME/Documents/jobs/"
 export notes="$HOME/Dropbox/notes/"
 
 # Don't put duplicate lines or lines starting with space in the history
