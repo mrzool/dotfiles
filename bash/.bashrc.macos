@@ -21,7 +21,7 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 [ -n "$TMUX" ] && export TERM=screen-256color-italic
 
 # Add homebrew bin folder to PATH
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="/usr/local/Cellar:/usr/local/bin:/usr/local/sbin:$PATH"
 # Fix LaTeX after El Capitan update
 export PATH="$PATH:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin"
 # Add Calibre command line tools
