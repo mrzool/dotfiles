@@ -91,6 +91,7 @@ Plug 'tpope/vim-abolish'
 " Plug 'rust-lang/rust.vim'
 " Plug 'cespare/vim-toml'
 " Plug 'mattn/gist-vim'
+" Plug 'rlue/vim-barbaric'
 
 call plug#end()
 
