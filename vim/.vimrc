@@ -616,7 +616,7 @@ let g:rsi_no_meta = 1 " Fixes ä issue
 let delimitMate_expand_space = 1
 let delimitMate_expand_cr = 1
 
-" Ragtag settings
+" Activate Ragtag shortcuts
 let g:ragtag_global_maps = 1
 
 " Smooth-scroll mappings
