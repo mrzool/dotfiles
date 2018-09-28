@@ -594,7 +594,8 @@ let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['liquid'] = 'liquid,html' " loads HTML snippets in liquid files
 
 " Goyo settings
-let g:goyo_height = 85
+let g:goyo_height = 70
+let g:goyo_width = 100
 
 function! s:goyo_enter()
   set noshowmode
