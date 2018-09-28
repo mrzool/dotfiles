@@ -33,6 +33,7 @@ alias gtypist="gtypist -S"
 alias ctags="`brew --prefix`/bin/ctags"
 alias ed='ed -p:'
 alias ql='qlmanage -p "$@" 2> /dev/null' # 'Quick look' on Mac OS
+alias wget='wget -c ' # resume download automatically
 
 # Newsbeuter
 alias reads="newsbeuter -C ~/dotfiles/newsbeuter/.newsbeuter/config-or"
