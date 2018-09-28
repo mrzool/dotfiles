@@ -17,6 +17,10 @@ alias info='info --vi-keys'
 alias mount='diskutil mount'
 alias umount='diskutil unmount'
 
+# Get internal and external IP address
+alias ipi='ipconfig getifaddr en0'
+alias ipe='curl ipinfo.io/ip'
+
 # Services
 alias a2restart="sudo service apache2 restart"
 alias sss='python -m SimpleHTTPServer 8888' # Start Simple Server
