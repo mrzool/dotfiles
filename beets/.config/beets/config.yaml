@@ -15,7 +15,7 @@ match:
     original_year: yes
 replace:
   '\ ': _
-plugins: ftintitle edit fetchart embedart scrub export lastgenre duplicates
+plugins: ftintitle edit fetchart embedart scrub export lastgenre duplicates discogs badfiles
 export:
   json:
     formatting:
