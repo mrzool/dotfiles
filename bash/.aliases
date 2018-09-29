@@ -17,6 +17,10 @@ alias info='info --vi-keys'
 alias mount='diskutil mount'
 alias umount='diskutil unmount'
 
+# Get internal and external IP address
+alias ipi='ipconfig getifaddr en0'
+alias ipe='curl ipinfo.io/ip'
+
 # Services
 alias a2restart="sudo service apache2 restart"
 alias sss='python -m SimpleHTTPServer 8888' # Start Simple Server
@@ -29,6 +33,7 @@ alias gtypist="gtypist -S"
 alias ctags="`brew --prefix`/bin/ctags"
 alias ed='ed -p:'
 alias ql='qlmanage -p "$@" 2> /dev/null' # 'Quick look' on Mac OS
+alias wget='wget -c ' # resume download automatically
 
 # Newsbeuter
 alias reads="newsbeuter -C ~/dotfiles/newsbeuter/.newsbeuter/config-or"
