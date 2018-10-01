@@ -340,6 +340,7 @@ if has("unix")
     set background=dark
     let base16colorspace=256
     colorscheme base16-ocean
+    hi Normal guibg=NONE ctermbg=NONE
   else
     " Settings for Terminator on Linux
     let g:molokai_original=1
