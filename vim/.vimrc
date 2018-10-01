@@ -33,6 +33,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'pbrisbin/vim-colors-off'
 
 " Syntax/Indenting
+Plug 'chiel92/vim-autoformat'
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'elzr/vim-json'
