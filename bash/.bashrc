@@ -64,11 +64,8 @@ export PATH="$HOME/bin:$PATH"
 stty werase undef
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-
   source ~/.bashrc.macos
-
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-
   source ~/.bashrc.linux-gnu
 
 fi
