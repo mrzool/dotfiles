@@ -31,5 +31,10 @@ export PATH=$PATH:/Applications/calibre.app/Contents/MacOS
 # Use the homebrew-intalled Python version
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
+export GOPATH=$HOME/repos/go
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+
 # Archey :)
 archey -o
