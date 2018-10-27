@@ -36,5 +36,8 @@ export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
+# Stop homebrew from updating every time
+export HOMEBREW_NO_AUTO_UPDATE=1
+
 # Archey :)
 archey -o
