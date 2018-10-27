@@ -639,3 +639,6 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 25, 4)<CR>
 " Set commentstring for php files
 autocmd BufNewFile,BufRead,BufEnter *.php setlocal commentstring=//\ %s
 autocmd FileType php setlocal commentstring=//\ %s
+
+" Map for vim-autoformat
+noremap <F3> :Autoformat<CR>
