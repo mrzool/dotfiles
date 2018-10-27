@@ -23,7 +23,7 @@ alias ipe='curl ipinfo.io/ip'
 
 # Services
 alias a2restart="sudo service apache2 restart"
-alias sss='python -m SimpleHTTPServer 8888' # Start Simple Server
+alias sss='python -m http.server 8888' # Start Simple Server
 alias sps='php -S localhost:3000' # Start PHP Server
 
 # Utilities
