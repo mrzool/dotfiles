@@ -348,6 +348,8 @@ if has("unix")
   endif
 endif
 
+set termguicolors
+
 " Display comments in italics
 highlight Comment cterm=italic
 
