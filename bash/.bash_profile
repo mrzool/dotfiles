@@ -10,4 +10,3 @@ fi
 if [ -f ~/.profile ]; then
    source ~/.profile
 fi
-export PATH="/usr/local/opt/opencv@2/bin:$PATH"

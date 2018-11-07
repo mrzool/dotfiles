@@ -21,7 +21,7 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 [ -n "$TMUX" ] && export TERM=screen-256color-italic
 
 # Add homebrew bin folder to PATH
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="/usr/local/Cellar:/usr/local/bin:/usr/local/sbin:$PATH"
 # Fix LaTeX after El Capitan update
 export PATH="$PATH:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin"
 # Add Calibre command line tools
@@ -30,6 +30,14 @@ export PATH=$PATH:/Applications/calibre.app/Contents/MacOS
 # export PATH="/Users/zool/tools/miniconda2/bin:$PATH"
 # Use the homebrew-intalled Python version
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
+export GOPATH=$HOME/repos/go
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+
+# Stop homebrew from updating every time
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 # Archey :)
 archey -o

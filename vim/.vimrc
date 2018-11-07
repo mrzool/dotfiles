@@ -33,6 +33,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'pbrisbin/vim-colors-off'
 
 " Syntax/Indenting
+Plug 'chiel92/vim-autoformat'
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'elzr/vim-json'
@@ -91,6 +92,7 @@ Plug 'tpope/vim-abolish'
 " Plug 'rust-lang/rust.vim'
 " Plug 'cespare/vim-toml'
 " Plug 'mattn/gist-vim'
+" Plug 'rlue/vim-barbaric'
 
 call plug#end()
 
@@ -223,7 +225,7 @@ set shiftwidth=2
 set smarttab
 " set tw=500
 set autoindent
-set smartindent
+" set cindent
 
 " Wrap related
 set nowrap " Leave text alone unless otherwise specified
@@ -338,6 +340,7 @@ if has("unix")
     set background=dark
     let base16colorspace=256
     colorscheme base16-ocean
+    hi Normal guibg=NONE ctermbg=NONE
   else
     " Settings for Terminator on Linux
     let g:molokai_original=1
@@ -427,8 +430,9 @@ inoremap jj <Esc>
 
 " Break undo sequence in insert mode when certain actions are performed
 " See http://vi.stackexchange.com/questions/4556/undo-in-insert-mode/4558#455
-inoremap <CR> <C-G>u<CR>
-inoremap <C-R> <C-G>u<C-R>
+" Interfering with DelimitMate, commenting out
+" inoremap <CR> <C-G>u<CR>
+" inoremap <C-R> <C-G>u<C-R>
 
 " Remap VIM 0 to first non-blank character
 noremap 0 ^
@@ -624,8 +628,9 @@ let g:rsi_no_meta = 1 " Fixes ä issue
 
 " DelimitMate Settings
 let delimitMate_expand_space = 1
+let delimitMate_expand_cr = 1
 
-" Ragtag settings
+" Activate Ragtag shortcuts
 let g:ragtag_global_maps = 1
 
 " Smooth-scroll mappings
@@ -637,3 +642,6 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 25, 4)<CR>
 " Set commentstring for php files
 autocmd BufNewFile,BufRead,BufEnter *.php setlocal commentstring=//\ %s
 autocmd FileType php setlocal commentstring=//\ %s
+
+" Map for vim-autoformat
+noremap <F3> :Autoformat<CR>

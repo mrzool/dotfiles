@@ -23,7 +23,7 @@ shopt -s cdable_vars
 export dotfiles="$HOME/dotfiles"
 export repos="$HOME/repos"
 export dropbox="$HOME/Dropbox"
-export jobs="$HOME/Documents/jobs/"
+# export jobs="$HOME/Documents/jobs/"
 export notes="$HOME/Dropbox/notes/"
 
 # Don't put duplicate lines or lines starting with space in the history
@@ -64,11 +64,8 @@ export PATH="$HOME/bin:$PATH"
 stty werase undef
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-
   source ~/.bashrc.macos
-
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-
   source ~/.bashrc.linux-gnu
 
 fi
