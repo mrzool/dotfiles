@@ -241,7 +241,7 @@ autocmd BufNewFile,BufRead,BufEnter *.txt setlocal wrap linebreak
 autocmd FileType text setlocal wrap linebreak
 
 " Turn on spell-checking for Markdown files
-autocmd BufRead,BufNewFile *.md setlocal spell
+" autocmd BufRead,BufNewFile *.md setlocal spell
 
 " Insert space before every line break for format=flowed to work
 autocmd FileType mail setlocal formatoptions+=aw
@@ -350,6 +350,8 @@ if has("unix")
     hi Normal guibg=NONE ctermbg=NONE
   endif
 endif
+
+set termguicolors
 
 " Display comments in italics
 highlight Comment cterm=italic
@@ -598,7 +600,8 @@ let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['liquid'] = 'liquid,html' " loads HTML snippets in liquid files
 
 " Goyo settings
-let g:goyo_height = 85
+let g:goyo_height = 70
+let g:goyo_width = 100
 
 function! s:goyo_enter()
   set noshowmode
