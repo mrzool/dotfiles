@@ -25,6 +25,7 @@ export repos="$HOME/repos"
 export dropbox="$HOME/Dropbox"
 # export jobs="$HOME/Documents/jobs/"
 export notes="$HOME/Dropbox/notes/"
+export dl="/Volumes/DataHD/downloads/"
 
 # Don't put duplicate lines or lines starting with space in the history
 HISTCONTROL="erasedups:ignoreboth"
