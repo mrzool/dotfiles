@@ -4,8 +4,8 @@ paths:
   default: %asciify{%lower{$albumartist}}-%asciify{%lower{$album}}-$year/$track-%asciify{%lower{$title}}
   comp: various-artists/$album%aunique{}/$track-%asciify{%lower{$title}}
 import:
-  move: yes
-  # copy: no
+  # move: yes
+  copy: no
 original_date: yes
 match:
   strong_rec_thresh: 0.1
