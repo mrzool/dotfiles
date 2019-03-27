@@ -494,7 +494,7 @@ command! Hnext GitGutterNextHunk
 command! Hprev GitGutterPrevHunk
 
 " Update git-gutter signs as soon as possible after stop typing event
-set updatetime=1000
+set updatetime=100
 
 " Copy/paste to system clipboard
 vmap <Leader>y "+y
