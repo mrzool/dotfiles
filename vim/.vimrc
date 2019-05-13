@@ -541,6 +541,9 @@ nnoremap <leader>sy :SyntasticCheck<cr>
 " New buffer from visual selection
 vnoremap <leader>n d:new<CR>P
 
+" Convert visual selection to HTML and pipe it to the clipboard
+vnoremap <Leader>h  :'<,'>w !pandoc -f markdown -t html \| pbcopy <CR>
+
 "------------------------------------------------------------
 " Plugins Settings
 
