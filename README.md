@@ -16,6 +16,8 @@ I'm a creature of habit and like my software to be stable and predictable. I'm v
 
 My computer is a late-2009, white polycarbonate unibody MacBook (A1342) that looks like [this](http://mrzool.cc/assets/imgs/macbook-A1342.jpeg) and which I'm very fond of. After SSD, RAM and battery upgrade, its GeekBench score reached 2365, which puts it approximately on par with a late-2011 MacBook Pro or a mid-2013 MacBook Air. That's more than enough for my needs and I don't plan to buy a new machine anytime soon.
 
+See also: [Why I use old hardware](https://drewdevault.com/2019/01/23/Why-I-use-old-hardware.html) by Drew DeVault.
+
 This repository includes dotfiles for Bash, Readline, Vim, tmux, Git, Mutt, newsbeuter, mpd/ncmpcpp, and more.
 
 Managed with the [GNU Stow](https://www.gnu.org/software/stow/) utility (read more about it [here](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html)).
