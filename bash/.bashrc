@@ -54,6 +54,7 @@ source ~/bin/completions/git-completion.bash
 source ~/bin/completions/tmux.completion.bash
 source ~/bin/completions/npm-completion.bash
 source ~/bin/completions/pandoc.bash
+source ~/bin/completions/beet.bash
 
 # Add node bin folder to PATH
 export PATH="$HOME/.node/bin:$PATH"
