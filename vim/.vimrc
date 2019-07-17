@@ -610,6 +610,7 @@ let g:goyo_width = 100
 function! s:goyo_enter()
   set noshowmode
   set scrolloff=999
+  highlight EndOfBuffer ctermfg=black ctermbg=black
 endfunction
 
 if !exists('*s:goyo_leave')
