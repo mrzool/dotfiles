@@ -26,10 +26,15 @@ export PATH="/usr/local/Cellar:/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH="$PATH:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin"
 # Add Calibre command line tools
 export PATH=$PATH:/Applications/calibre.app/Contents/MacOS
+# Add Perl bin directory
+export PATH=$PATH:/usr/local/Cellar/perl/5.28.1/bin
 # Add Miniconda2
 # export PATH="/Users/zool/tools/miniconda2/bin:$PATH"
 # Use the homebrew-intalled Python version
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
+export PATH="/usr/local/opt/node@10/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 export GOPATH=$HOME/repos/go
 export GOROOT=/usr/local/opt/go/libexec
