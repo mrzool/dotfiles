@@ -26,11 +26,9 @@ call plug#begin()
 " Libraries
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
-Plug 'mattn/webapi-vim'
 
 " Color schemes
 Plug 'chriskempson/base16-vim'
-Plug 'pbrisbin/vim-colors-off'
 
 " Syntax/Indenting
 Plug 'chiel92/vim-autoformat'
@@ -44,14 +42,11 @@ Plug 'tpope/vim-git'
 Plug 'hdima/python-syntax'
 Plug 'stephenway/postcss.vim'
 Plug 'tpope/vim-markdown'
-Plug 'mrzool/mustache.vim'
-Plug 'StanAngeloff/php.vim'
 
 " User Interface
 Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-vinegar'
 Plug 'airblade/vim-gitgutter'
-Plug 'sjl/gundo.vim'
 Plug 'terryma/vim-smooth-scroll'
 
 " Integrations
@@ -60,7 +55,6 @@ Plug 'vim-scripts/grep.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'Raimondi/delimitMate'
-Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -93,6 +87,12 @@ Plug 'tpope/vim-abolish'
 " Plug 'cespare/vim-toml'
 " Plug 'mattn/gist-vim'
 " Plug 'rlue/vim-barbaric'
+" Plug 'mrzool/mustache.vim'
+" Plug 'StanAngeloff/php.vim'
+" Plug 'pbrisbin/vim-colors-off'
+" Plug 'mattn/webapi-vim'
+" Plug 'sjl/gundo.vim'
+" Plug 'scrooloose/syntastic'
 
 call plug#end()
 
@@ -610,6 +610,7 @@ let g:goyo_width = 100
 function! s:goyo_enter()
   set noshowmode
   set scrolloff=999
+  highlight EndOfBuffer ctermfg=black ctermbg=black
 endfunction
 
 if !exists('*s:goyo_leave')

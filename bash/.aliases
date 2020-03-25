@@ -35,6 +35,15 @@ alias ed='ed -p:'
 alias ql='qlmanage -p "$@" 2> /dev/null' # 'Quick look' on Mac OS
 alias wget='wget -c ' # resume download automatically
 
+# VPN Management
+vpn-connect() {
+  osascript -e "tell application \"Viscosity\" to connect \"$(nordvpn-server-find -r).tcp\""
+    }
+vpn-disconnect() {
+  osascript -e "tell application \"Viscosity\" to disconnectall"
+    }
+
+
 # Newsbeuter
 alias reads="newsbeuter -C ~/dotfiles/newsbeuter/.newsbeuter/config-or"
 alias news="newsbeuter -u ~/Dropbox/feeds/urls-news"
