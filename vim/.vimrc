@@ -50,7 +50,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'terryma/vim-smooth-scroll'
 
 " Integrations
-Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/grep.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'mileszs/ack.vim'
