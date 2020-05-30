@@ -7,6 +7,8 @@ alias e='exit'
 
 alias -- -='cd -'
 
+alias ls='exa'
+
 alias l='ls -CF -lh'
 alias ll='ls -l'
 alias la='ls -A'
