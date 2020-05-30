@@ -352,7 +352,7 @@ if has("unix")
 endif
 
 " This caused the color scheme to fail when Vim was run in tmux
-" set termguicolors
+set termguicolors
 
 " Display comments in italics
 highlight Comment cterm=italic
