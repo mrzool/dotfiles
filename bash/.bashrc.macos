@@ -18,7 +18,7 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 # ls custom colors
 export LSCOLORS=ExFxBxDxCxegedabagacad
 # Fix support for 256 colors in tmux
-[ -n "$TMUX" ] && export TERM=screen-256color-italic
+[ -n "$TMUX" ] && export TERM=screen-256color
 
 # Add homebrew bin folder to PATH
 export PATH="/usr/local/Cellar:/usr/local/bin:/usr/local/sbin:$PATH"
