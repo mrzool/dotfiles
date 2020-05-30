@@ -67,32 +67,6 @@ Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-abolish'
 
-" Not used atm
-" Plug 'cakebaker/scss-syntax.vim'
-" Plug 'tomasr/molokai'
-" Plug 'altercation/vim-colors-solarized'
-" Plug 'mrtazz/simplenote.vim'
-" Plug 'junegunn/vim-xmark'
-" Plug 'garbas/vim-snipmate'
-" Plug 'honza/vim-snippets'
-" Plug '0x0dea/vim-molasses'
-" Plug 'christoomey/vim-tmux-navigator'
-" Plug 'benmills/vimux'
-" Plug 'vim-pandoc/vim-pandoc'
-" Plug 'vim-pandoc/vim-pandoc-syntax'
-" Plug 'liamcurry/tumblr.vim'
-" Plug 'captbaritone/better-indent-support-for-php-with-html'
-" Plug 'rust-lang/rust.vim'
-" Plug 'cespare/vim-toml'
-" Plug 'mattn/gist-vim'
-" Plug 'rlue/vim-barbaric'
-" Plug 'mrzool/mustache.vim'
-" Plug 'StanAngeloff/php.vim'
-" Plug 'pbrisbin/vim-colors-off'
-" Plug 'mattn/webapi-vim'
-" Plug 'sjl/gundo.vim'
-" Plug 'scrooloose/syntastic'
-
 call plug#end()
 
 " Load stock matchit.vim if no newer version available
