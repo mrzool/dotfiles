@@ -7,7 +7,7 @@
   ui = true
 [core]
 	excludesfile = ~/.cvsignore
-	editor = /usr/local/bin/vim
+	editor = vim
 [push]
 	default = simple
 	followTags = true
