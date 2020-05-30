@@ -107,20 +107,12 @@ set undolevels=5000
 " command-line history, search pattern history
 set viminfo='1000,<500,:500,/500
 
-" Get mouse working when running Vim in tmux
-if !has('nvim')
-  set ttymouse=xterm2
-endif
-
 " Configure backspace
 set backspace=eol,start,indent
-" Actually disable backspace so I just use <C-h>
+" Actually, disable backspace so I'm forced to use <C-h>
 inoremap <BS> <Nop>
 
-" Jump to next/previous line when moving left/right
-" set whichwrap+=<,>
-
-" Do not store global, local values or folds in a session 
+" Do not store global, local values or folds in a session
 set ssop-=options
 set ssop-=folds
 
@@ -237,8 +229,8 @@ if !has('nvim')
   set ttyfast
 endif
 
-" Don't highlight search results
-set nohlsearch
+" Highlight search results
+set hlsearch
 
 " Don't redraw while executing macros
 set lazyredraw
@@ -283,9 +275,6 @@ set statusline+=%p%% " Percentage through the file
 "   au InsertLeave * hi StatusLine ctermbg=19 ctermfg=20
 " endif
 
-" hide default mode indicator
-" set noshowmode
-
 " Switch cursor shape when changing modes
 if exists('$TMUX')
     let &t_SI = "\<Esc>Ptmux;\<Esc>\e[5 q\<Esc>\\"
@@ -293,11 +282,6 @@ if exists('$TMUX')
 else
     let &t_SI = "\e[5 q"
     let &t_EI = "\e[2 q"
-endif
-
-" Switch cursor shape when using NeoVim
-if has('nvim')
-  let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 endif
 
 " Number of colors
@@ -324,7 +308,7 @@ if has("unix")
   endif
 endif
 
-" This caused the color scheme to fail when Vim was run in tmux
+" This can cause the color scheme to fail when Vim was run in tmux
 set termguicolors
 
 " Display comments in italics
@@ -478,9 +462,6 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
-
-" Toggle Gundo
-nnoremap <Leader>G :GundoToggle<CR>
 
 " Toggle Goyo
 nnoremap <Leader>z :set nolist<CR>:Goyo<CR>
