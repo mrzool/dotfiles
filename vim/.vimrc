@@ -29,6 +29,7 @@ Plug 'tomtom/tlib_vim'
 
 " Color schemes
 Plug 'chriskempson/base16-vim'
+Plug 'jeffkreeftmeijer/vim-dim'
 
 " Syntax/Indenting
 Plug 'chiel92/vim-autoformat'
