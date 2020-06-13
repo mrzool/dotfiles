@@ -286,7 +286,7 @@ else
 endif
 
 " Number of colors
-set t_Co=256
+set t_Co=16
 
 syntax enable
 
