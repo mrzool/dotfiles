@@ -489,7 +489,7 @@ nnoremap <leader>sy :SyntasticCheck<cr>
 vnoremap <leader>n d:new<CR>P
 
 " Convert visual selection to HTML and pipe it to the clipboard
-vnoremap <Leader>h  :'<,'>w !pandoc -f markdown --ascii -t html \| pbcopy <CR>
+vnoremap <Leader>h  :'<,'>w !pandoc -f markdown -t html \| pbcopy <CR>
 
 "------------------------------------------------------------
 " Plugins Settings
