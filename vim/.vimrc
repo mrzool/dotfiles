@@ -289,6 +289,7 @@ endif
 set t_Co=16
 
 syntax enable
+colorscheme dim
 
 
 " This caused the color scheme to fail when Vim was run in tmux
