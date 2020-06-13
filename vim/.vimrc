@@ -100,7 +100,7 @@ set ttimeout
 set ttimeoutlen=100
 
 " Persistent undos
-set undodir=$HOME/.vim/tmp/undo//
+set undodir=$HOME/.vim/undodir
 set undofile
 set undolevels=5000
 
