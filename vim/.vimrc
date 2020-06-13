@@ -313,6 +313,9 @@ endif
 " set termguicolors
 
 " Display comments in italics
+" See https://stackoverflow.com/a/53625973/3078265
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
 highlight Comment cterm=italic
 
 " Italics and bold in markdown files
