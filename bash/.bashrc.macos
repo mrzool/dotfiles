@@ -32,6 +32,8 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 # export PATH="/Users/zool/tools/miniconda2/bin:$PATH"
 # Use the homebrew-intalled Python version
 # export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+# Use the homebrew-intalled Ruby version
+# export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 # export PATH="/usr/local/opt/node@10/bin:$PATH"
 # export PATH="$HOME/.cargo/bin:$PATH"
