@@ -319,13 +319,19 @@ highlight Comment cterm=italic
 highlight htmlItalic cterm=italic
 highlight htmlBold cterm=bold
 
-" Transparency wizardry
-highlight VertSplit ctermfg=244 ctermbg=NONE guibg=NONE
+" Color fine-tuning
+highlight cursorline cterm=none term=none
+highlight cursorline ctermbg=15
+highlight SignColumn ctermbg=NONE
+highlight NonText ctermfg=7
+highlight VertSplit ctermfg=8 ctermbg=NONE guibg=NONE
 highlight FoldColumn ctermbg=NONE guibg=NONE
 highlight LineNr ctermbg=NONE guibg=NONE
-highlight GitGutterAdd ctermbg=NONE guibg=NONE
-highlight GitGutterChange ctermbg=NONE guibg=NONE
-highlight GitGutterDelete ctermbg=NONE guibg=NONE
+highlight GitGutterAdd ctermbg=NONE ctermfg=10
+highlight GitGutterChange ctermbg=NONE ctermfg=12
+highlight GitGutterDelete ctermbg=NONE ctermfg=1
+let g:gitgutter_set_sign_backgrounds = 1
+let g:gitgutter_sign_allow_clobber = 1
 
 " Red text for misspelled words
 highlight clear SpellBad
