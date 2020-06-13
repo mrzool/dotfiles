@@ -290,24 +290,6 @@ set t_Co=16
 
 syntax enable
 
-" Colorscheme settings
-if has("unix")
-  let s:uname = system("uname")
-  if s:uname == "Darwin\n"
-    " Settings for iTerm2 on OS X
-    set background=dark
-    let base16colorspace=256
-    colorscheme base16-ocean
-    hi Normal guibg=NONE ctermbg=NONE
-  else
-    " Settings for Terminator on Linux
-    let g:molokai_original=1
-    let g:rehash256=1
-    colorscheme molokai
-    " Transparent background
-    hi Normal guibg=NONE ctermbg=NONE
-  endif
-endif
 
 " This caused the color scheme to fail when Vim was run in tmux
 " set termguicolors
