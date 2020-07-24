@@ -291,9 +291,6 @@ set t_Co=16
 syntax enable
 colorscheme dim
 
-" This can cause the color scheme to fail when Vim is run in tmux
-set termguicolors
-
 " Display comments in italics
 " See https://stackoverflow.com/a/53625973/3078265
 let &t_ZH="\e[3m"
