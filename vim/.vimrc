@@ -303,7 +303,15 @@ highlight htmlBold cterm=bold
 
 " Color fine-tuning
 highlight cursorline cterm=none term=none
-highlight cursorline ctermbg=15
+
+if $TERM_PROGRAM ==? "Apple_Terminal"
+  if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
+    highlight cursorline ctermbg=8
+  else
+    highlight cursorline ctermbg=15
+  endif
+endif
+
 highlight SignColumn ctermbg=NONE
 highlight NonText ctermfg=7
 highlight VertSplit ctermfg=8 ctermbg=NONE guibg=NONE
