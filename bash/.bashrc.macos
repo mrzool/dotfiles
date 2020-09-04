@@ -27,6 +27,8 @@ pathadd /usr/local/opt/python/libexec/bin
 # Calibre CLI tools
 pathadd /Applications/calibre.app/Contents/MacOS/
 
+pathadd /home/zool/.linuxbrew/bin
+
 # Stop homebrew from updating every time
 export HOMEBREW_NO_AUTO_UPDATE=1
 
