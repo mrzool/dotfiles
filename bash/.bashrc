@@ -9,6 +9,13 @@ if [ -f ~/.aliases ]; then
   source ~/.aliases
 fi
 
+# Define function to add a directory to $PATH
+pathadd() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="${PATH:+"$PATH:"}$1"
+    fi
+}
+
 export EDITOR="vim"
 
 # Implicit cd
