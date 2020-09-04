@@ -16,16 +16,6 @@ shopt -s autocd
 # Correct minor errors in the spelling of a directory
 shopt -s cdspell
 shopt -s dirspell
-# Define search path for the cd command
-CDPATH=".:~/repos"
-# Activate and define cdable variables
-shopt -s cdable_vars
-export dotfiles="$HOME/dotfiles"
-export repos="$HOME/repos"
-export dropbox="$HOME/Dropbox"
-# export jobs="$HOME/Documents/jobs/"
-export notes="$HOME/Dropbox/notes/"
-export dl="/Volumes/DataHD/downloads/"
 
 # Don't put duplicate lines or lines starting with space in the history
 HISTCONTROL="erasedups:ignoreboth"
@@ -56,10 +46,8 @@ source ~/bin/completions/npm-completion.bash
 source ~/bin/completions/pandoc.bash
 source ~/bin/completions/beet.bash
 
-# Add node bin folder to PATH
-export PATH="$HOME/.node/bin:$PATH"
-# Add my bin folder to PATH
-export PATH="$HOME/bin:$PATH"
+# Add bin folder
+pathadd $HOME/bin
 
 # Allow C-W mapping in inputrc to work
 # see https://unix.stackexchange.com/q/296822/63527
