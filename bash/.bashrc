@@ -12,7 +12,7 @@ fi
 # Define function to add a directory to $PATH
 pathadd() {
     if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
-        PATH="${PATH:+"$PATH:"}$1"
+        PATH="$1${PATH:+":$PATH"}"
     fi
 }
 
