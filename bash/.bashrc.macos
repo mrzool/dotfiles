@@ -12,36 +12,20 @@ fi
 
 # Activates colors
 export CLICOLOR=1
-# Base16 Shell
-# BASE16_SHELL=$HOME/.config/base16-shell/
-# [ -n "$PS1"  ] && [ -s $BASE16_SHELL/profile_helper.sh  ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
 # ls custom colors
 export LSCOLORS=ExFxBxDxCxegedabagacad
-# Fix support for 256 colors in tmux
-# [ -n "$TMUX" ] && export TERM=screen-256color-italic
 
-# Add homebrew bin folder to PATH
-# export PATH="/usr/local/Cellar:/usr/local/bin:/usr/local/sbin:$PATH"
-# Fix LaTeX after El Capitan update
-# export PATH="$PATH:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin"
-# Add Calibre command line tools
-# export PATH=$PATH:/Applications/calibre.app/Contents/MacOS
-# Add Perl bin directory
-# export PATH=$PATH:/usr/local/Cellar/perl/5.28.1/bin
-# Add Miniconda2
-# export PATH="/Users/zool/tools/miniconda2/bin:$PATH"
-# Use the homebrew-intalled Python version
-# export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-# Use the homebrew-intalled Ruby version
-# export PATH="/usr/local/opt/ruby/bin:$PATH"
+# Homebrew directories
+pathadd /usr/local/Cellar
+pathadd /usr/local/bin
+pathadd /usr/local/sbin
 
-# export PATH="/usr/local/opt/node@10/bin:$PATH"
-# export PATH="$HOME/.cargo/bin:$PATH"
+# Homebrew-intalled Python
+pathadd /usr/local/opt/python/libexec/bin
 
-export GOPATH=$HOME/repos/go
-export GOROOT=/usr/local/opt/go/libexec
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
+# Calibre CLI tools
+pathadd /Applications/calibre.app/Contents/MacOS/
 
 # Stop homebrew from updating every time
 export HOMEBREW_NO_AUTO_UPDATE=1
