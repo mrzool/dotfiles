@@ -45,6 +45,10 @@ vpn-disconnect() {
   osascript -e "tell application \"Viscosity\" to disconnectall"
     }
 
+# Get last command (https://unix.stackexchange.com/a/38075/63527)
+getlast() {
+    fc -ln "$1" "$1" | sed '1s/^[[:space:]]*//'
+}
 
 # Newsbeuter
 alias reads="newsbeuter -C ~/dotfiles/newsbeuter/.newsbeuter/config-or"
