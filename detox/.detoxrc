@@ -1,5 +1,8 @@
 sequence "default" {
-  iso8859_1;
+  # iso8859_1;
+  utf_8 {
+  filename ".unicode-tweaked.tbl";
+  };
   safe;
   lower;
   wipeup { remove_trailing; };
