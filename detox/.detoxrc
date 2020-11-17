@@ -1,10 +1,17 @@
 sequence "default" {
-  # iso8859_1;
   utf_8 {
-  filename ".unicode-tweaked.tbl";
+  filename "/Users/tezzele/.unicode-tweaked.tbl";
   };
   safe;
-  lower;
+  # lower;
+  wipeup { remove_trailing; };
+};
+
+sequence "mailboxes" {
+  utf_8 {
+  filename "/Users/tezzele/.unicode-tweaked.tbl";
+  };
+  # safe;
   wipeup { remove_trailing; };
 };
 
