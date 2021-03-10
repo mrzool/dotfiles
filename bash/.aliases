@@ -38,10 +38,10 @@ alias ql='qlmanage -p "$@" 2> /dev/null' # 'Quick look' on Mac OS
 alias wget='wget -c ' # resume download automatically
 
 # VPN Management
-vpn-connect() {
+vpnconnect() {
   osascript -e "tell application \"Viscosity\" to connect \"$(nordvpn-server-find -r).tcp\""
     }
-vpn-disconnect() {
+vpndisconnect() {
   osascript -e "tell application \"Viscosity\" to disconnectall"
     }
 
