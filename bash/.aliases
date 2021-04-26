@@ -50,6 +50,10 @@ getlast() {
     fc -ln "$1" "$1" | sed '1s/^[[:space:]]*//'
 }
 
+# Enable/disable Maccy
+alias maccy-disable="defaults write org.p0deje.Maccy ignoreEvents true"
+alias maccy-enable="defaults write org.p0deje.Maccy ignoreEvents false"
+
 # Newsbeuter
 alias reads="newsbeuter -C ~/dotfiles/newsbeuter/.newsbeuter/config-or"
 alias news="newsbeuter -u ~/Dropbox/feeds/urls-news"
