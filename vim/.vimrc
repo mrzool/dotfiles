@@ -601,3 +601,15 @@ autocmd FileType php setlocal commentstring=//\ %s
 
 " Map for vim-autoformat
 noremap <F3> :Autoformat<CR>
+
+if has('macunix')
+  function! OpenURLUnderCursor()
+    let s:uri = matchstr(getline('.'), '[a-z]*:\/\/[^ >,;()]*')
+    let s:uri = shellescape(s:uri, 1)
+    if s:uri != ''
+      silent exec "!open '".s:uri."'"
+      :redraw!
+    endif
+  endfunction
+  nnoremap gx :call OpenURLUnderCursor()<CR>
+endif
