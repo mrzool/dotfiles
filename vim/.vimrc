@@ -441,9 +441,9 @@ nnoremap <Leader>l :lcd ../
 nnoremap <Leader>o :!open<Space>
 
 " Git-related
-nnoremap SS :Gstatus<CR>
+nnoremap SS :Git<CR>
 nnoremap <Leader>a :exe ":GitGutterStageHunk"<CR>
-nnoremap <Leader>c :Gcommit -m 
+nnoremap <Leader>c :Git commit -m 
 command! Hpreview GitGutterPreviewHunk
 command! Hnext GitGutterNextHunk
 command! Hprev GitGutterPrevHunk
