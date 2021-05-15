@@ -375,7 +375,7 @@ inoreabbrev fucntion function
 "------------------------------------------------------------
 " Custom commands
 
-" Edit vimrc
+" Edit vimrc with :E
 command! E execute 'edit ' . resolve(expand($MYVIMRC)) | lcd %:p:h
 
 "------------------------------------------------------------
