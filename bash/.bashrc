@@ -23,6 +23,8 @@ shopt -s autocd
 # Correct minor errors in the spelling of a directory
 shopt -s cdspell
 shopt -s dirspell
+# Activate recursive globbing
+shopt -s globstar
 
 # Don't put duplicate lines or lines starting with space in the history
 HISTCONTROL="erasedups:ignoreboth"
