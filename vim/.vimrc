@@ -32,6 +32,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'jeffkreeftmeijer/vim-dim'
 
 " Syntax/Indenting
+Plug 'vim-syntastic/syntastic'
 Plug 'chiel92/vim-autoformat'
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
