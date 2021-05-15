@@ -56,6 +56,9 @@ source ~/bin/completions/beet.bash
 # Add bin folder
 pathadd $HOME/bin
 
+# Set bat theme
+export BAT_THEME="ansi"
+
 # Allow C-W mapping in inputrc to work
 # see https://unix.stackexchange.com/q/296822/63527
 stty werase undef
