@@ -1,10 +1,7 @@
 sequence "default" {
-  utf_8 {
-  filename "/Users/tezzele/.unicode-tweaked.tbl";
-  };
+  utf_8;
   safe;
-  # lower;
-  wipeup { remove_trailing; };
+  wipeup;
 };
 
 sequence "mailboxes" {
