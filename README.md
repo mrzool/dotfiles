@@ -1,5 +1,3 @@
-# zool's dotfiles
-
 Config files for my \*nix systems.
 
 This repository includes dotfiles for Bash, Readline, Vim, tmux, Git, Mutt, newsbeuter, mpd/ncmpcpp, and more.
