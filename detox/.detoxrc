@@ -8,7 +8,7 @@ sequence "mailboxes" {
   utf_8 {
   filename "/Users/tezzele/.unicode-tweaked.tbl";
   };
-  # safe;
+  safe;
   wipeup { remove_trailing; };
 };
 
