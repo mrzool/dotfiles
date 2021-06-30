@@ -329,7 +329,7 @@ highlight clear SpellBad
 highlight SpellBad ctermbg=NONE ctermfg=1
 
 " Line numbers tweaks
-set number
+set nonumber
 set numberwidth=2
 set foldcolumn=0
 
