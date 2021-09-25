@@ -575,7 +575,13 @@ let g:goyo_width = 100
 function! s:goyo_enter()
   set noshowmode
   set scrolloff=999
-  highlight EndOfBuffer ctermfg=black ctermbg=black
+  if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
+    highlight StatusLineNC ctermfg=black
+    highlight EndOfBuffer ctermfg=black ctermbg=black
+  else
+    highlight StatusLineNC ctermfg=white
+    highlight EndOfBuffer ctermfg=white ctermbg=white
+  endif
 endfunction
 
 if !exists('*s:goyo_leave')
