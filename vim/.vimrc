@@ -447,9 +447,9 @@ endif
 
 " Open file explorer
 nnoremap <Leader>e  :e.<CR>
-nnoremap <Leader>v  :Vex!<CR>
-nnoremap <Leader>s  :Hex<CR>
-nnoremap <Leader>t  :Tex<CR>
+nnoremap <Leader>v  :Vexplore!<CR>
+nnoremap <Leader>s  :Hexplore<CR>
+nnoremap <Leader>t  :Texplore<CR>
 
 nnoremap <Leader>l :lcd ../
 nnoremap <Leader>o :!open<Space>
