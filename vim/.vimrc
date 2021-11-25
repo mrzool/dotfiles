@@ -361,6 +361,10 @@ set helpheight=12
 " (https://ddrscott.github.io/blog/2016/sidescroll/)
 set sidescroll=1
 
+" Display number of matches in the lower right corner
+" From: https://vi.stackexchange.com/a/23296/3079
+set shortmess-=S
+
 "------------------------------------------------------------
 " Abbreviations
 
