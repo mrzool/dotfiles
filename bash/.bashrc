@@ -39,7 +39,7 @@ HISTSIZE=500000
 HISTFILESIZE=100000
 # Record each line of history right away
 # instead of at the end of the session
-PROMPT_COMMAND='history -a'
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} history -a"
 # Set history timestamp format
 HISTTIMEFORMAT='%F %T '
 
