@@ -242,7 +242,7 @@ if !has('nvim')
 endif
 
 " Highlight search results
-" set hlsearch
+set hlsearch
 
 " Don't redraw while executing macros
 set lazyredraw

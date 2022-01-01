@@ -30,8 +30,10 @@ pathadd $HOME/Library/Python/3.7/bin
 
 # Calibre CLI tools
 pathadd /Applications/calibre.app/Contents/MacOS/
-
 pathadd /home/zool/.linuxbrew/bin
+
+# Source perlbrew
+source ~/perl5/perlbrew/etc/bashrc
 
 # Stop homebrew from updating every time
 export HOMEBREW_NO_AUTO_UPDATE=1
