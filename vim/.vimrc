@@ -124,6 +124,9 @@ set modeline
 " Make yank repeatable with .
 set cpoptions+=y
 
+" Resize splits when the window is resized
+autocmd VimResized * exe "normal! \<c-w>="
+
 "------------------------------------------------------------
 " Files and buffers
 
