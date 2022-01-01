@@ -184,6 +184,9 @@ set wildignore=*.o,*~,*.pyc " Ignore compiled files when autocompleting
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
+" Don't move on *
+nnoremap * *<c-o>
+
 "------------------------------------------------------------
 " Text and whitespace
 
