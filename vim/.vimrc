@@ -180,6 +180,10 @@ set wildmenu " Turn on wildmenu
 set wildmode=longest,list:longest " How text gets replaced
 set wildignore=*.o,*~,*.pyc " Ignore compiled files when autocompleting
 
+" Keep search matches in the middle of the window
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
 "------------------------------------------------------------
 " Text and whitespace
 
