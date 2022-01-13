@@ -11,7 +11,7 @@ alias ls='exa --group-directories-first'
 
 alias l='ls -CF -lh'
 alias ll='ls -l'
-alias la='ls -A'
+alias la='ls -a'
 
 alias ct='column -t'
 alias info='info --vi-keys'
