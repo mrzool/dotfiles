@@ -50,6 +50,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-vinegar'
 Plug 'airblade/vim-gitgutter'
 Plug 'terryma/vim-smooth-scroll'
+Plug 'chrisbra/Colorizer'
 
 " Integrations
 Plug 'vim-scripts/grep.vim'
@@ -644,3 +645,6 @@ autocmd FileType php setlocal commentstring=//\ %s
 
 " Map for vim-autoformat
 noremap <F3> :Autoformat<CR>
+
+" Load colorizer automatically in HTML and CSS files
+let g:colorizer_auto_filetype='css,html'
