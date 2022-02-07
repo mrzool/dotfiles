@@ -541,12 +541,6 @@ if expand('%:p') =~ 'dotfiles'
   let g:netrw_hide=0 " Show hidden files if I'm in my dotfiles folder
   let g:ctrlp_show_hidden = 1 " Get CtrlP to show hidden files
 endif
-" Fix C-L mapping not working when in a netrw buffer
-augroup netrw_mappings
-  autocmd!
-  autocmd filetype netrw nunmap <buffer> <c-l>
-augroup END 
-
 
 " Python syntax settings
 let python_version_2 = 1
