@@ -480,9 +480,6 @@ command! Hpreview GitGutterPreviewHunk
 command! Hnext GitGutterNextHunk
 command! Hprev GitGutterPrevHunk
 
-" Update git-gutter signs as soon as possible after stop typing event
-set updatetime=100
-
 " Copy/paste to system clipboard
 vmap <Leader>y "+y
 vmap <Leader>d "+d
@@ -632,6 +629,9 @@ let delimitMate_expand_cr = 1
 
 " Activate Ragtag shortcuts
 let g:ragtag_global_maps = 1
+
+" Update git-gutter signs as soon as possible after stop typing event
+set updatetime=100
 
 " Smooth-scroll mappings
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 25, 2)<CR>
