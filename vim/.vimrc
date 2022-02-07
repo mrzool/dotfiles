@@ -461,7 +461,7 @@ if has('macunix')
 endif
 
 "------------------------------------------------------------
-" Leader mappings
+" Custom mappings
 
 " Open file explorer
 nnoremap <Leader>e  :e.<CR>
