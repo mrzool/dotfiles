@@ -526,7 +526,7 @@ vnoremap <leader>n d:new<CR>P
 vnoremap <Leader>h  :'<,'>w !pandoc -f markdown -t html \| pbcopy <CR>
 
 " Enable spell-checking and set its language to German
-nnoremap <leader>sp :set spell \| :set spelllang=de<CR>
+nnoremap <leader>sp :set spell! \| :set spelllang=de<CR>
 
 "------------------------------------------------------------
 " Plugins Settings
