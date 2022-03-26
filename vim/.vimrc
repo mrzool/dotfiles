@@ -304,43 +304,50 @@ endif
 set t_Co=16
 
 syntax enable
-colorscheme dim
 
 " Display comments in italics
 " See https://stackoverflow.com/a/53625973/3078265
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
-highlight Comment cterm=italic
+autocmd ColorScheme * highlight Comment cterm=italic
 
 " Italics and bold in markdown files
-highlight htmlItalic cterm=italic
-highlight htmlBold cterm=bold
+autocmd ColorScheme * highlight htmlItalic cterm=italic
+autocmd ColorScheme * highlight htmlBold cterm=bold
 
 " Color fine-tuning
-highlight cursorline cterm=none term=none
-
 if $TERM_PROGRAM ==? "Apple_Terminal"
   if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
-    highlight cursorline ctermbg=8
+    " Colors for dark mode
+    autocmd ColorScheme * highlight cursorline ctermbg=8
+    autocmd ColorScheme * highlight StatusLine ctermbg=7 ctermfg=0
+    autocmd ColorScheme * highlight StatusLineNC ctermbg=0 ctermfg=7
   else
-    highlight cursorline ctermbg=15
+    " Colors for light mode
+    autocmd ColorScheme * highlight cursorline ctermbg=15
+    autocmd ColorScheme * highlight StatusLine ctermbg=7 ctermfg=15
+    autocmd ColorScheme * highlight StatusLineNC ctermbg=15 ctermfg=0
   endif
 endif
 
-highlight SignColumn ctermbg=NONE
-highlight NonText ctermfg=7
-highlight VertSplit ctermfg=8 ctermbg=NONE guibg=NONE
-highlight FoldColumn ctermbg=NONE guibg=NONE
-highlight LineNr ctermbg=NONE guibg=NONE
-highlight GitGutterAdd ctermbg=NONE ctermfg=10
-highlight GitGutterChange ctermbg=NONE ctermfg=12
-highlight GitGutterDelete ctermbg=NONE ctermfg=1
+autocmd ColorScheme * highlight TabLineFill ctermbg=0 ctermfg=7
+autocmd ColorScheme * highlight cursorline cterm=none term=none
+autocmd ColorScheme * highlight SignColumn ctermbg=NONE
+autocmd ColorScheme * highlight NonText ctermfg=7
+autocmd ColorScheme * highlight VertSplit ctermfg=8 ctermbg=NONE guibg=NONE
+autocmd ColorScheme * highlight FoldColumn ctermbg=NONE guibg=NONE
+autocmd ColorScheme * highlight LineNr ctermbg=NONE guibg=NONE
+autocmd ColorScheme * highlight GitGutterAdd ctermbg=NONE ctermfg=10
+autocmd ColorScheme * highlight GitGutterChange ctermbg=NONE ctermfg=12
+autocmd ColorScheme * highlight GitGutterDelete ctermbg=NONE ctermfg=1
 let g:gitgutter_set_sign_backgrounds = 1
 let g:gitgutter_sign_allow_clobber = 1
 
 " Red text for misspelled words
-highlight clear SpellBad
-highlight SpellBad ctermbg=NONE ctermfg=1
+autocmd ColorScheme * highlight clear SpellBad
+autocmd ColorScheme * highlight SpellBad ctermbg=NONE ctermfg=1
+
+colorscheme dim
 
 " Line numbers tweaks
 set nonumber
