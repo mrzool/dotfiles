@@ -333,7 +333,7 @@ endif
 autocmd ColorScheme * highlight TabLineFill ctermbg=0 ctermfg=7
 autocmd ColorScheme * highlight cursorline cterm=none term=none
 autocmd ColorScheme * highlight SignColumn ctermbg=NONE
-autocmd ColorScheme * highlight NonText ctermfg=7
+autocmd ColorScheme * highlight NonText ctermfg=8
 autocmd ColorScheme * highlight VertSplit ctermfg=8 ctermbg=NONE guibg=NONE
 autocmd ColorScheme * highlight FoldColumn ctermbg=NONE guibg=NONE
 autocmd ColorScheme * highlight LineNr ctermbg=NONE guibg=NONE
