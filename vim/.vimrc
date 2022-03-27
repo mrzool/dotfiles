@@ -309,7 +309,7 @@ syntax enable
 " See https://stackoverflow.com/a/53625973/3078265
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
-autocmd ColorScheme * highlight Comment cterm=italic
+autocmd ColorScheme * highlight Comment cterm=italic ctermfg=8
 
 " Italics and bold in markdown files
 autocmd ColorScheme * highlight htmlItalic cterm=italic
