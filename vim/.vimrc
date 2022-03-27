@@ -321,7 +321,7 @@ if $TERM_PROGRAM ==? "Apple_Terminal"
     " Colors for dark mode
     autocmd ColorScheme * highlight cursorline ctermbg=8
     autocmd ColorScheme * highlight StatusLine ctermbg=7 ctermfg=0
-    autocmd ColorScheme * highlight StatusLineNC ctermbg=0 ctermfg=7
+    autocmd ColorScheme * highlight StatusLineNC ctermbg=8 ctermfg=0
   else
     " Colors for light mode
     autocmd ColorScheme * highlight cursorline ctermbg=15
