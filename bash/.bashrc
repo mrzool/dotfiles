@@ -65,6 +65,24 @@ export BAT_THEME="ansi"
 # see https://unix.stackexchange.com/q/296822/63527
 stty werase undef
 
+# Simple calculator
+function calc() {
+        local result=""
+        result="$(printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n')"
+        #                       └─ default (when `--mathlib` is used) is 20
+        #
+        if [[ "$result" == *.* ]]; then
+                # improve the output for decimal numbers
+                printf "$result" |
+                sed -e 's/^\./0./'        `# add "0" for cases like ".5"` \
+                    -e 's/^-\./-0./'      `# add "0" for cases like "-.5"`\
+                    -e 's/0*$//;s/\.$//'   # remove trailing zeros
+        else
+                printf "$result"
+        fi
+        printf "\n"
+}
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
   source ~/.bashrc.macos
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
