@@ -51,6 +51,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'airblade/vim-gitgutter'
 Plug 'terryma/vim-smooth-scroll'
 Plug 'chrisbra/Colorizer'
+Plug 'wfxr/minimap.vim'
 
 " Integrations
 Plug 'vim-scripts/grep.vim'
@@ -652,3 +653,8 @@ noremap <F3> :Autoformat<CR>
 
 " Load colorizer automatically in HTML and CSS files
 let g:colorizer_auto_filetype='css,html'
+
+" Minimap
+let g:minimap_width = 10
+let g:minimap_auto_start = 1
+let g:minimap_auto_start_win_enter = 1
