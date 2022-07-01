@@ -43,7 +43,9 @@ Plug 'keith/tmux.vim'
 Plug 'tpope/vim-git'
 Plug 'hdima/python-syntax'
 Plug 'stephenway/postcss.vim'
-Plug 'tpope/vim-markdown'
+Plug 'cespare/vim-toml'
+Plug 'preservim/vim-markdown'
+Plug 'StanAngeloff/php.vim'
 
 " User Interface
 Plug 'junegunn/goyo.vim'
