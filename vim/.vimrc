@@ -72,7 +72,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'airblade/vim-gitgutter'
 Plug 'terryma/vim-smooth-scroll'
 Plug 'chrisbra/Colorizer'
-Plug 'wfxr/minimap.vim'
+" Plug 'wfxr/minimap.vim'
 
 call plug#end()
 
