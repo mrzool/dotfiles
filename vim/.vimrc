@@ -72,6 +72,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-abolish'
+Plug 'godlygeek/tabular'
 
 call plug#end()
 
