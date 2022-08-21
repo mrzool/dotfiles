@@ -9,12 +9,17 @@
 [core]
 	excludesfile = ~/.cvsignore
 	editor = vim
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
 [push]
 	default = simple
 	followTags = true
 [merge]
 	tool = vimdiff
+  conflictstyle = diff3
 [pager]
        diff = diff-so-fancy | less --tabs=1,5 -RFX
        show = diff-so-fancy | less --tabs=1,5 -RFX
@@ -38,17 +43,19 @@
 	user = mrzool
 [ghi]
 	token = !security find-internet-password -a mrzool -s github.com -l 'ghi token' -w
-[color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
-[color "diff"]
-	meta = yellow
-	frag = magenta bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+; [color "diff-highlight"]
+; 	oldNormal = red bold
+; 	oldHighlight = red bold 52
+; 	newNormal = green bold
+; 	newHighlight = green bold 22
+; [color "diff"]
+; 	meta = yellow
+; 	frag = magenta bold
+; 	commit = yellow bold
+; 	old = red bold
+; 	new = green bold
+; 	whitespace = red reverse
+[diff]
+    colorMoved = default
 [diff-so-fancy]
 	first-run = false
