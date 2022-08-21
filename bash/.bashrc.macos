@@ -39,4 +39,4 @@ source ~/perl5/perlbrew/etc/bashrc
 export HOMEBREW_NO_AUTO_UPDATE=1
 
 # Archey (requires Archey4)
-archey -l retro
+# archey -l retro
