@@ -1,0 +1,2 @@
+# Disable colors (the default, dark-bg, stopped looking good on light terminal backgrounds)
+--color off
