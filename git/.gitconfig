@@ -1,6 +1,6 @@
 [user]
 	email = zool.bib@gmail.com
-	name  = mrzool
+	name = Mattia Tezzele
 	signingkey = 31A8BEA1F509E575
 [credential]
 	helper = cache
