@@ -63,7 +63,6 @@ Plug 'tpope/vim-git'
 Plug 'hdima/python-syntax'
 Plug 'stephenway/postcss.vim'
 Plug 'cespare/vim-toml'
-Plug 'gabrielelana/vim-markdown'
 Plug 'StanAngeloff/php.vim'
 
 " User Interface
