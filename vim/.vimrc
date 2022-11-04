@@ -483,6 +483,9 @@ nnoremap <Leader>t  :Texplore<CR>
 nnoremap <Leader>l :lcd ../
 nnoremap <Leader>o :!open<Space>
 
+" Open terminal 
+nnoremap <Leader>T :vert :term<CR>
+
 " Git-related
 nnoremap SS :Git<CR>
 nnoremap <Leader>a :exe ":GitGutterStageHunk"<CR>
