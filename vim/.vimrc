@@ -231,7 +231,7 @@ autocmd FileType mail setlocal formatoptions+=aw
 
 " Highlight whitespace with symbols
 set list
-set listchars=eol:¬,extends:…,precedes:…,tab:\ \ 
+set listchars=eol:¬,extends:…,precedes:…,lead:·
 
 " Makes foo-bar considered one word
 " set iskeyword+=-
