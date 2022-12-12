@@ -280,7 +280,7 @@ set statusline=%t   " File name of the file in the buffer
 set statusline+=%m  " Modified flag
 set statusline+=%5{v:register} "Which active register
 set statusline+=%=  " Align to the right from now on
-set statusline+=[%{fugitive#head()}]   " Current branch
+set statusline+=[%{FugitiveHead()}]   " Current branch
 set statusline+=\ \  " Blank space
 set statusline+=%y   " Type of file in the buffer
 set statusline+=%5l  " Current line
