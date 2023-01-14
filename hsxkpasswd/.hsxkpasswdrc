@@ -1,11 +1,24 @@
 {
   "custom_presets" : {
-    "DFA_PASSPHRASE" : {
-      "description" : "Default DFA config",
+    "SIMPLE_PASSPHRASE" : {
+      "description" : "Just a simple passphrase",
         "config" : {
           "num_words": 3,
           "word_length_min": 4,
           "word_length_max": 8,
+          "case_transform": "ALTERNATE",
+          "separator_character": "-",
+          "padding_digits_before": 0,
+          "padding_digits_after": 2,
+          "padding_type": "NONE"
+        }
+    },
+    "SIMPLE_PASSPHRASE_SHORT" : {
+      "description" : "Just a simple passphrase, shorter",
+        "config" : {
+          "num_words": 3,
+          "word_length_min": 4,
+          "word_length_max": 5,
           "case_transform": "ALTERNATE",
           "separator_character": "-",
           "padding_digits_before": 0,
