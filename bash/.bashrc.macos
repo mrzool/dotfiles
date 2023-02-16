@@ -38,5 +38,8 @@ source ~/perl5/perlbrew/etc/bashrc
 # Stop homebrew from updating every time
 export HOMEBREW_NO_AUTO_UPDATE=1
 
+# Don't use telemetry/analytics
+HOMEBREW_NO_ANALYTICS=1
+
 # Archey (requires Archey4)
 # archey -l retro
