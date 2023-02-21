@@ -8,4 +8,6 @@ mutt/.mutt/*
 !mutt/.mutt/mailcap
 !mutt/.mutt/dark.256.muttrc.erb
 !mutt/.mutt/view_attachment.sh
+ssh/.ssh/*
+!ssh/.ssh/config
 
