@@ -464,7 +464,7 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 nnoremap <c-w>o :tab sp<CR>
 
 "------------------------------------------------------------
-" Custom mappings
+" Custom mappings (leader)
 
 " Open file explorer
 nnoremap <Leader>e  :e.<CR>
