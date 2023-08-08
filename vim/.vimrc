@@ -463,6 +463,11 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 " Mimics zoom in on current split
 nnoremap <c-w>o :tab sp<CR>
 
+" Recommendations from :h ragtag
+inoremap <c-o>       <Esc>o
+inoremap <C-j>       <Down>
+inoremap <C-k>       <Up>
+
 "------------------------------------------------------------
 " Custom mappings (leader)
 
