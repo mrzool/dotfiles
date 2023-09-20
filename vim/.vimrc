@@ -250,6 +250,9 @@ endif
 " Highlight search results
 set hlsearch
 
+" Find all duplicate lines in current file
+command! FindDuplicateLines g/^\(.*\)$\n\1$/p
+
 " Clear last used search pattern with :C
 command! C let @/=""
 
