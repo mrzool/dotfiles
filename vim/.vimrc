@@ -251,7 +251,7 @@ endif
 set hlsearch
 
 " Clear last used search pattern with :C
-:command! C let @/=""
+command! C let @/=""
 
 " Don't redraw while executing macros
 set lazyredraw
