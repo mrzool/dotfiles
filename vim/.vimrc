@@ -49,6 +49,7 @@ Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-abolish'
 Plug 'godlygeek/tabular'
+Plug 'christoomey/vim-tmux-navigator'
 
 " Syntax/Indenting
 Plug 'vim-syntastic/syntastic'
