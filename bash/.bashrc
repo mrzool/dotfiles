@@ -89,3 +89,5 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
   source ~/.bashrc.linux-gnu
 
 fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
