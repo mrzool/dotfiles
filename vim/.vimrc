@@ -319,22 +319,20 @@ autocmd ColorScheme * highlight htmlItalic cterm=italic
 autocmd ColorScheme * highlight htmlBold cterm=bold
 
 " Color fine-tuning
-if $TERM_PROGRAM ==? "Apple_Terminal"
-  if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
-    " Colors for dark mode
-    autocmd ColorScheme * highlight cursorline ctermbg=8
-    autocmd ColorScheme * highlight StatusLine ctermbg=7 ctermfg=0
-    autocmd ColorScheme * highlight StatusLineNC ctermbg=8 ctermfg=0
-    autocmd ColorScheme * highlight StatusLineTerm ctermbg=7 ctermfg=0
-    autocmd ColorScheme * highlight StatusLineTermNC ctermbg=8 ctermfg=0
-  else
-    " Colors for light mode
-    autocmd ColorScheme * highlight cursorline ctermbg=15
-    autocmd ColorScheme * highlight StatusLine ctermbg=8 ctermfg=15
-    autocmd ColorScheme * highlight StatusLineNC ctermbg=7 ctermfg=15
-    autocmd ColorScheme * highlight StatusLineTerm ctermbg=8 ctermfg=15
-    autocmd ColorScheme * highlight StatusLineTermNC ctermbg=7 ctermfg=15
-  endif
+if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
+  " Colors for dark mode
+  autocmd ColorScheme * highlight cursorline ctermbg=8
+  autocmd ColorScheme * highlight StatusLine ctermbg=7 ctermfg=0
+  autocmd ColorScheme * highlight StatusLineNC ctermbg=8 ctermfg=0
+  autocmd ColorScheme * highlight StatusLineTerm ctermbg=7 ctermfg=0
+  autocmd ColorScheme * highlight StatusLineTermNC ctermbg=8 ctermfg=0
+else
+  " Colors for light mode
+  autocmd ColorScheme * highlight cursorline ctermbg=15
+  autocmd ColorScheme * highlight StatusLine ctermbg=8 ctermfg=15
+  autocmd ColorScheme * highlight StatusLineNC ctermbg=7 ctermfg=15
+  autocmd ColorScheme * highlight StatusLineTerm ctermbg=8 ctermfg=15
+  autocmd ColorScheme * highlight StatusLineTermNC ctermbg=7 ctermfg=15
 endif
 
 autocmd ColorScheme * highlight TabLineFill ctermbg=0 ctermfg=7
