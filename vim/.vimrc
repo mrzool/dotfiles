@@ -462,8 +462,8 @@ nnoremap <c-w>o :tab sp<CR>
 
 " Recommendations from :h ragtag
 inoremap <c-o>       <Esc>o
-inoremap <C-j>       <Down>
-inoremap <C-k>       <Up>
+" inoremap <C-j>       <Down>
+" inoremap <C-k>       <Up> "This interferes with the digraph mapping
 
 "------------------------------------------------------------
 " Custom mappings (leader)
