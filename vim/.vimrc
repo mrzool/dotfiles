@@ -67,7 +67,6 @@ Plug 'cespare/vim-toml'
 Plug 'StanAngeloff/php.vim'
 Plug 'mechatroner/rainbow_csv'
 Plug 'ryanolsonx/vim-xit'
-Plug 'sadotsoy/xit-vim'
 
 " User Interface
 Plug 'junegunn/goyo.vim'
