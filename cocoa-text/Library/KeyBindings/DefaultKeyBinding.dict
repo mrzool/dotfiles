@@ -1,3 +1,16 @@
 {
     "^w" = "deleteWordBackward:";
+    /* This command will let Ctrl-Shift-H turn the previous word
+     * into an HTML/XML opening and closing tag pair. */
+    "^H" = ( "setMark:",
+             "moveWordBackward:",
+             "deleteToMark:",
+             "insertText:", "<",
+             "yank:",
+             "insertText:", ">",
+             "setMark:",
+             "insertText:", "</",
+             "yank:",
+             "insertText:", ">",
+             "swapWithMark:");
 }
