@@ -655,6 +655,13 @@ noremap <F3> :Autoformat<CR>
 " Load colorizer automatically in HTML and CSS files
 let g:colorizer_auto_filetype='css,html'
 
+" Overrides/tweaks for the xit syntax
+highlight xitCheckboxOpen ctermfg=4
+highlight xitCheckboxChecked ctermfg=2
+highlight xitCheckboxOngoing ctermfg=3
+highlight xitCheckboxOpenPriority ctermfg=1
+"
+
 " Minimap
 " let g:minimap_width = 10
 " let g:minimap_auto_start = 1
