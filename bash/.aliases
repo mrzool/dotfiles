@@ -10,7 +10,7 @@ alias -- -='cd -'
 alias ls='eza --group-directories-first'
 
 alias l='ls -CF -lh'
-alias ll='ls -l'
+alias ll='ls -l --no-user --no-permissions'
 alias la='ls -a'
 
 alias ct='column -t'
