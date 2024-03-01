@@ -659,7 +659,7 @@ highlight xitCheckboxOpen ctermfg=4
 highlight xitCheckboxChecked ctermfg=2
 highlight xitCheckboxOngoing ctermfg=3
 highlight xitCheckboxOpenPriority ctermfg=1
-highlight xitTitle cterm=NONE,underline
+highlight xitTitle cterm=bold,none
 "
 
 " Minimap
