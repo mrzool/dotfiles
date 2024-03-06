@@ -453,6 +453,17 @@ function! s:VSetSearch()
   let @s = temp
 endfunction
 
+" Displays highlight group under cursor to customize the color scheme
+" (cit: like Firebug in Vim)
+noremap gm :call SynStack()<CR>
+
+function! SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
 " Expands path of current buffer on the command prompt
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
@@ -507,6 +518,9 @@ vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
 
 " Run :Make
 nnoremap <leader>m :Make<CR>
+
+" Insert date
+nnoremap <leader>d :r !date "+\%a \%Y-\%m-\%d"<CR>
 
 " Enable/disable the mouse
 nnoremap <leader>M :call ToggleMouse()<CR>
