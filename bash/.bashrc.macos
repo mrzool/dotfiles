@@ -32,6 +32,9 @@ pathadd $HOME/Library/Python/3.7/bin
 pathadd /Applications/calibre.app/Contents/MacOS/
 pathadd /home/zool/.linuxbrew/bin
 
+# Espanso
+pathadd /Applications/Espanso.app/Contents/MacOS
+
 # Source perlbrew
 source ~/perl5/perlbrew/etc/bashrc
 
