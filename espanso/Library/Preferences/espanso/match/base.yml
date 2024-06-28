@@ -4,6 +4,10 @@
 matches:
   - trigger: ":espanso"
     replace: Hi there!
+  - trigger: "sz"
+    replace: ß
+  - trigger: ":lg"
+    replace: Liebe Grüße
   - trigger: ":dfa.de"
     replace: deutsche-filmakademie.de
   - trigger: ":date"
