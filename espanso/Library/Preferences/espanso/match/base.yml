@@ -4,7 +4,7 @@
 matches:
   - trigger: ":espanso"
     replace: Hi there!
-  - trigger: "sz"
+  - trigger: ":sz"
     replace: ß
   - trigger: ":lg"
     replace: Liebe Grüße
