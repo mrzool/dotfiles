@@ -6,8 +6,10 @@ matches:
     replace: Hi there!
   - trigger: ":sz"
     replace: ß
-  - trigger: ":lg"
+  - trigger: ":LG"
     replace: Liebe Grüße
+  - trigger: ":lG"
+    replace: liebe Grüße
   - trigger: ":dfa.de"
     replace: deutsche-filmakademie.de
   - trigger: ":date"
