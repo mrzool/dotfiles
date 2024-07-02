@@ -10,6 +10,8 @@ matches:
     replace: Liebe Grüße
   - trigger: ":lG"
     replace: liebe Grüße
+  - trigger: ":eu"
+    replace: €
   - trigger: ":dfa.de"
     replace: deutsche-filmakademie.de
   - trigger: ":date"
