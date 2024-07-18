@@ -325,8 +325,8 @@ if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
   autocmd ColorScheme * highlight cursorline ctermbg=8
   autocmd ColorScheme * highlight StatusLine ctermbg=7 ctermfg=0
   autocmd ColorScheme * highlight StatusLineNC ctermbg=8 ctermfg=0
-  autocmd ColorScheme * highlight StatusLineTerm ctermbg=7 ctermfg=0
-  autocmd ColorScheme * highlight StatusLineTermNC ctermbg=8 ctermfg=0
+  autocmd ColorScheme * highlight StatusLineTerm ctermbg=8 ctermfg=0
+  autocmd ColorScheme * highlight StatusLineTermNC ctermbg=7 ctermfg=0
 else
   " Colors for light mode
   autocmd ColorScheme * highlight cursorline ctermbg=15
