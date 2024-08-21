@@ -87,7 +87,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   source ~/.bashrc.macos
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
   source ~/.bashrc.linux-gnu
-
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
