@@ -4,11 +4,6 @@ case $- in
       *) return;;
 esac
 
-# Load aliases
-if [ -f ~/.aliases ]; then
-  source ~/.aliases
-fi
-
 # Define function to add a directory to $PATH
 pathadd() {
     if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
@@ -90,3 +85,8 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+#
+# Load aliases
+if [ -f ~/.aliases ]; then
+  source ~/.aliases
+fi
