@@ -1,5 +1,8 @@
 # vi:syntax=sh
 
+# Add Homebrew to PATH in the way recommended by the official .pkg installer
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Set up locales
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
