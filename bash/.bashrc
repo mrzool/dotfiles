@@ -53,6 +53,9 @@ source ~/bin/completions/beet.bash
 # Add bin folder
 pathadd $HOME/bin
 
+# Add pipx directory
+pathadd $HOME/.local/bin
+
 # Set bat theme
 export BAT_THEME="ansi"
 
