@@ -20,12 +20,12 @@ export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
 # Homebrew directories
-pathadd /usr/local/Cellar
-pathadd /usr/local/bin
-pathadd /usr/local/sbin
+# pathadd /usr/local/Cellar
+# pathadd /usr/local/bin
+# pathadd /usr/local/sbin
 
 # Homebrew-intalled Python
-pathadd /usr/local/opt/python/libexec/bin
+# pathadd /usr/local/opt/python/libexec/bin
 
 # User base bin directory
 # https://docs.python-guide.org/dev/virtualenvs/
