@@ -2,18 +2,22 @@
 # Original file: default.yml
 
 matches:
-  - trigger: ":espanso"
-    replace: Hi there!
   - trigger: ":sz"
     replace: ß
   - trigger: ":LG"
     replace: Liebe Grüße
+  - trigger: ":FG"
+    replace: Freundliche Grüße
   - trigger: ":lG"
     replace: liebe Grüße
   - trigger: ":eu"
     replace: €
   - trigger: ":dfa.de"
     replace: deutsche-filmakademie.de
+  - trigger: ":->"
+    replace: →
+  - trigger: ":apple"
+    replace: 
   - trigger: ":date"
     replace: "{{mydate}}"
     vars:
