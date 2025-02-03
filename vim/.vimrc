@@ -482,7 +482,7 @@ inoremap <c-o>       <Esc>o
 
 " Open file explorer
 nnoremap <Leader>e  :e.<CR>
-nnoremap <Leader>v  :Vexplore!<CR>
+nnoremap <Leader>v  :Vexplore<CR>
 nnoremap <Leader>s  :Hexplore<CR>
 nnoremap <Leader>t  :Texplore<CR>
 
