@@ -56,6 +56,9 @@ pathadd $HOME/bin
 # Add pipx directory
 pathadd $HOME/.local/bin
 
+# rustup shell setup
+. "$HOME/.cargo/env"
+
 # Set bat theme
 export BAT_THEME="ansi"
 
