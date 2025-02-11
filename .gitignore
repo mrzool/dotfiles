@@ -10,5 +10,4 @@ mutt/.mutt/*
 !mutt/.mutt/view_attachment.sh
 ssh/.ssh/*
 !ssh/.ssh/config
-espanso/Library/Preferences/espanso/match/packages
-
+_legacy/espanso/Library/Preferences/espanso/match/packages
