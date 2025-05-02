@@ -56,6 +56,9 @@ pathadd $HOME/bin
 # Add pipx directory
 pathadd $HOME/.local/bin
 
+# Add go directory
+pathadd $HOME/go/bin
+#
 # rustup shell setup
 . "$HOME/.cargo/env"
 
