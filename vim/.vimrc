@@ -684,3 +684,11 @@ highlight xitTitle cterm=bold,none
 " let g:minimap_auto_start = 1
 " let g:minimap_auto_start_win_enter = 1
 " let g:minimap_highlight_search = 1
+
+" Initialize textobj plugin
+augroup textobj_quote
+  autocmd!
+  autocmd FileType markdown call textobj#quote#init()
+  autocmd FileType textile call textobj#quote#init()
+  autocmd FileType text call textobj#quote#init({'educate': 0})
+augroup END
