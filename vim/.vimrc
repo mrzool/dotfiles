@@ -50,6 +50,8 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-abolish'
 Plug 'godlygeek/tabular'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'kana/vim-textobj-user'
+Plug 'preservim/vim-textobj-quote'
 
 " Syntax/Indenting
 Plug 'vim-syntastic/syntastic'
