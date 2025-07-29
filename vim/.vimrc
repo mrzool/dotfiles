@@ -693,3 +693,7 @@ augroup textobj_quote
   autocmd FileType textile call textobj#quote#init()
   autocmd FileType text call textobj#quote#init({'educate': 0})
 augroup END
+
+" Configure markdown plugin
+" Don't indent list items when typing 'o'
+let g:vim_markdown_new_list_item_indent = 0
