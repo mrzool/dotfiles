@@ -70,6 +70,8 @@ Plug 'StanAngeloff/php.vim'
 Plug 'mechatroner/rainbow_csv'
 Plug 'ryanolsonx/vim-xit'
 Plug 'rust-lang/rust.vim'
+Plug 'godlygeek/tabular'
+Plug 'preservim/vim-markdown'
 
 " User Interface
 Plug 'junegunn/goyo.vim'
