@@ -65,6 +65,9 @@ pathadd $HOME/go/bin
 # Set bat theme
 export BAT_THEME="ansi"
 
+export LDFLAGS="-L/opt/homebrew/opt/libxslt/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libxslt/include"
+
 # Allow C-W mapping in inputrc to work
 # see https://unix.stackexchange.com/q/296822/63527
 stty werase undef
