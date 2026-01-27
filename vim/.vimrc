@@ -68,7 +68,7 @@ Plug 'stephenway/postcss.vim'
 Plug 'cespare/vim-toml'
 Plug 'StanAngeloff/php.vim'
 Plug 'mechatroner/rainbow_csv'
-Plug 'ryanolsonx/vim-xit'
+Plug 'mrzool/vim-xit'
 Plug 'rust-lang/rust.vim'
 Plug 'preservim/vim-markdown'
 
