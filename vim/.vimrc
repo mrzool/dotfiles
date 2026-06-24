@@ -697,3 +697,7 @@ augroup END
 " Configure markdown plugin
 " Don't indent list items when typing 'o'
 let g:vim_markdown_new_list_item_indent = 0
+
+" Don't mess with Vim command line
+let g:disable_rainbow_hover = 1
+
