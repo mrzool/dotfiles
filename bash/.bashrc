@@ -102,3 +102,10 @@ fi
 if [ -f ~/.aliases ]; then
   source ~/.aliases
 fi
+
+# Load lego env file (Hetzner API key)
+if [[ -r /etc/lego/env ]]; then
+  set -a
+  source /etc/lego/env
+  set +a
+fi
