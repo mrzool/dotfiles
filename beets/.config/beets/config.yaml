@@ -33,4 +33,4 @@ ftintitle:
 #   overwrite: yes
 lastgenre:
   canonical: yes
-  whitelist: ~/dotfiles/beets/.config/beets/genres-whitelist
+  whitelist: ~/.config/beets/genres-whitelist
