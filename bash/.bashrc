@@ -1,111 +1,114 @@
-# If not running interactively, don't do anything
+# Interactive shells only
 case $- in
     *i*) ;;
-      *) return;;
+      *) return ;;
 esac
 
-# Define function to add a directory to $PATH
+
+# Environment and PATH
+# --------------------
+
+export EDITOR="vim"
+export BAT_THEME="ansi"
+
+# Prepend a directory to PATH if it exists and isn't already present
 pathadd() {
-    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+    if [[ -d "$1" && ":$PATH:" != *":$1:"* ]]; then
         PATH="$1${PATH:+":$PATH"}"
     fi
 }
 
-export EDITOR="vim"
+pathadd "$HOME/bin"
+pathadd "$HOME/.local/bin"
+pathadd "$HOME/go/bin"
 
-# Implicit cd
-shopt -s autocd
-# Correct minor errors in the spelling of a directory
-shopt -s cdspell
-shopt -s dirspell
-# Activate recursive globbing
-shopt -s globstar
+# Rust
+[[ -r "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 
-# Don't put duplicate lines or lines starting with space in the history
+
+# Shell options
+# -------------
+
+shopt -s autocd      # Implicit cd
+shopt -s cdspell     # Correct minor directory spelling errors
+shopt -s dirspell    # Correct spelling errors during completion
+shopt -s globstar    # Recursive globbing
+
+
+# History
+# -------
+
 HISTCONTROL="erasedups:ignoreboth"
-# Commands that don't need to get recorded
-export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history"
-# Save multi-line commands to the history as one command
+HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history"
+
 shopt -s cmdhist
-# Append to the history file, don't overwrite it
 shopt -s histappend
-# Set history size to a very large number
+
 HISTSIZE=500000
 HISTFILESIZE=100000
-# Record each line of history right away
-# instead of at the end of the session
-PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} history -a"
-# Set history timestamp format
 HISTTIMEFORMAT='%F %T '
 
-# Custom prompt, git-aware
-export GITAWAREPROMPT=~/bin/git-aware-prompt
-source "${GITAWAREPROMPT}/main.sh"
-export PS1="\[\033[33;1m\]\W\[\033[m\]\[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]$ "
+# Write history after each command
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} history -a"
 
-# Complete all the things
-source ~/bin/completions/git-completion.bash
-source ~/bin/completions/tmux.completion.bash
-source ~/bin/completions/npm-completion.bash
-source ~/bin/completions/pandoc.bash
-source ~/bin/completions/beet.bash
 
-# Add bin folder
-pathadd $HOME/bin
+# Prompt
+# ------
 
-# Add pipx directory
-pathadd $HOME/.local/bin
+export GITAWAREPROMPT="$HOME/bin/git-aware-prompt"
 
-# Add go directory
-pathadd $HOME/go/bin
-#
-# rustup shell setup
-. "$HOME/.cargo/env"
+if [[ -r "$GITAWAREPROMPT/main.sh" ]]; then
+    source "$GITAWAREPROMPT/main.sh"
+    export PS1="\[\033[33;1m\]\W\[\033[m\]\[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]$ "
+fi
 
-# Set bat theme
-export BAT_THEME="ansi"
 
-export LDFLAGS="-L/opt/homebrew/opt/libxslt/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/libxslt/include"
+# Completions
+# -----------
 
-# Allow C-W mapping in inputrc to work
-# see https://unix.stackexchange.com/q/296822/63527
-stty werase undef
+for file in "$HOME"/bin/completions/*.bash; do
+    [[ -r "$file" ]] && source "$file"
+done
+
+unset file
+
+
+# Functions
+# ---------
 
 # Simple calculator
-function calc() {
-        local result=""
-        result="$(printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n')"
-        #                       └─ default (when `--mathlib` is used) is 20
-        #
-        if [[ "$result" == *.* ]]; then
-                # improve the output for decimal numbers
-                printf "$result" |
-                sed -e 's/^\./0./'        `# add "0" for cases like ".5"` \
-                    -e 's/^-\./-0./'      `# add "0" for cases like "-.5"`\
-                    -e 's/0*$//;s/\.$//'   # remove trailing zeros
-        else
-                printf "$result"
-        fi
-        printf "\n"
+calc() {
+    local result=""
+    result="$(printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n')"
+
+    if [[ "$result" == *.* ]]; then
+        printf '%s' "$result" |
+            sed -e 's/^\./0./' \
+                -e 's/^-\./-0./' \
+                -e 's/0*$//;s/\.$//'
+    else
+        printf '%s' "$result"
+    fi
+
+    printf '\n'
 }
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  source ~/.bashrc.macos
-elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-  source ~/.bashrc.linux-gnu
+
+# Platform-specific configuration
+# -------------------------------
+
+if [[ "$OSTYPE" == darwin* ]]; then
+    [[ -r "$HOME/.bashrc.macos" ]] && source "$HOME/.bashrc.macos"
+elif [[ "$OSTYPE" == linux-gnu* ]]; then
+    [[ -r "$HOME/.bashrc.linux-gnu" ]] && source "$HOME/.bashrc.linux-gnu"
 fi
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-#
-# Load aliases
-if [ -f ~/.aliases ]; then
-  source ~/.aliases
-fi
+# Disable Ctrl-W's terminal handling (configured in inputrc)
+stty werase undef
 
-# Load lego env file (Hetzner API key)
-if [[ -r /etc/lego/env ]]; then
-  set -a
-  source /etc/lego/env
-  set +a
-fi
+
+# Optional integrations
+# ---------------------
+
+[[ -r "$HOME/.fzf.bash" ]] && source "$HOME/.fzf.bash"
+[[ -r "$HOME/.aliases" ]] && source "$HOME/.aliases"
