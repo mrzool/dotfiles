@@ -93,6 +93,12 @@ calc() {
     printf '\n'
 }
 
+# Run beets through Docker Compose
+beet() {
+    docker compose \
+        --project-directory "$HOME/Developer/slskd-beets-docker" \
+        run --rm --no-deps beets "$@"
+}
 
 # Platform-specific configuration
 # -------------------------------
