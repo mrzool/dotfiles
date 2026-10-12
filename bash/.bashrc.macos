@@ -8,11 +8,6 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 
-# Enable Bash completion
-if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
-. $(brew --prefix)/share/bash-completion/bash_completion
-fi
-
 # Activates colors
 export CLICOLOR=1
 

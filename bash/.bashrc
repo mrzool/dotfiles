@@ -25,6 +25,14 @@ pathadd "$HOME/go/bin"
 # Rust
 [[ -r "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 
+# Platform-specific configuration
+# -------------------------------
+
+if [[ "$OSTYPE" == darwin* ]]; then
+    [[ -r "$HOME/.bashrc.macos" ]] && source "$HOME/.bashrc.macos"
+elif [[ "$OSTYPE" == linux-gnu* ]]; then
+    [[ -r "$HOME/.bashrc.linux-gnu" ]] && source "$HOME/.bashrc.linux-gnu"
+fi
 
 # Shell options
 # -------------
@@ -128,14 +136,6 @@ _beet_import_complete() {
 }
 
 complete -o filenames -F _beet_import_complete beet-import
-# Platform-specific configuration
-# -------------------------------
-
-if [[ "$OSTYPE" == darwin* ]]; then
-    [[ -r "$HOME/.bashrc.macos" ]] && source "$HOME/.bashrc.macos"
-elif [[ "$OSTYPE" == linux-gnu* ]]; then
-    [[ -r "$HOME/.bashrc.linux-gnu" ]] && source "$HOME/.bashrc.linux-gnu"
-fi
 
 # Disable Ctrl-W's terminal handling (configured in inputrc)
 stty werase undef
