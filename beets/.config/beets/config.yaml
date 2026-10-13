@@ -6,6 +6,7 @@ paths:
 import:
   # move: yes
   copy: yes
+  detail: yes
 original_date: yes
 match:
   strong_rec_thresh: 0.1
@@ -33,4 +34,5 @@ ftintitle:
 #   overwrite: yes
 lastgenre:
   canonical: yes
+  force: yes
   whitelist: ~/.config/beets/genres-whitelist
