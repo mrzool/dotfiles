@@ -32,7 +32,9 @@ ftintitle:
 #   backend: command
 #   auto: no
 #   overwrite: yes
+include:
+  - lastgenre-aliases.yaml
 lastgenre:
   canonical: yes
-  force: yes
   whitelist: ~/.config/beets/genres-whitelist
+  title_case: yes
