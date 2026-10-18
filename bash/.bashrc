@@ -103,40 +103,6 @@ calc() {
     printf '\n'
 }
 
-# Run beets through Docker Compose
-beet() {
-    docker compose \
-        --project-directory "$HOME/Developer/slskd-beets-docker" \
-        run --rm --no-deps beets "$@"
-}
-# Import albums from slskd into the remote music library
-beet-import() {
-    local downloads="$HOME/Developer/slskd-beets-docker/data/slskd/downloads"
-    local album="$1"
-
-    if [[ -z "$album" || ! -d "$downloads/$album" ]]; then
-        printf 'Usage: beet-import <album directory>\n' >&2
-        return 1
-    fi
-
-    beet import -c -t "/downloads/$album"
-}
-
-_beet_import_complete() {
-    local downloads="$HOME/Developer/slskd-beets-docker/data/slskd/downloads"
-    local cur="${COMP_WORDS[COMP_CWORD]}"
-    local dir
-
-    COMPREPLY=()
-    [[ $COMP_CWORD -eq 1 ]] || return
-
-    while IFS= read -r dir; do
-        COMPREPLY+=("$dir")
-    done < <(cd "$downloads" && compgen -d -- "$cur")
-}
-
-complete -o filenames -F _beet_import_complete beet-import
-
 # Disable Ctrl-W's terminal handling (configured in inputrc)
 stty werase undef
 
@@ -146,3 +112,4 @@ stty werase undef
 
 [[ -r "$HOME/.fzf.bash" ]] && source "$HOME/.fzf.bash"
 [[ -r "$HOME/.aliases" ]] && source "$HOME/.aliases"
+[[ -r "$HOME/.beets" ]] && source "$HOME/.beets"
