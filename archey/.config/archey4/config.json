@@ -1,0 +1,40 @@
+{
+    "logo_style": "",
+    "hide_undetected": true,
+    "entries": [
+        { "type": "User" },
+        { "type": "Hostname" },
+        {
+            "type": "Custom",
+            "name": "Model",
+            "shell": true,
+            "command": "system_profiler SPHardwareDataType | awk -F ': ' '/Model Name:/ {print $2; exit}'"
+        },
+        { "type": "Distro" },
+        { "type": "Uptime" },
+        { "type": "Shell" },
+        { "type": "Terminal" },
+        { "type": "Packages" },
+        { "type": "CPU" },
+        { "type": "GPU" },
+        { "type": "RAM" },
+        {
+          "type": "Custom",
+          "name": "Disk",
+          "shell": true,
+          "command": "df -g /System/Volumes/Data | awk 'NR==2 {printf \"%.1f GiB / %.1f GiB (%.0f%%)\", $3, $2, $3/$2*100}'"
+        },
+        {
+          "type": "Custom",
+          "name": "Battery",
+          "shell": true,
+          "command": "pmset -g batt | awk -F ';' '/%/ {gsub(/^[[:space:]]+|[[:space:]]+$/, \"\", $2); split($1, a, \" \"); print a[length(a)] \" (\" $2 \")\"}'"
+        },
+        {
+            "type": "LAN_IP",
+            "ipv6_support": false,
+            "show_link_local": false,
+            "max_count": 1
+        }
+    ]
+}
