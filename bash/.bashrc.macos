@@ -36,3 +36,8 @@ HOMEBREW_NO_ANALYTICS=1
 
 # Archey (requires Archey4)
 archey -l retro
+
+# Copy a file to the macOS clipboard
+fcopy() {
+    osascript -e "set the clipboard to (POSIX file \"$(realpath "$1")\")"
+}
