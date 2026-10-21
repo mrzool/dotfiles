@@ -1,5 +1,5 @@
-directory: /Volumes/Extreme SSD/music
-library: ~/.config/beets/zool-music.db
+directory: ~/mnt/zool-mp3s
+library: ~/.local/share/beets/library.db
 paths: 
   default: %asciify{%lower{$albumartist}}-%asciify{%lower{$album}}-$year/$track-%asciify{%lower{$title}}
   comp: various-artists/$album%aunique{}/$track-%asciify{%lower{$title}}
