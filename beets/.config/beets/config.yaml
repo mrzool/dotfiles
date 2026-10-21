@@ -38,3 +38,6 @@ lastgenre:
   canonical: yes
   whitelist: ~/.config/beets/genres-whitelist
   title_case: yes
+edit:
+  albumfields: album albumartist genres year
+  itemfields: track title artist album genres
