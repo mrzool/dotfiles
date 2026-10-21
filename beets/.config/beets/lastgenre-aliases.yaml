@@ -18,6 +18,8 @@ lastgenre:
       - (synth)[- ]*(pop)
     avant-garde:
       - avant[- ]*(garde?)?
+    neo-classical:
+      - neo[ -]*classical
 
     # Adding space
     \1 \2:
