@@ -6,13 +6,13 @@ beet() {
 # Run containerized beets when needed
 beet-docker() {
     docker compose \
-        --project-directory "$HOME/Developer/slskd-beets-docker" \
+        --project-directory "$HOME/Developer/beetbox" \
         run --rm --no-deps beets "$@"
 }
 
 # Import albums from slskd into the remote music library
 beet-import() {
-    local downloads="$HOME/Developer/slskd-beets-docker/data/slskd/downloads"
+    local downloads="$HOME/Developer/beetbox/data/slskd/downloads"
     local album="$1"
 
     if [[ -z "$album" || ! -d "$downloads/$album" ]]; then
@@ -24,7 +24,7 @@ beet-import() {
 }
 
 _beet_import_complete() {
-    local downloads="$HOME/Developer/slskd-beets-docker/data/slskd/downloads"
+    local downloads="$HOME/Developer/beetbox/data/slskd/downloads"
     local cur="${COMP_WORDS[COMP_CWORD]}"
     local dir
 
