@@ -336,9 +336,6 @@
 directories:
   downloads: /downloads
   incomplete: /incomplete
-soulseek:
-  distributed_network:
-    disabled: true
 shares:
   directories:
     - /mnt/music
