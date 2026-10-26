@@ -1,4 +1,4 @@
-directory: ~/mnt/zool-mp3s
+directory: ~/mnt/zool-mp3s-fuse
 library: ~/.local/share/beets/library.db
 paths: 
   default: %asciify{%lower{$albumartist}}-%asciify{%lower{$album}}-$year/$track-%asciify{%lower{$title}}
