@@ -39,5 +39,6 @@ lastgenre:
   whitelist: ~/.config/beets/genres-whitelist
   title_case: yes
 edit:
-  albumfields: album albumartist genres year
+  albumfields: album albumartist genres year albumdisambig
   itemfields: track title artist album genres
+  write: yes
