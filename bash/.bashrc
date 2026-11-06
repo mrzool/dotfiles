@@ -107,9 +107,6 @@ calc() {
 stty werase undef
 
 
-# Optional integrations
-# ---------------------
-
-[[ -r "$HOME/.fzf.bash" ]] && source "$HOME/.fzf.bash"
-[[ -r "$HOME/.aliases" ]] && source "$HOME/.aliases"
-[[ -r "$HOME/.beets" ]] && source "$HOME/.beets"
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init.bash 2>/dev/null || :
