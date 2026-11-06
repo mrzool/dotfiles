@@ -44,9 +44,30 @@ beet-import() {
     beet import -c -t "$path"
 }
 
-complete -o filenames -F _beet_import_complete beet-import
-
 # Search albums and show their IDs
 beet-search() {
     beet ls -a -f '$id | $albumartist - $album' "$@"
+}
+
+beet-edit() {
+    local selected id
+
+    selected=$(
+        beet ls -a -f '$id | $albumartist - $album' 'added-' |
+        fzf --height=60% \
+            --reverse \
+            --border \
+            --no-sort \
+            --prompt='Album > ' \
+            --query="$*"
+    ) || return
+
+    id="${selected%% | *}"
+
+    [[ "$id" =~ ^[0-9]+$ ]] || {
+        echo "Invalid album ID: $id" >&2
+        return 1
+    }
+
+    beet edit -a "id:$id"
 }
