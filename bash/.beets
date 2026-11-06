@@ -10,30 +10,38 @@ beet-docker() {
         run --rm --no-deps beets "$@"
 }
 
-# Import albums from slskd into the remote music library
+# Import albums from slskd or SeeleSeek into the remote music library
 beet-import() {
-    local downloads="$HOME/Developer/beetbox/data/slskd/downloads"
-    local album="$1"
+    local slskd="$HOME/Developer/beetbox/data/slskd/downloads"
+    local seelseek="$HOME/Downloads/SeeleSeek/Complete"
+    local selected source album path
 
-    if [[ -z "$album" || ! -d "$downloads/$album" ]]; then
-        printf 'Usage: beet-import <album directory>\n' >&2
-        return 1
-    fi
+    selected=$(
+        {
+            [[ -d "$slskd" ]] &&
+                find "$slskd" -mindepth 1 -maxdepth 1 -type d \
+                    -exec basename {} \; | sed 's/^/slskd | /'
 
-    beet import -c -t "$downloads/$album"
-}
+            [[ -d "$seelseek" ]] &&
+                find "$seelseek" -mindepth 1 -maxdepth 1 -type d \
+                    -exec basename {} \; | sed 's/^/SeeleSeek | /'
+        } | fzf --height=60% \
+                --reverse \
+                --border \
+                --prompt='Import album > ' \
+                --query="$*"
+    ) || return
 
-_beet_import_complete() {
-    local downloads="$HOME/Developer/beetbox/data/slskd/downloads"
-    local cur="${COMP_WORDS[COMP_CWORD]}"
-    local dir
+    source="${selected%% | *}"
+    album="${selected#* | }"
 
-    COMPREPLY=()
-    [[ $COMP_CWORD -eq 1 ]] || return
+    case "$source" in
+        slskd)     path="$slskd/$album" ;;
+        SeeleSeek) path="$seelseek/$album" ;;
+        *)         return 1 ;;
+    esac
 
-    while IFS= read -r dir; do
-        COMPREPLY+=("$dir")
-    done < <(cd "$downloads" && compgen -d -- "$cur")
+    beet import -c -t "$path"
 }
 
 complete -o filenames -F _beet_import_complete beet-import
