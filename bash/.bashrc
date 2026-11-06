@@ -83,6 +83,16 @@ done
 unset file
 
 
+# Integrations
+# ------------
+
+[[ -r "$HOME/.fzf.bash" ]] && source "$HOME/.fzf.bash"
+[[ -r "$HOME/.aliases" ]] && source "$HOME/.aliases"
+[[ -r "$HOME/.beets" ]] && source "$HOME/.beets"
+
+# Ctrl-G: fuzzy directory navigation
+bind '"\C-g": "\ec"'
+
 # Functions
 # ---------
 
