@@ -71,3 +71,27 @@ beet-edit() {
 
     beet edit -a "id:$id"
 }
+
+# Delete an album (both database entry and music files)
+beet-delete() {
+    local selected id
+
+    selected=$(
+        beet ls -a -f '$id | $albumartist - $album' 'added-' |
+        fzf --height=60% \
+            --reverse \
+            --border \
+            --no-sort \
+            --prompt='Delete album > ' \
+            --query="$*"
+    ) || return
+
+    id="${selected%% | *}"
+
+    [[ "$id" =~ ^[0-9]+$ ]] || {
+        echo "Invalid album ID: $id" >&2
+        return 1
+    }
+
+    beet remove -a -d "id:$id"
+}
