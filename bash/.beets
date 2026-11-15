@@ -65,20 +65,30 @@ beet-edit() {
         beet ls -a -f '$id | $albumartist - $album' 'added-' |
         fzf --height=60% \
             --reverse \
+            --multi \
             --border \
             --no-sort \
             --prompt='Album > ' \
             --query="$*"
     ) || return
 
-    id="${selected%% | *}"
+    local ids=() line id
 
-    [[ "$id" =~ ^[0-9]+$ ]] || {
-        echo "Invalid album ID: $id" >&2
-        return 1
-    }
+    while IFS= read -r line; do
+      id="${line%% | *}"
 
-    beet edit -a "id:$id"
+        [[ "$id" =~ ^[0-9]+$ ]] || {
+          echo "Invalid album ID: $id" >&2
+            return 1
+        }
+
+    ids+=("$id")
+      done <<< "$selected"
+
+      local query
+      query=$(IFS=,; echo "${ids[*]}")
+
+      beet edit -a "id::^(${query//,/|})$"
 }
 
 # Delete an album (both database entry and music files)
