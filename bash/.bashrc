@@ -23,6 +23,9 @@ pathadd "$HOME/.local/bin"
 pathadd "$HOME/go/bin"
 pathadd "$HOME/.rustel/bin"
 
+# Added by Kiri: its docker and kiri commands (kiri setup --uninstall removes this)
+case ":$PATH:" in *":$HOME/.kiri/bin:"*) ;; *) export PATH="$PATH:$HOME/.kiri/bin" ;; esac
+
 # Rust
 [[ -r "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 
