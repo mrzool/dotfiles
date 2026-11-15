@@ -21,6 +21,7 @@ pathadd() {
 pathadd "$HOME/bin"
 pathadd "$HOME/.local/bin"
 pathadd "$HOME/go/bin"
+pathadd "$HOME/.rustel/bin"
 
 # Rust
 [[ -r "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
