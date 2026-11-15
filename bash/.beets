@@ -20,16 +20,25 @@ beet-import() {
         {
             [[ -d "$slskd" ]] &&
                 find "$slskd" -mindepth 1 -maxdepth 1 -type d \
-                    -exec basename {} \; | sed 's/^/slskd | /'
+                  -exec stat -f '%m %N' {} \; |
+                  sort -nr |
+                  cut -d ' ' -f 2- |
+                  while IFS= read -r path; do basename "$path"; done |
+                  sed 's/^/slskd | /'
 
             [[ -d "$seelseek" ]] &&
-                find "$seelseek" -mindepth 1 -maxdepth 1 -type d \
-                    -exec basename {} \; | sed 's/^/SeeleSeek | /'
+            find "$seelseek" -mindepth 1 -maxdepth 1 -type d \
+            -exec stat -f '%m %N' {} \; |
+            sort -nr |
+            cut -d ' ' -f 2- |
+            while IFS= read -r path; do basename "$path"; done |
+            sed 's/^/SeeleSeek | /'
         } | fzf --height=60% \
                 --reverse \
                 --border \
                 --prompt='Import album > ' \
-                --query="$*"
+                --query="$*" \
+                --no-sort
     ) || return
 
     source="${selected%% | *}"
